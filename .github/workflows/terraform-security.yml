@@ -6,83 +6,59 @@ on:
   pull_request:
     branches: [ "main" ]
 
+permissions:
+  contents: read
+
 jobs:
   terraform-security:
     runs-on: ubuntu-latest
-
-    env:
-      AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID_TERRAFORM_USER }}
-      AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY_TERRAFORM_USER }}
-      AWS_DEFAULT_REGION: eu-west-2
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # Needed for Checkov (Python package)
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.x"
 
-      # Terraform CLI (so run_scans.sh can call terraform)
       - name: Install Terraform
         uses: hashicorp/setup-terraform@v3
         with:
-          terraform_version: "1.9.5"
+          terraform_version: 1.8.5
 
-      # Checkov CLI
       - name: Install Checkov
         run: |
-          python -m pip install --upgrade pip
+          pip install --upgrade pip
           pip install checkov
 
-      # tfsec CLI
       - name: Install tfsec
         run: |
-          curl -L https://github.com/aquasecurity/tfsec/releases/latest/download/tfsec-linux-amd64 -o tfsec
-          chmod +x tfsec
-          sudo mv tfsec /usr/local/bin/tfsec
+          curl -s https://raw.githubusercontent.com/aquasecurity/tfsec/master/scripts/install_linux.sh | bash
+          tfsec --version
 
-      # Terrascan CLI
       - name: Install Terrascan
         run: |
-          curl -L https://github.com/tenable/terrascan/releases/latest/download/terrascan_linux_amd64 -o terrascan
-          chmod +x terrascan
+          curl -L https://github.com/tenable/terrascan/releases/latest/download/terrascan_Linux_x86_64.tar.gz -o terrascan.tar.gz
+          tar -xzf terrascan.tar.gz terrascan
           sudo mv terrascan /usr/local/bin/terrascan
+          terrascan version
 
-      # Conftest (OPA)
       - name: Install Conftest
         run: |
-          # Get latest Conftest version
-          LATEST_VERSION=$(curl -sL "https://api.github.com/repos/open-policy-agent/conftest/releases/latest" \
-            | grep '"tag_name":' \
-            | sed -E 's/.*"([^"]+)".*/\1/' \
-            | cut -c 2-)
-
-          ARCH=$(uname -m)      # e.g. x86_64
-          SYSTEM=$(uname -s)    # e.g. Linux
-
-          echo "Installing Conftest v${LATEST_VERSION} for ${SYSTEM} ${ARCH}"
-
-          curl -L "https://github.com/open-policy-agent/conftest/releases/download/v${LATEST_VERSION}/conftest_${LATEST_VERSION}_${SYSTEM}_${ARCH}.tar.gz" \
-            -o conftest.tar.gz
-
-          tar -xzf conftest.tar.gz
+          LATEST_VERSION=$(wget -O - "https://api.github.com/repos/open-policy-agent/conftest/releases/latest" | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/' | cut -c 2-)
+          ARCH=$(arch)
+          SYSTEM=$(uname)
+          wget "https://github.com/open-policy-agent/conftest/releases/download/v${LATEST_VERSION}/conftest_${LATEST_VERSION}_${SYSTEM}_${ARCH}.tar.gz"
+          tar xzf "conftest_${LATEST_VERSION}_${SYSTEM}_${ARCH}.tar.gz"
           sudo mv conftest /usr/local/bin/conftest
-
           conftest --version
 
-       - name: Make scan script executable
-         run: chmod +x ./run_scans.sh
+      - name: Make run_scans.sh executable
+        run: chmod +x ./run_scans.sh
 
-    #  BENIGN scenario – should PASS
-    - name: Run scans for BENIGN S3 scenario
-      run: |
-        ./run_scans.sh test-suite/storage/STO-BENIGN-001-s3-private-encrypted/
+      - name: Run scans for BENIGN S3 scenario (should PASS)
+        run: ./run_scans.sh test-suite/storage/STO-BENIGN-001-s3-private-encrypted/
 
-    # MISC scenario – should FAIL (public, unencrypted)
-    - name: Run scans for MISC S3 scenario
-      run: |
-        ./run_scans.sh test-suite/storage/STO-MISC-001-s3-public-unencrypted/
-
+      - name: Run scans for MISCONFIG S3 scenario (should FAIL)
+        run: ./run_scans.sh test-suite/storage/STO-MISC-001-s3-public-unencrypted/
