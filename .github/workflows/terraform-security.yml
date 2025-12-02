@@ -1,0 +1,80 @@
+name: Terraform S3 Misconfig CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+
+env:
+  # AWS Region  
+  AWS_REGION: eu-west-2
+  AWS_DEFAULT_REGION: eu-west-2
+
+  # GitHub Secrets Details
+  AWS_ACCESS_KEY_ID: ${{ secrets.AWS_TERRAFORM_ACCESS_KEY_ID }}
+  AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_TERRAFORM_SECRET_ACCESS_KEY }}
+
+  TF_IN_AUTOMATION: "true"
+
+jobs:
+  terraform-security:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Terraform
+        uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: 1.9.8 # or close to what you use locally
+
+      - name: Show Terraform version
+        run: terraform version
+
+      - name: Install tools (Checkov, tfsec, Terrascan, Conftest)
+        run: |
+          sudo apt-get update -y
+          sudo apt-get install -y python3-pip
+
+          # Checkov (Python)
+          python3 -m pip install --upgrade pip
+          pip3 install checkov
+
+          # tfsec
+          curl -sSL https://raw.githubusercontent.com/aquasecurity/tfsec/master/scripts/install_linux.sh | bash
+
+          # Terrascan
+          curl -sSL https://raw.githubusercontent.com/tenable/terrascan/master/scripts/install.sh | bash
+
+          # Conftest (OPA-based)
+          curl -L "https://github.com/open-policy-agent/conftest/releases/latest/download/conftest_linux_amd64.tar.gz" -o conftest.tar.gz
+          tar -xzf conftest.tar.gz
+          sudo mv conftest /usr/local/bin/conftest
+          conftest --version
+
+      - name: Terraform fmt (lint)
+        run: terraform fmt -check -recursive
+
+      - name: Run scans for S3 scenarios
+        run: |
+          chmod +x run_scans.sh
+
+          echo "=== Running scans for benign S3 scenario ==="
+          ./run_scans.sh test-suite/storage/STO-BENIGN-001-s3-private-encrypted/
+
+          echo "=== Running scans for public S3 scenario ==="
+          ./run_scans.sh test-suite/storage/STO-MISC-001-s3-public-unencrypted/
+
+      - name: Upload scan reports
+        uses: actions/upload-artifact@v4
+        with:
+          name: scan-reports
+          path: |
+            test-suite/storage/STO-BENIGN-001-s3-private-encrypted/*.txt
+            test-suite/storage/STO-BENIGN-001-s3-private-encrypted/tfplan.json
+            test-suite/storage/STO-MISC-001-s3-public-unencrypted/*.txt
+            test-suite/storage/STO-MISC-001-s3-public-unencrypted/tfplan.json

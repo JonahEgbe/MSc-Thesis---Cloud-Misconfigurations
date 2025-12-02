@@ -1,0 +1,9 @@
+# Terraform junk
+.terraform/
+**/.terraform/*
+.terraform.lock.hcl
+*.tfstate
+*.tfstate.*
+crash.log
+*.tfplan
+tfplan*
