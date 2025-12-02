@@ -73,8 +73,16 @@ jobs:
 
           conftest --version
 
-      # 🔍 Run scans for the BENIGN S3 scenario only
-      - name: Run scans for BENIGN S3 scenario
-        run: |
-          chmod +x ./run_scans.sh
-          ./run_scans.sh test-suite/storage/STO-BENIGN-001-s3-private-encrypted/
+       - name: Make scan script executable
+         run: chmod +x ./run_scans.sh
+
+    #  BENIGN scenario – should PASS
+    - name: Run scans for BENIGN S3 scenario
+      run: |
+        ./run_scans.sh test-suite/storage/STO-BENIGN-001-s3-private-encrypted/
+
+    # MISC scenario – should FAIL (public, unencrypted)
+    - name: Run scans for MISC S3 scenario
+      run: |
+        ./run_scans.sh test-suite/storage/STO-MISC-001-s3-public-unencrypted/
+
