@@ -6,6 +6,6 @@ variable "region" {
 
 variable "profile" {
   type        = string
-  default     = "terraform_user"
+  default     = ""
   description = "AWS CLI profile to use"
 }
