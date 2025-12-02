@@ -37,12 +37,14 @@ jobs:
           curl -s https://raw.githubusercontent.com/aquasecurity/tfsec/master/scripts/install_linux.sh | bash
           tfsec --version
 
-      - name: Run Terrascan
-  uses: tenable/terrascan-action@main
-  with:
-    iac_type: terraform
-    iac_dir: .
-    policy_type: aws
+      # Terrascan CLI
+      - name: Install Terrascan
+        run: |
+          curl -L https://github.com/tenable/terrascan/releases/latest/download/terrascan_linux_amd64 -o terrascan
+          chmod +x terrascan
+          sudo mv terrascan /usr/local/bin/terrascan
+
+          # Conftest CLI
 
       - name: Install Conftest
         run: |
