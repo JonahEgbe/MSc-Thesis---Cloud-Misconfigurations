@@ -1,3 +1,0 @@
-[31mFAIL[0m - tfplan.json - main - S3 bucket ACL public_bucket_acl is public-read (NOT allowed) [plan]
-
-[31m2 tests, 1 passed, 0 warnings, 1 failure, 0 exceptions[0m

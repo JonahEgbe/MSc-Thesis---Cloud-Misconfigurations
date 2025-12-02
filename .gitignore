@@ -1,9 +1,13 @@
-# Terraform junk
+# Terraform outputs
 .terraform/
-**/.terraform/*
 .terraform.lock.hcl
-*.tfstate
-*.tfstate.*
-crash.log
-*.tfplan
-tfplan*
+terraform.tfstate
+terraform.tfstate.backup
+tfplan.binary
+tfplan.json
+
+# Scanner outputs
+checkov_*.txt
+tfsec_*.txt
+terrascan_*.txt
+conftest_*.txt
