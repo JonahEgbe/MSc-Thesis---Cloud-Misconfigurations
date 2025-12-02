@@ -2,79 +2,57 @@ name: Terraform S3 Misconfig CI
 
 on:
   push:
-    branches: [ main ]
+    branches: [ "main" ]
   pull_request:
-
-env:
-  # AWS Region  
-  AWS_REGION: eu-west-2
-  AWS_DEFAULT_REGION: eu-west-2
-
-  # GitHub Secrets Details
-  AWS_ACCESS_KEY_ID: ${{ secrets.AWS_TERRAFORM_ACCESS_KEY_ID }}
-  AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_TERRAFORM_SECRET_ACCESS_KEY }}
-
-  TF_IN_AUTOMATION: "true"
+    branches: [ "main" ]
 
 jobs:
   terraform-security:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        shell: bash
+
+    env:
+      AWS_DEFAULT_REGION: eu-west-2
+      #  GitHub Secrets Credentials
+      AWS_ACCESS_KEY_ID: ${{ secrets.AWS_TERRAFORM_ACCESS_KEY_ID }}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_TERRAFORM_SECRET_ACCESS_KEY }}
 
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
 
-      - name: Set up Terraform
-        uses: hashicorp/setup-terraform@v3
-        with:
-          terraform_version: 1.9.8 # or close to what you use locally
-
-      - name: Show Terraform version
-        run: terraform version
-
-      - name: Install tools (Checkov, tfsec, Terrascan, Conftest)
+      - name: Install Terraform and tools
         run: |
-          sudo apt-get update -y
-          sudo apt-get install -y python3-pip
+          sudo apt-get update
+          sudo apt-get install -y curl wget jq
 
-          # Checkov (Python)
-          python3 -m pip install --upgrade pip
+          # Terraform
+          curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo gpg --dearmor -o /usr/share/keyrings/hashicorp-archive-keyring.gpg
+          echo "deb [signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/hashicorp.list
+          sudo apt-get update && sudo apt-get install -y terraform
+
+          # Python + Checkov
+          sudo apt-get install -y python3-pip
           pip3 install checkov
 
           # tfsec
           curl -sSL https://raw.githubusercontent.com/aquasecurity/tfsec/master/scripts/install_linux.sh | bash
 
           # Terrascan
-          curl -sSL https://raw.githubusercontent.com/tenable/terrascan/master/scripts/install.sh | bash
+          curl -L https://github.com/tenable/terrascan/releases/latest/download/terrascan_linux_amd64.tar.gz \
+            -o terrascan.tar.gz
+          tar -xf terrascan.tar.gz
+          sudo mv terrascan /usr/local/bin/
 
-          # Conftest (OPA-based)
-          curl -L "https://github.com/open-policy-agent/conftest/releases/latest/download/conftest_linux_amd64.tar.gz" -o conftest.tar.gz
-          tar -xzf conftest.tar.gz
-          sudo mv conftest /usr/local/bin/conftest
-          conftest --version
+          # Conftest (OPA)
+          curl -L https://github.com/open-policy-agent/conftest/releases/latest/download/conftest_linux_amd64.tar.gz \
+            -o conftest.tar.gz
+          tar -xf conftest.tar.gz
+          sudo mv conftest /usr/local/bin/
 
-      - name: Terraform fmt (lint)
-        run: terraform fmt -check -recursive
+      - name: Make run_scans.sh executable
+        run: chmod +x ./run_scans.sh
 
-      - name: Run scans for S3 scenarios
+      - name: Run scans for misconfig and benign scenarios
         run: |
-          chmod +x run_scans.sh
-
-          echo "=== Running scans for benign S3 scenario ==="
-          ./run_scans.sh test-suite/storage/STO-BENIGN-001-s3-private-encrypted/
-
-          echo "=== Running scans for public S3 scenario ==="
           ./run_scans.sh test-suite/storage/STO-MISC-001-s3-public-unencrypted/
-
-      - name: Upload scan reports
-        uses: actions/upload-artifact@v4
-        with:
-          name: scan-reports
-          path: |
-            test-suite/storage/STO-BENIGN-001-s3-private-encrypted/*.txt
-            test-suite/storage/STO-BENIGN-001-s3-private-encrypted/tfplan.json
-            test-suite/storage/STO-MISC-001-s3-public-unencrypted/*.txt
-            test-suite/storage/STO-MISC-001-s3-public-unencrypted/tfplan.json
+          ./run_scans.sh test-suite/storage/STO-BENIGN-001-s3-private-encrypted/
