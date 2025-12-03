@@ -52,7 +52,7 @@ jobs:
           sudo mv terrascan /usr/local/bin/terrascan
           terrascan version || true
 
-      - - - name: Install Conftest
+      - name: Install Conftest
   run: |
     CONTFEST_VERSION="0.65.0"
 
