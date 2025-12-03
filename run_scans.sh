@@ -20,7 +20,7 @@ terraform validate
 
 echo
 echo "===== [3] Terraform plan (profile = terraform_user) ====="
-terraform plan -var="profile=terraform_user" -out=tfplan.binary
+terraform plan -out=tfplan.binary
 
 echo
 echo "===== [4] Export plan to JSON ====="
