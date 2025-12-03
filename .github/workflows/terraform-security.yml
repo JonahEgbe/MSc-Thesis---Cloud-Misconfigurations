@@ -2,66 +2,65 @@ name: Terraform S3 Misconfig CI
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ main ]
   pull_request:
-    branches: [ "main" ]
-
-permissions:
-  contents: read
+    branches: [ main ]
 
 jobs:
   terraform-security:
     runs-on: ubuntu-latest
-
-    env:
-      AWS_REGION: eu-west-2
+    defaults:
+      run:
+        shell: bash
 
     steps:
-      # 1. Checkout code
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # 2. Python for Checkov
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: "3.x"
+          python-version: '3.x'
 
-      # 3. Terraform CLI
       - name: Install Terraform
         uses: hashicorp/setup-terraform@v3
         with:
           terraform_version: 1.8.5
 
-      # 4. AWS credentials
+      # Uses your repo secrets:
+      #   AWS_TERRAFORM_ACCESS_KEY_ID
+      #   AWS_TERRAFORM_SECRET_ACCESS_KEY
       - name: Configure AWS credentials
-        uses: aws-actions/configure-aws-credentials@v4
+        uses: aws-actions/configure-aws-credentials@v2
         with:
           aws-access-key-id: ${{ secrets.AWS_TERRAFORM_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_TERRAFORM_SECRET_ACCESS_KEY }}
-          aws-region: ${{ env.AWS_REGION }}
+          aws-region: eu-west-2
 
-      # 5. Install Checkov
       - name: Install Checkov
         run: |
           python -m pip install --upgrade pip
           pip install checkov
 
-      # 6. Install tfsec
       - name: Install tfsec
         run: |
-          curl -s https://raw.githubusercontent.com/aquasecurity/tfsec/master/scripts/install_linux.sh | bash
+          curl -sSfL https://raw.githubusercontent.com/aquasecurity/tfsec/master/scripts/install_linux.sh \
+            | sh -s -- -b /usr/local/bin
           tfsec --version
 
-      #7. Terrascan CLI
       - name: Install Terrascan
         run: |
-          curl -L https://github.com/tenable/terrascan/releases/latest/download/terrascan_linux_amd64 -o terrascan
-          chmod +x terrascan
-          sudo mv terrascan /usr/local/bin/terrascan
+          # Get the latest Linux x86_64 asset URL from GitHub API
+          TERRASCAN_URL=$(curl -s https://api.github.com/repos/tenable/terrascan/releases/latest \
+            | grep -o -E 'https://[^\"]+Linux_x86_64\.tar\.gz')
+          echo "Terrascan asset: $TERRASCAN_URL"
 
-      # 8. Install Conftest (using latest/download URL)
-     - name: Install Conftest
+          curl -L "$TERRASCAN_URL" -o terrascan.tar.gz
+          tar -xzf terrascan.tar.gz terrascan
+          sudo install terrascan /usr/local/bin/terrascan
+          terrascan version
+
+      - name: Install Conftest
         run: |
           # Get latest tag, then download the matching Linux x86_64 tarball
           CONFTEST_VERSION=$(curl -s https://api.github.com/repos/open-policy-agent/conftest/releases/latest \
@@ -75,14 +74,11 @@ jobs:
           sudo install conftest /usr/local/bin/conftest
           conftest --version
 
-      # 9. Make your scan script executable
       - name: Make run_scans.sh executable
-        run: chmod +x run_scans.sh
+        run: chmod +x ./run_scans.sh
 
-      # 10. BENIGN scenario – should PASS
       - name: Run scans for BENIGN S3 scenario (should PASS)
-        run: ./run_scans.sh test-suite/storage/STO-BENIGN-001-s3-private-encrypted/
+        run: ./run_scans.sh test-suite/storage/STO-BENIGN-001-s3-private-encrypted
 
-      # 11. MISC scenario – should FAIL
       - name: Run scans for MISC S3 scenario (should FAIL)
-        run: ./run_scans.sh test-suite/storage/STO-MISC-001-s3-public-unencrypted/
+        run: ./run_scans.sh test-suite/storage/STO-MISC-001-s3-public-unencrypted
