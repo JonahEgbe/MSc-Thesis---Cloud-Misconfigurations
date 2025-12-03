@@ -52,26 +52,14 @@ jobs:
           sudo mv terrascan /usr/local/bin/terrascan
           terrascan version || true
 
-      - - name: Install Conftest
-        run: |
-          # Get latest Conftest version
-          LATEST_VERSION=$(curl -sL "https://api.github.com/repos/open-policy-agent/conftest/releases/latest" \
-            | grep '"tag_name":' \
-            | sed -E 's/.*"([^"]+)".*/\1/' \
-            | cut -c 2-)
+      - - - name: Install Conftest
+  run: |
+    CONTFEST_VERSION="0.65.0"
 
-          ARCH=$(uname -m)      # e.g. x86_64
-          SYSTEM=$(uname -s)    # e.g. Linux
-
-          echo "Installing Conftest v${LATEST_VERSION} for ${SYSTEM} ${ARCH}"
-
-          curl -L "https://github.com/open-policy-agent/conftest/releases/download/v${LATEST_VERSION}/conftest_${LATEST_VERSION}_${SYSTEM}_${ARCH}.tar.gz" \
-            -o conftest.tar.gz
-
-          tar -xzf conftest.tar.gz
-          sudo mv conftest /usr/local/bin/conftest
-
-          conftest --version
+    wget -q "https://github.com/open-policy-agent/conftest/releases/download/v${CONTFEST_VERSION}/conftest_${CONTFEST_VERSION}_Linux_x86_64.tar.gz"
+    tar xzf "conftest_${CONTFEST_VERSION}_Linux_x86_64.tar.gz"
+    sudo mv conftest /usr/local/bin
+    conftest --version
 
       - name: Make run_scans.sh executable
         run: chmod +x ./run_scans.sh
