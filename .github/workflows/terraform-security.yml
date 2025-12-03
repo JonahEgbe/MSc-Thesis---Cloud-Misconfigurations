@@ -26,15 +26,14 @@ jobs:
         uses: hashicorp/setup-terraform@v3
         with:
           terraform_version: 1.8.5
-             # Configure AWS credentials for Terraform
-      - name: Configure AWS credentials and Debug AWS identity
-        run: aws sts get-caller-identity
+
+      # Configure AWS credentials from GitHub secrets
+      - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v2
         with:
-          aws-access-key-id: ${{ secrets.AWS_TERRAFORM__ACCESS_KEY_ID }}
+          aws-access-key-id: ${{ secrets.AWS_TERRAFORM_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_TERRAFORM_SECRET_ACCESS_KEY }}
           aws-region: eu-west-2
-
 
       - name: Install Checkov
         run: |
@@ -46,21 +45,19 @@ jobs:
           curl -s https://raw.githubusercontent.com/aquasecurity/tfsec/master/scripts/install_linux.sh | bash
           tfsec --version
 
-      # Terrascan CLI
       - name: Install Terrascan
         run: |
           curl -L https://github.com/tenable/terrascan/releases/latest/download/terrascan_linux_amd64 -o terrascan
           chmod +x terrascan
           sudo mv terrascan /usr/local/bin/terrascan
-
-          # Conftest CLI
+          terrascan version || true
 
       - name: Install Conftest
         run: |
-          LATEST_VERSION=$(wget -O - "https://api.github.com/repos/open-policy-agent/conftest/releases/latest" | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/' | cut -c 2-)
-          ARCH=$(arch)
-          SYSTEM=$(uname)
-          wget "https://github.com/open-policy-agent/conftest/releases/download/v${LATEST_VERSION}/conftest_${LATEST_VERSION}_${SYSTEM}_${ARCH}.tar.gz"
+          LATEST_VERSION=$(wget -O - "https://api.github.com/repos/open-policy-agent/conftest/releases/latest" | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/')
+          ARCH=$(uname -m)
+          SYSTEM=$(uname | tr '[:upper:]' '[:lower:]')
+          wget "https://github.com/open-policy-agent/conftest/releases/download/${LATEST_VERSION}/conftest_${LATEST_VERSION}_${SYSTEM}_${ARCH}.tar.gz"
           tar xzf "conftest_${LATEST_VERSION}_${SYSTEM}_${ARCH}.tar.gz"
           sudo mv conftest /usr/local/bin/conftest
           conftest --version
@@ -71,5 +68,5 @@ jobs:
       - name: Run scans for BENIGN S3 scenario (should PASS)
         run: ./run_scans.sh test-suite/storage/STO-BENIGN-001-s3-private-encrypted/
 
-      - name: Run scans for MISCONFIG S3 scenario (should FAIL)
+      - name: Run scans for MISC S3 scenario (should FAIL)
         run: ./run_scans.sh test-suite/storage/STO-MISC-001-s3-public-unencrypted/
