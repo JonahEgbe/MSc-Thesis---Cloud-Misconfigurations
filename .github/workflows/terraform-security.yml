@@ -13,63 +13,70 @@ jobs:
   terraform-security:
     runs-on: ubuntu-latest
 
+    env:
+      AWS_REGION: eu-west-2
+
     steps:
+      # 1. Checkout code
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      # 2. Python for Checkov
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.x"
 
+      # 3. Terraform CLI
       - name: Install Terraform
         uses: hashicorp/setup-terraform@v3
         with:
           terraform_version: 1.8.5
 
-      # Configure AWS credentials from GitHub secrets
+      # 4. AWS credentials
       - name: Configure AWS credentials
-        uses: aws-actions/configure-aws-credentials@v2
+        uses: aws-actions/configure-aws-credentials@v4
         with:
           aws-access-key-id: ${{ secrets.AWS_TERRAFORM_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_TERRAFORM_SECRET_ACCESS_KEY }}
-          aws-region: eu-west-2
+          aws-region: ${{ env.AWS_REGION }}
 
+      # 5. Install Checkov
       - name: Install Checkov
         run: |
-          pip install --upgrade pip
+          python -m pip install --upgrade pip
           pip install checkov
 
+      # 6. Install tfsec
       - name: Install tfsec
         run: |
           curl -s https://raw.githubusercontent.com/aquasecurity/tfsec/master/scripts/install_linux.sh | bash
           tfsec --version
 
+      # 7. Install Terrascan
       - name: Install Terrascan
         run: |
-          curl -L https://github.com/tenable/terrascan/releases/latest/download/terrascan_linux_amd64 -o terrascan
-          chmod +x terrascan
-          sudo mv terrascan /usr/local/bin/terrascan
-          terrascan version || true
+          curl -L https://github.com/tenable/terrascan/releases/latest/download/terrascan_linux_amd64.tar.gz -o terrascan.tar.gz
+          tar xzf terrascan.tar.gz
+          sudo mv terrascan /usr/local/bin/
+          terrascan version
 
+      # 8. Install Conftest (using latest/download URL)
       - name: Install Conftest
-  run: |
-    LATEST_TAG=$(wget -qO- "https://api.github.com/repos/open-policy-agent/conftest/releases/latest" \
-      | grep '"tag_name"' | sed -E 's/.*"([^"]+)".*/\1/')
+        run: |
+          curl -L https://github.com/open-policy-agent/conftest/releases/latest/download/conftest_linux_x86_64.tar.gz -o conftest.tar.gz
+          tar xzf conftest.tar.gz
+          sudo mv conftest /usr/local/bin/
+          conftest --version
 
-    # strip the leading "v" -> v0.65.0 → 0.65.0
-    VERSION="${LATEST_TAG#v}"
-
-    wget -q "https://github.com/open-policy-agent/conftest/releases/download/${LATEST_TAG}/conftest_${VERSION}_Linux_x86_64.tar.gz"
-    tar xzf "conftest_${VERSION}_Linux_x86_64.tar.gz"
-    sudo mv conftest /usr/local/bin
-    conftest --version
-
+      # 9. Make your scan script executable
       - name: Make run_scans.sh executable
-        run: chmod +x ./run_scans.sh
+        run: chmod +x run_scans.sh
 
+      # 10. BENIGN scenario – should PASS
       - name: Run scans for BENIGN S3 scenario (should PASS)
         run: ./run_scans.sh test-suite/storage/STO-BENIGN-001-s3-private-encrypted/
 
+      # 11. MISC scenario – should FAIL
       - name: Run scans for MISC S3 scenario (should FAIL)
         run: ./run_scans.sh test-suite/storage/STO-MISC-001-s3-public-unencrypted/
