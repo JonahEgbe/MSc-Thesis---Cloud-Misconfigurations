@@ -26,13 +26,13 @@ jobs:
         uses: hashicorp/setup-terraform@v3
         with:
           terraform_version: 1.8.5
-              
              # Configure AWS credentials for Terraform
-      - name: Configure AWS credentials
+      - name: Configure AWS credentials and Debug AWS identity
+        run: aws sts get-caller-identity
         uses: aws-actions/configure-aws-credentials@v2
         with:
-          aws-access-key-id: ${{ secrets.TERRAFORM_USER_AWS_ACCESS_KEY }}
-          aws-secret-access-key: ${{ secrets.TERRAFORM_USER_AWS_SECRET_KEY }}
+          aws-access-key-id: ${{ secrets.AWS_TERRAFORM__ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_TERRAFORM_SECRET_ACCESS_KEY }}
           aws-region: eu-west-2
 
 
