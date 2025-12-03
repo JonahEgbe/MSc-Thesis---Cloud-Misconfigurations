@@ -54,10 +54,14 @@ jobs:
 
       - name: Install Conftest
   run: |
-    CONTFEST_VERSION="0.65.0"
+    LATEST_TAG=$(wget -qO- "https://api.github.com/repos/open-policy-agent/conftest/releases/latest" \
+      | grep '"tag_name"' | sed -E 's/.*"([^"]+)".*/\1/')
 
-    wget -q "https://github.com/open-policy-agent/conftest/releases/download/v${CONTFEST_VERSION}/conftest_${CONTFEST_VERSION}_Linux_x86_64.tar.gz"
-    tar xzf "conftest_${CONTFEST_VERSION}_Linux_x86_64.tar.gz"
+    # strip the leading "v" -> v0.65.0 → 0.65.0
+    VERSION="${LATEST_TAG#v}"
+
+    wget -q "https://github.com/open-policy-agent/conftest/releases/download/${LATEST_TAG}/conftest_${VERSION}_Linux_x86_64.tar.gz"
+    tar xzf "conftest_${VERSION}_Linux_x86_64.tar.gz"
     sudo mv conftest /usr/local/bin
     conftest --version
 
