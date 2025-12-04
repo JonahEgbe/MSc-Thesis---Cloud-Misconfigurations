@@ -1,0 +1,30 @@
+{
+  "scenario_id": "STO-MISC-001-s3-public-unencrypted",
+  "checkov": {
+    "tool": "checkov",
+    "total_failures": 13,
+    "high_critical": 23,
+    "detected": true
+  },
+  "tfsec": {
+    "tool": "tfsec",
+    "critical": 0,
+    "high": 7,
+    "medium": 2,
+    "detected": true
+  },
+  "terrascan": {
+    "tool": "terrascan",
+    "total_violations": 2,
+    "high": 2,
+    "medium": 0,
+    "low": 0,
+    "detected": true
+  },
+  "conftest": {
+    "tool": "conftest",
+    "failures": 1,
+    "detected": true
+  },
+  "combined_detection": true
+}

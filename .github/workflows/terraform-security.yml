@@ -80,3 +80,25 @@ jobs:
 
       - name: Run scans for MISC S3 scenario (should FAIL)
         run: ./run_scans.sh test-suite/storage/STO-MISC-001-s3-public-unencrypted
+
+       #Getting downloadable JSON file
+
+     - name: Aggregate results for BENIGN S3
+        run: |
+          mkdir -p results
+          python3 scripts/aggregate_results.py \
+            test-suite/storage/STO-BENIGN-001-s3-private-encrypted \
+            > results/STO-BENIGN-001-s3-private-encrypted.json
+
+      - name: Aggregate results for MISC S3
+        run: |
+          mkdir -p results
+          python3 scripts/aggregate_results.py \
+            test-suite/storage/STO-MISC-001-s3-public-unencrypted \
+            > results/STO-MISC-001-s3-public-unencrypted.json
+
+      - name: Upload scan results
+        uses: actions/upload-artifact@v4
+        with:
+          name: s3-scenarios-results
+          path: results/*.json

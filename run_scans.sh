@@ -1,49 +1,41 @@
 #!/usr/bin/env bash
-set -u
-set -o pipefail
+export AWS_PROFILE="${AWS_PROFILE:-terraform_user}"
+set -euo pipefail
+
+if [ $# -ne 1 ]; then
+  echo "Usage: $0 <scenario-dir>" >&2
+  exit 1
+fi
 
 SCENARIO_DIR="$1"
+SCENARIO_NAME=$(basename "$SCENARIO_DIR")
 
 echo "==> Scenario directory: $SCENARIO_DIR"
 
 cd "$SCENARIO_DIR"
 
-SCENARIO_NAME=$(basename "$SCENARIO_DIR")
-
-echo
 echo "===== [1] Terraform init ====="
-terraform init -input=false
+terraform init -input=false -upgrade
 
-echo
 echo "===== [2] Terraform validate ====="
 terraform validate
 
-echo
-echo "===== [3] Terraform plan (profile = terraform_user) ====="
-terraform plan -out=tfplan.binary
+echo "===== [3] Terraform plan ====="
+terraform plan -refresh=false -out=tfplan.binary
 
-echo
 echo "===== [4] Export plan to JSON ====="
 terraform show -json tfplan.binary > tfplan.json
 
-# ---------- RESULTS FILE NAMES ----------
-CHECKOV_OUT="checkov_${SCENARIO_NAME}.txt"
-TFSEC_OUT="tfsec_${SCENARIO_NAME}.txt"
-TERRASCAN_OUT="terrascan_${SCENARIO_NAME}.txt"
-CONFTEST_OUT="conftest_${SCENARIO_NAME}.txt"
+set +e
 
-echo
-echo "===== [5] Checkov (Terraform files + plan) ====="
-( checkov -d . --framework terraform,terraform_plan,secrets || true ) | tee "$CHECKOV_OUT"
+echo "===== [5] Checkov ====="
+checkov -d . --skip-download | tee "checkov_${SCENARIO_NAME}.txt"
 
-echo
 echo "===== [6] tfsec ====="
-( tfsec . || true ) | tee "$TFSEC_OUT"
+tfsec . | tee "tfsec_${SCENARIO_NAME}.txt"
 
-echo
 echo "===== [7] Terrascan ====="
-( terrascan scan -d . || true ) | tee "$TERRASCAN_OUT"
+terrascan scan -d . --iac-type terraform | tee "terrascan_${SCENARIO_NAME}.txt"
 
-echo
 echo "===== [8] Conftest ====="
-conftest test tfplan.json --policy ../../../policy/terraform/ | tee "$CONFTEST_OUT"
+conftest test tfplan.json --policy ../../../policy/terraform | tee "conftest_${SCENARIO_NAME}.txt"

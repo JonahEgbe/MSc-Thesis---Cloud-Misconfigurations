@@ -1,0 +1,30 @@
+{
+  "scenario_id": "STO-BENIGN-001-s3-private-encrypted",
+  "checkov": {
+    "tool": "checkov",
+    "total_failures": 5,
+    "high_critical": 10,
+    "detected": true
+  },
+  "tfsec": {
+    "tool": "tfsec",
+    "critical": 0,
+    "high": 1,
+    "medium": 1,
+    "detected": true
+  },
+  "terrascan": {
+    "tool": "terrascan",
+    "total_violations": 0,
+    "high": 0,
+    "medium": 0,
+    "low": 0,
+    "detected": false
+  },
+  "conftest": {
+    "tool": "conftest",
+    "failures": 0,
+    "detected": false
+  },
+  "combined_detection": true
+}
