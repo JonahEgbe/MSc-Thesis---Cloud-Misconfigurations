@@ -27,7 +27,7 @@ jobs:
         with:
           terraform_version: 1.8.5
 
-      # Uses your repo secrets:
+      # Uses GitHub repo secrets:
       #   AWS_TERRAFORM_ACCESS_KEY_ID
       #   AWS_TERRAFORM_SECRET_ACCESS_KEY
       - name: Configure AWS credentials
@@ -42,7 +42,6 @@ jobs:
           python -m pip install --upgrade pip
           pip install checkov
 
-      #  Install tfsec
       - name: Install tfsec
         run: |
           curl -s https://raw.githubusercontent.com/aquasecurity/tfsec/master/scripts/install_linux.sh | bash
@@ -50,21 +49,19 @@ jobs:
 
       - name: Install Terrascan
         run: |
-          # Get the latest Linux x86_64 asset URL from GitHub API
           TERRASCAN_URL=$(curl -s https://api.github.com/repos/tenable/terrascan/releases/latest \
-            | grep -o -E 'https://[^\"]+Linux_x86_64\.tar\.gz')
+            | grep -o -E 'https://[^"]*Linux_x86_64\.tar\.gz')
           echo "Terrascan asset: $TERRASCAN_URL"
-
           curl -L "$TERRASCAN_URL" -o terrascan.tar.gz
           tar -xzf terrascan.tar.gz terrascan
           sudo install terrascan /usr/local/bin/terrascan
           terrascan version
 
-       # Conftest CLI
-
+      # Conftest CLI
       - name: Install Conftest
         run: |
-          LATEST_VERSION=$(wget -O - "https://api.github.com/repos/open-policy-agent/conftest/releases/latest" | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/' | cut -c 2-)
+          LATEST_VERSION=$(wget -O - "https://api.github.com/repos/open-policy-agent/conftest/releases/latest" \
+            | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/' | cut -c 2-)
           ARCH=$(arch)
           SYSTEM=$(uname)
           wget "https://github.com/open-policy-agent/conftest/releases/download/v${LATEST_VERSION}/conftest_${LATEST_VERSION}_${SYSTEM}_${ARCH}.tar.gz"
@@ -80,21 +77,30 @@ jobs:
 
       - name: Run scans for MISC S3 scenario (should FAIL)
         run: ./run_scans.sh test-suite/storage/STO-MISC-001-s3-public-unencrypted
+        # We EXPECT this to fail; still continue so we can aggregate
+        continue-on-error: true
 
-       #Getting downloadable JSON file
+      # ---- Aggregation + Artifacts ---------------------------------------
 
       - name: Aggregate results for BENIGN S3
+        if: always()
         run: |
           mkdir -p results
-          python3 scripts/aggregate_results.py test-suite/storage/STO-BENIGN-001-s3-private-encrypted > results/STO-BENIGN-001-s3-private-encrypted.json
+          python3 scripts/aggregate_results.py \
+            test-suite/storage/STO-BENIGN-001-s3-private-encrypted \
+            > results/STO-BENIGN-001-s3-private-encrypted.json
 
       - name: Aggregate results for MISC S3
+        if: always()
         run: |
           mkdir -p results
-          python3 scripts/aggregate_results.py test-suite/storage/STO-MISC-001-s3-public-unencrypted > results/STO-MISC-001-s3-public-unencrypted.json
+          python3 scripts/aggregate_results.py \
+            test-suite/storage/STO-MISC-001-s3-public-unencrypted \
+            > results/STO-MISC-001-s3-public-unencrypted.json
 
-     - name: Upload scan results
-       uses: actions/upload-artifact@v4
-       with:
-         name: s3-scenarios-results
-         path: results/*.json
+      - name: Upload scan results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: s3-scenarios-results
+          path: results/*.json
