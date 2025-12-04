@@ -1,0 +1,3 @@
+Scenario_ID,Domain,Type,CIS_Control,Expected,Checkov_Detected,Checkov_HIGH,tfsec_Detected,tfsec_HIGH,Terrascan_Detected,Terrascan_HIGH,Conftest_Detected,Result
+STO-MISC-001-s3-public-unencrypted,Storage,MISC,S3.8|S3.9|S3.17,FAIL,TRUE,13,TRUE,7,TRUE,2,TRUE,TRUE_POSITIVE
+STO-BENIGN-001-s3-private-encrypted,Storage,BENIGN,S3.8|S3.9|S3.17,PASS,TRUE,5,TRUE,1,FALSE,0,FALSE,FALSE_POSITIVE
