@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-export AWS_PROFILE="${AWS_PROFILE:-terraform_user}"
 set -euo pipefail
 
 if [ $# -ne 1 ]; then
