@@ -31,7 +31,7 @@ echo "===== [5] Checkov ====="
 checkov -d . --skip-download | tee "checkov_${SCENARIO_NAME}.txt"
 
 echo "===== [6] tfsec ====="
-tfsec . | tee "tfsec_${SCENARIO_NAME}.txt"
+tfsec "$SCENARIO_DIR" --tfvars-file "$SCENARIO_DIR/terraform.tfvars"
 
 echo "===== [7] Terrascan ====="
 terrascan scan -d . --iac-type terraform | tee "terrascan_${SCENARIO_NAME}.txt"

@@ -1,45 +1,35 @@
 # ============================================================================
-# Scenario Metadata
-# ============================================================================
 # ID: STO-MISC-001
-# Title: Public S3 bucket with insecure ACL and missing hardening
-# Domain: Storage
+# Title: Public S3 bucket via ACL (public-read) with no public access blocking
+# Domain: STO (Storage)
 # Type: MISC
-#CIS Standards: CIS AWS Foundation Benchmark v5.0.0
-# CIS Controls:
-#   - CIS AWS S3.8 – Ensure that S3 buckets are not publicly accessible
-#   - CIS AWS S3.9 – Ensure S3 bucket access logging is enabled
-#   - CIS AWS S3.17 – Ensure S3 bucket default encryption is enabled
-# Severity: HIGH
-# Expected Detection:
-#   - Checkov: FAIL (CKV_AWS_20, CKV_AWS_53–56, CKV_AWS_18, CKV_AWS_21, CKV_AWS_144, CKV_AWS_145, CKV2_AWS_6, CKV2_AWS_61–62, CKV2_AWS_65)
-#   - tfsec: FAIL (aws-s3-no-public-access-with-acl, aws-s3-block-public-acls,
-#                  aws-s3-block-public-policy, aws-s3-ignore-public-acls,
-#                  aws-s3-no-public-buckets, aws-s3-enable-bucket-encryption,
-#                  aws-s3-enable-bucket-logging, aws-s3-enable-versioning)
-#   - Terrascan: FAIL (public ACL + missing versioning/logging policies)
-#   - Conftest: FAIL (public_read ACL policy)
-# Description:
-#   Misconfigured S3 bucket with 'public-read' ACL, no public access
-#   blocking, and weak hardening (no logging, versioning, lifecycle
-#   configuration, or KMS-by-default encryption). Represents a Capital
-#   One–style public bucket exposure pattern.
-# Expected Result: TRUE_POSITIVE (all tools should flag this scenario)
+# CIS: S3.8 (Not Public), S3.17 (Encryption), S3.9 (Logging) - intentionally violated
+# Expected: Checkov/tfsec/Terrascan FAIL; Conftest FAIL (ACL public-read)
 # ============================================================================
+
+# NOTE:
+# - Bucket name MUST be globally unique + lowercase.
+# - Your locals.tf provides random suffix: local.name_suffix
+# - Your provider.tf sets default tags automatically.
 
 resource "aws_s3_bucket" "public_bucket" {
-  bucket = "jonah-public-bucket-test-01"
+  bucket        = lower(format("%s-%s", substr(replace(var.scenario_id, "_", "-"), 0, 40), local.name_suffix))
+  force_destroy = true
+
+  tags = local.common_tags
 }
 
-resource "aws_s3_bucket_ownership_controls" "public_bucket_ownership" {
+# Allow ACLs (required when using aws_s3_bucket_acl)
+resource "aws_s3_bucket_ownership_controls" "ownership" {
   bucket = aws_s3_bucket.public_bucket.id
 
   rule {
-    object_ownership = "BucketOwnerPreferred"  # allows ACLs
+    object_ownership = "BucketOwnerPreferred"
   }
 }
 
-resource "aws_s3_bucket_public_access_block" "public_access" {
+# Explicitly do NOT block public access (misconfiguration)
+resource "aws_s3_bucket_public_access_block" "no_block" {
   bucket = aws_s3_bucket.public_bucket.id
 
   block_public_acls       = false
@@ -48,11 +38,12 @@ resource "aws_s3_bucket_public_access_block" "public_access" {
   restrict_public_buckets = false
 }
 
-resource "aws_s3_bucket_acl" "public_bucket_acl" {
-  bucket     = aws_s3_bucket.public_bucket.id
-  acl        = "public-read"
+# Public-read ACL (misconfiguration)
+resource "aws_s3_bucket_acl" "public_read" {
+  bucket = aws_s3_bucket.public_bucket.id
+  acl    = "public-read"
 
   depends_on = [
-    aws_s3_bucket_ownership_controls.public_bucket_ownership
+    aws_s3_bucket_ownership_controls.ownership
   ]
 }
