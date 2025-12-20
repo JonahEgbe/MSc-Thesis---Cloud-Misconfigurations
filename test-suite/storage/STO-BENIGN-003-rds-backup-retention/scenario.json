@@ -1,0 +1,8 @@
+{
+  "scenario_id": "STO-BENIGN-003-rds-backup-retention",
+  "domain": "STO",
+  "label": "BENIGN",
+  "severity": "NONE",
+  "cis_controls": ["RDS.4"],
+  "expected_block": false
+}

@@ -1,0 +1,8 @@
+{
+  "scenario_id": "CMP-BENIGN-002-imdsv2-required",
+  "domain": "CMP",
+  "label": "BENIGN",
+  "severity": "NONE",
+  "cis_controls": ["EC2.8"],
+  "expected_block": false
+}

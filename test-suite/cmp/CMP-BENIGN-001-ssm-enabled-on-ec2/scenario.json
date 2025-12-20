@@ -1,0 +1,8 @@
+{
+  "scenario_id": "BENIGN-001-ssm-enabled-on-ec2",
+  "domain": "CMP",
+  "label": "BENIGN",
+  "severity": "NONE",
+  "cis_controls": ["EC2.1"],
+  "expected_block": false
+}

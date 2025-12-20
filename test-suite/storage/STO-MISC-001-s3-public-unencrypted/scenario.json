@@ -1,0 +1,8 @@
+{
+  "scenario_id": "STO-MISC-001-s3-public-unencrypted",
+  "domain": "STO",
+  "label": "MISC",
+  "severity": "CRITICAL",
+  "cis_controls": ["S3.8", "S3.17", "S3.9"],
+  "expected_block": true
+}

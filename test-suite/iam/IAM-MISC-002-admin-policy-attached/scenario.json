@@ -1,0 +1,10 @@
+{
+  "scenario_id": "IAM-MISC-002-admin-policy-attached",
+  "domain": "IAM",
+  "label": "MISC",
+  "severity": "CRITICAL",
+  "cis_controls": ["IAM.4"],
+  "expected_block": true
+}
+
+

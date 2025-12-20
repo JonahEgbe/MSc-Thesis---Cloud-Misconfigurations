@@ -1,0 +1,8 @@
+{
+  "scenario_id": "STO-MISC-002-s3-public-policy",
+  "domain": "STO",
+  "label": "MISC",
+  "severity": "CRITICAL",
+  "cis_controls": ["S3.8"],
+  "expected_block": true
+}

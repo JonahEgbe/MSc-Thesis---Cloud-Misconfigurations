@@ -1,0 +1,9 @@
+{
+  "scenario_id": "NET-BENIGN-002-vpc-flow-logs-enabled",
+  "domain": "NET",
+  "label": "BENIGN",
+  "severity": "NONE",
+  "cis_controls": ["VPC.2"],
+  "expected_block": false
+}
+

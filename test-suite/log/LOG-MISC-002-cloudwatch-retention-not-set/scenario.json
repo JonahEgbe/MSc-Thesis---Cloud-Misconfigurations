@@ -1,0 +1,9 @@
+{
+  "scenario_id": "MISC-002-cloudwatch-retention-not-set",
+  "domain": "LOG",
+  "label": "MISC",
+  "severity": "MEDIUM",
+  "cis_controls": ["LOG.2"],
+  "expected_block": false
+}
+

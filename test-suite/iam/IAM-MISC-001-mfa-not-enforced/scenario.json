@@ -1,0 +1,9 @@
+{
+  "scenario_id": "IAM-MISC-001-mfa-not-enforced",
+  "domain": "IAM",
+  "label": "MISC",
+  "severity": "HIGH",
+  "cis_controls": ["IAM.5"],
+  "expected_block": true
+}
+

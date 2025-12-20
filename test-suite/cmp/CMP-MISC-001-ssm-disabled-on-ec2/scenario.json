@@ -1,0 +1,8 @@
+{
+  "scenario_id": "CMP-MISC-001-ssm-disabled-on-ec2",
+  "domain": "CMP",
+  "label": "MISC",
+  "severity": "MEDIUM",
+  "cis_controls": ["EC2.1"],
+  "expected_block": false
+}

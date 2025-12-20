@@ -1,0 +1,8 @@
+{
+  "scenario_id": "LOG-BENIGN-001-cloudtrail-enabled-all-regions",
+  "domain": "LOG",
+  "label": "BENIGN",
+  "severity": "NONE",
+  "cis_controls": ["CLoudTrail.1"],
+  "expected_block": false
+}

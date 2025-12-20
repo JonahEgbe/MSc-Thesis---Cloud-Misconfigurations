@@ -1,0 +1,8 @@
+{
+  "scenario_id": "LOG-BENIGN-002-cloudwatch-retention-set",
+  "domain": "LOG",
+  "label": "BENIGN",
+  "severity": "NONE",
+  "cis_controls": ["LOG.2"],
+  "expected_block": false
+}

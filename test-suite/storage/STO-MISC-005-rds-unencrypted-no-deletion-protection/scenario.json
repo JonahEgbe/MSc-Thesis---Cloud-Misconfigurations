@@ -1,0 +1,8 @@
+{
+  "scenario_id": "STO-MISC-005-rds-unencrypted-no-deletion-protection",
+  "domain": "STO",
+  "label": "MISC",
+  "severity": "CRITICAL",
+  "cis_controls": ["RDS.3", "RDS.7"],
+  "expected_block": true
+}

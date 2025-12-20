@@ -1,0 +1,9 @@
+{
+  "scenario_id": "STO-BENIGN-005-rds-encrypted-deletion-protection",
+  "domain": "STO",
+  "label": "BENIGN",
+  "severity": "NONE",
+  "cis_controls": ["RDS.3, RDS.7"],
+  "expected_block": false
+}
+

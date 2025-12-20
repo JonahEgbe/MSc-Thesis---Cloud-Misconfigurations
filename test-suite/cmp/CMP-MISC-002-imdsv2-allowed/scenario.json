@@ -1,0 +1,8 @@
+{
+  "scenario_id": "CMP-MISC-002-imdsv2-allowed",
+  "domain": "CMP",
+  "label": "MISC",
+  "severity": "HIGH",
+  "cis_controls": ["EC2.8"],
+  "expected_block": true
+}

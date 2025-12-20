@@ -1,0 +1,8 @@
+{
+  "scenario_id": "STO-BENIGN-001-s3-private-encrypted",
+  "domain": "STO",
+  "label": "BENIGN",
+  "severity": "NONE",
+  "cis_controls": ["S3.8", "S3.17"],
+  "expected_block": false
+}

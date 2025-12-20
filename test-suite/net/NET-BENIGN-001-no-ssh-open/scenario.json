@@ -1,0 +1,9 @@
+{
+  "scenario_id": "NET-BENIGN-001-no-ssh-open",
+  "domain": "NET",
+  "label": "BENIGN",
+  "severity": "NONE",
+  "cis_controls": ["EC2.1"],
+  "expected_block": false
+}
+

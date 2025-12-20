@@ -1,0 +1,8 @@
+{
+  "scenario_id": "STO-BENIGN-004-s3-access-logging-enabled",
+  "domain": "STO",
+  "label": "BENIGN",
+  "severity": "NONE",
+  "cis_controls": ["S3.9"],
+  "expected_block": false
+}

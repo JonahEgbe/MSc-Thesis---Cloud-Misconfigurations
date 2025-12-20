@@ -1,0 +1,10 @@
+{
+  "scenario_id": "NET-MISC-001-ssh-open-to-world",
+  "domain": "NET",
+  "label": "MISC",
+  "severity": "CRITICAL",
+  "cis_controls": ["EC2.1"],
+  "expected_block": true
+}
+
+

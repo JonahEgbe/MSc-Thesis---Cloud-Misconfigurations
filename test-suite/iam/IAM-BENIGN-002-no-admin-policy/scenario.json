@@ -1,0 +1,8 @@
+{
+  "scenario_id": "IAM-BENIGN-002-no-admin-policy",
+  "domain": "IAM",
+  "label": "BENIGN",
+  "severity": "NONE",
+  "cis_controls": ["IAM.4"],
+  "expected_block": false
+}

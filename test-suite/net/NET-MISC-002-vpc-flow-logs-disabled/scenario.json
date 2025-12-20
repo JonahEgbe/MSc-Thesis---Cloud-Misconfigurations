@@ -1,0 +1,8 @@
+{
+  "scenario_id": "NET-MISC-002-vpc-flow-logs-disabled",
+  "domain": "NET",
+  "label": "MISC",
+  "severity": "HIGH",
+  "cis_controls": ["VPC.2"],
+  "expected_block": true
+}

@@ -1,0 +1,8 @@
+{
+  "scenario_id": "LOG-MISC-001-cloudtrail-disabled",
+  "domain": "LOG",
+  "label": "MISC",
+  "severity": "CRITICAL",
+  "cis_controls": ["CloudTrail.1"],
+  "expected_block": true
+}

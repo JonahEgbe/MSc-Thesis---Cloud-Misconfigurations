@@ -13,3 +13,9 @@ checkov_*.txt
 tfsec_*.txt
 terrascan_*.txt
 conftest_*.txt
+.venv/
+.env
+.aws/
+output/
+*.swp
+*.swo

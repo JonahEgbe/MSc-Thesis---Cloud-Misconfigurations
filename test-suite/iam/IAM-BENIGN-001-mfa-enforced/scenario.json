@@ -1,0 +1,8 @@
+{
+  "scenario_id": "IAM-BENIGN-001-mfa-enforced",
+  "domain": "IAM",
+  "label": "BENIGN",
+  "severity": "NONE",
+  "cis_controls": ["IAM.5"],
+  "expected_block": false
+}
