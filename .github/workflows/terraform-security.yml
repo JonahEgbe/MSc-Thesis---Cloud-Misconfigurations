@@ -13,13 +13,6 @@ jobs:
       run:
         shell: bash
 
-    # IMPORTANT: override profile so CI never looks for "terraform-user"
-    env:
-      AWS_DEFAULT_REGION: eu-west-2
-      AWS_REGION: eu-west-2
-      TF_VAR_region: eu-west-2
-      TF_VAR_profile: ""   # <- this fixes "failed to get shared config profile, terraform-user"
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -27,22 +20,40 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: "3.11"
+          python-version: "3.x"
 
       - name: Install Terraform
         uses: hashicorp/setup-terraform@v3
         with:
           terraform_version: 1.8.5
 
-      # Uses GitHub repo secrets:
-      #   AWS_TERRAFORM_ACCESS_KEY_ID
-      #   AWS_TERRAFORM_SECRET_ACCESS_KEY
-      - name: Configure AWS credentials
-        uses: aws-actions/configure-aws-credentials@v4
+      # Exports AWS creds as env vars
+      - name: Configure AWS credentials (env)
+        uses: aws-actions/configure-aws-credentials@v2
         with:
           aws-access-key-id: ${{ secrets.AWS_TERRAFORM_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_TERRAFORM_SECRET_ACCESS_KEY }}
           aws-region: eu-west-2
+
+      # IMPORTANT: Create the SAME named profile Terraform expects (terraform-user)
+      - name: Create AWS shared credentials profile (terraform-user)
+        run: |
+          mkdir -p ~/.aws
+
+          cat > ~/.aws/credentials <<EOF
+          [terraform-user]
+          aws_access_key_id=${{ secrets.AWS_TERRAFORM_ACCESS_KEY_ID }}
+          aws_secret_access_key=${{ secrets.AWS_TERRAFORM_SECRET_ACCESS_KEY }}
+          EOF
+
+          cat > ~/.aws/config <<EOF
+          [profile terraform-user]
+          region=eu-west-2
+          output=json
+          EOF
+
+          echo "Wrote ~/.aws/credentials and ~/.aws/config"
+          ls -la ~/.aws
 
       - name: Install Checkov
         run: |
@@ -55,28 +66,39 @@ jobs:
           curl -s https://raw.githubusercontent.com/aquasecurity/tfsec/master/scripts/install_linux.sh | bash
           tfsec --version
 
-      - name: Install Terrascan
+      - name: Install Terrascan (robust)
         run: |
-          curl -sSL -o /tmp/terrascan.tar.gz https://github.com/tenable/terrascan/releases/latest/download/terrascan_linux_amd64.tar.gz
-          tar -xzf /tmp/terrascan.tar.gz terrascan
+          set -euo pipefail
+          TERRASCAN_URL=$(
+            curl -s https://api.github.com/repos/tenable/terrascan/releases/latest \
+            | grep -Eo '"browser_download_url":[^"]*"https://[^"]*Linux_x86_64\.tar\.gz"' \
+            | head -n 1 \
+            | cut -d '"' -f 4
+          )
+          echo "Terrascan asset: $TERRASCAN_URL"
+          curl -L "$TERRASCAN_URL" -o terrascan.tar.gz
+          tar -xzf terrascan.tar.gz terrascan
           sudo install terrascan /usr/local/bin/terrascan
           terrascan version
 
       - name: Install Conftest
         run: |
-          LATEST_VERSION=$(wget -O - "https://api.github.com/repos/open-policy-agent/conftest/releases/latest" \
-            | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/' | cut -c 2-)
-          ARCH=$(uname -m)
-          SYSTEM=$(uname -s)
-
-          # conftest release uses x86_64 naming; uname -m returns x86_64 on GitHub runners
-          wget -q "https://github.com/open-policy-agent/conftest/releases/download/v${LATEST_VERSION}/conftest_${LATEST_VERSION}_${SYSTEM}_${ARCH}.tar.gz"
-          tar xzf "conftest_${LATEST_VERSION}_${SYSTEM}_${ARCH}.tar.gz"
+          set -euo pipefail
+          LATEST_VERSION=$(
+            curl -s https://api.github.com/repos/open-policy-agent/conftest/releases/latest \
+            | grep '"tag_name"' | head -n 1 | sed -E 's/.*"v([^"]+)".*/\1/'
+          )
+          echo "Conftest version: $LATEST_VERSION"
+          curl -L "https://github.com/open-policy-agent/conftest/releases/download/v${LATEST_VERSION}/conftest_${LATEST_VERSION}_Linux_x86_64.tar.gz" \
+            -o conftest.tar.gz
+          tar xzf conftest.tar.gz conftest
           sudo mv conftest /usr/local/bin/conftest
           conftest --version
 
       - name: Make run_scans.sh executable
         run: chmod +x ./run_scans.sh
+
+      # ------------------- SCANS -------------------
 
       - name: Run scans for BENIGN S3 scenario (should PASS)
         run: ./run_scans.sh test-suite/storage/STO-BENIGN-001-s3-private-encrypted
@@ -85,7 +107,7 @@ jobs:
         run: ./run_scans.sh test-suite/storage/STO-MISC-001-s3-public-unencrypted
         continue-on-error: true
 
-      # ---- Aggregation + Artifacts ---------------------------------------
+      # ------------------- AGGREGATION -------------------
 
       - name: Aggregate results for BENIGN S3
         if: always()
@@ -114,4 +136,3 @@ jobs:
             test-suite/**/tfsec_*.txt
             test-suite/**/terrascan_*.txt
             test-suite/**/conftest_*.txt
-            test-suite/**/tfplan.json
