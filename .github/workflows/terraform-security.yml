@@ -13,6 +13,13 @@ jobs:
       run:
         shell: bash
 
+    # IMPORTANT: override profile so CI never looks for "terraform-user"
+    env:
+      AWS_DEFAULT_REGION: eu-west-2
+      AWS_REGION: eu-west-2
+      TF_VAR_region: eu-west-2
+      TF_VAR_profile: ""   # <- this fixes "failed to get shared config profile, terraform-user"
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -20,7 +27,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.x'
+          python-version: "3.11"
 
       - name: Install Terraform
         uses: hashicorp/setup-terraform@v3
@@ -31,7 +38,7 @@ jobs:
       #   AWS_TERRAFORM_ACCESS_KEY_ID
       #   AWS_TERRAFORM_SECRET_ACCESS_KEY
       - name: Configure AWS credentials
-        uses: aws-actions/configure-aws-credentials@v2
+        uses: aws-actions/configure-aws-credentials@v4
         with:
           aws-access-key-id: ${{ secrets.AWS_TERRAFORM_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_TERRAFORM_SECRET_ACCESS_KEY }}
@@ -41,6 +48,7 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install checkov
+          checkov --version
 
       - name: Install tfsec
         run: |
@@ -49,22 +57,20 @@ jobs:
 
       - name: Install Terrascan
         run: |
-          TERRASCAN_URL=$(curl -s https://api.github.com/repos/tenable/terrascan/releases/latest \
-            | grep -o -E 'https://[^"]*Linux_x86_64\.tar\.gz')
-          echo "Terrascan asset: $TERRASCAN_URL"
-          curl -L "$TERRASCAN_URL" -o terrascan.tar.gz
-          tar -xzf terrascan.tar.gz terrascan
+          curl -sSL -o /tmp/terrascan.tar.gz https://github.com/tenable/terrascan/releases/latest/download/terrascan_linux_amd64.tar.gz
+          tar -xzf /tmp/terrascan.tar.gz terrascan
           sudo install terrascan /usr/local/bin/terrascan
           terrascan version
 
-      # Conftest CLI
       - name: Install Conftest
         run: |
           LATEST_VERSION=$(wget -O - "https://api.github.com/repos/open-policy-agent/conftest/releases/latest" \
             | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/' | cut -c 2-)
-          ARCH=$(arch)
-          SYSTEM=$(uname)
-          wget "https://github.com/open-policy-agent/conftest/releases/download/v${LATEST_VERSION}/conftest_${LATEST_VERSION}_${SYSTEM}_${ARCH}.tar.gz"
+          ARCH=$(uname -m)
+          SYSTEM=$(uname -s)
+
+          # conftest release uses x86_64 naming; uname -m returns x86_64 on GitHub runners
+          wget -q "https://github.com/open-policy-agent/conftest/releases/download/v${LATEST_VERSION}/conftest_${LATEST_VERSION}_${SYSTEM}_${ARCH}.tar.gz"
           tar xzf "conftest_${LATEST_VERSION}_${SYSTEM}_${ARCH}.tar.gz"
           sudo mv conftest /usr/local/bin/conftest
           conftest --version
@@ -77,7 +83,6 @@ jobs:
 
       - name: Run scans for MISC S3 scenario (should FAIL)
         run: ./run_scans.sh test-suite/storage/STO-MISC-001-s3-public-unencrypted
-        # We EXPECT this to fail; still continue so we can aggregate
         continue-on-error: true
 
       # ---- Aggregation + Artifacts ---------------------------------------
@@ -103,4 +108,10 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: s3-scenarios-results
-          path: results/*.json
+          path: |
+            results/*.json
+            test-suite/**/checkov_*.txt
+            test-suite/**/tfsec_*.txt
+            test-suite/**/terrascan_*.txt
+            test-suite/**/conftest_*.txt
+            test-suite/**/tfplan.json
