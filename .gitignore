@@ -1,21 +1,21 @@
-# Terraform outputs
-.terraform/
-.terraform.lock.hcl
-terraform.tfstate
-terraform.tfstate.backup
-tfplan.binary
+# Terraform
+**/.terraform/
+**/.terraform.lock.hcl
 **/tfplan.binary
 **/tfplan.json
-tfplan.json
+**/tfplan_*.json
 
-# Scanner outputs
-checkov_*.txt
-tfsec_*.txt
-terrascan_*.txt
-conftest_*.txt
-.venv/
-.env
-.aws/
-output/
-*.swp
-*.swo
+# Terraform provider cache (LOCAL ONLY)
+.terraform-plugin-cache/
+.tfdata/
+
+# Tool outputs
+**/checkov_*.txt
+**/tfsec_*.txt
+**/terrascan_*.txt
+**/conftest_*.txt
+
+# Python
+__pycache__/
+*.pyc
+

@@ -1,0 +1,30 @@
+{
+  "scenario_id": "LOG-MISC-001-cloudtrail-disabled",
+  "checkov": {
+    "tool": "checkov",
+    "total_failures": 13,
+    "high_critical": 26,
+    "detected": true
+  },
+  "tfsec": {
+    "tool": "tfsec",
+    "critical": 0,
+    "high": 8,
+    "medium": 3,
+    "detected": true
+  },
+  "terrascan": {
+    "tool": "terrascan",
+    "total_violations": 5,
+    "high": 2,
+    "medium": 3,
+    "low": 0,
+    "detected": true
+  },
+  "conftest": {
+    "tool": "conftest",
+    "failures": 3,
+    "detected": true
+  },
+  "combined_detection": true
+}

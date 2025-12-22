@@ -1,0 +1,30 @@
+{
+  "scenario_id": "CMP-MISC-002-imdsv2-allowed",
+  "checkov": {
+    "tool": "checkov",
+    "total_failures": 5,
+    "high_critical": 10,
+    "detected": true
+  },
+  "tfsec": {
+    "tool": "tfsec",
+    "critical": 0,
+    "high": 2,
+    "medium": 0,
+    "detected": true
+  },
+  "terrascan": {
+    "tool": "terrascan",
+    "total_violations": 3,
+    "high": 1,
+    "medium": 2,
+    "low": 0,
+    "detected": true
+  },
+  "conftest": {
+    "tool": "conftest",
+    "failures": 3,
+    "detected": true
+  },
+  "combined_detection": true
+}

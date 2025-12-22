@@ -1,0 +1,30 @@
+{
+  "scenario_id": "STO-MISC-003-rds-no-backup-retention",
+  "checkov": {
+    "tool": "checkov",
+    "total_failures": 9,
+    "high_critical": 17,
+    "detected": true
+  },
+  "tfsec": {
+    "tool": "tfsec",
+    "critical": 0,
+    "high": 1,
+    "medium": 3,
+    "detected": true
+  },
+  "terrascan": {
+    "tool": "terrascan",
+    "total_violations": 3,
+    "high": 1,
+    "medium": 2,
+    "low": 0,
+    "detected": true
+  },
+  "conftest": {
+    "tool": "conftest",
+    "failures": 2,
+    "detected": true
+  },
+  "combined_detection": true
+}

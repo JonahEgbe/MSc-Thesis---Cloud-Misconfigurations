@@ -1,0 +1,30 @@
+{
+  "scenario_id": "NET-MISC-002-vpc-flow-logs-disabled",
+  "checkov": {
+    "tool": "checkov",
+    "total_failures": 2,
+    "high_critical": 4,
+    "detected": true
+  },
+  "tfsec": {
+    "tool": "tfsec",
+    "critical": 0,
+    "high": 0,
+    "medium": 1,
+    "detected": true
+  },
+  "terrascan": {
+    "tool": "terrascan",
+    "total_violations": 1,
+    "high": 0,
+    "medium": 0,
+    "low": 1,
+    "detected": true
+  },
+  "conftest": {
+    "tool": "conftest",
+    "failures": 2,
+    "detected": true
+  },
+  "combined_detection": true
+}

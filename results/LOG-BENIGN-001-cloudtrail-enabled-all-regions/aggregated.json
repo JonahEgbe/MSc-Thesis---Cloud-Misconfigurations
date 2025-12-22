@@ -1,0 +1,30 @@
+{
+  "scenario_id": "LOG-BENIGN-001-cloudtrail-enabled-all-regions",
+  "checkov": {
+    "tool": "checkov",
+    "total_failures": 11,
+    "high_critical": 22,
+    "detected": true
+  },
+  "tfsec": {
+    "tool": "tfsec",
+    "critical": 0,
+    "high": 8,
+    "medium": 2,
+    "detected": true
+  },
+  "terrascan": {
+    "tool": "terrascan",
+    "total_violations": 4,
+    "high": 2,
+    "medium": 2,
+    "low": 0,
+    "detected": true
+  },
+  "conftest": {
+    "tool": "conftest",
+    "failures": 1,
+    "detected": true
+  },
+  "combined_detection": true
+}

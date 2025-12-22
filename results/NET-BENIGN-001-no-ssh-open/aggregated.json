@@ -1,0 +1,30 @@
+{
+  "scenario_id": "NET-BENIGN-001-no-ssh-open",
+  "checkov": {
+    "tool": "checkov",
+    "total_failures": 5,
+    "high_critical": 9,
+    "detected": true
+  },
+  "tfsec": {
+    "tool": "tfsec",
+    "critical": 1,
+    "high": 0,
+    "medium": 1,
+    "detected": true
+  },
+  "terrascan": {
+    "tool": "terrascan",
+    "total_violations": 2,
+    "high": 0,
+    "medium": 0,
+    "low": 2,
+    "detected": true
+  },
+  "conftest": {
+    "tool": "conftest",
+    "failures": 3,
+    "detected": true
+  },
+  "combined_detection": true
+}

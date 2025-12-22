@@ -1,0 +1,30 @@
+{
+  "scenario_id": "IAM-MISC-001-mfa-not-enforced",
+  "checkov": {
+    "tool": "checkov",
+    "total_failures": 1,
+    "high_critical": 2,
+    "detected": true
+  },
+  "tfsec": {
+    "tool": "tfsec",
+    "critical": 0,
+    "high": 0,
+    "medium": 0,
+    "detected": false
+  },
+  "terrascan": {
+    "tool": "terrascan",
+    "total_violations": 0,
+    "high": 0,
+    "medium": 0,
+    "low": 0,
+    "detected": false
+  },
+  "conftest": {
+    "tool": "conftest",
+    "failures": 2,
+    "detected": true
+  },
+  "combined_detection": true
+}

@@ -1,0 +1,30 @@
+{
+  "scenario_id": "STO-BENIGN-004-s3-access-logging-enabled",
+  "checkov": {
+    "tool": "checkov",
+    "total_failures": 10,
+    "high_critical": 20,
+    "detected": true
+  },
+  "tfsec": {
+    "tool": "tfsec",
+    "critical": 0,
+    "high": 3,
+    "medium": 3,
+    "detected": true
+  },
+  "terrascan": {
+    "tool": "terrascan",
+    "total_violations": 2,
+    "high": 2,
+    "medium": 0,
+    "low": 0,
+    "detected": true
+  },
+  "conftest": {
+    "tool": "conftest",
+    "failures": 2,
+    "detected": true
+  },
+  "combined_detection": true
+}

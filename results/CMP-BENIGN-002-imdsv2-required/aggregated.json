@@ -1,0 +1,30 @@
+{
+  "scenario_id": "CMP-BENIGN-002-imdsv2-required",
+  "checkov": {
+    "tool": "checkov",
+    "total_failures": 4,
+    "high_critical": 8,
+    "detected": true
+  },
+  "tfsec": {
+    "tool": "tfsec",
+    "critical": 0,
+    "high": 1,
+    "medium": 0,
+    "detected": true
+  },
+  "terrascan": {
+    "tool": "terrascan",
+    "total_violations": 2,
+    "high": 1,
+    "medium": 1,
+    "low": 0,
+    "detected": true
+  },
+  "conftest": {
+    "tool": "conftest",
+    "failures": 2,
+    "detected": true
+  },
+  "combined_detection": true
+}
