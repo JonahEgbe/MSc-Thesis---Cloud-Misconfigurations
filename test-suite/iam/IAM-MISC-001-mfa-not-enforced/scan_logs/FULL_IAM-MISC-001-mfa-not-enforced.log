@@ -178,3 +178,99 @@ Return codes:
 Master log: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/iam/IAM-MISC-001-mfa-not-enforced/scan_logs/FULL_IAM-MISC-001-mfa-not-enforced.log
 ============================================================
 
+
+============================================================
+FULL SCAN LOG START: 2025-12-22 19:01:49 UTC
+Scenario: IAM-MISC-001-mfa-not-enforced
+Path: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/iam/IAM-MISC-001-mfa-not-enforced
+============================================================
+
+===== [1] Terraform init =====
+[0m[1mInitializing the backend...[0m
+[0m[1mInitializing provider plugins...[0m
+- Finding hashicorp/random versions matching "~> 3.6"...
+- Finding hashicorp/aws versions matching "~> 5.0"...
+- Using previously-installed hashicorp/random v3.7.2
+- Using previously-installed hashicorp/aws v5.100.0
+
+[0m[1m[32mTerraform has been successfully initialized![0m[32m[0m
+[0m[32m
+You may now begin working with Terraform. Try running "terraform plan" to see
+any changes that are required for your infrastructure. All Terraform commands
+should now work.
+
+If you ever set or change modules or backend configuration for Terraform,
+rerun this command to reinitialize your working directory. If you forget, other
+commands will detect it and remind you to do so if necessary.[0m
+===== [2] Terraform validate =====
+[32m[1mSuccess![0m The configuration is valid.
+[0m
+===== [3] Terraform plan =====
+
+Terraform used the selected providers to generate the following execution
+plan. Resource actions are indicated with the following symbols:
+  [32m+[0m create[0m
+
+Terraform will perform the following actions:
+
+[1m  # aws_iam_user.user[0m will be created
+[0m  [32m+[0m[0m resource "aws_iam_user" "user" {
+      [32m+[0m[0m arn           = (known after apply)
+      [32m+[0m[0m force_destroy = false
+      [32m+[0m[0m id            = (known after apply)
+      [32m+[0m[0m name          = (known after apply)
+      [32m+[0m[0m path          = "/"
+      [32m+[0m[0m tags          = {
+          [32m+[0m[0m "cis_controls" = "IAM.6"
+          [32m+[0m[0m "domain"       = "IAM"
+          [32m+[0m[0m "scenario_id"  = "IAM-MISC-001-mfa-not-enforced"
+          [32m+[0m[0m "type"         = "MISC"
+        }
+      [32m+[0m[0m tags_all      = {
+          [32m+[0m[0m "cis_controls" = "IAM.6"
+          [32m+[0m[0m "domain"       = "IAM"
+          [32m+[0m[0m "scenario_id"  = "IAM-MISC-001-mfa-not-enforced"
+          [32m+[0m[0m "type"         = "MISC"
+        }
+      [32m+[0m[0m unique_id     = (known after apply)
+    }
+
+[1m  # random_id.suffix[0m will be created
+[0m  [32m+[0m[0m resource "random_id" "suffix" {
+      [32m+[0m[0m b64_std     = (known after apply)
+      [32m+[0m[0m b64_url     = (known after apply)
+      [32m+[0m[0m byte_length = 4
+      [32m+[0m[0m dec         = (known after apply)
+      [32m+[0m[0m hex         = (known after apply)
+      [32m+[0m[0m id          = (known after apply)
+    }
+
+[1mPlan:[0m [0m2 to add, 0 to change, 0 to destroy.
+[90m
+─────────────────────────────────────────────────────────────────────────────[0m
+
+Saved the plan to: tfplan.binary
+
+To perform exactly these actions, run the following command to apply:
+    terraform apply "tfplan.binary"
+
+===== [4] Export plan to JSON =====
+
+===== [5] Checkov =====
+
+===== [6] tfsec =====
+
+===== [7] Terrascan =====
+
+===== [8] Conftest =====
+
+============================================================
+FULL SCAN LOG END: 2025-12-22 19:02:04 UTC
+Return codes:
+  checkov   = 1
+  tfsec     = 0
+  terrascan = 1
+  conftest  = 1
+Master log: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/iam/IAM-MISC-001-mfa-not-enforced/scan_logs/FULL_IAM-MISC-001-mfa-not-enforced.log
+============================================================
+

@@ -12,17 +12,15 @@ SCENARIO_NAME="$(basename "$SCENARIO_DIR")"
 
 echo "==> Scenario directory: $SCENARIO_DIR"
 
-# Work inside scenario dir (so tools output land here)
 cd "$SCENARIO_DIR"
 
-# Create a dedicated log folder inside the scenario
 LOG_DIR="${SCENARIO_DIR}/scan_logs"
 mkdir -p "$LOG_DIR"
 
 TS="$(date -u +%Y-%m-%d\ %H:%M:%S\ UTC)"
 MASTER_LOG="${LOG_DIR}/FULL_${SCENARIO_NAME}.log"
 
-# Print AND capture everything (full scrollback becomes the master log)
+# Capture EVERYTHING (terminal + master log)
 exec > >(tee -a "$MASTER_LOG") 2>&1
 
 echo
@@ -35,10 +33,11 @@ echo
 
 echo "===== [1] Terraform init ====="
 
-# Ensure TF plugin cache exists (prevents terraform init warning)
-if [ -n "${TF_PLUGIN_CACHE_DIR:-}" ]; then
-  mkdir -p "$TF_PLUGIN_CACHE_DIR" || true
+# Ensure Terraform plugin cache exists to avoid warnings (Codespaces/CI)
+if [ -z "${TF_PLUGIN_CACHE_DIR:-}" ]; then
+  export TF_PLUGIN_CACHE_DIR="/tmp/terraform-plugin-cache"
 fi
+mkdir -p "$TF_PLUGIN_CACHE_DIR" || true
 
 terraform init -input=false -upgrade
 
@@ -46,8 +45,14 @@ echo "===== [2] Terraform validate ====="
 terraform validate
 
 echo "===== [3] Terraform plan ====="
-# IMPORTANT: load terraform.tfvars so profile/metadata variables are applied
-terraform plan -refresh=false -var-file="terraform.tfvars" -out=tfplan.binary
+PLAN_ARGS=(-refresh=false -out=tfplan.binary)
+
+# Only use terraform.tfvars if it exists
+if [ -f "terraform.tfvars" ]; then
+  PLAN_ARGS+=(-var-file="terraform.tfvars")
+fi
+
+terraform plan "${PLAN_ARGS[@]}"
 
 echo
 echo "===== [4] Export plan to JSON ====="
@@ -56,27 +61,37 @@ terraform show -json tfplan.binary > tfplan.json
 # Do not stop the script if scanners fail
 set +e
 
+# Filenames expected by aggregator (scenario root)
+CHK_TF_ROOT="checkov_${SCENARIO_NAME}.txt"
+TFSEC_ROOT="tfsec_${SCENARIO_NAME}.txt"
+TERRASCAN_ROOT="terrascan_${SCENARIO_NAME}.txt"
+CONFTEST_ROOT="conftest_${SCENARIO_NAME}.txt"
+
 echo
 echo "===== [5] Checkov ====="
-checkov -d . --skip-download | tee "${LOG_DIR}/checkov_${SCENARIO_NAME}.txt"
+checkov -d . --skip-download 2>&1 | tee "$CHK_TF_ROOT" | tee "${LOG_DIR}/${CHK_TF_ROOT}" >/dev/null
 CHECKOV_RC=${PIPESTATUS[0]}
 
 echo
 echo "===== [6] tfsec ====="
-tfsec . --tfvars-file "terraform.tfvars" | tee "${LOG_DIR}/tfsec_${SCENARIO_NAME}.txt"
+TFSEC_ARGS=(.)
+if [ -f "terraform.tfvars" ]; then
+  TFSEC_ARGS+=(--tfvars-file "terraform.tfvars")
+fi
+tfsec "${TFSEC_ARGS[@]}" 2>&1 | tee "$TFSEC_ROOT" | tee "${LOG_DIR}/${TFSEC_ROOT}" >/dev/null
 TFSEC_RC=${PIPESTATUS[0]}
 
 echo
 echo "===== [7] Terrascan ====="
-# Skip non-terraform folders that live inside scenarios
 terrascan scan -d . --iac-type terraform \
-  --skip-dirs "github_conf,scan_logs,.terraform" | tee "${LOG_DIR}/terrascan_${SCENARIO_NAME}.txt"
+  --skip-dirs "github_conf,scan_logs,.terraform" 2>&1 | tee "$TERRASCAN_ROOT" | tee "${LOG_DIR}/${TERRASCAN_ROOT}" >/dev/null
 TERRASCAN_RC=${PIPESTATUS[0]}
 
 echo
 echo "===== [8] Conftest ====="
-# You currently only have s3.rego in policy/terraform; conftest will still run.
-conftest test tfplan.json --policy ../../../policy/terraform | tee "${LOG_DIR}/conftest_${SCENARIO_NAME}.txt"
+# Resolve policy path relative to repo root (robust)
+REPO_ROOT="$(cd "$(dirname "$0")" && pwd)"
+conftest test tfplan.json --policy "${REPO_ROOT}/policy/terraform" 2>&1 | tee "$CONFTEST_ROOT" | tee "${LOG_DIR}/${CONFTEST_ROOT}" >/dev/null
 CONFTEST_RC=${PIPESTATUS[0]}
 
 echo

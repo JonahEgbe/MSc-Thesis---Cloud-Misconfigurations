@@ -15,11 +15,11 @@
   },
   "terrascan": {
     "tool": "terrascan",
-    "total_violations": 2,
-    "high": 1,
+    "total_violations": 0,
+    "high": 0,
     "medium": 0,
-    "low": 1,
-    "detected": true
+    "low": 0,
+    "detected": false
   },
   "conftest": {
     "tool": "conftest",
