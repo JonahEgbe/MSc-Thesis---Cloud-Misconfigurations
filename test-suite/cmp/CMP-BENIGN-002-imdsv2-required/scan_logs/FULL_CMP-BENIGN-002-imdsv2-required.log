@@ -506,3 +506,1026 @@ Return codes:
 Master log: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-002-imdsv2-required/scan_logs/FULL_CMP-BENIGN-002-imdsv2-required.log
 ============================================================
 
+
+============================================================
+FULL SCAN LOG START: 2025-12-22 20:01:42 UTC
+Scenario: CMP-BENIGN-002-imdsv2-required
+Path: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-002-imdsv2-required
+POLICY_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/policy/terraform
+============================================================
+
+===== [0] Terraform plugin cache fix =====
+TF_PLUGIN_CACHE_DIR=/tmp/terraform-plugin-cache
+
+===== [1] Terraform init =====
+[0m[1mInitializing the backend...[0m
+[0m[1mInitializing provider plugins...[0m
+- Finding hashicorp/aws versions matching "~> 5.0"...
+- Finding hashicorp/random versions matching "~> 3.6"...
+- Using previously-installed hashicorp/aws v5.100.0
+- Using previously-installed hashicorp/random v3.7.2
+
+[0m[1m[32mTerraform has been successfully initialized![0m[32m[0m
+[0m[32m
+You may now begin working with Terraform. Try running "terraform plan" to see
+any changes that are required for your infrastructure. All Terraform commands
+should now work.
+
+If you ever set or change modules or backend configuration for Terraform,
+rerun this command to reinitialize your working directory. If you forget, other
+commands will detect it and remind you to do so if necessary.[0m
+
+===== [2] Terraform validate =====
+[32m[1mSuccess![0m The configuration is valid.
+[0m
+
+===== [3] Terraform plan =====
+Detected terraform.tfvars -> using -var-file=terraform.tfvars
+[0m[1mdata.aws_ami.al2: Reading...[0m[0m
+[0m[1mdata.aws_ami.al2: Read complete after 0s [id=ami-0ad8de99ac93341e7][0m
+
+Terraform used the selected providers to generate the following execution
+plan. Resource actions are indicated with the following symbols:
+  [32m+[0m create[0m
+
+Terraform will perform the following actions:
+
+[1m  # aws_instance.ec2[0m will be created
+[0m  [32m+[0m[0m resource "aws_instance" "ec2" {
+      [32m+[0m[0m ami                                  = "ami-0ad8de99ac93341e7"
+      [32m+[0m[0m arn                                  = (known after apply)
+      [32m+[0m[0m associate_public_ip_address          = (known after apply)
+      [32m+[0m[0m availability_zone                    = (known after apply)
+      [32m+[0m[0m cpu_core_count                       = (known after apply)
+      [32m+[0m[0m cpu_threads_per_core                 = (known after apply)
+      [32m+[0m[0m disable_api_stop                     = (known after apply)
+      [32m+[0m[0m disable_api_termination              = (known after apply)
+      [32m+[0m[0m ebs_optimized                        = (known after apply)
+      [32m+[0m[0m enable_primary_ipv6                  = (known after apply)
+      [32m+[0m[0m get_password_data                    = false
+      [32m+[0m[0m host_id                              = (known after apply)
+      [32m+[0m[0m host_resource_group_arn              = (known after apply)
+      [32m+[0m[0m iam_instance_profile                 = (known after apply)
+      [32m+[0m[0m id                                   = (known after apply)
+      [32m+[0m[0m instance_initiated_shutdown_behavior = (known after apply)
+      [32m+[0m[0m instance_lifecycle                   = (known after apply)
+      [32m+[0m[0m instance_state                       = (known after apply)
+      [32m+[0m[0m instance_type                        = "t3.micro"
+      [32m+[0m[0m ipv6_address_count                   = (known after apply)
+      [32m+[0m[0m ipv6_addresses                       = (known after apply)
+      [32m+[0m[0m key_name                             = (known after apply)
+      [32m+[0m[0m monitoring                           = (known after apply)
+      [32m+[0m[0m outpost_arn                          = (known after apply)
+      [32m+[0m[0m password_data                        = (known after apply)
+      [32m+[0m[0m placement_group                      = (known after apply)
+      [32m+[0m[0m placement_partition_number           = (known after apply)
+      [32m+[0m[0m primary_network_interface_id         = (known after apply)
+      [32m+[0m[0m private_dns                          = (known after apply)
+      [32m+[0m[0m private_ip                           = (known after apply)
+      [32m+[0m[0m public_dns                           = (known after apply)
+      [32m+[0m[0m public_ip                            = (known after apply)
+      [32m+[0m[0m secondary_private_ips                = (known after apply)
+      [32m+[0m[0m security_groups                      = (known after apply)
+      [32m+[0m[0m source_dest_check                    = true
+      [32m+[0m[0m spot_instance_request_id             = (known after apply)
+      [32m+[0m[0m subnet_id                            = (known after apply)
+      [32m+[0m[0m tags                                 = {
+          [32m+[0m[0m "cis_controls" = "EC2.8"
+          [32m+[0m[0m "domain"       = "CMP"
+          [32m+[0m[0m "scenario_id"  = "CMP-BENIGN-002-imdsv2-required"
+          [32m+[0m[0m "type"         = "BENIGN"
+        }
+      [32m+[0m[0m tags_all                             = {
+          [32m+[0m[0m "cis_controls" = "EC2.8"
+          [32m+[0m[0m "domain"       = "CMP"
+          [32m+[0m[0m "scenario_id"  = "CMP-BENIGN-002-imdsv2-required"
+          [32m+[0m[0m "type"         = "BENIGN"
+        }
+      [32m+[0m[0m tenancy                              = (known after apply)
+      [32m+[0m[0m user_data                            = (known after apply)
+      [32m+[0m[0m user_data_base64                     = (known after apply)
+      [32m+[0m[0m user_data_replace_on_change          = false
+      [32m+[0m[0m vpc_security_group_ids               = (known after apply)
+
+      [32m+[0m[0m capacity_reservation_specification (known after apply)
+
+      [32m+[0m[0m cpu_options (known after apply)
+
+      [32m+[0m[0m ebs_block_device (known after apply)
+
+      [32m+[0m[0m enclave_options (known after apply)
+
+      [32m+[0m[0m ephemeral_block_device (known after apply)
+
+      [32m+[0m[0m instance_market_options (known after apply)
+
+      [32m+[0m[0m maintenance_options (known after apply)
+
+      [32m+[0m[0m metadata_options {
+          [32m+[0m[0m http_endpoint               = "enabled"
+          [32m+[0m[0m http_protocol_ipv6          = "disabled"
+          [32m+[0m[0m http_put_response_hop_limit = (known after apply)
+          [32m+[0m[0m http_tokens                 = "required"
+          [32m+[0m[0m instance_metadata_tags      = (known after apply)
+        }
+
+      [32m+[0m[0m network_interface (known after apply)
+
+      [32m+[0m[0m private_dns_name_options (known after apply)
+
+      [32m+[0m[0m root_block_device (known after apply)
+    }
+
+[1m  # random_id.suffix[0m will be created
+[0m  [32m+[0m[0m resource "random_id" "suffix" {
+      [32m+[0m[0m b64_std     = (known after apply)
+      [32m+[0m[0m b64_url     = (known after apply)
+      [32m+[0m[0m byte_length = 4
+      [32m+[0m[0m dec         = (known after apply)
+      [32m+[0m[0m hex         = (known after apply)
+      [32m+[0m[0m id          = (known after apply)
+    }
+
+[1mPlan:[0m [0m2 to add, 0 to change, 0 to destroy.
+[90m
+─────────────────────────────────────────────────────────────────────────────[0m
+
+Saved the plan to: tfplan.binary
+
+To perform exactly these actions, run the following command to apply:
+    terraform apply "tfplan.binary"
+
+===== [4] Export plan to JSON =====
+
+===== [5] Checkov =====
+
+       _               _
+   ___| |__   ___  ___| | _______   __
+  / __| '_ \ / _ \/ __| |/ / _ \ \ / /
+ | (__| | | |  __/ (__|   < (_) \ V /
+  \___|_| |_|\___|\___|_|\_\___/ \_/
+
+By Prisma Cloud | version: 3.2.495 
+
+terraform scan results:
+
+Passed checks: 5, Failed checks: 4, Skipped checks: 0
+
+Check: CKV_AWS_386: "Reduce potential for WhoAMI cloud image name confusion attack"
+	PASSED for resource: aws_ami.al2
+	File: /main.tf:3-10
+Check: CKV_AWS_46: "Ensure no hard-coded secrets exist in EC2 user data"
+	PASSED for resource: aws_instance.ec2
+	File: /main.tf:12-21
+Check: CKV_AWS_79: "Ensure Instance Metadata Service Version 1 is not enabled"
+	PASSED for resource: aws_instance.ec2
+	File: /main.tf:12-21
+Check: CKV_AWS_88: "EC2 instance should not have public IP."
+	PASSED for resource: aws_instance.ec2
+	File: /main.tf:12-21
+Check: CKV_AWS_41: "Ensure no hard coded AWS access key and secret key exists in provider"
+	PASSED for resource: aws.default
+	File: /provider.tf:1-9
+Check: CKV_AWS_126: "Ensure that detailed monitoring is enabled for EC2 instances"
+	FAILED for resource: aws_instance.ec2
+	File: /main.tf:12-21
+
+		12 | resource "aws_instance" "ec2" {
+		13 |   ami           = data.aws_ami.al2.id
+		14 |   instance_type = "t3.micro"
+		15 | 
+		16 |   metadata_options {
+		17 |     http_tokens = "required"
+		18 |   }
+		19 | 
+		20 |   tags = local.common_tags
+		21 | }
+
+Check: CKV_AWS_135: "Ensure that EC2 is EBS optimized"
+	FAILED for resource: aws_instance.ec2
+	File: /main.tf:12-21
+
+		12 | resource "aws_instance" "ec2" {
+		13 |   ami           = data.aws_ami.al2.id
+		14 |   instance_type = "t3.micro"
+		15 | 
+		16 |   metadata_options {
+		17 |     http_tokens = "required"
+		18 |   }
+		19 | 
+		20 |   tags = local.common_tags
+		21 | }
+
+Check: CKV_AWS_8: "Ensure all data stored in the Launch configuration or instance Elastic Blocks Store is securely encrypted"
+	FAILED for resource: aws_instance.ec2
+	File: /main.tf:12-21
+
+		12 | resource "aws_instance" "ec2" {
+		13 |   ami           = data.aws_ami.al2.id
+		14 |   instance_type = "t3.micro"
+		15 | 
+		16 |   metadata_options {
+		17 |     http_tokens = "required"
+		18 |   }
+		19 | 
+		20 |   tags = local.common_tags
+		21 | }
+
+Check: CKV2_AWS_41: "Ensure an IAM role is attached to EC2 instance"
+	FAILED for resource: aws_instance.ec2
+	File: /main.tf:12-21
+
+		12 | resource "aws_instance" "ec2" {
+		13 |   ami           = data.aws_ami.al2.id
+		14 |   instance_type = "t3.micro"
+		15 | 
+		16 |   metadata_options {
+		17 |     http_tokens = "required"
+		18 |   }
+		19 | 
+		20 |   tags = local.common_tags
+		21 | }
+
+terraform_plan scan results:
+
+Passed checks: 4, Failed checks: 4, Skipped checks: 0
+
+Check: CKV_AWS_41: "Ensure no hard coded AWS access key and secret key exists in provider"
+	PASSED for resource: aws.default
+	File: /tfplan.json:0-1
+Check: CKV_AWS_46: "Ensure no hard-coded secrets exist in EC2 user data"
+	PASSED for resource: aws_instance.ec2
+	File: /tfplan.json:0-0
+Check: CKV_AWS_79: "Ensure Instance Metadata Service Version 1 is not enabled"
+	PASSED for resource: aws_instance.ec2
+	File: /tfplan.json:0-0
+Check: CKV_AWS_88: "EC2 instance should not have public IP."
+	PASSED for resource: aws_instance.ec2
+	File: /tfplan.json:0-0
+Check: CKV_AWS_126: "Ensure that detailed monitoring is enabled for EC2 instances"
+	FAILED for resource: aws_instance.ec2
+	File: /tfplan.json:0-0
+Check: CKV_AWS_135: "Ensure that EC2 is EBS optimized"
+	FAILED for resource: aws_instance.ec2
+	File: /tfplan.json:0-0
+Check: CKV_AWS_8: "Ensure all data stored in the Launch configuration or instance Elastic Blocks Store is securely encrypted"
+	FAILED for resource: aws_instance.ec2
+	File: /tfplan.json:0-0
+Check: CKV2_AWS_41: "Ensure an IAM role is attached to EC2 instance"
+	FAILED for resource: aws_instance.ec2
+	File: /tfplan.json:0-0
+
+
+===== [6] tfsec =====
+
+======================================================
+tfsec is joining the Trivy family
+
+tfsec will continue to remain available 
+for the time being, although our engineering 
+attention will be directed at Trivy going forward.
+
+You can read more here: 
+https://github.com/aquasecurity/tfsec/discussions/1994
+======================================================
+
+[0m[3mResult #1[0m [0m[31mHIGH[39m[0m [1mRoot block device is not encrypted.[0m [2m[0m
+[0m[0m[90m───────────────────────────────────────────────────────────────────────────────────────────────────────────
+[0m[0m  [3mmain.tf[2m[3m:12-21
+[0m[0m[90m───────────────────────────────────────────────────────────────────────────────────────────────────────────[39m
+[0m[0m[31m   12  [0m[0m [0m[0m [38;5;33mresource[0m [38;5;37m"aws_instance"[0m [38;5;37m"ec2"[0m {[0m
+[0m[31m   13  [0m[0m [0m[0m   [38;5;245mami[0m           = [38;5;33mdata[0m.aws_ami.al2.id[0m
+[0m[31m   14  [0m[0m [0m[0m   [38;5;245minstance_type[0m = [38;5;37m"t3.micro"[0m
+[0m[31m   15  [0m[0m [0m[0m [0m[0m
+[0m[31m   16  [0m[0m [0m[0m   metadata_options {[0m
+[0m[31m   17  [0m[0m [0m[0m     [38;5;245mhttp_tokens[0m = [38;5;37m"required"[0m
+[0m[31m   18  [0m[0m [0m[0m [0m  }[0m
+[0m[31m   19  [0m[0m [0m[0m [0m
+[0m[31m   20  [0m[0m [0m[0m   [38;5;245mtags[0m = local.common_tags[0m
+[0m[31m   21  [0m[0m [0m[0m }[0m
+[0m[90m───────────────────────────────────────────────────────────────────────────────────────────────────────────[39m
+[0m[0m  [2m        ID[0m[3m aws-ec2-enable-at-rest-encryption
+[0m[0m  [2m    Impact[0m The block device could be compromised and read from
+[0m[0m  [2mResolution[0m Turn on encryption for all block devices
+[0m[0m
+  [2mMore Information[0m[0m[0m
+  [2m-[0m [34mhttps://aquasecurity.github.io/tfsec/v1.28.14/checks/aws/ec2/enable-at-rest-encryption/[0m[0m
+  [2m-[0m [34mhttps://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/instance#ebs-ephemeral-and-root-block-devices[0m[0m
+[90m───────────────────────────────────────────────────────────────────────────────────────────────────────────[39m
+
+
+[0m[0m  [1mtimings[0m
+  ──────────────────────────────────────────
+[0m[0m  [2mdisk i/o            [0m 34.256µs
+[0m[0m  [2mparsing             [0m 508.915µs
+[0m[0m  [2madaptation          [0m 78.806µs
+[0m[0m  [2mchecks              [0m 5.125402ms
+[0m[0m  [2mtotal               [0m 5.747379ms
+[0m
+[0m  [1mcounts[0m
+  ──────────────────────────────────────────
+[0m[0m  [2mmodules downloaded  [0m 0
+[0m[0m  [2mmodules processed   [0m 1
+[0m[0m  [2mblocks processed    [0m 12
+[0m[0m  [2mfiles read          [0m 5
+[0m
+[0m  [1mresults[0m
+  ──────────────────────────────────────────
+[0m[0m  [2mpassed              [0m 2
+[0m[0m  [2mignored             [0m 0
+[0m[0m  [2mcritical            [0m 0
+[0m[0m  [2mhigh                [0m 1
+[0m[0m  [2mmedium              [0m 0
+[0m[0m  [2mlow                 [0m 0
+[0m
+[0m  [31m[1m2 passed, 1 potential problem(s) detected.
+
+[0m
+===== [7] Terrascan =====
+
+===== [8] Conftest =====
+[31mFAIL[0m - tfplan.json - main - No aws_cloudtrail resource detected in plan (CloudTrail logging not enabled)
+[31mFAIL[0m - tfplan.json - main - No aws_flow_log resources detected in plan (VPC Flow Logs likely not enabled)
+
+[31m21 tests, 19 passed, 0 warnings, 2 failures, 0 exceptions[0m
+
+============================================================
+FULL SCAN LOG END: 2025-12-22 20:01:57 UTC
+Return codes:
+  checkov   = 1
+  tfsec     = 1
+  terrascan = 1
+  conftest  = 1
+Scenario outputs (root):
+  - /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-002-imdsv2-required/checkov_CMP-BENIGN-002-imdsv2-required.txt
+  - /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-002-imdsv2-required/tfsec_CMP-BENIGN-002-imdsv2-required.txt
+  - /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-002-imdsv2-required/terrascan_CMP-BENIGN-002-imdsv2-required.txt
+  - /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-002-imdsv2-required/conftest_CMP-BENIGN-002-imdsv2-required.txt
+Master log:
+  - /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-002-imdsv2-required/scan_logs/FULL_CMP-BENIGN-002-imdsv2-required.log
+============================================================
+
+============================================================
+FULL SCAN LOG START: 2025-12-22 20:28:55 UTC
+Scenario: CMP-BENIGN-002-imdsv2-required
+Path: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-002-imdsv2-required
+POLICY_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/policy/terraform
+============================================================
+
+===== [0] Terraform plugin cache fix =====
+TF_PLUGIN_CACHE_DIR=/tmp/terraform-plugin-cache
+
+===== [1] Terraform init =====
+[0m[1mInitializing the backend...[0m
+[0m[1mInitializing provider plugins...[0m
+- Finding hashicorp/random versions matching "~> 3.6"...
+- Finding hashicorp/aws versions matching "~> 5.0"...
+- Using previously-installed hashicorp/random v3.7.2
+- Using previously-installed hashicorp/aws v5.100.0
+
+[0m[1m[32mTerraform has been successfully initialized![0m[32m[0m
+[0m[32m
+You may now begin working with Terraform. Try running "terraform plan" to see
+any changes that are required for your infrastructure. All Terraform commands
+should now work.
+
+If you ever set or change modules or backend configuration for Terraform,
+rerun this command to reinitialize your working directory. If you forget, other
+commands will detect it and remind you to do so if necessary.[0m
+
+===== [2] Terraform validate =====
+[32m[1mSuccess![0m The configuration is valid.
+[0m
+
+===== [3] Terraform plan =====
+Detected terraform.tfvars -> using -var-file=terraform.tfvars
+[0m[1mdata.aws_ami.al2: Reading...[0m[0m
+[0m[1mdata.aws_ami.al2: Read complete after 1s [id=ami-0ad8de99ac93341e7][0m
+
+Terraform used the selected providers to generate the following execution
+plan. Resource actions are indicated with the following symbols:
+  [32m+[0m create[0m
+
+Terraform will perform the following actions:
+
+[1m  # aws_instance.ec2[0m will be created
+[0m  [32m+[0m[0m resource "aws_instance" "ec2" {
+      [32m+[0m[0m ami                                  = "ami-0ad8de99ac93341e7"
+      [32m+[0m[0m arn                                  = (known after apply)
+      [32m+[0m[0m associate_public_ip_address          = (known after apply)
+      [32m+[0m[0m availability_zone                    = (known after apply)
+      [32m+[0m[0m cpu_core_count                       = (known after apply)
+      [32m+[0m[0m cpu_threads_per_core                 = (known after apply)
+      [32m+[0m[0m disable_api_stop                     = (known after apply)
+      [32m+[0m[0m disable_api_termination              = (known after apply)
+      [32m+[0m[0m ebs_optimized                        = (known after apply)
+      [32m+[0m[0m enable_primary_ipv6                  = (known after apply)
+      [32m+[0m[0m get_password_data                    = false
+      [32m+[0m[0m host_id                              = (known after apply)
+      [32m+[0m[0m host_resource_group_arn              = (known after apply)
+      [32m+[0m[0m iam_instance_profile                 = (known after apply)
+      [32m+[0m[0m id                                   = (known after apply)
+      [32m+[0m[0m instance_initiated_shutdown_behavior = (known after apply)
+      [32m+[0m[0m instance_lifecycle                   = (known after apply)
+      [32m+[0m[0m instance_state                       = (known after apply)
+      [32m+[0m[0m instance_type                        = "t3.micro"
+      [32m+[0m[0m ipv6_address_count                   = (known after apply)
+      [32m+[0m[0m ipv6_addresses                       = (known after apply)
+      [32m+[0m[0m key_name                             = (known after apply)
+      [32m+[0m[0m monitoring                           = (known after apply)
+      [32m+[0m[0m outpost_arn                          = (known after apply)
+      [32m+[0m[0m password_data                        = (known after apply)
+      [32m+[0m[0m placement_group                      = (known after apply)
+      [32m+[0m[0m placement_partition_number           = (known after apply)
+      [32m+[0m[0m primary_network_interface_id         = (known after apply)
+      [32m+[0m[0m private_dns                          = (known after apply)
+      [32m+[0m[0m private_ip                           = (known after apply)
+      [32m+[0m[0m public_dns                           = (known after apply)
+      [32m+[0m[0m public_ip                            = (known after apply)
+      [32m+[0m[0m secondary_private_ips                = (known after apply)
+      [32m+[0m[0m security_groups                      = (known after apply)
+      [32m+[0m[0m source_dest_check                    = true
+      [32m+[0m[0m spot_instance_request_id             = (known after apply)
+      [32m+[0m[0m subnet_id                            = (known after apply)
+      [32m+[0m[0m tags                                 = {
+          [32m+[0m[0m "cis_controls" = "EC2.8"
+          [32m+[0m[0m "domain"       = "CMP"
+          [32m+[0m[0m "scenario_id"  = "CMP-BENIGN-002-imdsv2-required"
+          [32m+[0m[0m "type"         = "BENIGN"
+        }
+      [32m+[0m[0m tags_all                             = {
+          [32m+[0m[0m "cis_controls" = "EC2.8"
+          [32m+[0m[0m "domain"       = "CMP"
+          [32m+[0m[0m "scenario_id"  = "CMP-BENIGN-002-imdsv2-required"
+          [32m+[0m[0m "type"         = "BENIGN"
+        }
+      [32m+[0m[0m tenancy                              = (known after apply)
+      [32m+[0m[0m user_data                            = (known after apply)
+      [32m+[0m[0m user_data_base64                     = (known after apply)
+      [32m+[0m[0m user_data_replace_on_change          = false
+      [32m+[0m[0m vpc_security_group_ids               = (known after apply)
+
+      [32m+[0m[0m capacity_reservation_specification (known after apply)
+
+      [32m+[0m[0m cpu_options (known after apply)
+
+      [32m+[0m[0m ebs_block_device (known after apply)
+
+      [32m+[0m[0m enclave_options (known after apply)
+
+      [32m+[0m[0m ephemeral_block_device (known after apply)
+
+      [32m+[0m[0m instance_market_options (known after apply)
+
+      [32m+[0m[0m maintenance_options (known after apply)
+
+      [32m+[0m[0m metadata_options {
+          [32m+[0m[0m http_endpoint               = "enabled"
+          [32m+[0m[0m http_protocol_ipv6          = "disabled"
+          [32m+[0m[0m http_put_response_hop_limit = (known after apply)
+          [32m+[0m[0m http_tokens                 = "required"
+          [32m+[0m[0m instance_metadata_tags      = (known after apply)
+        }
+
+      [32m+[0m[0m network_interface (known after apply)
+
+      [32m+[0m[0m private_dns_name_options (known after apply)
+
+      [32m+[0m[0m root_block_device (known after apply)
+    }
+
+[1m  # random_id.suffix[0m will be created
+[0m  [32m+[0m[0m resource "random_id" "suffix" {
+      [32m+[0m[0m b64_std     = (known after apply)
+      [32m+[0m[0m b64_url     = (known after apply)
+      [32m+[0m[0m byte_length = 4
+      [32m+[0m[0m dec         = (known after apply)
+      [32m+[0m[0m hex         = (known after apply)
+      [32m+[0m[0m id          = (known after apply)
+    }
+
+[1mPlan:[0m [0m2 to add, 0 to change, 0 to destroy.
+[90m
+─────────────────────────────────────────────────────────────────────────────[0m
+
+Saved the plan to: tfplan.binary
+
+To perform exactly these actions, run the following command to apply:
+    terraform apply "tfplan.binary"
+
+===== [4] Export plan to JSON =====
+
+===== [5] Checkov =====
+
+       _               _
+   ___| |__   ___  ___| | _______   __
+  / __| '_ \ / _ \/ __| |/ / _ \ \ / /
+ | (__| | | |  __/ (__|   < (_) \ V /
+  \___|_| |_|\___|\___|_|\_\___/ \_/
+
+By Prisma Cloud | version: 3.2.495 
+
+terraform scan results:
+
+Passed checks: 5, Failed checks: 4, Skipped checks: 0
+
+Check: CKV_AWS_46: "Ensure no hard-coded secrets exist in EC2 user data"
+	PASSED for resource: aws_instance.ec2
+	File: /main.tf:12-21
+Check: CKV_AWS_79: "Ensure Instance Metadata Service Version 1 is not enabled"
+	PASSED for resource: aws_instance.ec2
+	File: /main.tf:12-21
+Check: CKV_AWS_88: "EC2 instance should not have public IP."
+	PASSED for resource: aws_instance.ec2
+	File: /main.tf:12-21
+Check: CKV_AWS_386: "Reduce potential for WhoAMI cloud image name confusion attack"
+	PASSED for resource: aws_ami.al2
+	File: /main.tf:3-10
+Check: CKV_AWS_41: "Ensure no hard coded AWS access key and secret key exists in provider"
+	PASSED for resource: aws.default
+	File: /provider.tf:1-9
+Check: CKV_AWS_126: "Ensure that detailed monitoring is enabled for EC2 instances"
+	FAILED for resource: aws_instance.ec2
+	File: /main.tf:12-21
+
+		12 | resource "aws_instance" "ec2" {
+		13 |   ami           = data.aws_ami.al2.id
+		14 |   instance_type = "t3.micro"
+		15 | 
+		16 |   metadata_options {
+		17 |     http_tokens = "required"
+		18 |   }
+		19 | 
+		20 |   tags = local.common_tags
+		21 | }
+
+Check: CKV_AWS_135: "Ensure that EC2 is EBS optimized"
+	FAILED for resource: aws_instance.ec2
+	File: /main.tf:12-21
+
+		12 | resource "aws_instance" "ec2" {
+		13 |   ami           = data.aws_ami.al2.id
+		14 |   instance_type = "t3.micro"
+		15 | 
+		16 |   metadata_options {
+		17 |     http_tokens = "required"
+		18 |   }
+		19 | 
+		20 |   tags = local.common_tags
+		21 | }
+
+Check: CKV_AWS_8: "Ensure all data stored in the Launch configuration or instance Elastic Blocks Store is securely encrypted"
+	FAILED for resource: aws_instance.ec2
+	File: /main.tf:12-21
+
+		12 | resource "aws_instance" "ec2" {
+		13 |   ami           = data.aws_ami.al2.id
+		14 |   instance_type = "t3.micro"
+		15 | 
+		16 |   metadata_options {
+		17 |     http_tokens = "required"
+		18 |   }
+		19 | 
+		20 |   tags = local.common_tags
+		21 | }
+
+Check: CKV2_AWS_41: "Ensure an IAM role is attached to EC2 instance"
+	FAILED for resource: aws_instance.ec2
+	File: /main.tf:12-21
+
+		12 | resource "aws_instance" "ec2" {
+		13 |   ami           = data.aws_ami.al2.id
+		14 |   instance_type = "t3.micro"
+		15 | 
+		16 |   metadata_options {
+		17 |     http_tokens = "required"
+		18 |   }
+		19 | 
+		20 |   tags = local.common_tags
+		21 | }
+
+terraform_plan scan results:
+
+Passed checks: 4, Failed checks: 4, Skipped checks: 0
+
+Check: CKV_AWS_41: "Ensure no hard coded AWS access key and secret key exists in provider"
+	PASSED for resource: aws.default
+	File: /tfplan.json:0-1
+Check: CKV_AWS_46: "Ensure no hard-coded secrets exist in EC2 user data"
+	PASSED for resource: aws_instance.ec2
+	File: /tfplan.json:0-0
+Check: CKV_AWS_79: "Ensure Instance Metadata Service Version 1 is not enabled"
+	PASSED for resource: aws_instance.ec2
+	File: /tfplan.json:0-0
+Check: CKV_AWS_88: "EC2 instance should not have public IP."
+	PASSED for resource: aws_instance.ec2
+	File: /tfplan.json:0-0
+Check: CKV_AWS_126: "Ensure that detailed monitoring is enabled for EC2 instances"
+	FAILED for resource: aws_instance.ec2
+	File: /tfplan.json:0-0
+Check: CKV_AWS_135: "Ensure that EC2 is EBS optimized"
+	FAILED for resource: aws_instance.ec2
+	File: /tfplan.json:0-0
+Check: CKV_AWS_8: "Ensure all data stored in the Launch configuration or instance Elastic Blocks Store is securely encrypted"
+	FAILED for resource: aws_instance.ec2
+	File: /tfplan.json:0-0
+Check: CKV2_AWS_41: "Ensure an IAM role is attached to EC2 instance"
+	FAILED for resource: aws_instance.ec2
+	File: /tfplan.json:0-0
+
+
+===== [6] tfsec =====
+
+======================================================
+tfsec is joining the Trivy family
+
+tfsec will continue to remain available 
+for the time being, although our engineering 
+attention will be directed at Trivy going forward.
+
+You can read more here: 
+https://github.com/aquasecurity/tfsec/discussions/1994
+======================================================
+
+[0m[3mResult #1[0m [0m[31mHIGH[39m[0m [1mRoot block device is not encrypted.[0m [2m[0m
+[0m[0m[90m───────────────────────────────────────────────────────────────────────────────────────────────────────────
+[0m[0m  [3mmain.tf[2m[3m:12-21
+[0m[0m[90m───────────────────────────────────────────────────────────────────────────────────────────────────────────[39m
+[0m[0m[31m   12  [0m[0m [0m[0m [38;5;33mresource[0m [38;5;37m"aws_instance"[0m [38;5;37m"ec2"[0m {[0m
+[0m[31m   13  [0m[0m [0m[0m   [38;5;245mami[0m           = [38;5;33mdata[0m.aws_ami.al2.id[0m
+[0m[31m   14  [0m[0m [0m[0m   [38;5;245minstance_type[0m = [38;5;37m"t3.micro"[0m
+[0m[31m   15  [0m[0m [0m[0m [0m[0m
+[0m[31m   16  [0m[0m [0m[0m   metadata_options {[0m
+[0m[31m   17  [0m[0m [0m[0m     [38;5;245mhttp_tokens[0m = [38;5;37m"required"[0m
+[0m[31m   18  [0m[0m [0m[0m [0m  }[0m
+[0m[31m   19  [0m[0m [0m[0m [0m
+[0m[31m   20  [0m[0m [0m[0m   [38;5;245mtags[0m = local.common_tags[0m
+[0m[31m   21  [0m[0m [0m[0m }[0m
+[0m[90m───────────────────────────────────────────────────────────────────────────────────────────────────────────[39m
+[0m[0m  [2m        ID[0m[3m aws-ec2-enable-at-rest-encryption
+[0m[0m  [2m    Impact[0m The block device could be compromised and read from
+[0m[0m  [2mResolution[0m Turn on encryption for all block devices
+[0m[0m
+  [2mMore Information[0m[0m[0m
+  [2m-[0m [34mhttps://aquasecurity.github.io/tfsec/v1.28.14/checks/aws/ec2/enable-at-rest-encryption/[0m[0m
+  [2m-[0m [34mhttps://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/instance#ebs-ephemeral-and-root-block-devices[0m[0m
+[90m───────────────────────────────────────────────────────────────────────────────────────────────────────────[39m
+
+
+[0m[0m  [1mtimings[0m
+  ──────────────────────────────────────────
+[0m[0m  [2mdisk i/o            [0m 49.911µs
+[0m[0m  [2mparsing             [0m 824.699µs
+[0m[0m  [2madaptation          [0m 119.396µs
+[0m[0m  [2mchecks              [0m 5.360521ms
+[0m[0m  [2mtotal               [0m 6.354527ms
+[0m
+[0m  [1mcounts[0m
+  ──────────────────────────────────────────
+[0m[0m  [2mmodules downloaded  [0m 0
+[0m[0m  [2mmodules processed   [0m 1
+[0m[0m  [2mblocks processed    [0m 12
+[0m[0m  [2mfiles read          [0m 5
+[0m
+[0m  [1mresults[0m
+  ──────────────────────────────────────────
+[0m[0m  [2mpassed              [0m 2
+[0m[0m  [2mignored             [0m 0
+[0m[0m  [2mcritical            [0m 0
+[0m[0m  [2mhigh                [0m 1
+[0m[0m  [2mmedium              [0m 0
+[0m[0m  [2mlow                 [0m 0
+[0m
+[0m  [31m[1m2 passed, 1 potential problem(s) detected.
+
+[0m
+===== [7] Terrascan =====
+NOTE: Terrascan produced no output (rc=1). Check Terrascan config/policies.
+
+===== [8] Conftest =====
+[31mFAIL[0m - tfplan.json - main - No aws_cloudtrail resource detected in plan (CloudTrail logging not enabled)
+[31mFAIL[0m - tfplan.json - main - No aws_flow_log resources detected in plan (VPC Flow Logs likely not enabled)
+
+[31m21 tests, 19 passed, 0 warnings, 2 failures, 0 exceptions[0m
+
+============================================================
+FULL SCAN LOG END: 2025-12-22 20:29:13 UTC
+Return codes:
+  checkov   = 1
+  tfsec     = 1
+  terrascan = 1
+  conftest  = 1
+Master log:
+  - /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-002-imdsv2-required/scan_logs/FULL_CMP-BENIGN-002-imdsv2-required.log
+============================================================
+
+============================================================
+FULL SCAN START: 2025-12-22 22:42:16 UTC
+Scenario: CMP-BENIGN-002-imdsv2-required
+Path: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-002-imdsv2-required
+Policy: /workspaces/MSc-Thesis---Cloud-Misconfigurations/policy/terraform
+============================================================
+
+Initializing the backend...
+Initializing provider plugins...
+- Reusing previous version of hashicorp/aws from the dependency lock file
+- Reusing previous version of hashicorp/random from the dependency lock file
+- Using previously-installed hashicorp/aws v5.100.0
+- Using previously-installed hashicorp/random v3.7.2
+
+Terraform has been successfully initialized!
+
+You may now begin working with Terraform. Try running "terraform plan" to see
+any changes that are required for your infrastructure. All Terraform commands
+should now work.
+
+If you ever set or change modules or backend configuration for Terraform,
+rerun this command to reinitialize your working directory. If you forget, other
+commands will detect it and remind you to do so if necessary.
+Success! The configuration is valid.
+
+data.aws_ami.al2: Reading...
+data.aws_ami.al2: Read complete after 0s [id=ami-0ad8de99ac93341e7]
+
+Terraform used the selected providers to generate the following execution
+plan. Resource actions are indicated with the following symbols:
+  + create
+
+Terraform will perform the following actions:
+
+  # aws_instance.ec2 will be created
+  + resource "aws_instance" "ec2" {
+      + ami                                  = "ami-0ad8de99ac93341e7"
+      + arn                                  = (known after apply)
+      + associate_public_ip_address          = (known after apply)
+      + availability_zone                    = (known after apply)
+      + cpu_core_count                       = (known after apply)
+      + cpu_threads_per_core                 = (known after apply)
+      + disable_api_stop                     = (known after apply)
+      + disable_api_termination              = (known after apply)
+      + ebs_optimized                        = (known after apply)
+      + enable_primary_ipv6                  = (known after apply)
+      + get_password_data                    = false
+      + host_id                              = (known after apply)
+      + host_resource_group_arn              = (known after apply)
+      + iam_instance_profile                 = (known after apply)
+      + id                                   = (known after apply)
+      + instance_initiated_shutdown_behavior = (known after apply)
+      + instance_lifecycle                   = (known after apply)
+      + instance_state                       = (known after apply)
+      + instance_type                        = "t3.micro"
+      + ipv6_address_count                   = (known after apply)
+      + ipv6_addresses                       = (known after apply)
+      + key_name                             = (known after apply)
+      + monitoring                           = (known after apply)
+      + outpost_arn                          = (known after apply)
+      + password_data                        = (known after apply)
+      + placement_group                      = (known after apply)
+      + placement_partition_number           = (known after apply)
+      + primary_network_interface_id         = (known after apply)
+      + private_dns                          = (known after apply)
+      + private_ip                           = (known after apply)
+      + public_dns                           = (known after apply)
+      + public_ip                            = (known after apply)
+      + secondary_private_ips                = (known after apply)
+      + security_groups                      = (known after apply)
+      + source_dest_check                    = true
+      + spot_instance_request_id             = (known after apply)
+      + subnet_id                            = (known after apply)
+      + tags                                 = {
+          + "cis_controls" = "EC2.8"
+          + "domain"       = "CMP"
+          + "scenario_id"  = "CMP-BENIGN-002-imdsv2-required"
+          + "type"         = "BENIGN"
+        }
+      + tags_all                             = {
+          + "cis_controls" = "EC2.8"
+          + "domain"       = "CMP"
+          + "scenario_id"  = "CMP-BENIGN-002-imdsv2-required"
+          + "type"         = "BENIGN"
+        }
+      + tenancy                              = (known after apply)
+      + user_data                            = (known after apply)
+      + user_data_base64                     = (known after apply)
+      + user_data_replace_on_change          = false
+      + vpc_security_group_ids               = (known after apply)
+
+      + capacity_reservation_specification (known after apply)
+
+      + cpu_options (known after apply)
+
+      + ebs_block_device (known after apply)
+
+      + enclave_options (known after apply)
+
+      + ephemeral_block_device (known after apply)
+
+      + instance_market_options (known after apply)
+
+      + maintenance_options (known after apply)
+
+      + metadata_options {
+          + http_endpoint               = "enabled"
+          + http_protocol_ipv6          = "disabled"
+          + http_put_response_hop_limit = (known after apply)
+          + http_tokens                 = "required"
+          + instance_metadata_tags      = (known after apply)
+        }
+
+      + network_interface (known after apply)
+
+      + private_dns_name_options (known after apply)
+
+      + root_block_device (known after apply)
+    }
+
+  # random_id.suffix will be created
+  + resource "random_id" "suffix" {
+      + b64_std     = (known after apply)
+      + b64_url     = (known after apply)
+      + byte_length = 4
+      + dec         = (known after apply)
+      + hex         = (known after apply)
+      + id          = (known after apply)
+    }
+
+Plan: 2 to add, 0 to change, 0 to destroy.
+
+─────────────────────────────────────────────────────────────────────────────
+
+Saved the plan to:
+/workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-002-imdsv2-required/tfplan.binary
+
+To perform exactly these actions, run the following command to apply:
+    terraform apply "/workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-002-imdsv2-required/tfplan.binary"
+
+============================================================
+FULL SCAN END: 2025-12-22 22:42:31 UTC
+Return codes (non-fatal):
+  checkov   = 1
+  tfsec     = 1
+  terrascan = 1
+  conftest  = 1
+Outputs:
+  /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-002-imdsv2-required/scan_logs/checkov_CMP-BENIGN-002-imdsv2-required.txt
+  /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-002-imdsv2-required/scan_logs/tfsec_CMP-BENIGN-002-imdsv2-required.txt
+  /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-002-imdsv2-required/scan_logs/terrascan_CMP-BENIGN-002-imdsv2-required.txt
+  /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-002-imdsv2-required/scan_logs/conftest_CMP-BENIGN-002-imdsv2-required.txt
+Master log:
+  /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-002-imdsv2-required/scan_logs/FULL_CMP-BENIGN-002-imdsv2-required.log
+============================================================
+============================================================
+FULL SCAN START: 2025-12-23 00:42:12 UTC
+Scenario: CMP-BENIGN-002-imdsv2-required
+Path: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-002-imdsv2-required
+Policy: /workspaces/MSc-Thesis---Cloud-Misconfigurations/policy/terraform
+============================================================
+
+Initializing the backend...
+Initializing provider plugins...
+- Reusing previous version of hashicorp/aws from the dependency lock file
+- Reusing previous version of hashicorp/random from the dependency lock file
+- Using previously-installed hashicorp/random v3.7.2
+- Using previously-installed hashicorp/aws v5.100.0
+
+Terraform has been successfully initialized!
+
+You may now begin working with Terraform. Try running "terraform plan" to see
+any changes that are required for your infrastructure. All Terraform commands
+should now work.
+
+If you ever set or change modules or backend configuration for Terraform,
+rerun this command to reinitialize your working directory. If you forget, other
+commands will detect it and remind you to do so if necessary.
+Success! The configuration is valid.
+
+data.aws_ami.al2: Reading...
+data.aws_ami.al2: Read complete after 0s [id=ami-0ad8de99ac93341e7]
+
+Terraform used the selected providers to generate the following execution
+plan. Resource actions are indicated with the following symbols:
+  + create
+
+Terraform will perform the following actions:
+
+  # aws_instance.ec2 will be created
+  + resource "aws_instance" "ec2" {
+      + ami                                  = "ami-0ad8de99ac93341e7"
+      + arn                                  = (known after apply)
+      + associate_public_ip_address          = (known after apply)
+      + availability_zone                    = (known after apply)
+      + cpu_core_count                       = (known after apply)
+      + cpu_threads_per_core                 = (known after apply)
+      + disable_api_stop                     = (known after apply)
+      + disable_api_termination              = (known after apply)
+      + ebs_optimized                        = (known after apply)
+      + enable_primary_ipv6                  = (known after apply)
+      + get_password_data                    = false
+      + host_id                              = (known after apply)
+      + host_resource_group_arn              = (known after apply)
+      + iam_instance_profile                 = (known after apply)
+      + id                                   = (known after apply)
+      + instance_initiated_shutdown_behavior = (known after apply)
+      + instance_lifecycle                   = (known after apply)
+      + instance_state                       = (known after apply)
+      + instance_type                        = "t3.micro"
+      + ipv6_address_count                   = (known after apply)
+      + ipv6_addresses                       = (known after apply)
+      + key_name                             = (known after apply)
+      + monitoring                           = (known after apply)
+      + outpost_arn                          = (known after apply)
+      + password_data                        = (known after apply)
+      + placement_group                      = (known after apply)
+      + placement_partition_number           = (known after apply)
+      + primary_network_interface_id         = (known after apply)
+      + private_dns                          = (known after apply)
+      + private_ip                           = (known after apply)
+      + public_dns                           = (known after apply)
+      + public_ip                            = (known after apply)
+      + secondary_private_ips                = (known after apply)
+      + security_groups                      = (known after apply)
+      + source_dest_check                    = true
+      + spot_instance_request_id             = (known after apply)
+      + subnet_id                            = (known after apply)
+      + tags                                 = {
+          + "cis_controls" = "EC2.8"
+          + "domain"       = "CMP"
+          + "scenario_id"  = "CMP-BENIGN-002-imdsv2-required"
+          + "type"         = "BENIGN"
+        }
+      + tags_all                             = {
+          + "cis_controls" = "EC2.8"
+          + "domain"       = "CMP"
+          + "scenario_id"  = "CMP-BENIGN-002-imdsv2-required"
+          + "type"         = "BENIGN"
+        }
+      + tenancy                              = (known after apply)
+      + user_data                            = (known after apply)
+      + user_data_base64                     = (known after apply)
+      + user_data_replace_on_change          = false
+      + vpc_security_group_ids               = (known after apply)
+
+      + capacity_reservation_specification (known after apply)
+
+      + cpu_options (known after apply)
+
+      + ebs_block_device (known after apply)
+
+      + enclave_options (known after apply)
+
+      + ephemeral_block_device (known after apply)
+
+      + instance_market_options (known after apply)
+
+      + maintenance_options (known after apply)
+
+      + metadata_options {
+          + http_endpoint               = "enabled"
+          + http_protocol_ipv6          = "disabled"
+          + http_put_response_hop_limit = (known after apply)
+          + http_tokens                 = "required"
+          + instance_metadata_tags      = (known after apply)
+        }
+
+      + network_interface (known after apply)
+
+      + private_dns_name_options (known after apply)
+
+      + root_block_device (known after apply)
+    }
+
+  # random_id.suffix will be created
+  + resource "random_id" "suffix" {
+      + b64_std     = (known after apply)
+      + b64_url     = (known after apply)
+      + byte_length = 4
+      + dec         = (known after apply)
+      + hex         = (known after apply)
+      + id          = (known after apply)
+    }
+
+Plan: 2 to add, 0 to change, 0 to destroy.
+
+─────────────────────────────────────────────────────────────────────────────
+
+Saved the plan to:
+/workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-002-imdsv2-required/tfplan.binary
+
+To perform exactly these actions, run the following command to apply:
+    terraform apply "/workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-002-imdsv2-required/tfplan.binary"
+
+============================================================
+FULL SCAN END: 2025-12-23 00:42:29 UTC
+Return codes (non-fatal):
+  checkov   = 1
+  tfsec     = 1
+  terrascan = 1
+  conftest  = 0
+Outputs:
+  /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-002-imdsv2-required/scan_logs/checkov_CMP-BENIGN-002-imdsv2-required.txt
+  /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-002-imdsv2-required/scan_logs/tfsec_CMP-BENIGN-002-imdsv2-required.txt
+  /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-002-imdsv2-required/scan_logs/terrascan_CMP-BENIGN-002-imdsv2-required.txt
+  /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-002-imdsv2-required/scan_logs/conftest_CMP-BENIGN-002-imdsv2-required.txt
+Master log:
+  /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-002-imdsv2-required/scan_logs/FULL_CMP-BENIGN-002-imdsv2-required.log
+============================================================

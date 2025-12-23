@@ -1,0 +1,2664 @@
+============================================================
+============================================================
+============================================================
+============================================================
+EXPERIMENT START: 2025-12-22 21:02:22 UTC
+EXPERIMENT START: 2025-12-22 21:02:22 UTC
+EXPERIMENT START: 2025-12-22 21:02:22 UTC
+EXPERIMENT START: 2025-12-22 21:02:22 UTC
+EXPERIMENT START: 2025-12-22 21:02:22 UTC
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210222.log
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210222.log
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210222.log
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210222.log
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210222.log
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+
+
+
+
+
+==> Found 26 scenarios.
+==> Found 26 scenarios.
+==> Found 26 scenarios.
+==> Found 26 scenarios.
+==> Found 26 scenarios.
+
+
+
+
+
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+EXPERIMENT START: 2025-12-22 21:02:23 UTC
+EXPERIMENT START: 2025-12-22 21:02:23 UTC
+EXPERIMENT START: 2025-12-22 21:02:23 UTC
+EXPERIMENT START: 2025-12-22 21:02:23 UTC
+EXPERIMENT START: 2025-12-22 21:02:23 UTC
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210223.log
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210223.log
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210223.log
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210223.log
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210223.log
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+
+
+
+
+
+==> Found 26 scenarios.
+==> Found 26 scenarios.
+==> Found 26 scenarios.
+==> Found 26 scenarios.
+==> Found 26 scenarios.
+
+
+
+
+
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+EXPERIMENT START: 2025-12-22 21:02:23 UTC
+EXPERIMENT START: 2025-12-22 21:02:23 UTC
+EXPERIMENT START: 2025-12-22 21:02:23 UTC
+EXPERIMENT START: 2025-12-22 21:02:23 UTC
+EXPERIMENT START: 2025-12-22 21:02:23 UTC
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210223.log
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210223.log
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210223.log
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210223.log
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210223.log
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+
+
+
+
+
+==> Found 26 scenarios.
+==> Found 26 scenarios.
+==> Found 26 scenarios.
+==> Found 26 scenarios.
+==> Found 26 scenarios.
+
+
+
+
+============================================================
+============================================================
+============================================================
+============================================================
+
+============================================================
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+EXPERIMENT START: 2025-12-22 21:02:23 UTC
+EXPERIMENT START: 2025-12-22 21:02:23 UTC
+EXPERIMENT START: 2025-12-22 21:02:23 UTC
+EXPERIMENT START: 2025-12-22 21:02:23 UTC
+EXPERIMENT START: 2025-12-22 21:02:23 UTC
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210223.log
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210223.log
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210223.log
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210223.log
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210223.log
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+
+
+
+
+
+==> Found 26 scenarios.
+==> Found 26 scenarios.
+==> Found 26 scenarios.
+==> Found 26 scenarios.
+==> Found 26 scenarios.
+
+
+
+
+
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+EXPERIMENT START: 2025-12-22 21:02:23 UTC
+EXPERIMENT START: 2025-12-22 21:02:23 UTC
+EXPERIMENT START: 2025-12-22 21:02:23 UTC
+EXPERIMENT START: 2025-12-22 21:02:23 UTC
+EXPERIMENT START: 2025-12-22 21:02:23 UTC
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210223.log
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210223.log
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210223.log
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210223.log
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210223.log
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+
+
+
+
+
+==> Found 26 scenarios.
+==> Found 26 scenarios.
+==> Found 26 scenarios.
+==> Found 26 scenarios.
+==> Found 26 scenarios.
+
+
+
+
+
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+EXPERIMENT START: 2025-12-22 21:02:23 UTC
+EXPERIMENT START: 2025-12-22 21:02:23 UTC
+EXPERIMENT START: 2025-12-22 21:02:23 UTC
+EXPERIMENT START: 2025-12-22 21:02:23 UTC
+EXPERIMENT START: 2025-12-22 21:02:23 UTC
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210223.log
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210223.log
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210223.log
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210223.log
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210223.log
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+
+
+
+
+
+==> Found 26 scenarios.
+==> Found 26 scenarios.
+==> Found 26 scenarios.
+==> Found 26 scenarios.
+==> Found 26 scenarios.
+
+
+
+
+
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+EXPERIMENT START: 2025-12-22 21:02:23 UTC
+EXPERIMENT START: 2025-12-22 21:02:23 UTC
+EXPERIMENT START: 2025-12-22 21:02:23 UTC
+EXPERIMENT START: 2025-12-22 21:02:23 UTC
+EXPERIMENT START: 2025-12-22 21:02:23 UTC
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210223.log
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210223.log
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210223.log
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210223.log
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210223.log
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+
+
+
+
+
+==> Found 26 scenarios.
+==> Found 26 scenarios.
+==> Found 26 scenarios.
+==> Found 26 scenarios.
+==> Found 26 scenarios.
+
+
+
+
+
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+EXPERIMENT START: 2025-12-22 21:02:23 UTC
+EXPERIMENT START: 2025-12-22 21:02:23 UTC
+EXPERIMENT START: 2025-12-22 21:02:23 UTC
+EXPERIMENT START: 2025-12-22 21:02:23 UTC
+EXPERIMENT START: 2025-12-22 21:02:23 UTC
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210223.log
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210223.log
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210223.log
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210223.log
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210223.log
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+
+
+
+
+
+==> Found 26 scenarios.
+==> Found 26 scenarios.
+==> Found 26 scenarios.
+==> Found 26 scenarios.
+==> Found 26 scenarios.
+
+
+
+
+
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+EXPERIMENT START: 2025-12-22 21:02:23 UTC
+EXPERIMENT START: 2025-12-22 21:02:23 UTC
+EXPERIMENT START: 2025-12-22 21:02:23 UTC
+EXPERIMENT START: 2025-12-22 21:02:23 UTC
+EXPERIMENT START: 2025-12-22 21:02:23 UTC
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210223.log
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210223.log
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210223.log
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210223.log
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210223.log
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+
+
+
+
+
+==> Found 26 scenarios.
+==> Found 26 scenarios.
+==> Found 26 scenarios.
+==> Found 26 scenarios.
+==> Found 26 scenarios.
+
+
+
+
+
+============================================================
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+============================================================
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+============================================================
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+============================================================
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+============================================================
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+EXPERIMENT START: 2025-12-22 21:02:24 UTC
+EXPERIMENT START: 2025-12-22 21:02:24 UTC
+EXPERIMENT START: 2025-12-22 21:02:24 UTC
+EXPERIMENT START: 2025-12-22 21:02:24 UTC
+EXPERIMENT START: 2025-12-22 21:02:24 UTC
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210224.log
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210224.log
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210224.log
+============================================================
+============================================================
+============================================================
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210224.log
+============================================================
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210224.log
+============================================================
+
+
+
+
+
+==> Found 26 scenarios.
+==> Found 26 scenarios.
+==> Found 26 scenarios.
+==> Found 26 scenarios.
+==> Found 26 scenarios.
+
+
+
+
+
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+EXPERIMENT START: 2025-12-22 21:02:24 UTC
+EXPERIMENT START: 2025-12-22 21:02:24 UTC
+EXPERIMENT START: 2025-12-22 21:02:24 UTC
+EXPERIMENT START: 2025-12-22 21:02:24 UTC
+EXPERIMENT START: 2025-12-22 21:02:24 UTC
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210224.log
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210224.log
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210224.log
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210224.log
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210224.log
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+
+
+
+
+
+==> Found 26 scenarios.
+==> Found 26 scenarios.
+==> Found 26 scenarios.
+==> Found 26 scenarios.
+==> Found 26 scenarios.
+
+
+
+
+
+============================================================
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+============================================================
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+============================================================
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+============================================================
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+============================================================
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+EXPERIMENT START: 2025-12-22 21:02:24 UTC
+EXPERIMENT START: 2025-12-22 21:02:24 UTC
+EXPERIMENT START: 2025-12-22 21:02:24 UTC
+EXPERIMENT START: 2025-12-22 21:02:24 UTC
+EXPERIMENT START: 2025-12-22 21:02:24 UTC
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210224.log
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210224.log
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210224.log
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210224.log
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210224.log
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+
+
+
+
+
+==> Found 26 scenarios.
+==> Found 26 scenarios.
+==> Found 26 scenarios.
+==> Found 26 scenarios.
+==> Found 26 scenarios.
+
+
+
+
+
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+EXPERIMENT START: 2025-12-22 21:02:24 UTC
+EXPERIMENT START: 2025-12-22 21:02:24 UTC
+EXPERIMENT START: 2025-12-22 21:02:24 UTC
+EXPERIMENT START: 2025-12-22 21:02:24 UTC
+EXPERIMENT START: 2025-12-22 21:02:24 UTC
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210224.log
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210224.log
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210224.log
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210224.log
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210224.log
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+
+
+
+
+
+==> Found 26 scenarios.
+==> Found 26 scenarios.
+==> Found 26 scenarios.
+==> Found 26 scenarios.
+==> Found 26 scenarios.
+
+
+
+
+
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+EXPERIMENT START: 2025-12-22 21:02:24 UTC
+EXPERIMENT START: 2025-12-22 21:02:24 UTC
+EXPERIMENT START: 2025-12-22 21:02:24 UTC
+EXPERIMENT START: 2025-12-22 21:02:24 UTC
+EXPERIMENT START: 2025-12-22 21:02:24 UTC
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210224.log
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210224.log
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210224.log
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210224.log
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210224.log
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+
+
+
+
+
+==> Found 26 scenarios.
+==> Found 26 scenarios.
+==> Found 26 scenarios.
+==> Found 26 scenarios.
+==> Found 26 scenarios.
+
+
+
+
+
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+EXPERIMENT START: 2025-12-22 21:02:25 UTC
+EXPERIMENT START: 2025-12-22 21:02:25 UTC
+EXPERIMENT START: 2025-12-22 21:02:25 UTC
+EXPERIMENT START: 2025-12-22 21:02:25 UTC
+EXPERIMENT START: 2025-12-22 21:02:25 UTC
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210225.log
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210225.log
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210225.log
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210225.log
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210225.log
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+
+
+
+
+
+==> Found 26 scenarios.
+==> Found 26 scenarios.
+==> Found 26 scenarios.
+==> Found 26 scenarios.
+==> Found 26 scenarios.
+
+
+
+
+
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+EXPERIMENT START: 2025-12-22 21:02:25 UTC
+EXPERIMENT START: 2025-12-22 21:02:25 UTC
+EXPERIMENT START: 2025-12-22 21:02:25 UTC
+EXPERIMENT START: 2025-12-22 21:02:25 UTC
+EXPERIMENT START: 2025-12-22 21:02:25 UTC
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210225.log
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210225.log
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210225.log
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210225.log
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210225.log
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+
+
+
+
+
+==> Found 26 scenarios.
+==> Found 26 scenarios.
+==> Found 26 scenarios.
+==> Found 26 scenarios.
+==> Found 26 scenarios.
+
+
+
+
+
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+EXPERIMENT START: 2025-12-22 21:02:25 UTC
+EXPERIMENT START: 2025-12-22 21:02:25 UTC
+EXPERIMENT START: 2025-12-22 21:02:25 UTC
+EXPERIMENT START: 2025-12-22 21:02:25 UTC
+EXPERIMENT START: 2025-12-22 21:02:25 UTC
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210225.log
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210225.log
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210225.log
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210225.log
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210225.log
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+
+
+
+
+
+==> Found 26 scenarios.
+==> Found 26 scenarios.
+==> Found 26 scenarios.
+==> Found 26 scenarios.
+==> Found 26 scenarios.
+
+============================================================
+
+============================================================
+
+============================================================
+
+============================================================
+
+============================================================
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+EXPERIMENT START: 2025-12-22 21:02:25 UTC
+EXPERIMENT START: 2025-12-22 21:02:25 UTC
+EXPERIMENT START: 2025-12-22 21:02:25 UTC
+EXPERIMENT START: 2025-12-22 21:02:25 UTC
+EXPERIMENT START: 2025-12-22 21:02:25 UTC
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210225.log
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210225.log
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210225.log
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210225.log
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210225.log
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+
+
+
+
+
+==> Found 26 scenarios.
+==> Found 26 scenarios.
+==> Found 26 scenarios.
+==> Found 26 scenarios.
+==> Found 26 scenarios.
+
+
+
+
+============================================================
+============================================================
+============================================================
+============================================================
+
+============================================================
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+EXPERIMENT START: 2025-12-22 21:02:25 UTC
+============================================================
+EXPERIMENT START: 2025-12-22 21:02:25 UTC
+============================================================
+EXPERIMENT START: 2025-12-22 21:02:25 UTC
+============================================================
+EXPERIMENT START: 2025-12-22 21:02:25 UTC
+============================================================
+EXPERIMENT START: 2025-12-22 21:02:25 UTC
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210225.log
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210225.log
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210225.log
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210225.log
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210225.log
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+
+
+
+
+
+==> Found 26 scenarios.
+==> Found 26 scenarios.
+==> Found 26 scenarios.
+==> Found 26 scenarios.
+==> Found 26 scenarios.
+
+
+
+
+
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+============================================================
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+============================================================
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+============================================================
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+============================================================
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+============================================================
+============================================================
+EXPERIMENT START: 2025-12-22 21:02:25 UTC
+============================================================
+EXPERIMENT START: 2025-12-22 21:02:25 UTC
+============================================================
+EXPERIMENT START: 2025-12-22 21:02:25 UTC
+============================================================
+EXPERIMENT START: 2025-12-22 21:02:25 UTC
+============================================================
+EXPERIMENT START: 2025-12-22 21:02:25 UTC
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210225.log
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210225.log
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210225.log
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210225.log
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210225.log
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+
+
+
+
+
+==> Found 26 scenarios.
+==> Found 26 scenarios.
+==> Found 26 scenarios.
+==> Found 26 scenarios.
+==> Found 26 scenarios.
+
+
+
+
+
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+EXPERIMENT START: 2025-12-22 21:02:26 UTC
+EXPERIMENT START: 2025-12-22 21:02:26 UTC
+EXPERIMENT START: 2025-12-22 21:02:26 UTC
+EXPERIMENT START: 2025-12-22 21:02:26 UTC
+EXPERIMENT START: 2025-12-22 21:02:26 UTC
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210226.log
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210226.log
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210226.log
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210226.log
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210226.log
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+
+
+
+
+
+==> Found 26 scenarios.
+==> Found 26 scenarios.
+==> Found 26 scenarios.
+==> Found 26 scenarios.
+==> Found 26 scenarios.
+
+
+
+
+
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+EXPERIMENT START: 2025-12-22 21:02:26 UTC
+EXPERIMENT START: 2025-12-22 21:02:26 UTC
+EXPERIMENT START: 2025-12-22 21:02:26 UTC
+EXPERIMENT START: 2025-12-22 21:02:26 UTC
+EXPERIMENT START: 2025-12-22 21:02:26 UTC
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210226.log
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210226.log
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210226.log
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210226.log
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210226.log
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+
+
+
+
+
+==> Found 26 scenarios.
+==> Found 26 scenarios.
+==> Found 26 scenarios.
+==> Found 26 scenarios.
+==> Found 26 scenarios.
+
+
+
+
+
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+EXPERIMENT START: 2025-12-22 21:02:26 UTC
+EXPERIMENT START: 2025-12-22 21:02:26 UTC
+EXPERIMENT START: 2025-12-22 21:02:26 UTC
+EXPERIMENT START: 2025-12-22 21:02:26 UTC
+EXPERIMENT START: 2025-12-22 21:02:26 UTC
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210226.log
+============================================================
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210226.log
+============================================================
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210226.log
+============================================================
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210226.log
+============================================================
+
+
+
+
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210226.log
+============================================================
+
+==> Found 26 scenarios.
+==> Found 26 scenarios.
+==> Found 26 scenarios.
+==> Found 26 scenarios.
+==> Found 26 scenarios.
+
+
+
+
+
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+EXPERIMENT START: 2025-12-22 21:02:26 UTC
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+EXPERIMENT START: 2025-12-22 21:02:26 UTC
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+EXPERIMENT START: 2025-12-22 21:02:26 UTC
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+EXPERIMENT START: 2025-12-22 21:02:26 UTC
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+EXPERIMENT START: 2025-12-22 21:02:26 UTC
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210226.log
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210226.log
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210226.log
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210226.log
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210226.log
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+
+
+
+
+
+==> Found 26 scenarios.
+==> Found 26 scenarios.
+==> Found 26 scenarios.
+==> Found 26 scenarios.
+==> Found 26 scenarios.
+
+
+
+
+
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+EXPERIMENT START: 2025-12-22 21:02:26 UTC
+EXPERIMENT START: 2025-12-22 21:02:26 UTC
+EXPERIMENT START: 2025-12-22 21:02:26 UTC
+EXPERIMENT START: 2025-12-22 21:02:26 UTC
+EXPERIMENT START: 2025-12-22 21:02:26 UTC
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210226.log
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210226.log
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210226.log
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210226.log
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210226.log
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+
+
+
+
+
+==> Found 26 scenarios.
+==> Found 26 scenarios.
+==> Found 26 scenarios.
+==> Found 26 scenarios.
+==> Found 26 scenarios.
+
+
+
+
+
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+EXPERIMENT START: 2025-12-22 21:02:27 UTC
+============================================================
+EXPERIMENT START: 2025-12-22 21:02:27 UTC
+============================================================
+EXPERIMENT START: 2025-12-22 21:02:27 UTC
+============================================================
+EXPERIMENT START: 2025-12-22 21:02:27 UTC
+============================================================
+EXPERIMENT START: 2025-12-22 21:02:27 UTC
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210227.log
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210227.log
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210227.log
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210227.log
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210227.log
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+
+
+
+
+
+==> Found 26 scenarios.
+==> Found 26 scenarios.
+==> Found 26 scenarios.
+==> Found 26 scenarios.
+==> Found 26 scenarios.
+
+
+
+
+
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+EXPERIMENT START: 2025-12-22 21:02:27 UTC
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+============================================================
+EXPERIMENT START: 2025-12-22 21:02:27 UTC
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+============================================================
+EXPERIMENT START: 2025-12-22 21:02:27 UTC
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+============================================================
+EXPERIMENT START: 2025-12-22 21:02:27 UTC
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+============================================================
+EXPERIMENT START: 2025-12-22 21:02:27 UTC
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210227.log
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210227.log
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210227.log
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210227.log
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210227.log
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+
+
+
+
+
+==> Found 26 scenarios.
+==> Found 26 scenarios.
+==> Found 26 scenarios.
+==> Found 26 scenarios.
+==> Found 26 scenarios.
+
+============================================================
+
+============================================================
+
+============================================================
+
+============================================================
+
+============================================================
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+EXPERIMENT START: 2025-12-22 21:02:27 UTC
+EXPERIMENT START: 2025-12-22 21:02:27 UTC
+EXPERIMENT START: 2025-12-22 21:02:27 UTC
+EXPERIMENT START: 2025-12-22 21:02:27 UTC
+EXPERIMENT START: 2025-12-22 21:02:27 UTC
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210227.log
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210227.log
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210227.log
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210227.log
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210227.log
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+
+
+
+
+
+==> Found 26 scenarios.
+==> Found 26 scenarios.
+==> Found 26 scenarios.
+==> Found 26 scenarios.
+==> Found 26 scenarios.
+
+
+
+
+
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+EXPERIMENT START: 2025-12-22 21:02:27 UTC
+EXPERIMENT START: 2025-12-22 21:02:27 UTC
+EXPERIMENT START: 2025-12-22 21:02:27 UTC
+EXPERIMENT START: 2025-12-22 21:02:27 UTC
+EXPERIMENT START: 2025-12-22 21:02:27 UTC
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210227.log
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210227.log
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210227.log
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210227.log
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210227.log
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+
+
+
+
+
+==> Found 26 scenarios.
+==> Found 26 scenarios.
+==> Found 26 scenarios.
+==> Found 26 scenarios.
+==> Found 26 scenarios.
+
+
+
+
+
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+EXPERIMENT START: 2025-12-22 21:02:27 UTC
+EXPERIMENT START: 2025-12-22 21:02:27 UTC
+EXPERIMENT START: 2025-12-22 21:02:27 UTC
+EXPERIMENT START: 2025-12-22 21:02:27 UTC
+EXPERIMENT START: 2025-12-22 21:02:27 UTC
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210227.log
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210227.log
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210227.log
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210227.log
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210227.log
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+
+
+
+
+
+==> Found 26 scenarios.
+==> Found 26 scenarios.
+==> Found 26 scenarios.
+==> Found 26 scenarios.
+==> Found 26 scenarios.
+
+
+
+
+
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+EXPERIMENT START: 2025-12-22 21:02:28 UTC
+EXPERIMENT START: 2025-12-22 21:02:28 UTC
+EXPERIMENT START: 2025-12-22 21:02:28 UTC
+EXPERIMENT START: 2025-12-22 21:02:28 UTC
+EXPERIMENT START: 2025-12-22 21:02:28 UTC
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210228.log
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210228.log
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210228.log
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210228.log
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210228.log
+============================================================
+
+============================================================
+
+============================================================
+
+============================================================
+
+============================================================
+
+==> Found 26 scenarios.
+==> Found 26 scenarios.
+==> Found 26 scenarios.
+==> Found 26 scenarios.
+==> Found 26 scenarios.
+
+
+
+
+
+============================================================
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+============================================================
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+============================================================
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+============================================================
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+EXPERIMENT START: 2025-12-22 21:02:28 UTC
+EXPERIMENT START: 2025-12-22 21:02:28 UTC
+EXPERIMENT START: 2025-12-22 21:02:28 UTC
+EXPERIMENT START: 2025-12-22 21:02:28 UTC
+EXPERIMENT START: 2025-12-22 21:02:28 UTC
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210228.log
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210228.log
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210228.log
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210228.log
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210228.log
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+
+
+
+
+
+==> Found 26 scenarios.
+==> Found 26 scenarios.
+==> Found 26 scenarios.
+==> Found 26 scenarios.
+==> Found 26 scenarios.
+
+
+
+
+
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+EXPERIMENT START: 2025-12-22 21:02:28 UTC
+EXPERIMENT START: 2025-12-22 21:02:28 UTC
+EXPERIMENT START: 2025-12-22 21:02:28 UTC
+EXPERIMENT START: 2025-12-22 21:02:28 UTC
+EXPERIMENT START: 2025-12-22 21:02:28 UTC
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210228.log
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210228.log
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210228.log
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210228.log
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210228.log
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+
+
+
+
+
+==> Found 26 scenarios.
+==> Found 26 scenarios.
+==> Found 26 scenarios.
+==> Found 26 scenarios.
+==> Found 26 scenarios.
+
+
+
+
+
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+============================================================
+============================================================
+============================================================
+============================================================
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+EXPERIMENT START: 2025-12-22 21:02:28 UTC
+EXPERIMENT START: 2025-12-22 21:02:28 UTC
+EXPERIMENT START: 2025-12-22 21:02:28 UTC
+EXPERIMENT START: 2025-12-22 21:02:28 UTC
+EXPERIMENT START: 2025-12-22 21:02:28 UTC
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210228.log
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210228.log
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210228.log
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210228.log
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210228.log
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+
+
+
+
+
+==> Found 26 scenarios.
+==> Found 26 scenarios.
+==> Found 26 scenarios.
+==> Found 26 scenarios.
+==> Found 26 scenarios.
+
+
+
+
+
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+EXPERIMENT START: 2025-12-22 21:02:28 UTC
+EXPERIMENT START: 2025-12-22 21:02:28 UTC
+EXPERIMENT START: 2025-12-22 21:02:28 UTC
+EXPERIMENT START: 2025-12-22 21:02:28 UTC
+EXPERIMENT START: 2025-12-22 21:02:28 UTC
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210228.log
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210228.log
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210228.log
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210228.log
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210228.log
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+
+
+
+
+
+==> Found 26 scenarios.
+==> Found 26 scenarios.
+==> Found 26 scenarios.
+==> Found 26 scenarios.
+==> Found 26 scenarios.
+
+
+
+
+
+============================================================
+============================================================
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+============================================================
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+============================================================
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+============================================================
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+EXPERIMENT START: 2025-12-22 21:02:28 UTC
+EXPERIMENT START: 2025-12-22 21:02:28 UTC
+EXPERIMENT START: 2025-12-22 21:02:28 UTC
+EXPERIMENT START: 2025-12-22 21:02:28 UTC
+EXPERIMENT START: 2025-12-22 21:02:28 UTC
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210228.log
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210228.log
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210228.log
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210228.log
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210228.log
+============================================================
+============================================================
+
+
+============================================================
+
+============================================================
+
+============================================================
+
+==> Found 26 scenarios.
+==> Found 26 scenarios.
+==> Found 26 scenarios.
+==> Found 26 scenarios.
+==> Found 26 scenarios.
+
+
+
+
+
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+EXPERIMENT START: 2025-12-22 21:02:29 UTC
+EXPERIMENT START: 2025-12-22 21:02:29 UTC
+EXPERIMENT START: 2025-12-22 21:02:29 UTC
+EXPERIMENT START: 2025-12-22 21:02:29 UTC
+EXPERIMENT START: 2025-12-22 21:02:29 UTC
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210229.log
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210229.log
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210229.log
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210229.log
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210229.log
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+
+
+
+
+
+==> Found 26 scenarios.
+==> Found 26 scenarios.
+==> Found 26 scenarios.
+==> Found 26 scenarios.
+==> Found 26 scenarios.
+
+
+
+
+
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+EXPERIMENT START: 2025-12-22 21:02:29 UTC
+EXPERIMENT START: 2025-12-22 21:02:29 UTC
+EXPERIMENT START: 2025-12-22 21:02:29 UTC
+EXPERIMENT START: 2025-12-22 21:02:29 UTC
+EXPERIMENT START: 2025-12-22 21:02:29 UTC
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210229.log
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210229.log
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210229.log
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210229.log
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210229.log
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+
+
+
+
+
+==> Found 26 scenarios.
+
+==> Found 26 scenarios.
+
+==> Found 26 scenarios.
+
+==> Found 26 scenarios.
+
+==> Found 26 scenarios.
+
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+EXPERIMENT START: 2025-12-22 21:02:29 UTC
+EXPERIMENT START: 2025-12-22 21:02:29 UTC
+EXPERIMENT START: 2025-12-22 21:02:29 UTC
+EXPERIMENT START: 2025-12-22 21:02:29 UTC
+EXPERIMENT START: 2025-12-22 21:02:29 UTC
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210229.log
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210229.log
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210229.log
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210229.log
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210229.log
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+
+
+
+
+
+==> Found 26 scenarios.
+
+==> Found 26 scenarios.
+
+==> Found 26 scenarios.
+
+==> Found 26 scenarios.
+
+==> Found 26 scenarios.
+
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+EXPERIMENT START: 2025-12-22 21:02:29 UTC
+EXPERIMENT START: 2025-12-22 21:02:29 UTC
+EXPERIMENT START: 2025-12-22 21:02:29 UTC
+EXPERIMENT START: 2025-12-22 21:02:29 UTC
+EXPERIMENT START: 2025-12-22 21:02:29 UTC
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210229.log
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210229.log
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210229.log
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210229.log
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210229.log
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+
+
+
+
+
+==> Found 26 scenarios.
+==> Found 26 scenarios.
+==> Found 26 scenarios.
+==> Found 26 scenarios.
+==> Found 26 scenarios.
+
+
+
+
+
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+============================================================
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+============================================================
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+============================================================
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+============================================================
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+EXPERIMENT START: 2025-12-22 21:02:30 UTC
+EXPERIMENT START: 2025-12-22 21:02:30 UTC
+EXPERIMENT START: 2025-12-22 21:02:30 UTC
+EXPERIMENT START: 2025-12-22 21:02:30 UTC
+EXPERIMENT START: 2025-12-22 21:02:30 UTC
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210230.log
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210230.log
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210230.log
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210230.log
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210230.log
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+
+
+
+
+
+==> Found 26 scenarios.
+==> Found 26 scenarios.
+==> Found 26 scenarios.
+==> Found 26 scenarios.
+==> Found 26 scenarios.
+
+
+
+
+
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+============================================================
+============================================================
+============================================================
+============================================================
+============================================================

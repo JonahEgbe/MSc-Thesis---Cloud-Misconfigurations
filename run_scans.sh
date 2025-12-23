@@ -1,110 +1,103 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-if [ $# -ne 1 ]; then
-  echo "Usage: $0 <scenario-dir>" >&2
-  exit 1
+# --------------------------------------------------
+# Usage: ./run_scans.sh <scenario-dir>
+# --------------------------------------------------
+
+SCENARIO_DIR="${1:-}"
+if [[ -z "${SCENARIO_DIR}" || ! -d "${SCENARIO_DIR}" ]]; then
+  echo "Usage: $0 <scenario-dir>"
+  exit 2
 fi
 
-SCENARIO_DIR="$1"
-SCENARIO_DIR="$(cd "$SCENARIO_DIR" && pwd)"
-SCENARIO_NAME="$(basename "$SCENARIO_DIR")"
+ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+SCENARIO_DIR="$(cd "${SCENARIO_DIR}" && pwd)"
+SCENARIO_NAME="$(basename "${SCENARIO_DIR}")"
 
-echo "==> Scenario directory: $SCENARIO_DIR"
-
-cd "$SCENARIO_DIR"
+POLICY_DIR="${ROOT_DIR}/policy/terraform"
 
 LOG_DIR="${SCENARIO_DIR}/scan_logs"
-mkdir -p "$LOG_DIR"
+mkdir -p "${LOG_DIR}"
 
-TS="$(date -u +%Y-%m-%d\ %H:%M:%S\ UTC)"
 MASTER_LOG="${LOG_DIR}/FULL_${SCENARIO_NAME}.log"
+TFPLAN_BIN="${SCENARIO_DIR}/tfplan.binary"
+TFPLAN_JSON="${SCENARIO_DIR}/tfplan.json"
 
-# Capture EVERYTHING (terminal + master log)
-exec > >(tee -a "$MASTER_LOG") 2>&1
+CHECKOV_OUT="${LOG_DIR}/checkov_${SCENARIO_NAME}.txt"
+TFSEC_OUT="${LOG_DIR}/tfsec_${SCENARIO_NAME}.txt"
+TERRASCAN_OUT="${LOG_DIR}/terrascan_${SCENARIO_NAME}.txt"
+CONFTEST_OUT="${LOG_DIR}/conftest_${SCENARIO_NAME}.txt"
 
-echo
+# Log everything (stdout+stderr) into the scenario master log
+exec > >(tee -a "${MASTER_LOG}") 2>&1
+
 echo "============================================================"
-echo "FULL SCAN LOG START: $TS"
-echo "Scenario: $SCENARIO_NAME"
-echo "Path: $SCENARIO_DIR"
+echo "FULL SCAN START: $(date -u '+%Y-%m-%d %H:%M:%S UTC')"
+echo "Scenario: ${SCENARIO_NAME}"
+echo "Path: ${SCENARIO_DIR}"
+echo "Policy: ${POLICY_DIR}"
 echo "============================================================"
 echo
 
-echo "===== [1] Terraform init ====="
+cd "${SCENARIO_DIR}"
 
-# Ensure Terraform plugin cache exists to avoid warnings (Codespaces/CI)
-if [ -z "${TF_PLUGIN_CACHE_DIR:-}" ]; then
-  export TF_PLUGIN_CACHE_DIR="/tmp/terraform-plugin-cache"
+# --------------------------------------------------
+# Terraform
+# --------------------------------------------------
+terraform init -input=false -no-color
+terraform validate -no-color
+
+PLAN_ARGS=(plan -input=false -no-color -out "${TFPLAN_BIN}")
+if [[ -f terraform.tfvars ]]; then
+  PLAN_ARGS+=( -var-file=terraform.tfvars )
 fi
-mkdir -p "$TF_PLUGIN_CACHE_DIR" || true
+terraform "${PLAN_ARGS[@]}"
 
-terraform init -input=false -upgrade
+terraform show -json "${TFPLAN_BIN}" > "${TFPLAN_JSON}"
 
-echo "===== [2] Terraform validate ====="
-terraform validate
-
-echo "===== [3] Terraform plan ====="
-PLAN_ARGS=(-refresh=false -out=tfplan.binary)
-
-# Only use terraform.tfvars if it exists
-if [ -f "terraform.tfvars" ]; then
-  PLAN_ARGS+=(-var-file="terraform.tfvars")
-fi
-
-terraform plan "${PLAN_ARGS[@]}"
-
-echo
-echo "===== [4] Export plan to JSON ====="
-terraform show -json tfplan.binary > tfplan.json
-
-# Do not stop the script if scanners fail
+# --------------------------------------------------
+# Scanners (findings allowed; do not fail experiment)
+# --------------------------------------------------
 set +e
 
-# Filenames expected by aggregator (scenario root)
-CHK_TF_ROOT="checkov_${SCENARIO_NAME}.txt"
-TFSEC_ROOT="tfsec_${SCENARIO_NAME}.txt"
-TERRASCAN_ROOT="terrascan_${SCENARIO_NAME}.txt"
-CONFTEST_ROOT="conftest_${SCENARIO_NAME}.txt"
+# Checkov against tfplan.json
+checkov -f "tfplan.json" -o cli > "${CHECKOV_OUT}" 2>&1
+rc_checkov=$?
 
-echo
-echo "===== [5] Checkov ====="
-checkov -d . --skip-download 2>&1 | tee "$CHK_TF_ROOT" | tee "${LOG_DIR}/${CHK_TF_ROOT}" >/dev/null
-CHECKOV_RC=${PIPESTATUS[0]}
-
-echo
-echo "===== [6] tfsec ====="
-TFSEC_ARGS=(.)
-if [ -f "terraform.tfvars" ]; then
-  TFSEC_ARGS+=(--tfvars-file "terraform.tfvars")
+# tfsec: scan current directory, but include tfvars when present
+if [[ -f terraform.tfvars ]]; then
+  tfsec . --tfvars-file terraform.tfvars > "${TFSEC_OUT}" 2>&1
+else
+  tfsec . > "${TFSEC_OUT}" 2>&1
 fi
-tfsec "${TFSEC_ARGS[@]}" 2>&1 | tee "$TFSEC_ROOT" | tee "${LOG_DIR}/${TFSEC_ROOT}" >/dev/null
-TFSEC_RC=${PIPESTATUS[0]}
+rc_tfsec=$?
 
-echo
-echo "===== [7] Terrascan ====="
-terrascan scan -d . --iac-type terraform \
-  --skip-dirs "github_conf,scan_logs,.terraform" 2>&1 | tee "$TERRASCAN_ROOT" | tee "${LOG_DIR}/${TERRASCAN_ROOT}" >/dev/null
-TERRASCAN_RC=${PIPESTATUS[0]}
+# Terrascan: scan current directory, skip scan_logs + .terraform
+terrascan scan -i terraform -t aws -d . -o human --skip-dirs "scan_logs,.terraform" > "${TERRASCAN_OUT}" 2>&1
+rc_terrascan=$?
 
-echo
-echo "===== [8] Conftest ====="
-# Resolve policy path relative to repo root (robust)
-REPO_ROOT="$(cd "$(dirname "$0")" && pwd)"
-conftest test tfplan.json --policy "${REPO_ROOT}/policy/terraform" 2>&1 | tee "$CONFTEST_ROOT" | tee "${LOG_DIR}/${CONFTEST_ROOT}" >/dev/null
-CONFTEST_RC=${PIPESTATUS[0]}
+# Conftest: exact style (tfplan.json + policy/terraform/)
+conftest test tfplan.json --policy "${POLICY_DIR}/" > "${CONFTEST_OUT}" 2>&1
+rc_conftest=$?
+
+set -e
 
 echo
 echo "============================================================"
-echo "FULL SCAN LOG END: $(date -u +%Y-%m-%d\ %H:%M:%S\ UTC)"
-echo "Return codes:"
-echo "  checkov   = ${CHECKOV_RC}"
-echo "  tfsec     = ${TFSEC_RC}"
-echo "  terrascan = ${TERRASCAN_RC}"
-echo "  conftest  = ${CONFTEST_RC}"
-echo "Master log: ${MASTER_LOG}"
+echo "FULL SCAN END: $(date -u '+%Y-%m-%d %H:%M:%S UTC')"
+echo "Return codes (non-fatal):"
+echo "  checkov   = ${rc_checkov}"
+echo "  tfsec     = ${rc_tfsec}"
+echo "  terrascan = ${rc_terrascan}"
+echo "  conftest  = ${rc_conftest}"
+echo "Outputs:"
+echo "  ${CHECKOV_OUT}"
+echo "  ${TFSEC_OUT}"
+echo "  ${TERRASCAN_OUT}"
+echo "  ${CONFTEST_OUT}"
+echo "Master log:"
+echo "  ${MASTER_LOG}"
 echo "============================================================"
-echo
 
-# Always exit 0 (Option A: no gating; you want outputs)
 exit 0

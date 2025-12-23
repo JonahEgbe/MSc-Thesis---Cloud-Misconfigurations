@@ -714,3 +714,433 @@ Return codes:
 Master log: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/net/NET-BENIGN-002-vpc-flow-logs-enabled/scan_logs/FULL_NET-BENIGN-002-vpc-flow-logs-enabled.log
 ============================================================
 
+============================================================
+FULL SCAN START: 2025-12-22 22:45:19 UTC
+Scenario: NET-BENIGN-002-vpc-flow-logs-enabled
+Path: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/net/NET-BENIGN-002-vpc-flow-logs-enabled
+Policy: /workspaces/MSc-Thesis---Cloud-Misconfigurations/policy/terraform
+============================================================
+
+Initializing the backend...
+Initializing provider plugins...
+- Reusing previous version of hashicorp/random from the dependency lock file
+- Reusing previous version of hashicorp/aws from the dependency lock file
+- Using previously-installed hashicorp/random v3.7.2
+- Using previously-installed hashicorp/aws v5.100.0
+
+Terraform has been successfully initialized!
+
+You may now begin working with Terraform. Try running "terraform plan" to see
+any changes that are required for your infrastructure. All Terraform commands
+should now work.
+
+If you ever set or change modules or backend configuration for Terraform,
+rerun this command to reinitialize your working directory. If you forget, other
+commands will detect it and remind you to do so if necessary.
+Success! The configuration is valid.
+
+
+Terraform used the selected providers to generate the following execution
+plan. Resource actions are indicated with the following symbols:
+  + create
+
+Terraform will perform the following actions:
+
+  # aws_cloudwatch_log_group.flowlogs will be created
+  + resource "aws_cloudwatch_log_group" "flowlogs" {
+      + arn               = (known after apply)
+      + id                = (known after apply)
+      + log_group_class   = (known after apply)
+      + name              = (known after apply)
+      + name_prefix       = (known after apply)
+      + retention_in_days = 30
+      + skip_destroy      = false
+      + tags              = {
+          + "cis_controls" = "VPC.2"
+          + "domain"       = "NET"
+          + "scenario_id"  = "NET-BENIGN-002-vpc-flow-logs-enabled"
+          + "type"         = "BENIGN"
+        }
+      + tags_all          = {
+          + "cis_controls" = "VPC.2"
+          + "domain"       = "NET"
+          + "scenario_id"  = "NET-BENIGN-002-vpc-flow-logs-enabled"
+          + "type"         = "BENIGN"
+        }
+    }
+
+  # aws_flow_log.vpc_flow will be created
+  + resource "aws_flow_log" "vpc_flow" {
+      + arn                      = (known after apply)
+      + iam_role_arn             = (known after apply)
+      + id                       = (known after apply)
+      + log_destination          = (known after apply)
+      + log_destination_type     = "cloud-watch-logs"
+      + log_format               = (known after apply)
+      + log_group_name           = (known after apply)
+      + max_aggregation_interval = 600
+      + tags                     = {
+          + "cis_controls" = "VPC.2"
+          + "domain"       = "NET"
+          + "scenario_id"  = "NET-BENIGN-002-vpc-flow-logs-enabled"
+          + "type"         = "BENIGN"
+        }
+      + tags_all                 = {
+          + "cis_controls" = "VPC.2"
+          + "domain"       = "NET"
+          + "scenario_id"  = "NET-BENIGN-002-vpc-flow-logs-enabled"
+          + "type"         = "BENIGN"
+        }
+      + traffic_type             = "ALL"
+      + vpc_id                   = (known after apply)
+    }
+
+  # aws_iam_role.flowlogs_role will be created
+  + resource "aws_iam_role" "flowlogs_role" {
+      + arn                   = (known after apply)
+      + assume_role_policy    = jsonencode(
+            {
+              + Statement = [
+                  + {
+                      + Action    = "sts:AssumeRole"
+                      + Effect    = "Allow"
+                      + Principal = {
+                          + Service = "vpc-flow-logs.amazonaws.com"
+                        }
+                    },
+                ]
+              + Version   = "2012-10-17"
+            }
+        )
+      + create_date           = (known after apply)
+      + force_detach_policies = false
+      + id                    = (known after apply)
+      + managed_policy_arns   = (known after apply)
+      + max_session_duration  = 3600
+      + name                  = (known after apply)
+      + name_prefix           = (known after apply)
+      + path                  = "/"
+      + tags                  = {
+          + "cis_controls" = "VPC.2"
+          + "domain"       = "NET"
+          + "scenario_id"  = "NET-BENIGN-002-vpc-flow-logs-enabled"
+          + "type"         = "BENIGN"
+        }
+      + tags_all              = {
+          + "cis_controls" = "VPC.2"
+          + "domain"       = "NET"
+          + "scenario_id"  = "NET-BENIGN-002-vpc-flow-logs-enabled"
+          + "type"         = "BENIGN"
+        }
+      + unique_id             = (known after apply)
+
+      + inline_policy (known after apply)
+    }
+
+  # aws_iam_role_policy.flowlogs_policy will be created
+  + resource "aws_iam_role_policy" "flowlogs_policy" {
+      + id          = (known after apply)
+      + name        = (known after apply)
+      + name_prefix = (known after apply)
+      + policy      = jsonencode(
+            {
+              + Statement = [
+                  + {
+                      + Action   = [
+                          + "logs:CreateLogStream",
+                          + "logs:PutLogEvents",
+                          + "logs:DescribeLogGroups",
+                          + "logs:DescribeLogStreams",
+                        ]
+                      + Effect   = "Allow"
+                      + Resource = "*"
+                    },
+                ]
+              + Version   = "2012-10-17"
+            }
+        )
+      + role        = (known after apply)
+    }
+
+  # aws_vpc.vpc will be created
+  + resource "aws_vpc" "vpc" {
+      + arn                                  = (known after apply)
+      + cidr_block                           = "10.53.0.0/16"
+      + default_network_acl_id               = (known after apply)
+      + default_route_table_id               = (known after apply)
+      + default_security_group_id            = (known after apply)
+      + dhcp_options_id                      = (known after apply)
+      + enable_dns_hostnames                 = true
+      + enable_dns_support                   = true
+      + enable_network_address_usage_metrics = (known after apply)
+      + id                                   = (known after apply)
+      + instance_tenancy                     = "default"
+      + ipv6_association_id                  = (known after apply)
+      + ipv6_cidr_block                      = (known after apply)
+      + ipv6_cidr_block_network_border_group = (known after apply)
+      + main_route_table_id                  = (known after apply)
+      + owner_id                             = (known after apply)
+      + tags                                 = {
+          + "cis_controls" = "VPC.2"
+          + "domain"       = "NET"
+          + "scenario_id"  = "NET-BENIGN-002-vpc-flow-logs-enabled"
+          + "type"         = "BENIGN"
+        }
+      + tags_all                             = {
+          + "cis_controls" = "VPC.2"
+          + "domain"       = "NET"
+          + "scenario_id"  = "NET-BENIGN-002-vpc-flow-logs-enabled"
+          + "type"         = "BENIGN"
+        }
+    }
+
+  # random_id.suffix will be created
+  + resource "random_id" "suffix" {
+      + b64_std     = (known after apply)
+      + b64_url     = (known after apply)
+      + byte_length = 4
+      + dec         = (known after apply)
+      + hex         = (known after apply)
+      + id          = (known after apply)
+    }
+
+Plan: 6 to add, 0 to change, 0 to destroy.
+
+─────────────────────────────────────────────────────────────────────────────
+
+Saved the plan to:
+/workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/net/NET-BENIGN-002-vpc-flow-logs-enabled/tfplan.binary
+
+To perform exactly these actions, run the following command to apply:
+    terraform apply "/workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/net/NET-BENIGN-002-vpc-flow-logs-enabled/tfplan.binary"
+
+============================================================
+FULL SCAN END: 2025-12-22 22:45:34 UTC
+Return codes (non-fatal):
+  checkov   = 1
+  tfsec     = 1
+  terrascan = 1
+  conftest  = 1
+Outputs:
+  /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/net/NET-BENIGN-002-vpc-flow-logs-enabled/scan_logs/checkov_NET-BENIGN-002-vpc-flow-logs-enabled.txt
+  /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/net/NET-BENIGN-002-vpc-flow-logs-enabled/scan_logs/tfsec_NET-BENIGN-002-vpc-flow-logs-enabled.txt
+  /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/net/NET-BENIGN-002-vpc-flow-logs-enabled/scan_logs/terrascan_NET-BENIGN-002-vpc-flow-logs-enabled.txt
+  /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/net/NET-BENIGN-002-vpc-flow-logs-enabled/scan_logs/conftest_NET-BENIGN-002-vpc-flow-logs-enabled.txt
+Master log:
+  /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/net/NET-BENIGN-002-vpc-flow-logs-enabled/scan_logs/FULL_NET-BENIGN-002-vpc-flow-logs-enabled.log
+============================================================
+============================================================
+FULL SCAN START: 2025-12-23 00:45:21 UTC
+Scenario: NET-BENIGN-002-vpc-flow-logs-enabled
+Path: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/net/NET-BENIGN-002-vpc-flow-logs-enabled
+Policy: /workspaces/MSc-Thesis---Cloud-Misconfigurations/policy/terraform
+============================================================
+
+Initializing the backend...
+Initializing provider plugins...
+- Reusing previous version of hashicorp/aws from the dependency lock file
+- Reusing previous version of hashicorp/random from the dependency lock file
+- Using previously-installed hashicorp/aws v5.100.0
+- Using previously-installed hashicorp/random v3.7.2
+
+Terraform has been successfully initialized!
+
+You may now begin working with Terraform. Try running "terraform plan" to see
+any changes that are required for your infrastructure. All Terraform commands
+should now work.
+
+If you ever set or change modules or backend configuration for Terraform,
+rerun this command to reinitialize your working directory. If you forget, other
+commands will detect it and remind you to do so if necessary.
+Success! The configuration is valid.
+
+
+Terraform used the selected providers to generate the following execution
+plan. Resource actions are indicated with the following symbols:
+  + create
+
+Terraform will perform the following actions:
+
+  # aws_cloudwatch_log_group.flowlogs will be created
+  + resource "aws_cloudwatch_log_group" "flowlogs" {
+      + arn               = (known after apply)
+      + id                = (known after apply)
+      + log_group_class   = (known after apply)
+      + name              = (known after apply)
+      + name_prefix       = (known after apply)
+      + retention_in_days = 30
+      + skip_destroy      = false
+      + tags              = {
+          + "cis_controls" = "VPC.2"
+          + "domain"       = "NET"
+          + "scenario_id"  = "NET-BENIGN-002-vpc-flow-logs-enabled"
+          + "type"         = "BENIGN"
+        }
+      + tags_all          = {
+          + "cis_controls" = "VPC.2"
+          + "domain"       = "NET"
+          + "scenario_id"  = "NET-BENIGN-002-vpc-flow-logs-enabled"
+          + "type"         = "BENIGN"
+        }
+    }
+
+  # aws_flow_log.vpc_flow will be created
+  + resource "aws_flow_log" "vpc_flow" {
+      + arn                      = (known after apply)
+      + iam_role_arn             = (known after apply)
+      + id                       = (known after apply)
+      + log_destination          = (known after apply)
+      + log_destination_type     = "cloud-watch-logs"
+      + log_format               = (known after apply)
+      + log_group_name           = (known after apply)
+      + max_aggregation_interval = 600
+      + tags                     = {
+          + "cis_controls" = "VPC.2"
+          + "domain"       = "NET"
+          + "scenario_id"  = "NET-BENIGN-002-vpc-flow-logs-enabled"
+          + "type"         = "BENIGN"
+        }
+      + tags_all                 = {
+          + "cis_controls" = "VPC.2"
+          + "domain"       = "NET"
+          + "scenario_id"  = "NET-BENIGN-002-vpc-flow-logs-enabled"
+          + "type"         = "BENIGN"
+        }
+      + traffic_type             = "ALL"
+      + vpc_id                   = (known after apply)
+    }
+
+  # aws_iam_role.flowlogs_role will be created
+  + resource "aws_iam_role" "flowlogs_role" {
+      + arn                   = (known after apply)
+      + assume_role_policy    = jsonencode(
+            {
+              + Statement = [
+                  + {
+                      + Action    = "sts:AssumeRole"
+                      + Effect    = "Allow"
+                      + Principal = {
+                          + Service = "vpc-flow-logs.amazonaws.com"
+                        }
+                    },
+                ]
+              + Version   = "2012-10-17"
+            }
+        )
+      + create_date           = (known after apply)
+      + force_detach_policies = false
+      + id                    = (known after apply)
+      + managed_policy_arns   = (known after apply)
+      + max_session_duration  = 3600
+      + name                  = (known after apply)
+      + name_prefix           = (known after apply)
+      + path                  = "/"
+      + tags                  = {
+          + "cis_controls" = "VPC.2"
+          + "domain"       = "NET"
+          + "scenario_id"  = "NET-BENIGN-002-vpc-flow-logs-enabled"
+          + "type"         = "BENIGN"
+        }
+      + tags_all              = {
+          + "cis_controls" = "VPC.2"
+          + "domain"       = "NET"
+          + "scenario_id"  = "NET-BENIGN-002-vpc-flow-logs-enabled"
+          + "type"         = "BENIGN"
+        }
+      + unique_id             = (known after apply)
+
+      + inline_policy (known after apply)
+    }
+
+  # aws_iam_role_policy.flowlogs_policy will be created
+  + resource "aws_iam_role_policy" "flowlogs_policy" {
+      + id          = (known after apply)
+      + name        = (known after apply)
+      + name_prefix = (known after apply)
+      + policy      = jsonencode(
+            {
+              + Statement = [
+                  + {
+                      + Action   = [
+                          + "logs:CreateLogStream",
+                          + "logs:PutLogEvents",
+                          + "logs:DescribeLogGroups",
+                          + "logs:DescribeLogStreams",
+                        ]
+                      + Effect   = "Allow"
+                      + Resource = "*"
+                    },
+                ]
+              + Version   = "2012-10-17"
+            }
+        )
+      + role        = (known after apply)
+    }
+
+  # aws_vpc.vpc will be created
+  + resource "aws_vpc" "vpc" {
+      + arn                                  = (known after apply)
+      + cidr_block                           = "10.53.0.0/16"
+      + default_network_acl_id               = (known after apply)
+      + default_route_table_id               = (known after apply)
+      + default_security_group_id            = (known after apply)
+      + dhcp_options_id                      = (known after apply)
+      + enable_dns_hostnames                 = true
+      + enable_dns_support                   = true
+      + enable_network_address_usage_metrics = (known after apply)
+      + id                                   = (known after apply)
+      + instance_tenancy                     = "default"
+      + ipv6_association_id                  = (known after apply)
+      + ipv6_cidr_block                      = (known after apply)
+      + ipv6_cidr_block_network_border_group = (known after apply)
+      + main_route_table_id                  = (known after apply)
+      + owner_id                             = (known after apply)
+      + tags                                 = {
+          + "cis_controls" = "VPC.2"
+          + "domain"       = "NET"
+          + "scenario_id"  = "NET-BENIGN-002-vpc-flow-logs-enabled"
+          + "type"         = "BENIGN"
+        }
+      + tags_all                             = {
+          + "cis_controls" = "VPC.2"
+          + "domain"       = "NET"
+          + "scenario_id"  = "NET-BENIGN-002-vpc-flow-logs-enabled"
+          + "type"         = "BENIGN"
+        }
+    }
+
+  # random_id.suffix will be created
+  + resource "random_id" "suffix" {
+      + b64_std     = (known after apply)
+      + b64_url     = (known after apply)
+      + byte_length = 4
+      + dec         = (known after apply)
+      + hex         = (known after apply)
+      + id          = (known after apply)
+    }
+
+Plan: 6 to add, 0 to change, 0 to destroy.
+
+─────────────────────────────────────────────────────────────────────────────
+
+Saved the plan to:
+/workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/net/NET-BENIGN-002-vpc-flow-logs-enabled/tfplan.binary
+
+To perform exactly these actions, run the following command to apply:
+    terraform apply "/workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/net/NET-BENIGN-002-vpc-flow-logs-enabled/tfplan.binary"
+
+============================================================
+FULL SCAN END: 2025-12-23 00:45:36 UTC
+Return codes (non-fatal):
+  checkov   = 1
+  tfsec     = 1
+  terrascan = 1
+  conftest  = 0
+Outputs:
+  /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/net/NET-BENIGN-002-vpc-flow-logs-enabled/scan_logs/checkov_NET-BENIGN-002-vpc-flow-logs-enabled.txt
+  /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/net/NET-BENIGN-002-vpc-flow-logs-enabled/scan_logs/tfsec_NET-BENIGN-002-vpc-flow-logs-enabled.txt
+  /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/net/NET-BENIGN-002-vpc-flow-logs-enabled/scan_logs/terrascan_NET-BENIGN-002-vpc-flow-logs-enabled.txt
+  /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/net/NET-BENIGN-002-vpc-flow-logs-enabled/scan_logs/conftest_NET-BENIGN-002-vpc-flow-logs-enabled.txt
+Master log:
+  /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/net/NET-BENIGN-002-vpc-flow-logs-enabled/scan_logs/FULL_NET-BENIGN-002-vpc-flow-logs-enabled.log
+============================================================

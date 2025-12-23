@@ -1,24 +1,32 @@
 package main
 
-# IAM-1: Block AdministratorAccess attachment (managed policy)
+# IAM-1: Block AdministratorAccess attachment (only for IAM domain)
 deny contains msg if {
+  applies_to_domain("IAM")
+
   some i
   rc := input.resource_changes[i]
   rc.type == "aws_iam_role_policy_attachment"
   contains(lower(rc.change.after.policy_arn), "administratoraccess")
+
   msg := sprintf("IAM role policy attachment %s uses AdministratorAccess (NOT allowed)", [rc.address])
 }
 
 deny contains msg if {
+  applies_to_domain("IAM")
+
   some i
   rc := input.resource_changes[i]
   rc.type == "aws_iam_user_policy_attachment"
   contains(lower(rc.change.after.policy_arn), "administratoraccess")
+
   msg := sprintf("IAM user policy attachment %s uses AdministratorAccess (NOT allowed)", [rc.address])
 }
 
-# IAM-2: Inline policy with wildcard action AND wildcard resource (high-risk)
+# IAM-2: Inline policy wildcard action + wildcard resource (only for IAM domain)
 deny contains msg if {
+  applies_to_domain("IAM")
+
   some i
   rc := input.resource_changes[i]
   rc.type == "aws_iam_role_policy"
@@ -31,10 +39,13 @@ deny contains msg if {
   s := pol.Statement[j]
   allows_wildcard_action(s)
   allows_wildcard_resource(s)
+
   msg := sprintf("IAM inline policy %s allows Action='*' and Resource='*' (NOT allowed)", [rc.address])
 }
 
 deny contains msg if {
+  applies_to_domain("IAM")
+
   some i
   rc := input.resource_changes[i]
   rc.type == "aws_iam_policy"
@@ -47,11 +58,14 @@ deny contains msg if {
   s := pol.Statement[j]
   allows_wildcard_action(s)
   allows_wildcard_resource(s)
+
   msg := sprintf("IAM managed policy %s allows Action='*' and Resource='*' (NOT allowed)", [rc.address])
 }
 
-# IAM-3: AssumeRole policy with overly broad principal (Principal="*")
+# IAM-3: Trust policy principal '*' (only for IAM domain)
 deny contains msg if {
+  applies_to_domain("IAM")
+
   some i
   rc := input.resource_changes[i]
   rc.type == "aws_iam_role"
@@ -103,7 +117,6 @@ principal_is_star(p) if {
 
 principal_is_star(p) if {
   is_object(p)
-  # Common shapes: {"AWS":"*"} or {"Service":"*"}
   some k
   v := p[k]
   is_string(v)
@@ -117,3 +130,40 @@ principal_is_star(p) if {
   is_array(v)
   v[_] == "*"
 }
+
+# Domain gating (detect domain from tags in plan)
+applies_to_domain(d) if {
+  domains := scenario_domains
+  domains[d]
+}
+
+scenario_domains := {d |
+  some i
+  rc := input.resource_changes[i]
+  after := rc.change.after
+  d := extract_domain_from_after(after)
+  d != ""
+}
+
+scenario_domains := {d |
+  some i
+  res := input.planned_values.root_module.resources[i]
+  vals := res.values
+  d := extract_domain_from_after(vals)
+  d != ""
+}
+
+extract_domain_from_after(obj) := d if {
+  is_object(obj)
+  tags := obj.tags
+  is_object(tags)
+  d := tags.domain
+  is_string(d)
+} else := d if {
+  is_object(obj)
+  tags := obj.tags_all
+  is_object(tags)
+  d := tags.domain
+  is_string(d)
+} else := ""
+

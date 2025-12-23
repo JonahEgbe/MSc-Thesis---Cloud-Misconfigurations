@@ -1,0 +1,4161 @@
+============================================================
+EXPERIMENT START: 2025-12-23 00:41:09 UTC
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251223_004109.log
+============================================================
+
+Found 26 scenarios
+
+------------------------------------------------------------
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+------------------------------------------------------------
+============================================================
+FULL SCAN START: 2025-12-23 00:41:09 UTC
+Scenario: CMP-BENIGN-001-ssm-enabled-on-ec2
+Path: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+Policy: /workspaces/MSc-Thesis---Cloud-Misconfigurations/policy/terraform
+============================================================
+
+There are some problems with the CLI configuration:
+╷
+│ Error: The specified plugin cache dir /tmp/terraform-plugin-cache cannot be opened: stat /tmp/terraform-plugin-cache: no such file or directory
+│
+╵
+
+As a result of the above problems, Terraform may not behave as intended.
+
+
+Initializing the backend...
+Initializing provider plugins...
+- Reusing previous version of hashicorp/random from the dependency lock file
+- Reusing previous version of hashicorp/aws from the dependency lock file
+- Installing hashicorp/random v3.7.2...
+- Installed hashicorp/random v3.7.2 (signed by HashiCorp)
+- Installing hashicorp/aws v5.100.0...
+- Installed hashicorp/aws v5.100.0 (signed by HashiCorp)
+
+Terraform has been successfully initialized!
+
+You may now begin working with Terraform. Try running "terraform plan" to see
+any changes that are required for your infrastructure. All Terraform commands
+should now work.
+
+If you ever set or change modules or backend configuration for Terraform,
+rerun this command to reinitialize your working directory. If you forget, other
+commands will detect it and remind you to do so if necessary.
+Success! The configuration is valid.
+
+data.aws_ami.al2: Reading...
+data.aws_ami.al2: Read complete after 0s [id=ami-0ad8de99ac93341e7]
+
+Terraform used the selected providers to generate the following execution
+plan. Resource actions are indicated with the following symbols:
+  + create
+
+Terraform will perform the following actions:
+
+  # aws_iam_instance_profile.profile will be created
+  + resource "aws_iam_instance_profile" "profile" {
+      + arn         = (known after apply)
+      + create_date = (known after apply)
+      + id          = (known after apply)
+      + name        = (known after apply)
+      + name_prefix = (known after apply)
+      + path        = "/"
+      + role        = (known after apply)
+      + tags        = {
+          + "cis_controls" = "SSM.1"
+          + "domain"       = "CMP"
+          + "scenario_id"  = "CMP-BENIGN-001-ssm-enabled-on-ec2"
+          + "type"         = "BENIGN"
+        }
+      + tags_all    = {
+          + "cis_controls" = "SSM.1"
+          + "domain"       = "CMP"
+          + "scenario_id"  = "CMP-BENIGN-001-ssm-enabled-on-ec2"
+          + "type"         = "BENIGN"
+        }
+      + unique_id   = (known after apply)
+    }
+
+  # aws_iam_role.ssm_role will be created
+  + resource "aws_iam_role" "ssm_role" {
+      + arn                   = (known after apply)
+      + assume_role_policy    = jsonencode(
+            {
+              + Statement = [
+                  + {
+                      + Action    = "sts:AssumeRole"
+                      + Effect    = "Allow"
+                      + Principal = {
+                          + Service = "ec2.amazonaws.com"
+                        }
+                    },
+                ]
+              + Version   = "2012-10-17"
+            }
+        )
+      + create_date           = (known after apply)
+      + force_detach_policies = false
+      + id                    = (known after apply)
+      + managed_policy_arns   = (known after apply)
+      + max_session_duration  = 3600
+      + name                  = (known after apply)
+      + name_prefix           = (known after apply)
+      + path                  = "/"
+      + tags                  = {
+          + "cis_controls" = "SSM.1"
+          + "domain"       = "CMP"
+          + "scenario_id"  = "CMP-BENIGN-001-ssm-enabled-on-ec2"
+          + "type"         = "BENIGN"
+        }
+      + tags_all              = {
+          + "cis_controls" = "SSM.1"
+          + "domain"       = "CMP"
+          + "scenario_id"  = "CMP-BENIGN-001-ssm-enabled-on-ec2"
+          + "type"         = "BENIGN"
+        }
+      + unique_id             = (known after apply)
+
+      + inline_policy (known after apply)
+    }
+
+  # aws_iam_role_policy_attachment.ssm_core will be created
+  + resource "aws_iam_role_policy_attachment" "ssm_core" {
+      + id         = (known after apply)
+      + policy_arn = "arn:aws:iam::aws:policy/AmazonSSMManagedInstanceCore"
+      + role       = (known after apply)
+    }
+
+  # aws_instance.ec2 will be created
+  + resource "aws_instance" "ec2" {
+      + ami                                  = "ami-0ad8de99ac93341e7"
+      + arn                                  = (known after apply)
+      + associate_public_ip_address          = false
+      + availability_zone                    = (known after apply)
+      + cpu_core_count                       = (known after apply)
+      + cpu_threads_per_core                 = (known after apply)
+      + disable_api_stop                     = (known after apply)
+      + disable_api_termination              = (known after apply)
+      + ebs_optimized                        = (known after apply)
+      + enable_primary_ipv6                  = (known after apply)
+      + get_password_data                    = false
+      + host_id                              = (known after apply)
+      + host_resource_group_arn              = (known after apply)
+      + iam_instance_profile                 = (known after apply)
+      + id                                   = (known after apply)
+      + instance_initiated_shutdown_behavior = (known after apply)
+      + instance_lifecycle                   = (known after apply)
+      + instance_state                       = (known after apply)
+      + instance_type                        = "t3.micro"
+      + ipv6_address_count                   = (known after apply)
+      + ipv6_addresses                       = (known after apply)
+      + key_name                             = (known after apply)
+      + monitoring                           = (known after apply)
+      + outpost_arn                          = (known after apply)
+      + password_data                        = (known after apply)
+      + placement_group                      = (known after apply)
+      + placement_partition_number           = (known after apply)
+      + primary_network_interface_id         = (known after apply)
+      + private_dns                          = (known after apply)
+      + private_ip                           = (known after apply)
+      + public_dns                           = (known after apply)
+      + public_ip                            = (known after apply)
+      + secondary_private_ips                = (known after apply)
+      + security_groups                      = (known after apply)
+      + source_dest_check                    = true
+      + spot_instance_request_id             = (known after apply)
+      + subnet_id                            = (known after apply)
+      + tags                                 = {
+          + "cis_controls" = "SSM.1"
+          + "domain"       = "CMP"
+          + "scenario_id"  = "CMP-BENIGN-001-ssm-enabled-on-ec2"
+          + "type"         = "BENIGN"
+        }
+      + tags_all                             = {
+          + "cis_controls" = "SSM.1"
+          + "domain"       = "CMP"
+          + "scenario_id"  = "CMP-BENIGN-001-ssm-enabled-on-ec2"
+          + "type"         = "BENIGN"
+        }
+      + tenancy                              = (known after apply)
+      + user_data                            = (known after apply)
+      + user_data_base64                     = (known after apply)
+      + user_data_replace_on_change          = false
+      + vpc_security_group_ids               = (known after apply)
+
+      + capacity_reservation_specification (known after apply)
+
+      + cpu_options (known after apply)
+
+      + ebs_block_device (known after apply)
+
+      + enclave_options (known after apply)
+
+      + ephemeral_block_device (known after apply)
+
+      + instance_market_options (known after apply)
+
+      + maintenance_options (known after apply)
+
+      + metadata_options (known after apply)
+
+      + network_interface (known after apply)
+
+      + private_dns_name_options (known after apply)
+
+      + root_block_device (known after apply)
+    }
+
+  # aws_security_group.sg will be created
+  + resource "aws_security_group" "sg" {
+      + arn                    = (known after apply)
+      + description            = "Managed by Terraform"
+      + egress                 = [
+          + {
+              + cidr_blocks      = [
+                  + "0.0.0.0/0",
+                ]
+              + from_port        = 0
+              + ipv6_cidr_blocks = []
+              + prefix_list_ids  = []
+              + protocol         = "-1"
+              + security_groups  = []
+              + self             = false
+              + to_port          = 0
+                # (1 unchanged attribute hidden)
+            },
+        ]
+      + id                     = (known after apply)
+      + ingress                = (known after apply)
+      + name                   = (known after apply)
+      + name_prefix            = (known after apply)
+      + owner_id               = (known after apply)
+      + revoke_rules_on_delete = false
+      + tags                   = {
+          + "cis_controls" = "SSM.1"
+          + "domain"       = "CMP"
+          + "scenario_id"  = "CMP-BENIGN-001-ssm-enabled-on-ec2"
+          + "type"         = "BENIGN"
+        }
+      + tags_all               = {
+          + "cis_controls" = "SSM.1"
+          + "domain"       = "CMP"
+          + "scenario_id"  = "CMP-BENIGN-001-ssm-enabled-on-ec2"
+          + "type"         = "BENIGN"
+        }
+      + vpc_id                 = (known after apply)
+    }
+
+  # aws_subnet.private will be created
+  + resource "aws_subnet" "private" {
+      + arn                                            = (known after apply)
+      + assign_ipv6_address_on_creation                = false
+      + availability_zone                              = "eu-west-2a"
+      + availability_zone_id                           = (known after apply)
+      + cidr_block                                     = "10.61.1.0/24"
+      + enable_dns64                                   = false
+      + enable_resource_name_dns_a_record_on_launch    = false
+      + enable_resource_name_dns_aaaa_record_on_launch = false
+      + id                                             = (known after apply)
+      + ipv6_cidr_block_association_id                 = (known after apply)
+      + ipv6_native                                    = false
+      + map_public_ip_on_launch                        = false
+      + owner_id                                       = (known after apply)
+      + private_dns_hostname_type_on_launch            = (known after apply)
+      + tags                                           = {
+          + "cis_controls" = "SSM.1"
+          + "domain"       = "CMP"
+          + "scenario_id"  = "CMP-BENIGN-001-ssm-enabled-on-ec2"
+          + "type"         = "BENIGN"
+        }
+      + tags_all                                       = {
+          + "cis_controls" = "SSM.1"
+          + "domain"       = "CMP"
+          + "scenario_id"  = "CMP-BENIGN-001-ssm-enabled-on-ec2"
+          + "type"         = "BENIGN"
+        }
+      + vpc_id                                         = (known after apply)
+    }
+
+  # aws_vpc.vpc will be created
+  + resource "aws_vpc" "vpc" {
+      + arn                                  = (known after apply)
+      + cidr_block                           = "10.61.0.0/16"
+      + default_network_acl_id               = (known after apply)
+      + default_route_table_id               = (known after apply)
+      + default_security_group_id            = (known after apply)
+      + dhcp_options_id                      = (known after apply)
+      + enable_dns_hostnames                 = true
+      + enable_dns_support                   = true
+      + enable_network_address_usage_metrics = (known after apply)
+      + id                                   = (known after apply)
+      + instance_tenancy                     = "default"
+      + ipv6_association_id                  = (known after apply)
+      + ipv6_cidr_block                      = (known after apply)
+      + ipv6_cidr_block_network_border_group = (known after apply)
+      + main_route_table_id                  = (known after apply)
+      + owner_id                             = (known after apply)
+      + tags                                 = {
+          + "cis_controls" = "SSM.1"
+          + "domain"       = "CMP"
+          + "scenario_id"  = "CMP-BENIGN-001-ssm-enabled-on-ec2"
+          + "type"         = "BENIGN"
+        }
+      + tags_all                             = {
+          + "cis_controls" = "SSM.1"
+          + "domain"       = "CMP"
+          + "scenario_id"  = "CMP-BENIGN-001-ssm-enabled-on-ec2"
+          + "type"         = "BENIGN"
+        }
+    }
+
+  # random_id.suffix will be created
+  + resource "random_id" "suffix" {
+      + b64_std     = (known after apply)
+      + b64_url     = (known after apply)
+      + byte_length = 4
+      + dec         = (known after apply)
+      + hex         = (known after apply)
+      + id          = (known after apply)
+    }
+
+Plan: 8 to add, 0 to change, 0 to destroy.
+
+─────────────────────────────────────────────────────────────────────────────
+
+Saved the plan to:
+/workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2/tfplan.binary
+
+To perform exactly these actions, run the following command to apply:
+    terraform apply "/workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2/tfplan.binary"
+
+
+------------------------------------------------------------
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-002-imdsv2-required
+------------------------------------------------------------
+============================================================
+============================================================
+FULL SCAN END: 2025-12-23 00:42:12 UTC
+Return codes (non-fatal):
+  checkov   = 1
+  tfsec     = 1
+  terrascan = 1
+  conftest  = 0
+Outputs:
+  /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2/scan_logs/checkov_CMP-BENIGN-001-ssm-enabled-on-ec2.txt
+  /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2/scan_logs/tfsec_CMP-BENIGN-001-ssm-enabled-on-ec2.txt
+  /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2/scan_logs/terrascan_CMP-BENIGN-001-ssm-enabled-on-ec2.txt
+  /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2/scan_logs/conftest_CMP-BENIGN-001-ssm-enabled-on-ec2.txt
+Master log:
+  /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2/scan_logs/FULL_CMP-BENIGN-001-ssm-enabled-on-ec2.log
+============================================================
+FULL SCAN START: 2025-12-23 00:42:12 UTC
+Scenario: CMP-BENIGN-002-imdsv2-required
+Path: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-002-imdsv2-required
+Policy: /workspaces/MSc-Thesis---Cloud-Misconfigurations/policy/terraform
+============================================================
+
+Initializing the backend...
+Initializing provider plugins...
+- Reusing previous version of hashicorp/aws from the dependency lock file
+- Reusing previous version of hashicorp/random from the dependency lock file
+- Using previously-installed hashicorp/random v3.7.2
+- Using previously-installed hashicorp/aws v5.100.0
+
+Terraform has been successfully initialized!
+
+You may now begin working with Terraform. Try running "terraform plan" to see
+any changes that are required for your infrastructure. All Terraform commands
+should now work.
+
+If you ever set or change modules or backend configuration for Terraform,
+rerun this command to reinitialize your working directory. If you forget, other
+commands will detect it and remind you to do so if necessary.
+Success! The configuration is valid.
+
+data.aws_ami.al2: Reading...
+data.aws_ami.al2: Read complete after 0s [id=ami-0ad8de99ac93341e7]
+
+Terraform used the selected providers to generate the following execution
+plan. Resource actions are indicated with the following symbols:
+  + create
+
+Terraform will perform the following actions:
+
+  # aws_instance.ec2 will be created
+  + resource "aws_instance" "ec2" {
+      + ami                                  = "ami-0ad8de99ac93341e7"
+      + arn                                  = (known after apply)
+      + associate_public_ip_address          = (known after apply)
+      + availability_zone                    = (known after apply)
+      + cpu_core_count                       = (known after apply)
+      + cpu_threads_per_core                 = (known after apply)
+      + disable_api_stop                     = (known after apply)
+      + disable_api_termination              = (known after apply)
+      + ebs_optimized                        = (known after apply)
+      + enable_primary_ipv6                  = (known after apply)
+      + get_password_data                    = false
+      + host_id                              = (known after apply)
+      + host_resource_group_arn              = (known after apply)
+      + iam_instance_profile                 = (known after apply)
+      + id                                   = (known after apply)
+      + instance_initiated_shutdown_behavior = (known after apply)
+      + instance_lifecycle                   = (known after apply)
+      + instance_state                       = (known after apply)
+      + instance_type                        = "t3.micro"
+      + ipv6_address_count                   = (known after apply)
+      + ipv6_addresses                       = (known after apply)
+      + key_name                             = (known after apply)
+      + monitoring                           = (known after apply)
+      + outpost_arn                          = (known after apply)
+      + password_data                        = (known after apply)
+      + placement_group                      = (known after apply)
+      + placement_partition_number           = (known after apply)
+      + primary_network_interface_id         = (known after apply)
+      + private_dns                          = (known after apply)
+      + private_ip                           = (known after apply)
+      + public_dns                           = (known after apply)
+      + public_ip                            = (known after apply)
+      + secondary_private_ips                = (known after apply)
+      + security_groups                      = (known after apply)
+      + source_dest_check                    = true
+      + spot_instance_request_id             = (known after apply)
+      + subnet_id                            = (known after apply)
+      + tags                                 = {
+          + "cis_controls" = "EC2.8"
+          + "domain"       = "CMP"
+          + "scenario_id"  = "CMP-BENIGN-002-imdsv2-required"
+          + "type"         = "BENIGN"
+        }
+      + tags_all                             = {
+          + "cis_controls" = "EC2.8"
+          + "domain"       = "CMP"
+          + "scenario_id"  = "CMP-BENIGN-002-imdsv2-required"
+          + "type"         = "BENIGN"
+        }
+      + tenancy                              = (known after apply)
+      + user_data                            = (known after apply)
+      + user_data_base64                     = (known after apply)
+      + user_data_replace_on_change          = false
+      + vpc_security_group_ids               = (known after apply)
+
+      + capacity_reservation_specification (known after apply)
+
+      + cpu_options (known after apply)
+
+      + ebs_block_device (known after apply)
+
+      + enclave_options (known after apply)
+
+      + ephemeral_block_device (known after apply)
+
+      + instance_market_options (known after apply)
+
+      + maintenance_options (known after apply)
+
+      + metadata_options {
+          + http_endpoint               = "enabled"
+          + http_protocol_ipv6          = "disabled"
+          + http_put_response_hop_limit = (known after apply)
+          + http_tokens                 = "required"
+          + instance_metadata_tags      = (known after apply)
+        }
+
+      + network_interface (known after apply)
+
+      + private_dns_name_options (known after apply)
+
+      + root_block_device (known after apply)
+    }
+
+  # random_id.suffix will be created
+  + resource "random_id" "suffix" {
+      + b64_std     = (known after apply)
+      + b64_url     = (known after apply)
+      + byte_length = 4
+      + dec         = (known after apply)
+      + hex         = (known after apply)
+      + id          = (known after apply)
+    }
+
+Plan: 2 to add, 0 to change, 0 to destroy.
+
+─────────────────────────────────────────────────────────────────────────────
+
+Saved the plan to:
+/workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-002-imdsv2-required/tfplan.binary
+
+To perform exactly these actions, run the following command to apply:
+    terraform apply "/workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-002-imdsv2-required/tfplan.binary"
+
+============================================================
+FULL SCAN END: 2025-12-23 00:42:29 UTC
+Return codes (non-fatal):
+  checkov   = 1
+  tfsec     = 1
+  terrascan = 1
+  conftest  = 0
+Outputs:
+  /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-002-imdsv2-required/scan_logs/checkov_CMP-BENIGN-002-imdsv2-required.txt
+  /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-002-imdsv2-required/scan_logs/tfsec_CMP-BENIGN-002-imdsv2-required.txt
+  /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-002-imdsv2-required/scan_logs/terrascan_CMP-BENIGN-002-imdsv2-required.txt
+  /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-002-imdsv2-required/scan_logs/conftest_CMP-BENIGN-002-imdsv2-required.txt
+Master log:
+  /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-002-imdsv2-required/scan_logs/FULL_CMP-BENIGN-002-imdsv2-required.log
+============================================================
+
+------------------------------------------------------------
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-MISC-001-ssm-disabled-on-ec2
+------------------------------------------------------------
+============================================================
+FULL SCAN START: 2025-12-23 00:42:29 UTC
+Scenario: CMP-MISC-001-ssm-disabled-on-ec2
+Path: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-MISC-001-ssm-disabled-on-ec2
+Policy: /workspaces/MSc-Thesis---Cloud-Misconfigurations/policy/terraform
+============================================================
+
+Initializing the backend...
+Initializing provider plugins...
+- Reusing previous version of hashicorp/random from the dependency lock file
+- Reusing previous version of hashicorp/aws from the dependency lock file
+- Using previously-installed hashicorp/random v3.7.2
+- Using previously-installed hashicorp/aws v5.100.0
+
+Terraform has been successfully initialized!
+
+You may now begin working with Terraform. Try running "terraform plan" to see
+any changes that are required for your infrastructure. All Terraform commands
+should now work.
+
+If you ever set or change modules or backend configuration for Terraform,
+rerun this command to reinitialize your working directory. If you forget, other
+commands will detect it and remind you to do so if necessary.
+Success! The configuration is valid.
+
+data.aws_ami.al2: Reading...
+data.aws_ami.al2: Read complete after 1s [id=ami-0ad8de99ac93341e7]
+
+Terraform used the selected providers to generate the following execution
+plan. Resource actions are indicated with the following symbols:
+  + create
+
+Terraform will perform the following actions:
+
+  # aws_instance.ec2 will be created
+  + resource "aws_instance" "ec2" {
+      + ami                                  = "ami-0ad8de99ac93341e7"
+      + arn                                  = (known after apply)
+      + associate_public_ip_address          = false
+      + availability_zone                    = (known after apply)
+      + cpu_core_count                       = (known after apply)
+      + cpu_threads_per_core                 = (known after apply)
+      + disable_api_stop                     = (known after apply)
+      + disable_api_termination              = (known after apply)
+      + ebs_optimized                        = (known after apply)
+      + enable_primary_ipv6                  = (known after apply)
+      + get_password_data                    = false
+      + host_id                              = (known after apply)
+      + host_resource_group_arn              = (known after apply)
+      + iam_instance_profile                 = (known after apply)
+      + id                                   = (known after apply)
+      + instance_initiated_shutdown_behavior = (known after apply)
+      + instance_lifecycle                   = (known after apply)
+      + instance_state                       = (known after apply)
+      + instance_type                        = "t3.micro"
+      + ipv6_address_count                   = (known after apply)
+      + ipv6_addresses                       = (known after apply)
+      + key_name                             = (known after apply)
+      + monitoring                           = (known after apply)
+      + outpost_arn                          = (known after apply)
+      + password_data                        = (known after apply)
+      + placement_group                      = (known after apply)
+      + placement_partition_number           = (known after apply)
+      + primary_network_interface_id         = (known after apply)
+      + private_dns                          = (known after apply)
+      + private_ip                           = (known after apply)
+      + public_dns                           = (known after apply)
+      + public_ip                            = (known after apply)
+      + secondary_private_ips                = (known after apply)
+      + security_groups                      = (known after apply)
+      + source_dest_check                    = true
+      + spot_instance_request_id             = (known after apply)
+      + subnet_id                            = (known after apply)
+      + tags                                 = {
+          + "cis_controls" = "SSM.1"
+          + "domain"       = "CMP"
+          + "scenario_id"  = "CMP-MISC-001-ssm-disabled-on-ec2"
+          + "type"         = "MISC"
+        }
+      + tags_all                             = {
+          + "cis_controls" = "SSM.1"
+          + "domain"       = "CMP"
+          + "scenario_id"  = "CMP-MISC-001-ssm-disabled-on-ec2"
+          + "type"         = "MISC"
+        }
+      + tenancy                              = (known after apply)
+      + user_data                            = (known after apply)
+      + user_data_base64                     = (known after apply)
+      + user_data_replace_on_change          = false
+      + vpc_security_group_ids               = (known after apply)
+
+      + capacity_reservation_specification (known after apply)
+
+      + cpu_options (known after apply)
+
+      + ebs_block_device (known after apply)
+
+      + enclave_options (known after apply)
+
+      + ephemeral_block_device (known after apply)
+
+      + instance_market_options (known after apply)
+
+      + maintenance_options (known after apply)
+
+      + metadata_options (known after apply)
+
+      + network_interface (known after apply)
+
+      + private_dns_name_options (known after apply)
+
+      + root_block_device (known after apply)
+    }
+
+  # aws_security_group.sg will be created
+  + resource "aws_security_group" "sg" {
+      + arn                    = (known after apply)
+      + description            = "Managed by Terraform"
+      + egress                 = [
+          + {
+              + cidr_blocks      = [
+                  + "0.0.0.0/0",
+                ]
+              + from_port        = 0
+              + ipv6_cidr_blocks = []
+              + prefix_list_ids  = []
+              + protocol         = "-1"
+              + security_groups  = []
+              + self             = false
+              + to_port          = 0
+                # (1 unchanged attribute hidden)
+            },
+        ]
+      + id                     = (known after apply)
+      + ingress                = (known after apply)
+      + name                   = (known after apply)
+      + name_prefix            = (known after apply)
+      + owner_id               = (known after apply)
+      + revoke_rules_on_delete = false
+      + tags                   = {
+          + "cis_controls" = "SSM.1"
+          + "domain"       = "CMP"
+          + "scenario_id"  = "CMP-MISC-001-ssm-disabled-on-ec2"
+          + "type"         = "MISC"
+        }
+      + tags_all               = {
+          + "cis_controls" = "SSM.1"
+          + "domain"       = "CMP"
+          + "scenario_id"  = "CMP-MISC-001-ssm-disabled-on-ec2"
+          + "type"         = "MISC"
+        }
+      + vpc_id                 = (known after apply)
+    }
+
+  # aws_subnet.private will be created
+  + resource "aws_subnet" "private" {
+      + arn                                            = (known after apply)
+      + assign_ipv6_address_on_creation                = false
+      + availability_zone                              = "eu-west-2a"
+      + availability_zone_id                           = (known after apply)
+      + cidr_block                                     = "10.60.1.0/24"
+      + enable_dns64                                   = false
+      + enable_resource_name_dns_a_record_on_launch    = false
+      + enable_resource_name_dns_aaaa_record_on_launch = false
+      + id                                             = (known after apply)
+      + ipv6_cidr_block_association_id                 = (known after apply)
+      + ipv6_native                                    = false
+      + map_public_ip_on_launch                        = false
+      + owner_id                                       = (known after apply)
+      + private_dns_hostname_type_on_launch            = (known after apply)
+      + tags                                           = {
+          + "cis_controls" = "SSM.1"
+          + "domain"       = "CMP"
+          + "scenario_id"  = "CMP-MISC-001-ssm-disabled-on-ec2"
+          + "type"         = "MISC"
+        }
+      + tags_all                                       = {
+          + "cis_controls" = "SSM.1"
+          + "domain"       = "CMP"
+          + "scenario_id"  = "CMP-MISC-001-ssm-disabled-on-ec2"
+          + "type"         = "MISC"
+        }
+      + vpc_id                                         = (known after apply)
+    }
+
+  # aws_vpc.vpc will be created
+  + resource "aws_vpc" "vpc" {
+      + arn                                  = (known after apply)
+      + cidr_block                           = "10.60.0.0/16"
+      + default_network_acl_id               = (known after apply)
+      + default_route_table_id               = (known after apply)
+      + default_security_group_id            = (known after apply)
+      + dhcp_options_id                      = (known after apply)
+      + enable_dns_hostnames                 = true
+      + enable_dns_support                   = true
+      + enable_network_address_usage_metrics = (known after apply)
+      + id                                   = (known after apply)
+      + instance_tenancy                     = "default"
+      + ipv6_association_id                  = (known after apply)
+      + ipv6_cidr_block                      = (known after apply)
+      + ipv6_cidr_block_network_border_group = (known after apply)
+      + main_route_table_id                  = (known after apply)
+      + owner_id                             = (known after apply)
+      + tags                                 = {
+          + "cis_controls" = "SSM.1"
+          + "domain"       = "CMP"
+          + "scenario_id"  = "CMP-MISC-001-ssm-disabled-on-ec2"
+          + "type"         = "MISC"
+        }
+      + tags_all                             = {
+          + "cis_controls" = "SSM.1"
+          + "domain"       = "CMP"
+          + "scenario_id"  = "CMP-MISC-001-ssm-disabled-on-ec2"
+          + "type"         = "MISC"
+        }
+    }
+
+  # random_id.suffix will be created
+  + resource "random_id" "suffix" {
+      + b64_std     = (known after apply)
+      + b64_url     = (known after apply)
+      + byte_length = 4
+      + dec         = (known after apply)
+      + hex         = (known after apply)
+      + id          = (known after apply)
+    }
+
+Plan: 5 to add, 0 to change, 0 to destroy.
+
+─────────────────────────────────────────────────────────────────────────────
+
+Saved the plan to:
+/workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-MISC-001-ssm-disabled-on-ec2/tfplan.binary
+
+To perform exactly these actions, run the following command to apply:
+    terraform apply "/workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-MISC-001-ssm-disabled-on-ec2/tfplan.binary"
+
+============================================================
+FULL SCAN END: 2025-12-23 00:42:45 UTC
+Return codes (non-fatal):
+  checkov   = 1
+  tfsec     = 1
+  terrascan = 1
+  conftest  = 0
+Outputs:
+  /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-MISC-001-ssm-disabled-on-ec2/scan_logs/checkov_CMP-MISC-001-ssm-disabled-on-ec2.txt
+  /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-MISC-001-ssm-disabled-on-ec2/scan_logs/tfsec_CMP-MISC-001-ssm-disabled-on-ec2.txt
+  /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-MISC-001-ssm-disabled-on-ec2/scan_logs/terrascan_CMP-MISC-001-ssm-disabled-on-ec2.txt
+  /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-MISC-001-ssm-disabled-on-ec2/scan_logs/conftest_CMP-MISC-001-ssm-disabled-on-ec2.txt
+Master log:
+  /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-MISC-001-ssm-disabled-on-ec2/scan_logs/FULL_CMP-MISC-001-ssm-disabled-on-ec2.log
+============================================================
+
+------------------------------------------------------------
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-MISC-002-imdsv2-allowed
+------------------------------------------------------------
+============================================================
+FULL SCAN START: 2025-12-23 00:42:45 UTC
+Scenario: CMP-MISC-002-imdsv2-allowed
+Path: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-MISC-002-imdsv2-allowed
+Policy: /workspaces/MSc-Thesis---Cloud-Misconfigurations/policy/terraform
+============================================================
+
+Initializing the backend...
+Initializing provider plugins...
+- Reusing previous version of hashicorp/aws from the dependency lock file
+- Reusing previous version of hashicorp/random from the dependency lock file
+- Using previously-installed hashicorp/aws v5.100.0
+- Using previously-installed hashicorp/random v3.7.2
+
+Terraform has been successfully initialized!
+
+You may now begin working with Terraform. Try running "terraform plan" to see
+any changes that are required for your infrastructure. All Terraform commands
+should now work.
+
+If you ever set or change modules or backend configuration for Terraform,
+rerun this command to reinitialize your working directory. If you forget, other
+commands will detect it and remind you to do so if necessary.
+Success! The configuration is valid.
+
+data.aws_ami.al2: Reading...
+data.aws_ami.al2: Read complete after 0s [id=ami-0ad8de99ac93341e7]
+
+Terraform used the selected providers to generate the following execution
+plan. Resource actions are indicated with the following symbols:
+  + create
+
+Terraform will perform the following actions:
+
+  # aws_instance.ec2 will be created
+  + resource "aws_instance" "ec2" {
+      + ami                                  = "ami-0ad8de99ac93341e7"
+      + arn                                  = (known after apply)
+      + associate_public_ip_address          = (known after apply)
+      + availability_zone                    = (known after apply)
+      + cpu_core_count                       = (known after apply)
+      + cpu_threads_per_core                 = (known after apply)
+      + disable_api_stop                     = (known after apply)
+      + disable_api_termination              = (known after apply)
+      + ebs_optimized                        = (known after apply)
+      + enable_primary_ipv6                  = (known after apply)
+      + get_password_data                    = false
+      + host_id                              = (known after apply)
+      + host_resource_group_arn              = (known after apply)
+      + iam_instance_profile                 = (known after apply)
+      + id                                   = (known after apply)
+      + instance_initiated_shutdown_behavior = (known after apply)
+      + instance_lifecycle                   = (known after apply)
+      + instance_state                       = (known after apply)
+      + instance_type                        = "t3.micro"
+      + ipv6_address_count                   = (known after apply)
+      + ipv6_addresses                       = (known after apply)
+      + key_name                             = (known after apply)
+      + monitoring                           = (known after apply)
+      + outpost_arn                          = (known after apply)
+      + password_data                        = (known after apply)
+      + placement_group                      = (known after apply)
+      + placement_partition_number           = (known after apply)
+      + primary_network_interface_id         = (known after apply)
+      + private_dns                          = (known after apply)
+      + private_ip                           = (known after apply)
+      + public_dns                           = (known after apply)
+      + public_ip                            = (known after apply)
+      + secondary_private_ips                = (known after apply)
+      + security_groups                      = (known after apply)
+      + source_dest_check                    = true
+      + spot_instance_request_id             = (known after apply)
+      + subnet_id                            = (known after apply)
+      + tags                                 = {
+          + "cis_controls" = "EC2.8"
+          + "domain"       = "CMP"
+          + "scenario_id"  = "CMP-MISC-002-imdsv2-allowed"
+          + "type"         = "MISC"
+        }
+      + tags_all                             = {
+          + "cis_controls" = "EC2.8"
+          + "domain"       = "CMP"
+          + "scenario_id"  = "CMP-MISC-002-imdsv2-allowed"
+          + "type"         = "MISC"
+        }
+      + tenancy                              = (known after apply)
+      + user_data                            = (known after apply)
+      + user_data_base64                     = (known after apply)
+      + user_data_replace_on_change          = false
+      + vpc_security_group_ids               = (known after apply)
+
+      + capacity_reservation_specification (known after apply)
+
+      + cpu_options (known after apply)
+
+      + ebs_block_device (known after apply)
+
+      + enclave_options (known after apply)
+
+      + ephemeral_block_device (known after apply)
+
+      + instance_market_options (known after apply)
+
+      + maintenance_options (known after apply)
+
+      + metadata_options {
+          + http_endpoint               = "enabled"
+          + http_protocol_ipv6          = "disabled"
+          + http_put_response_hop_limit = (known after apply)
+          + http_tokens                 = "optional"
+          + instance_metadata_tags      = (known after apply)
+        }
+
+      + network_interface (known after apply)
+
+      + private_dns_name_options (known after apply)
+
+      + root_block_device (known after apply)
+    }
+
+  # random_id.suffix will be created
+  + resource "random_id" "suffix" {
+      + b64_std     = (known after apply)
+      + b64_url     = (known after apply)
+      + byte_length = 4
+      + dec         = (known after apply)
+      + hex         = (known after apply)
+      + id          = (known after apply)
+    }
+
+Plan: 2 to add, 0 to change, 0 to destroy.
+
+─────────────────────────────────────────────────────────────────────────────
+
+Saved the plan to:
+/workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-MISC-002-imdsv2-allowed/tfplan.binary
+
+To perform exactly these actions, run the following command to apply:
+    terraform apply "/workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-MISC-002-imdsv2-allowed/tfplan.binary"
+
+============================================================
+FULL SCAN END: 2025-12-23 00:43:01 UTC
+Return codes (non-fatal):
+  checkov   = 1
+  tfsec     = 1
+  terrascan = 1
+  conftest  = 1
+Outputs:
+  /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-MISC-002-imdsv2-allowed/scan_logs/checkov_CMP-MISC-002-imdsv2-allowed.txt
+  /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-MISC-002-imdsv2-allowed/scan_logs/tfsec_CMP-MISC-002-imdsv2-allowed.txt
+  /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-MISC-002-imdsv2-allowed/scan_logs/terrascan_CMP-MISC-002-imdsv2-allowed.txt
+  /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-MISC-002-imdsv2-allowed/scan_logs/conftest_CMP-MISC-002-imdsv2-allowed.txt
+Master log:
+  /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-MISC-002-imdsv2-allowed/scan_logs/FULL_CMP-MISC-002-imdsv2-allowed.log
+============================================================
+
+------------------------------------------------------------
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/iam/IAM-BENIGN-001-mfa-enforced
+------------------------------------------------------------
+============================================================
+FULL SCAN START: 2025-12-23 00:43:01 UTC
+Scenario: IAM-BENIGN-001-mfa-enforced
+Path: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/iam/IAM-BENIGN-001-mfa-enforced
+Policy: /workspaces/MSc-Thesis---Cloud-Misconfigurations/policy/terraform
+============================================================
+
+Initializing the backend...
+Initializing provider plugins...
+- Reusing previous version of hashicorp/random from the dependency lock file
+- Reusing previous version of hashicorp/aws from the dependency lock file
+- Using previously-installed hashicorp/random v3.7.2
+- Using previously-installed hashicorp/aws v5.100.0
+
+Terraform has been successfully initialized!
+
+You may now begin working with Terraform. Try running "terraform plan" to see
+any changes that are required for your infrastructure. All Terraform commands
+should now work.
+
+If you ever set or change modules or backend configuration for Terraform,
+rerun this command to reinitialize your working directory. If you forget, other
+commands will detect it and remind you to do so if necessary.
+Success! The configuration is valid.
+
+
+Terraform used the selected providers to generate the following execution
+plan. Resource actions are indicated with the following symbols:
+  + create
+
+Terraform will perform the following actions:
+
+  # aws_iam_policy.deny_without_mfa will be created
+  + resource "aws_iam_policy" "deny_without_mfa" {
+      + arn              = (known after apply)
+      + attachment_count = (known after apply)
+      + id               = (known after apply)
+      + name             = (known after apply)
+      + name_prefix      = (known after apply)
+      + path             = "/"
+      + policy           = jsonencode(
+            {
+              + Statement = [
+                  + {
+                      + Condition = {
+                          + BoolIfExists = {
+                              + "aws:MultiFactorAuthPresent" = "false"
+                            }
+                        }
+                      + Effect    = "Deny"
+                      + NotAction = [
+                          + "iam:CreateVirtualMFADevice",
+                          + "iam:EnableMFADevice",
+                          + "iam:GetUser",
+                          + "iam:ListMFADevices",
+                          + "iam:ListVirtualMFADevices",
+                          + "iam:ResyncMFADevice",
+                        ]
+                      + Resource  = "*"
+                      + Sid       = "DenyAllUnlessMFA"
+                    },
+                ]
+              + Version   = "2012-10-17"
+            }
+        )
+      + policy_id        = (known after apply)
+      + tags_all         = {
+          + "cis_controls" = "IAM.6"
+          + "domain"       = "IAM"
+          + "scenario_id"  = "IAM-BENIGN-001-mfa-enforced"
+          + "type"         = "BENIGN"
+        }
+    }
+
+  # aws_iam_user.user will be created
+  + resource "aws_iam_user" "user" {
+      + arn           = (known after apply)
+      + force_destroy = false
+      + id            = (known after apply)
+      + name          = (known after apply)
+      + path          = "/"
+      + tags          = {
+          + "cis_controls" = "IAM.6"
+          + "domain"       = "IAM"
+          + "scenario_id"  = "IAM-BENIGN-001-mfa-enforced"
+          + "type"         = "BENIGN"
+        }
+      + tags_all      = {
+          + "cis_controls" = "IAM.6"
+          + "domain"       = "IAM"
+          + "scenario_id"  = "IAM-BENIGN-001-mfa-enforced"
+          + "type"         = "BENIGN"
+        }
+      + unique_id     = (known after apply)
+    }
+
+  # aws_iam_user_policy_attachment.attach will be created
+  + resource "aws_iam_user_policy_attachment" "attach" {
+      + id         = (known after apply)
+      + policy_arn = (known after apply)
+      + user       = (known after apply)
+    }
+
+  # random_id.suffix will be created
+  + resource "random_id" "suffix" {
+      + b64_std     = (known after apply)
+      + b64_url     = (known after apply)
+      + byte_length = 4
+      + dec         = (known after apply)
+      + hex         = (known after apply)
+      + id          = (known after apply)
+    }
+
+Plan: 4 to add, 0 to change, 0 to destroy.
+
+─────────────────────────────────────────────────────────────────────────────
+
+Saved the plan to:
+/workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/iam/IAM-BENIGN-001-mfa-enforced/tfplan.binary
+
+To perform exactly these actions, run the following command to apply:
+    terraform apply "/workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/iam/IAM-BENIGN-001-mfa-enforced/tfplan.binary"
+
+============================================================
+FULL SCAN END: 2025-12-23 00:43:16 UTC
+Return codes (non-fatal):
+  checkov   = 1
+  tfsec     = 0
+  terrascan = 1
+  conftest  = 0
+Outputs:
+  /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/iam/IAM-BENIGN-001-mfa-enforced/scan_logs/checkov_IAM-BENIGN-001-mfa-enforced.txt
+  /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/iam/IAM-BENIGN-001-mfa-enforced/scan_logs/tfsec_IAM-BENIGN-001-mfa-enforced.txt
+  /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/iam/IAM-BENIGN-001-mfa-enforced/scan_logs/terrascan_IAM-BENIGN-001-mfa-enforced.txt
+  /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/iam/IAM-BENIGN-001-mfa-enforced/scan_logs/conftest_IAM-BENIGN-001-mfa-enforced.txt
+Master log:
+  /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/iam/IAM-BENIGN-001-mfa-enforced/scan_logs/FULL_IAM-BENIGN-001-mfa-enforced.log
+============================================================
+
+------------------------------------------------------------
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/iam/IAM-BENIGN-002-no-admin-policy
+------------------------------------------------------------
+============================================================
+FULL SCAN START: 2025-12-23 00:43:16 UTC
+Scenario: IAM-BENIGN-002-no-admin-policy
+Path: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/iam/IAM-BENIGN-002-no-admin-policy
+Policy: /workspaces/MSc-Thesis---Cloud-Misconfigurations/policy/terraform
+============================================================
+
+Initializing the backend...
+Initializing provider plugins...
+- Reusing previous version of hashicorp/random from the dependency lock file
+- Reusing previous version of hashicorp/aws from the dependency lock file
+- Using previously-installed hashicorp/random v3.7.2
+- Using previously-installed hashicorp/aws v5.100.0
+
+Terraform has been successfully initialized!
+
+You may now begin working with Terraform. Try running "terraform plan" to see
+any changes that are required for your infrastructure. All Terraform commands
+should now work.
+
+If you ever set or change modules or backend configuration for Terraform,
+rerun this command to reinitialize your working directory. If you forget, other
+commands will detect it and remind you to do so if necessary.
+Success! The configuration is valid.
+
+
+Terraform used the selected providers to generate the following execution
+plan. Resource actions are indicated with the following symbols:
+  + create
+
+Terraform will perform the following actions:
+
+  # aws_iam_user.user will be created
+  + resource "aws_iam_user" "user" {
+      + arn           = (known after apply)
+      + force_destroy = false
+      + id            = (known after apply)
+      + name          = (known after apply)
+      + path          = "/"
+      + tags          = {
+          + "cis_controls" = "IAM.1"
+          + "domain"       = "IAM"
+          + "scenario_id"  = "IAM-BENIGN-002-no-admin-policy"
+          + "type"         = "BENIGN"
+        }
+      + tags_all      = {
+          + "cis_controls" = "IAM.1"
+          + "domain"       = "IAM"
+          + "scenario_id"  = "IAM-BENIGN-002-no-admin-policy"
+          + "type"         = "BENIGN"
+        }
+      + unique_id     = (known after apply)
+    }
+
+  # aws_iam_user_policy_attachment.readonly will be created
+  + resource "aws_iam_user_policy_attachment" "readonly" {
+      + id         = (known after apply)
+      + policy_arn = "arn:aws:iam::aws:policy/ReadOnlyAccess"
+      + user       = (known after apply)
+    }
+
+  # random_id.suffix will be created
+  + resource "random_id" "suffix" {
+      + b64_std     = (known after apply)
+      + b64_url     = (known after apply)
+      + byte_length = 4
+      + dec         = (known after apply)
+      + hex         = (known after apply)
+      + id          = (known after apply)
+    }
+
+Plan: 3 to add, 0 to change, 0 to destroy.
+
+─────────────────────────────────────────────────────────────────────────────
+
+Saved the plan to:
+/workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/iam/IAM-BENIGN-002-no-admin-policy/tfplan.binary
+
+To perform exactly these actions, run the following command to apply:
+    terraform apply "/workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/iam/IAM-BENIGN-002-no-admin-policy/tfplan.binary"
+
+============================================================
+FULL SCAN END: 2025-12-23 00:43:32 UTC
+Return codes (non-fatal):
+  checkov   = 1
+  tfsec     = 0
+  terrascan = 1
+  conftest  = 0
+Outputs:
+  /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/iam/IAM-BENIGN-002-no-admin-policy/scan_logs/checkov_IAM-BENIGN-002-no-admin-policy.txt
+  /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/iam/IAM-BENIGN-002-no-admin-policy/scan_logs/tfsec_IAM-BENIGN-002-no-admin-policy.txt
+  /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/iam/IAM-BENIGN-002-no-admin-policy/scan_logs/terrascan_IAM-BENIGN-002-no-admin-policy.txt
+  /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/iam/IAM-BENIGN-002-no-admin-policy/scan_logs/conftest_IAM-BENIGN-002-no-admin-policy.txt
+Master log:
+  /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/iam/IAM-BENIGN-002-no-admin-policy/scan_logs/FULL_IAM-BENIGN-002-no-admin-policy.log
+============================================================
+
+------------------------------------------------------------
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/iam/IAM-MISC-001-mfa-not-enforced
+------------------------------------------------------------
+============================================================
+FULL SCAN START: 2025-12-23 00:43:32 UTC
+Scenario: IAM-MISC-001-mfa-not-enforced
+Path: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/iam/IAM-MISC-001-mfa-not-enforced
+Policy: /workspaces/MSc-Thesis---Cloud-Misconfigurations/policy/terraform
+============================================================
+
+Initializing the backend...
+Initializing provider plugins...
+- Reusing previous version of hashicorp/aws from the dependency lock file
+- Reusing previous version of hashicorp/random from the dependency lock file
+- Using previously-installed hashicorp/aws v5.100.0
+- Using previously-installed hashicorp/random v3.7.2
+
+Terraform has been successfully initialized!
+
+You may now begin working with Terraform. Try running "terraform plan" to see
+any changes that are required for your infrastructure. All Terraform commands
+should now work.
+
+If you ever set or change modules or backend configuration for Terraform,
+rerun this command to reinitialize your working directory. If you forget, other
+commands will detect it and remind you to do so if necessary.
+Success! The configuration is valid.
+
+
+Terraform used the selected providers to generate the following execution
+plan. Resource actions are indicated with the following symbols:
+  + create
+
+Terraform will perform the following actions:
+
+  # aws_iam_user.user will be created
+  + resource "aws_iam_user" "user" {
+      + arn           = (known after apply)
+      + force_destroy = false
+      + id            = (known after apply)
+      + name          = (known after apply)
+      + path          = "/"
+      + tags          = {
+          + "cis_controls" = "IAM.6"
+          + "domain"       = "IAM"
+          + "scenario_id"  = "IAM-MISC-001-mfa-not-enforced"
+          + "type"         = "MISC"
+        }
+      + tags_all      = {
+          + "cis_controls" = "IAM.6"
+          + "domain"       = "IAM"
+          + "scenario_id"  = "IAM-MISC-001-mfa-not-enforced"
+          + "type"         = "MISC"
+        }
+      + unique_id     = (known after apply)
+    }
+
+  # random_id.suffix will be created
+  + resource "random_id" "suffix" {
+      + b64_std     = (known after apply)
+      + b64_url     = (known after apply)
+      + byte_length = 4
+      + dec         = (known after apply)
+      + hex         = (known after apply)
+      + id          = (known after apply)
+    }
+
+Plan: 2 to add, 0 to change, 0 to destroy.
+
+─────────────────────────────────────────────────────────────────────────────
+
+Saved the plan to:
+/workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/iam/IAM-MISC-001-mfa-not-enforced/tfplan.binary
+
+To perform exactly these actions, run the following command to apply:
+    terraform apply "/workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/iam/IAM-MISC-001-mfa-not-enforced/tfplan.binary"
+
+============================================================
+FULL SCAN END: 2025-12-23 00:43:48 UTC
+Return codes (non-fatal):
+  checkov   = 1
+  tfsec     = 0
+  terrascan = 1
+  conftest  = 0
+Outputs:
+  /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/iam/IAM-MISC-001-mfa-not-enforced/scan_logs/checkov_IAM-MISC-001-mfa-not-enforced.txt
+  /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/iam/IAM-MISC-001-mfa-not-enforced/scan_logs/tfsec_IAM-MISC-001-mfa-not-enforced.txt
+  /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/iam/IAM-MISC-001-mfa-not-enforced/scan_logs/terrascan_IAM-MISC-001-mfa-not-enforced.txt
+  /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/iam/IAM-MISC-001-mfa-not-enforced/scan_logs/conftest_IAM-MISC-001-mfa-not-enforced.txt
+Master log:
+  /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/iam/IAM-MISC-001-mfa-not-enforced/scan_logs/FULL_IAM-MISC-001-mfa-not-enforced.log
+============================================================
+
+------------------------------------------------------------
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/iam/IAM-MISC-002-admin-policy-attached
+------------------------------------------------------------
+============================================================
+FULL SCAN START: 2025-12-23 00:43:48 UTC
+Scenario: IAM-MISC-002-admin-policy-attached
+Path: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/iam/IAM-MISC-002-admin-policy-attached
+Policy: /workspaces/MSc-Thesis---Cloud-Misconfigurations/policy/terraform
+============================================================
+
+Initializing the backend...
+Initializing provider plugins...
+- Reusing previous version of hashicorp/random from the dependency lock file
+- Reusing previous version of hashicorp/aws from the dependency lock file
+- Using previously-installed hashicorp/random v3.7.2
+- Using previously-installed hashicorp/aws v5.100.0
+
+Terraform has been successfully initialized!
+
+You may now begin working with Terraform. Try running "terraform plan" to see
+any changes that are required for your infrastructure. All Terraform commands
+should now work.
+
+If you ever set or change modules or backend configuration for Terraform,
+rerun this command to reinitialize your working directory. If you forget, other
+commands will detect it and remind you to do so if necessary.
+Success! The configuration is valid.
+
+
+Terraform used the selected providers to generate the following execution
+plan. Resource actions are indicated with the following symbols:
+  + create
+
+Terraform will perform the following actions:
+
+  # aws_iam_user.user will be created
+  + resource "aws_iam_user" "user" {
+      + arn           = (known after apply)
+      + force_destroy = false
+      + id            = (known after apply)
+      + name          = (known after apply)
+      + path          = "/"
+      + tags          = {
+          + "cis_controls" = "IAM.1"
+          + "domain"       = "IAM"
+          + "scenario_id"  = "IAM-MISC-002-admin-policy-attached"
+          + "type"         = "MISC"
+        }
+      + tags_all      = {
+          + "cis_controls" = "IAM.1"
+          + "domain"       = "IAM"
+          + "scenario_id"  = "IAM-MISC-002-admin-policy-attached"
+          + "type"         = "MISC"
+        }
+      + unique_id     = (known after apply)
+    }
+
+  # aws_iam_user_policy_attachment.admin will be created
+  + resource "aws_iam_user_policy_attachment" "admin" {
+      + id         = (known after apply)
+      + policy_arn = "arn:aws:iam::aws:policy/AdministratorAccess"
+      + user       = (known after apply)
+    }
+
+  # random_id.suffix will be created
+  + resource "random_id" "suffix" {
+      + b64_std     = (known after apply)
+      + b64_url     = (known after apply)
+      + byte_length = 4
+      + dec         = (known after apply)
+      + hex         = (known after apply)
+      + id          = (known after apply)
+    }
+
+Plan: 3 to add, 0 to change, 0 to destroy.
+
+─────────────────────────────────────────────────────────────────────────────
+
+Saved the plan to:
+/workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/iam/IAM-MISC-002-admin-policy-attached/tfplan.binary
+
+To perform exactly these actions, run the following command to apply:
+    terraform apply "/workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/iam/IAM-MISC-002-admin-policy-attached/tfplan.binary"
+
+============================================================
+FULL SCAN END: 2025-12-23 00:44:03 UTC
+Return codes (non-fatal):
+  checkov   = 1
+  tfsec     = 0
+  terrascan = 1
+  conftest  = 1
+Outputs:
+  /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/iam/IAM-MISC-002-admin-policy-attached/scan_logs/checkov_IAM-MISC-002-admin-policy-attached.txt
+  /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/iam/IAM-MISC-002-admin-policy-attached/scan_logs/tfsec_IAM-MISC-002-admin-policy-attached.txt
+  /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/iam/IAM-MISC-002-admin-policy-attached/scan_logs/terrascan_IAM-MISC-002-admin-policy-attached.txt
+  /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/iam/IAM-MISC-002-admin-policy-attached/scan_logs/conftest_IAM-MISC-002-admin-policy-attached.txt
+Master log:
+  /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/iam/IAM-MISC-002-admin-policy-attached/scan_logs/FULL_IAM-MISC-002-admin-policy-attached.log
+============================================================
+
+------------------------------------------------------------
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/log/LOG-BENIGN-001-cloudtrail-enabled-all-regions
+------------------------------------------------------------
+============================================================
+FULL SCAN START: 2025-12-23 00:44:03 UTC
+Scenario: LOG-BENIGN-001-cloudtrail-enabled-all-regions
+Path: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/log/LOG-BENIGN-001-cloudtrail-enabled-all-regions
+Policy: /workspaces/MSc-Thesis---Cloud-Misconfigurations/policy/terraform
+============================================================
+
+Initializing the backend...
+Initializing provider plugins...
+- Reusing previous version of hashicorp/random from the dependency lock file
+- Reusing previous version of hashicorp/aws from the dependency lock file
+- Using previously-installed hashicorp/aws v5.100.0
+- Using previously-installed hashicorp/random v3.7.2
+
+Terraform has been successfully initialized!
+
+You may now begin working with Terraform. Try running "terraform plan" to see
+any changes that are required for your infrastructure. All Terraform commands
+should now work.
+
+If you ever set or change modules or backend configuration for Terraform,
+rerun this command to reinitialize your working directory. If you forget, other
+commands will detect it and remind you to do so if necessary.
+Success! The configuration is valid.
+
+
+Terraform used the selected providers to generate the following execution
+plan. Resource actions are indicated with the following symbols:
+  + create
+
+Terraform will perform the following actions:
+
+  # aws_cloudtrail.trail will be created
+  + resource "aws_cloudtrail" "trail" {
+      + arn                           = (known after apply)
+      + enable_log_file_validation    = false
+      + enable_logging                = true
+      + home_region                   = (known after apply)
+      + id                            = (known after apply)
+      + include_global_service_events = true
+      + is_multi_region_trail         = true
+      + is_organization_trail         = false
+      + name                          = (known after apply)
+      + s3_bucket_name                = (known after apply)
+      + sns_topic_arn                 = (known after apply)
+      + tags                          = {
+          + "cis_controls" = "CT.1"
+          + "domain"       = "LOG"
+          + "scenario_id"  = "LOG-BENIGN-001-cloudtrail-enabled-all-regions"
+          + "type"         = "BENIGN"
+        }
+      + tags_all                      = {
+          + "cis_controls" = "CT.1"
+          + "domain"       = "LOG"
+          + "scenario_id"  = "LOG-BENIGN-001-cloudtrail-enabled-all-regions"
+          + "type"         = "BENIGN"
+        }
+    }
+
+  # aws_s3_bucket.trail_bucket will be created
+  + resource "aws_s3_bucket" "trail_bucket" {
+      + acceleration_status         = (known after apply)
+      + acl                         = (known after apply)
+      + arn                         = (known after apply)
+      + bucket                      = (known after apply)
+      + bucket_domain_name          = (known after apply)
+      + bucket_prefix               = (known after apply)
+      + bucket_regional_domain_name = (known after apply)
+      + force_destroy               = true
+      + hosted_zone_id              = (known after apply)
+      + id                          = (known after apply)
+      + object_lock_enabled         = (known after apply)
+      + policy                      = (known after apply)
+      + region                      = (known after apply)
+      + request_payer               = (known after apply)
+      + tags                        = {
+          + "cis_controls" = "CT.1"
+          + "domain"       = "LOG"
+          + "scenario_id"  = "LOG-BENIGN-001-cloudtrail-enabled-all-regions"
+          + "type"         = "BENIGN"
+        }
+      + tags_all                    = {
+          + "cis_controls" = "CT.1"
+          + "domain"       = "LOG"
+          + "scenario_id"  = "LOG-BENIGN-001-cloudtrail-enabled-all-regions"
+          + "type"         = "BENIGN"
+        }
+      + website_domain              = (known after apply)
+      + website_endpoint            = (known after apply)
+
+      + cors_rule (known after apply)
+
+      + grant (known after apply)
+
+      + lifecycle_rule (known after apply)
+
+      + logging (known after apply)
+
+      + object_lock_configuration (known after apply)
+
+      + replication_configuration (known after apply)
+
+      + server_side_encryption_configuration (known after apply)
+
+      + versioning (known after apply)
+
+      + website (known after apply)
+    }
+
+  # random_id.suffix will be created
+  + resource "random_id" "suffix" {
+      + b64_std     = (known after apply)
+      + b64_url     = (known after apply)
+      + byte_length = 4
+      + dec         = (known after apply)
+      + hex         = (known after apply)
+      + id          = (known after apply)
+    }
+
+Plan: 3 to add, 0 to change, 0 to destroy.
+
+─────────────────────────────────────────────────────────────────────────────
+
+Saved the plan to:
+/workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/log/LOG-BENIGN-001-cloudtrail-enabled-all-regions/tfplan.binary
+
+To perform exactly these actions, run the following command to apply:
+    terraform apply "/workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/log/LOG-BENIGN-001-cloudtrail-enabled-all-regions/tfplan.binary"
+
+============================================================
+FULL SCAN END: 2025-12-23 00:44:19 UTC
+Return codes (non-fatal):
+  checkov   = 1
+  tfsec     = 1
+  terrascan = 1
+  conftest  = 0
+Outputs:
+  /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/log/LOG-BENIGN-001-cloudtrail-enabled-all-regions/scan_logs/checkov_LOG-BENIGN-001-cloudtrail-enabled-all-regions.txt
+  /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/log/LOG-BENIGN-001-cloudtrail-enabled-all-regions/scan_logs/tfsec_LOG-BENIGN-001-cloudtrail-enabled-all-regions.txt
+  /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/log/LOG-BENIGN-001-cloudtrail-enabled-all-regions/scan_logs/terrascan_LOG-BENIGN-001-cloudtrail-enabled-all-regions.txt
+  /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/log/LOG-BENIGN-001-cloudtrail-enabled-all-regions/scan_logs/conftest_LOG-BENIGN-001-cloudtrail-enabled-all-regions.txt
+Master log:
+  /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/log/LOG-BENIGN-001-cloudtrail-enabled-all-regions/scan_logs/FULL_LOG-BENIGN-001-cloudtrail-enabled-all-regions.log
+============================================================
+
+------------------------------------------------------------
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/log/LOG-BENIGN-002-cloudwatch-retention-set
+------------------------------------------------------------
+============================================================
+FULL SCAN START: 2025-12-23 00:44:19 UTC
+Scenario: LOG-BENIGN-002-cloudwatch-retention-set
+Path: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/log/LOG-BENIGN-002-cloudwatch-retention-set
+Policy: /workspaces/MSc-Thesis---Cloud-Misconfigurations/policy/terraform
+============================================================
+
+Initializing the backend...
+Initializing provider plugins...
+- Reusing previous version of hashicorp/random from the dependency lock file
+- Reusing previous version of hashicorp/aws from the dependency lock file
+- Using previously-installed hashicorp/random v3.7.2
+- Using previously-installed hashicorp/aws v5.100.0
+
+Terraform has been successfully initialized!
+
+You may now begin working with Terraform. Try running "terraform plan" to see
+any changes that are required for your infrastructure. All Terraform commands
+should now work.
+
+If you ever set or change modules or backend configuration for Terraform,
+rerun this command to reinitialize your working directory. If you forget, other
+commands will detect it and remind you to do so if necessary.
+Success! The configuration is valid.
+
+
+Terraform used the selected providers to generate the following execution
+plan. Resource actions are indicated with the following symbols:
+  + create
+
+Terraform will perform the following actions:
+
+  # aws_cloudwatch_log_group.lg will be created
+  + resource "aws_cloudwatch_log_group" "lg" {
+      + arn               = (known after apply)
+      + id                = (known after apply)
+      + log_group_class   = (known after apply)
+      + name              = (known after apply)
+      + name_prefix       = (known after apply)
+      + retention_in_days = 30
+      + skip_destroy      = false
+      + tags              = {
+          + "cis_controls" = "CW.1"
+          + "domain"       = "LOG"
+          + "scenario_id"  = "LOG-BENIGN-002-cloudwatch-retention-set"
+          + "type"         = "BENIGN"
+        }
+      + tags_all          = {
+          + "cis_controls" = "CW.1"
+          + "domain"       = "LOG"
+          + "scenario_id"  = "LOG-BENIGN-002-cloudwatch-retention-set"
+          + "type"         = "BENIGN"
+        }
+    }
+
+  # random_id.suffix will be created
+  + resource "random_id" "suffix" {
+      + b64_std     = (known after apply)
+      + b64_url     = (known after apply)
+      + byte_length = 4
+      + dec         = (known after apply)
+      + hex         = (known after apply)
+      + id          = (known after apply)
+    }
+
+Plan: 2 to add, 0 to change, 0 to destroy.
+
+─────────────────────────────────────────────────────────────────────────────
+
+Saved the plan to:
+/workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/log/LOG-BENIGN-002-cloudwatch-retention-set/tfplan.binary
+
+To perform exactly these actions, run the following command to apply:
+    terraform apply "/workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/log/LOG-BENIGN-002-cloudwatch-retention-set/tfplan.binary"
+
+============================================================
+FULL SCAN END: 2025-12-23 00:44:34 UTC
+Return codes (non-fatal):
+  checkov   = 1
+  tfsec     = 2
+  terrascan = 1
+  conftest  = 1
+Outputs:
+  /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/log/LOG-BENIGN-002-cloudwatch-retention-set/scan_logs/checkov_LOG-BENIGN-002-cloudwatch-retention-set.txt
+  /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/log/LOG-BENIGN-002-cloudwatch-retention-set/scan_logs/tfsec_LOG-BENIGN-002-cloudwatch-retention-set.txt
+  /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/log/LOG-BENIGN-002-cloudwatch-retention-set/scan_logs/terrascan_LOG-BENIGN-002-cloudwatch-retention-set.txt
+  /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/log/LOG-BENIGN-002-cloudwatch-retention-set/scan_logs/conftest_LOG-BENIGN-002-cloudwatch-retention-set.txt
+Master log:
+  /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/log/LOG-BENIGN-002-cloudwatch-retention-set/scan_logs/FULL_LOG-BENIGN-002-cloudwatch-retention-set.log
+============================================================
+
+------------------------------------------------------------
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/log/LOG-MISC-001-cloudtrail-disabled
+------------------------------------------------------------
+============================================================
+FULL SCAN START: 2025-12-23 00:44:34 UTC
+Scenario: LOG-MISC-001-cloudtrail-disabled
+Path: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/log/LOG-MISC-001-cloudtrail-disabled
+Policy: /workspaces/MSc-Thesis---Cloud-Misconfigurations/policy/terraform
+============================================================
+
+Initializing the backend...
+Initializing provider plugins...
+- Reusing previous version of hashicorp/aws from the dependency lock file
+- Reusing previous version of hashicorp/random from the dependency lock file
+- Using previously-installed hashicorp/aws v5.100.0
+- Using previously-installed hashicorp/random v3.7.2
+
+Terraform has been successfully initialized!
+
+You may now begin working with Terraform. Try running "terraform plan" to see
+any changes that are required for your infrastructure. All Terraform commands
+should now work.
+
+If you ever set or change modules or backend configuration for Terraform,
+rerun this command to reinitialize your working directory. If you forget, other
+commands will detect it and remind you to do so if necessary.
+Success! The configuration is valid.
+
+
+Terraform used the selected providers to generate the following execution
+plan. Resource actions are indicated with the following symbols:
+  + create
+
+Terraform will perform the following actions:
+
+  # aws_cloudtrail.trail will be created
+  + resource "aws_cloudtrail" "trail" {
+      + arn                           = (known after apply)
+      + enable_log_file_validation    = false
+      + enable_logging                = false
+      + home_region                   = (known after apply)
+      + id                            = (known after apply)
+      + include_global_service_events = false
+      + is_multi_region_trail         = false
+      + is_organization_trail         = false
+      + name                          = (known after apply)
+      + s3_bucket_name                = (known after apply)
+      + sns_topic_arn                 = (known after apply)
+      + tags                          = {
+          + "cis_controls" = "CT.1"
+          + "domain"       = "LOG"
+          + "scenario_id"  = "LOG-MISC-001-cloudtrail-disabled"
+          + "type"         = "MISC"
+        }
+      + tags_all                      = {
+          + "cis_controls" = "CT.1"
+          + "domain"       = "LOG"
+          + "scenario_id"  = "LOG-MISC-001-cloudtrail-disabled"
+          + "type"         = "MISC"
+        }
+    }
+
+  # aws_s3_bucket.trail_bucket will be created
+  + resource "aws_s3_bucket" "trail_bucket" {
+      + acceleration_status         = (known after apply)
+      + acl                         = (known after apply)
+      + arn                         = (known after apply)
+      + bucket                      = (known after apply)
+      + bucket_domain_name          = (known after apply)
+      + bucket_prefix               = (known after apply)
+      + bucket_regional_domain_name = (known after apply)
+      + force_destroy               = true
+      + hosted_zone_id              = (known after apply)
+      + id                          = (known after apply)
+      + object_lock_enabled         = (known after apply)
+      + policy                      = (known after apply)
+      + region                      = (known after apply)
+      + request_payer               = (known after apply)
+      + tags                        = {
+          + "cis_controls" = "CT.1"
+          + "domain"       = "LOG"
+          + "scenario_id"  = "LOG-MISC-001-cloudtrail-disabled"
+          + "type"         = "MISC"
+        }
+      + tags_all                    = {
+          + "cis_controls" = "CT.1"
+          + "domain"       = "LOG"
+          + "scenario_id"  = "LOG-MISC-001-cloudtrail-disabled"
+          + "type"         = "MISC"
+        }
+      + website_domain              = (known after apply)
+      + website_endpoint            = (known after apply)
+
+      + cors_rule (known after apply)
+
+      + grant (known after apply)
+
+      + lifecycle_rule (known after apply)
+
+      + logging (known after apply)
+
+      + object_lock_configuration (known after apply)
+
+      + replication_configuration (known after apply)
+
+      + server_side_encryption_configuration (known after apply)
+
+      + versioning (known after apply)
+
+      + website (known after apply)
+    }
+
+  # random_id.suffix will be created
+  + resource "random_id" "suffix" {
+      + b64_std     = (known after apply)
+      + b64_url     = (known after apply)
+      + byte_length = 4
+      + dec         = (known after apply)
+      + hex         = (known after apply)
+      + id          = (known after apply)
+    }
+
+Plan: 3 to add, 0 to change, 0 to destroy.
+
+─────────────────────────────────────────────────────────────────────────────
+
+Saved the plan to:
+/workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/log/LOG-MISC-001-cloudtrail-disabled/tfplan.binary
+
+To perform exactly these actions, run the following command to apply:
+    terraform apply "/workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/log/LOG-MISC-001-cloudtrail-disabled/tfplan.binary"
+
+============================================================
+FULL SCAN END: 2025-12-23 00:44:49 UTC
+Return codes (non-fatal):
+  checkov   = 1
+  tfsec     = 1
+  terrascan = 1
+  conftest  = 1
+Outputs:
+  /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/log/LOG-MISC-001-cloudtrail-disabled/scan_logs/checkov_LOG-MISC-001-cloudtrail-disabled.txt
+  /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/log/LOG-MISC-001-cloudtrail-disabled/scan_logs/tfsec_LOG-MISC-001-cloudtrail-disabled.txt
+  /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/log/LOG-MISC-001-cloudtrail-disabled/scan_logs/terrascan_LOG-MISC-001-cloudtrail-disabled.txt
+  /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/log/LOG-MISC-001-cloudtrail-disabled/scan_logs/conftest_LOG-MISC-001-cloudtrail-disabled.txt
+Master log:
+  /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/log/LOG-MISC-001-cloudtrail-disabled/scan_logs/FULL_LOG-MISC-001-cloudtrail-disabled.log
+============================================================
+
+------------------------------------------------------------
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/log/LOG-MISC-002-cloudwatch-retention-not-set
+------------------------------------------------------------
+============================================================
+FULL SCAN START: 2025-12-23 00:44:49 UTC
+Scenario: LOG-MISC-002-cloudwatch-retention-not-set
+Path: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/log/LOG-MISC-002-cloudwatch-retention-not-set
+Policy: /workspaces/MSc-Thesis---Cloud-Misconfigurations/policy/terraform
+============================================================
+
+Initializing the backend...
+Initializing provider plugins...
+- Reusing previous version of hashicorp/aws from the dependency lock file
+- Reusing previous version of hashicorp/random from the dependency lock file
+- Using previously-installed hashicorp/aws v5.100.0
+- Using previously-installed hashicorp/random v3.7.2
+
+Terraform has been successfully initialized!
+
+You may now begin working with Terraform. Try running "terraform plan" to see
+any changes that are required for your infrastructure. All Terraform commands
+should now work.
+
+If you ever set or change modules or backend configuration for Terraform,
+rerun this command to reinitialize your working directory. If you forget, other
+commands will detect it and remind you to do so if necessary.
+Success! The configuration is valid.
+
+
+Terraform used the selected providers to generate the following execution
+plan. Resource actions are indicated with the following symbols:
+  + create
+
+Terraform will perform the following actions:
+
+  # aws_cloudwatch_log_group.lg will be created
+  + resource "aws_cloudwatch_log_group" "lg" {
+      + arn               = (known after apply)
+      + id                = (known after apply)
+      + log_group_class   = (known after apply)
+      + name              = (known after apply)
+      + name_prefix       = (known after apply)
+      + retention_in_days = 0
+      + skip_destroy      = false
+      + tags              = {
+          + "cis_controls" = "CW.1"
+          + "domain"       = "LOG"
+          + "scenario_id"  = "LOG-MISC-002-cloudwatch-retention-not-set"
+          + "type"         = "MISC"
+        }
+      + tags_all          = {
+          + "cis_controls" = "CW.1"
+          + "domain"       = "LOG"
+          + "scenario_id"  = "LOG-MISC-002-cloudwatch-retention-not-set"
+          + "type"         = "MISC"
+        }
+    }
+
+  # random_id.suffix will be created
+  + resource "random_id" "suffix" {
+      + b64_std     = (known after apply)
+      + b64_url     = (known after apply)
+      + byte_length = 4
+      + dec         = (known after apply)
+      + hex         = (known after apply)
+      + id          = (known after apply)
+    }
+
+Plan: 2 to add, 0 to change, 0 to destroy.
+
+─────────────────────────────────────────────────────────────────────────────
+
+Saved the plan to:
+/workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/log/LOG-MISC-002-cloudwatch-retention-not-set/tfplan.binary
+
+To perform exactly these actions, run the following command to apply:
+    terraform apply "/workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/log/LOG-MISC-002-cloudwatch-retention-not-set/tfplan.binary"
+
+============================================================
+FULL SCAN END: 2025-12-23 00:45:05 UTC
+Return codes (non-fatal):
+  checkov   = 1
+  tfsec     = 2
+  terrascan = 1
+  conftest  = 1
+Outputs:
+  /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/log/LOG-MISC-002-cloudwatch-retention-not-set/scan_logs/checkov_LOG-MISC-002-cloudwatch-retention-not-set.txt
+  /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/log/LOG-MISC-002-cloudwatch-retention-not-set/scan_logs/tfsec_LOG-MISC-002-cloudwatch-retention-not-set.txt
+  /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/log/LOG-MISC-002-cloudwatch-retention-not-set/scan_logs/terrascan_LOG-MISC-002-cloudwatch-retention-not-set.txt
+  /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/log/LOG-MISC-002-cloudwatch-retention-not-set/scan_logs/conftest_LOG-MISC-002-cloudwatch-retention-not-set.txt
+Master log:
+  /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/log/LOG-MISC-002-cloudwatch-retention-not-set/scan_logs/FULL_LOG-MISC-002-cloudwatch-retention-not-set.log
+============================================================
+
+------------------------------------------------------------
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/net/NET-BENIGN-001-no-ssh-open
+------------------------------------------------------------
+============================================================
+FULL SCAN START: 2025-12-23 00:45:05 UTC
+Scenario: NET-BENIGN-001-no-ssh-open
+Path: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/net/NET-BENIGN-001-no-ssh-open
+Policy: /workspaces/MSc-Thesis---Cloud-Misconfigurations/policy/terraform
+============================================================
+
+Initializing the backend...
+Initializing provider plugins...
+- Reusing previous version of hashicorp/random from the dependency lock file
+- Reusing previous version of hashicorp/aws from the dependency lock file
+- Using previously-installed hashicorp/random v3.7.2
+- Using previously-installed hashicorp/aws v5.100.0
+
+Terraform has been successfully initialized!
+
+You may now begin working with Terraform. Try running "terraform plan" to see
+any changes that are required for your infrastructure. All Terraform commands
+should now work.
+
+If you ever set or change modules or backend configuration for Terraform,
+rerun this command to reinitialize your working directory. If you forget, other
+commands will detect it and remind you to do so if necessary.
+Success! The configuration is valid.
+
+
+Terraform used the selected providers to generate the following execution
+plan. Resource actions are indicated with the following symbols:
+  + create
+
+Terraform will perform the following actions:
+
+  # aws_security_group.sg will be created
+  + resource "aws_security_group" "sg" {
+      + arn                    = (known after apply)
+      + description            = "Managed by Terraform"
+      + egress                 = [
+          + {
+              + cidr_blocks      = [
+                  + "0.0.0.0/0",
+                ]
+              + from_port        = 0
+              + ipv6_cidr_blocks = []
+              + prefix_list_ids  = []
+              + protocol         = "-1"
+              + security_groups  = []
+              + self             = false
+              + to_port          = 0
+                # (1 unchanged attribute hidden)
+            },
+        ]
+      + id                     = (known after apply)
+      + ingress                = [
+          + {
+              + cidr_blocks      = [
+                  + "10.51.0.0/16",
+                ]
+              + from_port        = 22
+              + ipv6_cidr_blocks = []
+              + prefix_list_ids  = []
+              + protocol         = "tcp"
+              + security_groups  = []
+              + self             = false
+              + to_port          = 22
+                # (1 unchanged attribute hidden)
+            },
+        ]
+      + name                   = (known after apply)
+      + name_prefix            = (known after apply)
+      + owner_id               = (known after apply)
+      + revoke_rules_on_delete = false
+      + tags                   = {
+          + "cis_controls" = "EC2.2"
+          + "domain"       = "NET"
+          + "scenario_id"  = "NET-BENIGN-001-no-ssh-open"
+          + "type"         = "BENIGN"
+        }
+      + tags_all               = {
+          + "cis_controls" = "EC2.2"
+          + "domain"       = "NET"
+          + "scenario_id"  = "NET-BENIGN-001-no-ssh-open"
+          + "type"         = "BENIGN"
+        }
+      + vpc_id                 = (known after apply)
+    }
+
+  # aws_subnet.subnet will be created
+  + resource "aws_subnet" "subnet" {
+      + arn                                            = (known after apply)
+      + assign_ipv6_address_on_creation                = false
+      + availability_zone                              = "eu-west-2a"
+      + availability_zone_id                           = (known after apply)
+      + cidr_block                                     = "10.51.1.0/24"
+      + enable_dns64                                   = false
+      + enable_resource_name_dns_a_record_on_launch    = false
+      + enable_resource_name_dns_aaaa_record_on_launch = false
+      + id                                             = (known after apply)
+      + ipv6_cidr_block_association_id                 = (known after apply)
+      + ipv6_native                                    = false
+      + map_public_ip_on_launch                        = false
+      + owner_id                                       = (known after apply)
+      + private_dns_hostname_type_on_launch            = (known after apply)
+      + tags                                           = {
+          + "cis_controls" = "EC2.2"
+          + "domain"       = "NET"
+          + "scenario_id"  = "NET-BENIGN-001-no-ssh-open"
+          + "type"         = "BENIGN"
+        }
+      + tags_all                                       = {
+          + "cis_controls" = "EC2.2"
+          + "domain"       = "NET"
+          + "scenario_id"  = "NET-BENIGN-001-no-ssh-open"
+          + "type"         = "BENIGN"
+        }
+      + vpc_id                                         = (known after apply)
+    }
+
+  # aws_vpc.vpc will be created
+  + resource "aws_vpc" "vpc" {
+      + arn                                  = (known after apply)
+      + cidr_block                           = "10.51.0.0/16"
+      + default_network_acl_id               = (known after apply)
+      + default_route_table_id               = (known after apply)
+      + default_security_group_id            = (known after apply)
+      + dhcp_options_id                      = (known after apply)
+      + enable_dns_hostnames                 = true
+      + enable_dns_support                   = true
+      + enable_network_address_usage_metrics = (known after apply)
+      + id                                   = (known after apply)
+      + instance_tenancy                     = "default"
+      + ipv6_association_id                  = (known after apply)
+      + ipv6_cidr_block                      = (known after apply)
+      + ipv6_cidr_block_network_border_group = (known after apply)
+      + main_route_table_id                  = (known after apply)
+      + owner_id                             = (known after apply)
+      + tags                                 = {
+          + "cis_controls" = "EC2.2"
+          + "domain"       = "NET"
+          + "scenario_id"  = "NET-BENIGN-001-no-ssh-open"
+          + "type"         = "BENIGN"
+        }
+      + tags_all                             = {
+          + "cis_controls" = "EC2.2"
+          + "domain"       = "NET"
+          + "scenario_id"  = "NET-BENIGN-001-no-ssh-open"
+          + "type"         = "BENIGN"
+        }
+    }
+
+  # random_id.suffix will be created
+  + resource "random_id" "suffix" {
+      + b64_std     = (known after apply)
+      + b64_url     = (known after apply)
+      + byte_length = 4
+      + dec         = (known after apply)
+      + hex         = (known after apply)
+      + id          = (known after apply)
+    }
+
+Plan: 4 to add, 0 to change, 0 to destroy.
+
+─────────────────────────────────────────────────────────────────────────────
+
+Saved the plan to:
+/workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/net/NET-BENIGN-001-no-ssh-open/tfplan.binary
+
+To perform exactly these actions, run the following command to apply:
+    terraform apply "/workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/net/NET-BENIGN-001-no-ssh-open/tfplan.binary"
+
+============================================================
+FULL SCAN END: 2025-12-23 00:45:21 UTC
+Return codes (non-fatal):
+  checkov   = 1
+  tfsec     = 1
+  terrascan = 1
+  conftest  = 1
+Outputs:
+  /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/net/NET-BENIGN-001-no-ssh-open/scan_logs/checkov_NET-BENIGN-001-no-ssh-open.txt
+  /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/net/NET-BENIGN-001-no-ssh-open/scan_logs/tfsec_NET-BENIGN-001-no-ssh-open.txt
+  /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/net/NET-BENIGN-001-no-ssh-open/scan_logs/terrascan_NET-BENIGN-001-no-ssh-open.txt
+  /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/net/NET-BENIGN-001-no-ssh-open/scan_logs/conftest_NET-BENIGN-001-no-ssh-open.txt
+Master log:
+  /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/net/NET-BENIGN-001-no-ssh-open/scan_logs/FULL_NET-BENIGN-001-no-ssh-open.log
+============================================================
+
+------------------------------------------------------------
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/net/NET-BENIGN-002-vpc-flow-logs-enabled
+------------------------------------------------------------
+============================================================
+FULL SCAN START: 2025-12-23 00:45:21 UTC
+Scenario: NET-BENIGN-002-vpc-flow-logs-enabled
+Path: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/net/NET-BENIGN-002-vpc-flow-logs-enabled
+Policy: /workspaces/MSc-Thesis---Cloud-Misconfigurations/policy/terraform
+============================================================
+
+Initializing the backend...
+Initializing provider plugins...
+- Reusing previous version of hashicorp/aws from the dependency lock file
+- Reusing previous version of hashicorp/random from the dependency lock file
+- Using previously-installed hashicorp/aws v5.100.0
+- Using previously-installed hashicorp/random v3.7.2
+
+Terraform has been successfully initialized!
+
+You may now begin working with Terraform. Try running "terraform plan" to see
+any changes that are required for your infrastructure. All Terraform commands
+should now work.
+
+If you ever set or change modules or backend configuration for Terraform,
+rerun this command to reinitialize your working directory. If you forget, other
+commands will detect it and remind you to do so if necessary.
+Success! The configuration is valid.
+
+
+Terraform used the selected providers to generate the following execution
+plan. Resource actions are indicated with the following symbols:
+  + create
+
+Terraform will perform the following actions:
+
+  # aws_cloudwatch_log_group.flowlogs will be created
+  + resource "aws_cloudwatch_log_group" "flowlogs" {
+      + arn               = (known after apply)
+      + id                = (known after apply)
+      + log_group_class   = (known after apply)
+      + name              = (known after apply)
+      + name_prefix       = (known after apply)
+      + retention_in_days = 30
+      + skip_destroy      = false
+      + tags              = {
+          + "cis_controls" = "VPC.2"
+          + "domain"       = "NET"
+          + "scenario_id"  = "NET-BENIGN-002-vpc-flow-logs-enabled"
+          + "type"         = "BENIGN"
+        }
+      + tags_all          = {
+          + "cis_controls" = "VPC.2"
+          + "domain"       = "NET"
+          + "scenario_id"  = "NET-BENIGN-002-vpc-flow-logs-enabled"
+          + "type"         = "BENIGN"
+        }
+    }
+
+  # aws_flow_log.vpc_flow will be created
+  + resource "aws_flow_log" "vpc_flow" {
+      + arn                      = (known after apply)
+      + iam_role_arn             = (known after apply)
+      + id                       = (known after apply)
+      + log_destination          = (known after apply)
+      + log_destination_type     = "cloud-watch-logs"
+      + log_format               = (known after apply)
+      + log_group_name           = (known after apply)
+      + max_aggregation_interval = 600
+      + tags                     = {
+          + "cis_controls" = "VPC.2"
+          + "domain"       = "NET"
+          + "scenario_id"  = "NET-BENIGN-002-vpc-flow-logs-enabled"
+          + "type"         = "BENIGN"
+        }
+      + tags_all                 = {
+          + "cis_controls" = "VPC.2"
+          + "domain"       = "NET"
+          + "scenario_id"  = "NET-BENIGN-002-vpc-flow-logs-enabled"
+          + "type"         = "BENIGN"
+        }
+      + traffic_type             = "ALL"
+      + vpc_id                   = (known after apply)
+    }
+
+  # aws_iam_role.flowlogs_role will be created
+  + resource "aws_iam_role" "flowlogs_role" {
+      + arn                   = (known after apply)
+      + assume_role_policy    = jsonencode(
+            {
+              + Statement = [
+                  + {
+                      + Action    = "sts:AssumeRole"
+                      + Effect    = "Allow"
+                      + Principal = {
+                          + Service = "vpc-flow-logs.amazonaws.com"
+                        }
+                    },
+                ]
+              + Version   = "2012-10-17"
+            }
+        )
+      + create_date           = (known after apply)
+      + force_detach_policies = false
+      + id                    = (known after apply)
+      + managed_policy_arns   = (known after apply)
+      + max_session_duration  = 3600
+      + name                  = (known after apply)
+      + name_prefix           = (known after apply)
+      + path                  = "/"
+      + tags                  = {
+          + "cis_controls" = "VPC.2"
+          + "domain"       = "NET"
+          + "scenario_id"  = "NET-BENIGN-002-vpc-flow-logs-enabled"
+          + "type"         = "BENIGN"
+        }
+      + tags_all              = {
+          + "cis_controls" = "VPC.2"
+          + "domain"       = "NET"
+          + "scenario_id"  = "NET-BENIGN-002-vpc-flow-logs-enabled"
+          + "type"         = "BENIGN"
+        }
+      + unique_id             = (known after apply)
+
+      + inline_policy (known after apply)
+    }
+
+  # aws_iam_role_policy.flowlogs_policy will be created
+  + resource "aws_iam_role_policy" "flowlogs_policy" {
+      + id          = (known after apply)
+      + name        = (known after apply)
+      + name_prefix = (known after apply)
+      + policy      = jsonencode(
+            {
+              + Statement = [
+                  + {
+                      + Action   = [
+                          + "logs:CreateLogStream",
+                          + "logs:PutLogEvents",
+                          + "logs:DescribeLogGroups",
+                          + "logs:DescribeLogStreams",
+                        ]
+                      + Effect   = "Allow"
+                      + Resource = "*"
+                    },
+                ]
+              + Version   = "2012-10-17"
+            }
+        )
+      + role        = (known after apply)
+    }
+
+  # aws_vpc.vpc will be created
+  + resource "aws_vpc" "vpc" {
+      + arn                                  = (known after apply)
+      + cidr_block                           = "10.53.0.0/16"
+      + default_network_acl_id               = (known after apply)
+      + default_route_table_id               = (known after apply)
+      + default_security_group_id            = (known after apply)
+      + dhcp_options_id                      = (known after apply)
+      + enable_dns_hostnames                 = true
+      + enable_dns_support                   = true
+      + enable_network_address_usage_metrics = (known after apply)
+      + id                                   = (known after apply)
+      + instance_tenancy                     = "default"
+      + ipv6_association_id                  = (known after apply)
+      + ipv6_cidr_block                      = (known after apply)
+      + ipv6_cidr_block_network_border_group = (known after apply)
+      + main_route_table_id                  = (known after apply)
+      + owner_id                             = (known after apply)
+      + tags                                 = {
+          + "cis_controls" = "VPC.2"
+          + "domain"       = "NET"
+          + "scenario_id"  = "NET-BENIGN-002-vpc-flow-logs-enabled"
+          + "type"         = "BENIGN"
+        }
+      + tags_all                             = {
+          + "cis_controls" = "VPC.2"
+          + "domain"       = "NET"
+          + "scenario_id"  = "NET-BENIGN-002-vpc-flow-logs-enabled"
+          + "type"         = "BENIGN"
+        }
+    }
+
+  # random_id.suffix will be created
+  + resource "random_id" "suffix" {
+      + b64_std     = (known after apply)
+      + b64_url     = (known after apply)
+      + byte_length = 4
+      + dec         = (known after apply)
+      + hex         = (known after apply)
+      + id          = (known after apply)
+    }
+
+Plan: 6 to add, 0 to change, 0 to destroy.
+
+─────────────────────────────────────────────────────────────────────────────
+
+Saved the plan to:
+/workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/net/NET-BENIGN-002-vpc-flow-logs-enabled/tfplan.binary
+
+To perform exactly these actions, run the following command to apply:
+    terraform apply "/workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/net/NET-BENIGN-002-vpc-flow-logs-enabled/tfplan.binary"
+
+============================================================
+FULL SCAN END: 2025-12-23 00:45:36 UTC
+Return codes (non-fatal):
+  checkov   = 1
+  tfsec     = 1
+  terrascan = 1
+  conftest  = 0
+Outputs:
+  /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/net/NET-BENIGN-002-vpc-flow-logs-enabled/scan_logs/checkov_NET-BENIGN-002-vpc-flow-logs-enabled.txt
+  /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/net/NET-BENIGN-002-vpc-flow-logs-enabled/scan_logs/tfsec_NET-BENIGN-002-vpc-flow-logs-enabled.txt
+  /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/net/NET-BENIGN-002-vpc-flow-logs-enabled/scan_logs/terrascan_NET-BENIGN-002-vpc-flow-logs-enabled.txt
+  /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/net/NET-BENIGN-002-vpc-flow-logs-enabled/scan_logs/conftest_NET-BENIGN-002-vpc-flow-logs-enabled.txt
+Master log:
+  /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/net/NET-BENIGN-002-vpc-flow-logs-enabled/scan_logs/FULL_NET-BENIGN-002-vpc-flow-logs-enabled.log
+============================================================
+
+------------------------------------------------------------
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/net/NET-MISC-001-ssh-open-to-world
+------------------------------------------------------------
+============================================================
+FULL SCAN START: 2025-12-23 00:45:36 UTC
+Scenario: NET-MISC-001-ssh-open-to-world
+Path: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/net/NET-MISC-001-ssh-open-to-world
+Policy: /workspaces/MSc-Thesis---Cloud-Misconfigurations/policy/terraform
+============================================================
+
+Initializing the backend...
+Initializing provider plugins...
+- Reusing previous version of hashicorp/aws from the dependency lock file
+- Reusing previous version of hashicorp/random from the dependency lock file
+- Using previously-installed hashicorp/random v3.7.2
+- Using previously-installed hashicorp/aws v5.100.0
+
+Terraform has been successfully initialized!
+
+You may now begin working with Terraform. Try running "terraform plan" to see
+any changes that are required for your infrastructure. All Terraform commands
+should now work.
+
+If you ever set or change modules or backend configuration for Terraform,
+rerun this command to reinitialize your working directory. If you forget, other
+commands will detect it and remind you to do so if necessary.
+Success! The configuration is valid.
+
+
+Terraform used the selected providers to generate the following execution
+plan. Resource actions are indicated with the following symbols:
+  + create
+
+Terraform will perform the following actions:
+
+  # aws_security_group.sg will be created
+  + resource "aws_security_group" "sg" {
+      + arn                    = (known after apply)
+      + description            = "Managed by Terraform"
+      + egress                 = [
+          + {
+              + cidr_blocks      = [
+                  + "0.0.0.0/0",
+                ]
+              + from_port        = 0
+              + ipv6_cidr_blocks = []
+              + prefix_list_ids  = []
+              + protocol         = "-1"
+              + security_groups  = []
+              + self             = false
+              + to_port          = 0
+                # (1 unchanged attribute hidden)
+            },
+        ]
+      + id                     = (known after apply)
+      + ingress                = [
+          + {
+              + cidr_blocks      = [
+                  + "0.0.0.0/0",
+                ]
+              + from_port        = 22
+              + ipv6_cidr_blocks = []
+              + prefix_list_ids  = []
+              + protocol         = "tcp"
+              + security_groups  = []
+              + self             = false
+              + to_port          = 22
+                # (1 unchanged attribute hidden)
+            },
+        ]
+      + name                   = (known after apply)
+      + name_prefix            = (known after apply)
+      + owner_id               = (known after apply)
+      + revoke_rules_on_delete = false
+      + tags                   = {
+          + "cis_controls" = "EC2.2"
+          + "domain"       = "NET"
+          + "scenario_id"  = "NET-MISC-001-ssh-open-to-world"
+          + "type"         = "MISC"
+        }
+      + tags_all               = {
+          + "cis_controls" = "EC2.2"
+          + "domain"       = "NET"
+          + "scenario_id"  = "NET-MISC-001-ssh-open-to-world"
+          + "type"         = "MISC"
+        }
+      + vpc_id                 = (known after apply)
+    }
+
+  # aws_subnet.subnet will be created
+  + resource "aws_subnet" "subnet" {
+      + arn                                            = (known after apply)
+      + assign_ipv6_address_on_creation                = false
+      + availability_zone                              = "eu-west-2a"
+      + availability_zone_id                           = (known after apply)
+      + cidr_block                                     = "10.50.1.0/24"
+      + enable_dns64                                   = false
+      + enable_resource_name_dns_a_record_on_launch    = false
+      + enable_resource_name_dns_aaaa_record_on_launch = false
+      + id                                             = (known after apply)
+      + ipv6_cidr_block_association_id                 = (known after apply)
+      + ipv6_native                                    = false
+      + map_public_ip_on_launch                        = false
+      + owner_id                                       = (known after apply)
+      + private_dns_hostname_type_on_launch            = (known after apply)
+      + tags                                           = {
+          + "cis_controls" = "EC2.2"
+          + "domain"       = "NET"
+          + "scenario_id"  = "NET-MISC-001-ssh-open-to-world"
+          + "type"         = "MISC"
+        }
+      + tags_all                                       = {
+          + "cis_controls" = "EC2.2"
+          + "domain"       = "NET"
+          + "scenario_id"  = "NET-MISC-001-ssh-open-to-world"
+          + "type"         = "MISC"
+        }
+      + vpc_id                                         = (known after apply)
+    }
+
+  # aws_vpc.vpc will be created
+  + resource "aws_vpc" "vpc" {
+      + arn                                  = (known after apply)
+      + cidr_block                           = "10.50.0.0/16"
+      + default_network_acl_id               = (known after apply)
+      + default_route_table_id               = (known after apply)
+      + default_security_group_id            = (known after apply)
+      + dhcp_options_id                      = (known after apply)
+      + enable_dns_hostnames                 = true
+      + enable_dns_support                   = true
+      + enable_network_address_usage_metrics = (known after apply)
+      + id                                   = (known after apply)
+      + instance_tenancy                     = "default"
+      + ipv6_association_id                  = (known after apply)
+      + ipv6_cidr_block                      = (known after apply)
+      + ipv6_cidr_block_network_border_group = (known after apply)
+      + main_route_table_id                  = (known after apply)
+      + owner_id                             = (known after apply)
+      + tags                                 = {
+          + "cis_controls" = "EC2.2"
+          + "domain"       = "NET"
+          + "scenario_id"  = "NET-MISC-001-ssh-open-to-world"
+          + "type"         = "MISC"
+        }
+      + tags_all                             = {
+          + "cis_controls" = "EC2.2"
+          + "domain"       = "NET"
+          + "scenario_id"  = "NET-MISC-001-ssh-open-to-world"
+          + "type"         = "MISC"
+        }
+    }
+
+  # random_id.suffix will be created
+  + resource "random_id" "suffix" {
+      + b64_std     = (known after apply)
+      + b64_url     = (known after apply)
+      + byte_length = 4
+      + dec         = (known after apply)
+      + hex         = (known after apply)
+      + id          = (known after apply)
+    }
+
+Plan: 4 to add, 0 to change, 0 to destroy.
+
+─────────────────────────────────────────────────────────────────────────────
+
+Saved the plan to:
+/workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/net/NET-MISC-001-ssh-open-to-world/tfplan.binary
+
+To perform exactly these actions, run the following command to apply:
+    terraform apply "/workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/net/NET-MISC-001-ssh-open-to-world/tfplan.binary"
+
+============================================================
+FULL SCAN END: 2025-12-23 00:45:52 UTC
+Return codes (non-fatal):
+  checkov   = 1
+  tfsec     = 1
+  terrascan = 1
+  conftest  = 1
+Outputs:
+  /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/net/NET-MISC-001-ssh-open-to-world/scan_logs/checkov_NET-MISC-001-ssh-open-to-world.txt
+  /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/net/NET-MISC-001-ssh-open-to-world/scan_logs/tfsec_NET-MISC-001-ssh-open-to-world.txt
+  /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/net/NET-MISC-001-ssh-open-to-world/scan_logs/terrascan_NET-MISC-001-ssh-open-to-world.txt
+  /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/net/NET-MISC-001-ssh-open-to-world/scan_logs/conftest_NET-MISC-001-ssh-open-to-world.txt
+Master log:
+  /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/net/NET-MISC-001-ssh-open-to-world/scan_logs/FULL_NET-MISC-001-ssh-open-to-world.log
+============================================================
+
+------------------------------------------------------------
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/net/NET-MISC-002-vpc-flow-logs-disabled
+------------------------------------------------------------
+============================================================
+FULL SCAN START: 2025-12-23 00:45:52 UTC
+Scenario: NET-MISC-002-vpc-flow-logs-disabled
+Path: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/net/NET-MISC-002-vpc-flow-logs-disabled
+Policy: /workspaces/MSc-Thesis---Cloud-Misconfigurations/policy/terraform
+============================================================
+
+Initializing the backend...
+Initializing provider plugins...
+- Reusing previous version of hashicorp/random from the dependency lock file
+- Reusing previous version of hashicorp/aws from the dependency lock file
+- Using previously-installed hashicorp/random v3.7.2
+- Using previously-installed hashicorp/aws v5.100.0
+
+Terraform has been successfully initialized!
+
+You may now begin working with Terraform. Try running "terraform plan" to see
+any changes that are required for your infrastructure. All Terraform commands
+should now work.
+
+If you ever set or change modules or backend configuration for Terraform,
+rerun this command to reinitialize your working directory. If you forget, other
+commands will detect it and remind you to do so if necessary.
+Success! The configuration is valid.
+
+
+Terraform used the selected providers to generate the following execution
+plan. Resource actions are indicated with the following symbols:
+  + create
+
+Terraform will perform the following actions:
+
+  # aws_vpc.vpc will be created
+  + resource "aws_vpc" "vpc" {
+      + arn                                  = (known after apply)
+      + cidr_block                           = "10.52.0.0/16"
+      + default_network_acl_id               = (known after apply)
+      + default_route_table_id               = (known after apply)
+      + default_security_group_id            = (known after apply)
+      + dhcp_options_id                      = (known after apply)
+      + enable_dns_hostnames                 = true
+      + enable_dns_support                   = true
+      + enable_network_address_usage_metrics = (known after apply)
+      + id                                   = (known after apply)
+      + instance_tenancy                     = "default"
+      + ipv6_association_id                  = (known after apply)
+      + ipv6_cidr_block                      = (known after apply)
+      + ipv6_cidr_block_network_border_group = (known after apply)
+      + main_route_table_id                  = (known after apply)
+      + owner_id                             = (known after apply)
+      + tags                                 = {
+          + "cis_controls" = "VPC.2"
+          + "domain"       = "NET"
+          + "scenario_id"  = "NET-MISC-002-vpc-flow-logs-disabled"
+          + "type"         = "MISC"
+        }
+      + tags_all                             = {
+          + "cis_controls" = "VPC.2"
+          + "domain"       = "NET"
+          + "scenario_id"  = "NET-MISC-002-vpc-flow-logs-disabled"
+          + "type"         = "MISC"
+        }
+    }
+
+  # random_id.suffix will be created
+  + resource "random_id" "suffix" {
+      + b64_std     = (known after apply)
+      + b64_url     = (known after apply)
+      + byte_length = 4
+      + dec         = (known after apply)
+      + hex         = (known after apply)
+      + id          = (known after apply)
+    }
+
+Plan: 2 to add, 0 to change, 0 to destroy.
+
+─────────────────────────────────────────────────────────────────────────────
+
+Saved the plan to:
+/workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/net/NET-MISC-002-vpc-flow-logs-disabled/tfplan.binary
+
+To perform exactly these actions, run the following command to apply:
+    terraform apply "/workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/net/NET-MISC-002-vpc-flow-logs-disabled/tfplan.binary"
+
+============================================================
+FULL SCAN END: 2025-12-23 00:46:07 UTC
+Return codes (non-fatal):
+  checkov   = 1
+  tfsec     = 1
+  terrascan = 1
+  conftest  = 1
+Outputs:
+  /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/net/NET-MISC-002-vpc-flow-logs-disabled/scan_logs/checkov_NET-MISC-002-vpc-flow-logs-disabled.txt
+  /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/net/NET-MISC-002-vpc-flow-logs-disabled/scan_logs/tfsec_NET-MISC-002-vpc-flow-logs-disabled.txt
+  /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/net/NET-MISC-002-vpc-flow-logs-disabled/scan_logs/terrascan_NET-MISC-002-vpc-flow-logs-disabled.txt
+  /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/net/NET-MISC-002-vpc-flow-logs-disabled/scan_logs/conftest_NET-MISC-002-vpc-flow-logs-disabled.txt
+Master log:
+  /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/net/NET-MISC-002-vpc-flow-logs-disabled/scan_logs/FULL_NET-MISC-002-vpc-flow-logs-disabled.log
+============================================================
+
+------------------------------------------------------------
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/storage/STO-BENIGN-001-s3-private-encrypted
+------------------------------------------------------------
+============================================================
+FULL SCAN START: 2025-12-23 00:46:07 UTC
+Scenario: STO-BENIGN-001-s3-private-encrypted
+Path: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/storage/STO-BENIGN-001-s3-private-encrypted
+Policy: /workspaces/MSc-Thesis---Cloud-Misconfigurations/policy/terraform
+============================================================
+
+Initializing the backend...
+Initializing provider plugins...
+- Reusing previous version of hashicorp/aws from the dependency lock file
+- Reusing previous version of hashicorp/random from the dependency lock file
+- Using previously-installed hashicorp/aws v5.100.0
+- Using previously-installed hashicorp/random v3.7.2
+
+Terraform has been successfully initialized!
+
+You may now begin working with Terraform. Try running "terraform plan" to see
+any changes that are required for your infrastructure. All Terraform commands
+should now work.
+
+If you ever set or change modules or backend configuration for Terraform,
+rerun this command to reinitialize your working directory. If you forget, other
+commands will detect it and remind you to do so if necessary.
+Success! The configuration is valid.
+
+
+Terraform used the selected providers to generate the following execution
+plan. Resource actions are indicated with the following symbols:
+  + create
+
+Terraform will perform the following actions:
+
+  # aws_s3_bucket.bucket will be created
+  + resource "aws_s3_bucket" "bucket" {
+      + acceleration_status         = (known after apply)
+      + acl                         = (known after apply)
+      + arn                         = (known after apply)
+      + bucket                      = (known after apply)
+      + bucket_domain_name          = (known after apply)
+      + bucket_prefix               = (known after apply)
+      + bucket_regional_domain_name = (known after apply)
+      + force_destroy               = true
+      + hosted_zone_id              = (known after apply)
+      + id                          = (known after apply)
+      + object_lock_enabled         = (known after apply)
+      + policy                      = (known after apply)
+      + region                      = (known after apply)
+      + request_payer               = (known after apply)
+      + tags                        = {
+          + "cis_controls" = "S3.8,S3.17"
+          + "domain"       = "STO"
+          + "scenario_id"  = "STO-BENIGN-001-s3-private-encrypted"
+          + "type"         = "BENIGN"
+        }
+      + tags_all                    = {
+          + "cis_controls" = "S3.8,S3.17"
+          + "domain"       = "STO"
+          + "scenario_id"  = "STO-BENIGN-001-s3-private-encrypted"
+          + "type"         = "BENIGN"
+        }
+      + website_domain              = (known after apply)
+      + website_endpoint            = (known after apply)
+
+      + cors_rule (known after apply)
+
+      + grant (known after apply)
+
+      + lifecycle_rule (known after apply)
+
+      + logging (known after apply)
+
+      + object_lock_configuration (known after apply)
+
+      + replication_configuration (known after apply)
+
+      + server_side_encryption_configuration (known after apply)
+
+      + versioning (known after apply)
+
+      + website (known after apply)
+    }
+
+  # aws_s3_bucket_public_access_block.block will be created
+  + resource "aws_s3_bucket_public_access_block" "block" {
+      + block_public_acls       = true
+      + block_public_policy     = true
+      + bucket                  = (known after apply)
+      + id                      = (known after apply)
+      + ignore_public_acls      = true
+      + restrict_public_buckets = true
+    }
+
+  # aws_s3_bucket_server_side_encryption_configuration.encrypt will be created
+  + resource "aws_s3_bucket_server_side_encryption_configuration" "encrypt" {
+      + bucket = (known after apply)
+      + id     = (known after apply)
+
+      + rule {
+          + apply_server_side_encryption_by_default {
+              + sse_algorithm     = "AES256"
+                # (1 unchanged attribute hidden)
+            }
+        }
+    }
+
+  # aws_s3_bucket_versioning.versioning will be created
+  + resource "aws_s3_bucket_versioning" "versioning" {
+      + bucket = (known after apply)
+      + id     = (known after apply)
+
+      + versioning_configuration {
+          + mfa_delete = (known after apply)
+          + status     = "Enabled"
+        }
+    }
+
+  # random_id.suffix will be created
+  + resource "random_id" "suffix" {
+      + b64_std     = (known after apply)
+      + b64_url     = (known after apply)
+      + byte_length = 4
+      + dec         = (known after apply)
+      + hex         = (known after apply)
+      + id          = (known after apply)
+    }
+
+Plan: 5 to add, 0 to change, 0 to destroy.
+
+─────────────────────────────────────────────────────────────────────────────
+
+Saved the plan to:
+/workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/storage/STO-BENIGN-001-s3-private-encrypted/tfplan.binary
+
+To perform exactly these actions, run the following command to apply:
+    terraform apply "/workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/storage/STO-BENIGN-001-s3-private-encrypted/tfplan.binary"
+
+============================================================
+FULL SCAN END: 2025-12-23 00:46:23 UTC
+Return codes (non-fatal):
+  checkov   = 1
+  tfsec     = 1
+  terrascan = 1
+  conftest  = 0
+Outputs:
+  /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/storage/STO-BENIGN-001-s3-private-encrypted/scan_logs/checkov_STO-BENIGN-001-s3-private-encrypted.txt
+  /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/storage/STO-BENIGN-001-s3-private-encrypted/scan_logs/tfsec_STO-BENIGN-001-s3-private-encrypted.txt
+  /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/storage/STO-BENIGN-001-s3-private-encrypted/scan_logs/terrascan_STO-BENIGN-001-s3-private-encrypted.txt
+  /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/storage/STO-BENIGN-001-s3-private-encrypted/scan_logs/conftest_STO-BENIGN-001-s3-private-encrypted.txt
+Master log:
+  /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/storage/STO-BENIGN-001-s3-private-encrypted/scan_logs/FULL_STO-BENIGN-001-s3-private-encrypted.log
+============================================================
+
+------------------------------------------------------------
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/storage/STO-BENIGN-002-s3-private-policy
+------------------------------------------------------------
+============================================================
+FULL SCAN START: 2025-12-23 00:46:23 UTC
+Scenario: STO-BENIGN-002-s3-private-policy
+Path: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/storage/STO-BENIGN-002-s3-private-policy
+Policy: /workspaces/MSc-Thesis---Cloud-Misconfigurations/policy/terraform
+============================================================
+
+Initializing the backend...
+Initializing provider plugins...
+- Reusing previous version of hashicorp/random from the dependency lock file
+- Reusing previous version of hashicorp/aws from the dependency lock file
+- Using previously-installed hashicorp/random v3.7.2
+- Using previously-installed hashicorp/aws v5.100.0
+
+Terraform has been successfully initialized!
+
+You may now begin working with Terraform. Try running "terraform plan" to see
+any changes that are required for your infrastructure. All Terraform commands
+should now work.
+
+If you ever set or change modules or backend configuration for Terraform,
+rerun this command to reinitialize your working directory. If you forget, other
+commands will detect it and remind you to do so if necessary.
+Success! The configuration is valid.
+
+data.aws_caller_identity.current: Reading...
+data.aws_caller_identity.current: Read complete after 0s [id=688567271421]
+
+Terraform used the selected providers to generate the following execution
+plan. Resource actions are indicated with the following symbols:
+  + create
+
+Terraform will perform the following actions:
+
+  # aws_s3_bucket.bucket will be created
+  + resource "aws_s3_bucket" "bucket" {
+      + acceleration_status         = (known after apply)
+      + acl                         = (known after apply)
+      + arn                         = (known after apply)
+      + bucket                      = (known after apply)
+      + bucket_domain_name          = (known after apply)
+      + bucket_prefix               = (known after apply)
+      + bucket_regional_domain_name = (known after apply)
+      + force_destroy               = true
+      + hosted_zone_id              = (known after apply)
+      + id                          = (known after apply)
+      + object_lock_enabled         = (known after apply)
+      + policy                      = (known after apply)
+      + region                      = (known after apply)
+      + request_payer               = (known after apply)
+      + tags                        = {
+          + "cis_controls" = "S3.8,S3.17"
+          + "domain"       = "STO"
+          + "scenario_id"  = "STO-BENIGN-002-s3-private-policy"
+          + "type"         = "BENIGN"
+        }
+      + tags_all                    = {
+          + "cis_controls" = "S3.8,S3.17"
+          + "domain"       = "STO"
+          + "scenario_id"  = "STO-BENIGN-002-s3-private-policy"
+          + "type"         = "BENIGN"
+        }
+      + website_domain              = (known after apply)
+      + website_endpoint            = (known after apply)
+
+      + cors_rule (known after apply)
+
+      + grant (known after apply)
+
+      + lifecycle_rule (known after apply)
+
+      + logging (known after apply)
+
+      + object_lock_configuration (known after apply)
+
+      + replication_configuration (known after apply)
+
+      + server_side_encryption_configuration (known after apply)
+
+      + versioning (known after apply)
+
+      + website (known after apply)
+    }
+
+  # aws_s3_bucket_policy.account_only will be created
+  + resource "aws_s3_bucket_policy" "account_only" {
+      + bucket = (known after apply)
+      + id     = (known after apply)
+      + policy = (known after apply)
+    }
+
+  # aws_s3_bucket_public_access_block.block will be created
+  + resource "aws_s3_bucket_public_access_block" "block" {
+      + block_public_acls       = true
+      + block_public_policy     = true
+      + bucket                  = (known after apply)
+      + id                      = (known after apply)
+      + ignore_public_acls      = true
+      + restrict_public_buckets = true
+    }
+
+  # aws_s3_bucket_server_side_encryption_configuration.encrypt will be created
+  + resource "aws_s3_bucket_server_side_encryption_configuration" "encrypt" {
+      + bucket = (known after apply)
+      + id     = (known after apply)
+
+      + rule {
+          + apply_server_side_encryption_by_default {
+              + sse_algorithm     = "AES256"
+                # (1 unchanged attribute hidden)
+            }
+        }
+    }
+
+  # random_id.suffix will be created
+  + resource "random_id" "suffix" {
+      + b64_std     = (known after apply)
+      + b64_url     = (known after apply)
+      + byte_length = 4
+      + dec         = (known after apply)
+      + hex         = (known after apply)
+      + id          = (known after apply)
+    }
+
+Plan: 5 to add, 0 to change, 0 to destroy.
+
+─────────────────────────────────────────────────────────────────────────────
+
+Saved the plan to:
+/workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/storage/STO-BENIGN-002-s3-private-policy/tfplan.binary
+
+To perform exactly these actions, run the following command to apply:
+    terraform apply "/workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/storage/STO-BENIGN-002-s3-private-policy/tfplan.binary"
+
+============================================================
+FULL SCAN END: 2025-12-23 00:46:38 UTC
+Return codes (non-fatal):
+  checkov   = 1
+  tfsec     = 1
+  terrascan = 1
+  conftest  = 0
+Outputs:
+  /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/storage/STO-BENIGN-002-s3-private-policy/scan_logs/checkov_STO-BENIGN-002-s3-private-policy.txt
+  /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/storage/STO-BENIGN-002-s3-private-policy/scan_logs/tfsec_STO-BENIGN-002-s3-private-policy.txt
+  /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/storage/STO-BENIGN-002-s3-private-policy/scan_logs/terrascan_STO-BENIGN-002-s3-private-policy.txt
+  /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/storage/STO-BENIGN-002-s3-private-policy/scan_logs/conftest_STO-BENIGN-002-s3-private-policy.txt
+Master log:
+  /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/storage/STO-BENIGN-002-s3-private-policy/scan_logs/FULL_STO-BENIGN-002-s3-private-policy.log
+============================================================
+
+------------------------------------------------------------
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/storage/STO-BENIGN-003-rds-backup-retention
+------------------------------------------------------------
+============================================================
+FULL SCAN START: 2025-12-23 00:46:38 UTC
+Scenario: STO-BENIGN-003-rds-backup-retention
+Path: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/storage/STO-BENIGN-003-rds-backup-retention
+Policy: /workspaces/MSc-Thesis---Cloud-Misconfigurations/policy/terraform
+============================================================
+
+Initializing the backend...
+Initializing provider plugins...
+- Reusing previous version of hashicorp/random from the dependency lock file
+- Reusing previous version of hashicorp/aws from the dependency lock file
+- Using previously-installed hashicorp/random v3.7.2
+- Using previously-installed hashicorp/aws v5.100.0
+
+Terraform has been successfully initialized!
+
+You may now begin working with Terraform. Try running "terraform plan" to see
+any changes that are required for your infrastructure. All Terraform commands
+should now work.
+
+If you ever set or change modules or backend configuration for Terraform,
+rerun this command to reinitialize your working directory. If you forget, other
+commands will detect it and remind you to do so if necessary.
+Success! The configuration is valid.
+
+
+Terraform used the selected providers to generate the following execution
+plan. Resource actions are indicated with the following symbols:
+  + create
+
+Terraform will perform the following actions:
+
+  # aws_db_instance.rds will be created
+  + resource "aws_db_instance" "rds" {
+      + address                               = (known after apply)
+      + allocated_storage                     = 20
+      + apply_immediately                     = false
+      + arn                                   = (known after apply)
+      + auto_minor_version_upgrade            = true
+      + availability_zone                     = (known after apply)
+      + backup_retention_period               = 7
+      + backup_target                         = (known after apply)
+      + backup_window                         = (known after apply)
+      + ca_cert_identifier                    = (known after apply)
+      + character_set_name                    = (known after apply)
+      + copy_tags_to_snapshot                 = false
+      + database_insights_mode                = (known after apply)
+      + db_name                               = (known after apply)
+      + db_subnet_group_name                  = (known after apply)
+      + dedicated_log_volume                  = false
+      + delete_automated_backups              = true
+      + domain_fqdn                           = (known after apply)
+      + endpoint                              = (known after apply)
+      + engine                                = "mysql"
+      + engine_lifecycle_support              = (known after apply)
+      + engine_version                        = "8.0"
+      + engine_version_actual                 = (known after apply)
+      + hosted_zone_id                        = (known after apply)
+      + id                                    = (known after apply)
+      + identifier                            = (known after apply)
+      + identifier_prefix                     = (known after apply)
+      + instance_class                        = "db.t3.micro"
+      + iops                                  = (known after apply)
+      + kms_key_id                            = (known after apply)
+      + latest_restorable_time                = (known after apply)
+      + license_model                         = (known after apply)
+      + listener_endpoint                     = (known after apply)
+      + maintenance_window                    = (known after apply)
+      + master_user_secret                    = (known after apply)
+      + master_user_secret_kms_key_id         = (known after apply)
+      + monitoring_interval                   = 0
+      + monitoring_role_arn                   = (known after apply)
+      + multi_az                              = (known after apply)
+      + nchar_character_set_name              = (known after apply)
+      + network_type                          = (known after apply)
+      + option_group_name                     = (known after apply)
+      + parameter_group_name                  = (known after apply)
+      + password                              = (sensitive value)
+      + password_wo                           = (write-only attribute)
+      + performance_insights_enabled          = false
+      + performance_insights_kms_key_id       = (known after apply)
+      + performance_insights_retention_period = (known after apply)
+      + port                                  = (known after apply)
+      + publicly_accessible                   = false
+      + replica_mode                          = (known after apply)
+      + replicas                              = (known after apply)
+      + resource_id                           = (known after apply)
+      + skip_final_snapshot                   = true
+      + snapshot_identifier                   = (known after apply)
+      + status                                = (known after apply)
+      + storage_throughput                    = (known after apply)
+      + storage_type                          = (known after apply)
+      + tags                                  = {
+          + "cis_controls" = "RDS.2"
+          + "domain"       = "STO"
+          + "scenario_id"  = "STO-BENIGN-003-rds-backup-retention"
+          + "type"         = "BENIGN"
+        }
+      + tags_all                              = {
+          + "cis_controls" = "RDS.2"
+          + "domain"       = "STO"
+          + "scenario_id"  = "STO-BENIGN-003-rds-backup-retention"
+          + "type"         = "BENIGN"
+        }
+      + timezone                              = (known after apply)
+      + username                              = "adminuser"
+      + vpc_security_group_ids                = (known after apply)
+    }
+
+  # random_id.suffix will be created
+  + resource "random_id" "suffix" {
+      + b64_std     = (known after apply)
+      + b64_url     = (known after apply)
+      + byte_length = 4
+      + dec         = (known after apply)
+      + hex         = (known after apply)
+      + id          = (known after apply)
+    }
+
+  # random_password.db will be created
+  + resource "random_password" "db" {
+      + bcrypt_hash = (sensitive value)
+      + id          = (known after apply)
+      + length      = 16
+      + lower       = true
+      + min_lower   = 0
+      + min_numeric = 0
+      + min_special = 0
+      + min_upper   = 0
+      + number      = true
+      + numeric     = true
+      + result      = (sensitive value)
+      + special     = true
+      + upper       = true
+    }
+
+Plan: 3 to add, 0 to change, 0 to destroy.
+
+─────────────────────────────────────────────────────────────────────────────
+
+Saved the plan to:
+/workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/storage/STO-BENIGN-003-rds-backup-retention/tfplan.binary
+
+To perform exactly these actions, run the following command to apply:
+    terraform apply "/workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/storage/STO-BENIGN-003-rds-backup-retention/tfplan.binary"
+
+============================================================
+FULL SCAN END: 2025-12-23 00:46:53 UTC
+Return codes (non-fatal):
+  checkov   = 1
+  tfsec     = 1
+  terrascan = 1
+  conftest  = 0
+Outputs:
+  /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/storage/STO-BENIGN-003-rds-backup-retention/scan_logs/checkov_STO-BENIGN-003-rds-backup-retention.txt
+  /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/storage/STO-BENIGN-003-rds-backup-retention/scan_logs/tfsec_STO-BENIGN-003-rds-backup-retention.txt
+  /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/storage/STO-BENIGN-003-rds-backup-retention/scan_logs/terrascan_STO-BENIGN-003-rds-backup-retention.txt
+  /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/storage/STO-BENIGN-003-rds-backup-retention/scan_logs/conftest_STO-BENIGN-003-rds-backup-retention.txt
+Master log:
+  /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/storage/STO-BENIGN-003-rds-backup-retention/scan_logs/FULL_STO-BENIGN-003-rds-backup-retention.log
+============================================================
+
+------------------------------------------------------------
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/storage/STO-BENIGN-004-s3-access-logging-enabled
+------------------------------------------------------------
+============================================================
+FULL SCAN START: 2025-12-23 00:46:54 UTC
+Scenario: STO-BENIGN-004-s3-access-logging-enabled
+Path: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/storage/STO-BENIGN-004-s3-access-logging-enabled
+Policy: /workspaces/MSc-Thesis---Cloud-Misconfigurations/policy/terraform
+============================================================
+
+Initializing the backend...
+Initializing provider plugins...
+- Reusing previous version of hashicorp/random from the dependency lock file
+- Reusing previous version of hashicorp/aws from the dependency lock file
+- Using previously-installed hashicorp/random v3.7.2
+- Using previously-installed hashicorp/aws v5.100.0
+
+Terraform has been successfully initialized!
+
+You may now begin working with Terraform. Try running "terraform plan" to see
+any changes that are required for your infrastructure. All Terraform commands
+should now work.
+
+If you ever set or change modules or backend configuration for Terraform,
+rerun this command to reinitialize your working directory. If you forget, other
+commands will detect it and remind you to do so if necessary.
+Success! The configuration is valid.
+
+
+Terraform used the selected providers to generate the following execution
+plan. Resource actions are indicated with the following symbols:
+  + create
+
+Terraform will perform the following actions:
+
+  # aws_s3_bucket.bucket will be created
+  + resource "aws_s3_bucket" "bucket" {
+      + acceleration_status         = (known after apply)
+      + acl                         = (known after apply)
+      + arn                         = (known after apply)
+      + bucket                      = (known after apply)
+      + bucket_domain_name          = (known after apply)
+      + bucket_prefix               = (known after apply)
+      + bucket_regional_domain_name = (known after apply)
+      + force_destroy               = true
+      + hosted_zone_id              = (known after apply)
+      + id                          = (known after apply)
+      + object_lock_enabled         = (known after apply)
+      + policy                      = (known after apply)
+      + region                      = (known after apply)
+      + request_payer               = (known after apply)
+      + tags                        = {
+          + "cis_controls" = "S3.9"
+          + "domain"       = "STO"
+          + "scenario_id"  = "STO-BENIGN-004-s3-access-logging-enabled"
+          + "type"         = "BENIGN"
+        }
+      + tags_all                    = {
+          + "cis_controls" = "S3.9"
+          + "domain"       = "STO"
+          + "scenario_id"  = "STO-BENIGN-004-s3-access-logging-enabled"
+          + "type"         = "BENIGN"
+        }
+      + website_domain              = (known after apply)
+      + website_endpoint            = (known after apply)
+
+      + cors_rule (known after apply)
+
+      + grant (known after apply)
+
+      + lifecycle_rule (known after apply)
+
+      + logging (known after apply)
+
+      + object_lock_configuration (known after apply)
+
+      + replication_configuration (known after apply)
+
+      + server_side_encryption_configuration (known after apply)
+
+      + versioning (known after apply)
+
+      + website (known after apply)
+    }
+
+  # aws_s3_bucket.log_bucket will be created
+  + resource "aws_s3_bucket" "log_bucket" {
+      + acceleration_status         = (known after apply)
+      + acl                         = (known after apply)
+      + arn                         = (known after apply)
+      + bucket                      = (known after apply)
+      + bucket_domain_name          = (known after apply)
+      + bucket_prefix               = (known after apply)
+      + bucket_regional_domain_name = (known after apply)
+      + force_destroy               = true
+      + hosted_zone_id              = (known after apply)
+      + id                          = (known after apply)
+      + object_lock_enabled         = (known after apply)
+      + policy                      = (known after apply)
+      + region                      = (known after apply)
+      + request_payer               = (known after apply)
+      + tags                        = {
+          + "cis_controls" = "S3.9"
+          + "domain"       = "STO"
+          + "scenario_id"  = "STO-BENIGN-004-s3-access-logging-enabled"
+          + "type"         = "BENIGN"
+        }
+      + tags_all                    = {
+          + "cis_controls" = "S3.9"
+          + "domain"       = "STO"
+          + "scenario_id"  = "STO-BENIGN-004-s3-access-logging-enabled"
+          + "type"         = "BENIGN"
+        }
+      + website_domain              = (known after apply)
+      + website_endpoint            = (known after apply)
+
+      + cors_rule (known after apply)
+
+      + grant (known after apply)
+
+      + lifecycle_rule (known after apply)
+
+      + logging (known after apply)
+
+      + object_lock_configuration (known after apply)
+
+      + replication_configuration (known after apply)
+
+      + server_side_encryption_configuration (known after apply)
+
+      + versioning (known after apply)
+
+      + website (known after apply)
+    }
+
+  # aws_s3_bucket_logging.logging will be created
+  + resource "aws_s3_bucket_logging" "logging" {
+      + bucket        = (known after apply)
+      + id            = (known after apply)
+      + target_bucket = (known after apply)
+      + target_prefix = "access-logs/"
+    }
+
+  # aws_s3_bucket_public_access_block.block will be created
+  + resource "aws_s3_bucket_public_access_block" "block" {
+      + block_public_acls       = true
+      + block_public_policy     = true
+      + bucket                  = (known after apply)
+      + id                      = (known after apply)
+      + ignore_public_acls      = true
+      + restrict_public_buckets = true
+    }
+
+  # aws_s3_bucket_public_access_block.log_block will be created
+  + resource "aws_s3_bucket_public_access_block" "log_block" {
+      + block_public_acls       = true
+      + block_public_policy     = true
+      + bucket                  = (known after apply)
+      + id                      = (known after apply)
+      + ignore_public_acls      = true
+      + restrict_public_buckets = true
+    }
+
+  # aws_s3_bucket_server_side_encryption_configuration.encrypt will be created
+  + resource "aws_s3_bucket_server_side_encryption_configuration" "encrypt" {
+      + bucket = (known after apply)
+      + id     = (known after apply)
+
+      + rule {
+          + apply_server_side_encryption_by_default {
+              + sse_algorithm     = "AES256"
+                # (1 unchanged attribute hidden)
+            }
+        }
+    }
+
+  # random_id.suffix will be created
+  + resource "random_id" "suffix" {
+      + b64_std     = (known after apply)
+      + b64_url     = (known after apply)
+      + byte_length = 4
+      + dec         = (known after apply)
+      + hex         = (known after apply)
+      + id          = (known after apply)
+    }
+
+Plan: 7 to add, 0 to change, 0 to destroy.
+
+─────────────────────────────────────────────────────────────────────────────
+
+Saved the plan to:
+/workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/storage/STO-BENIGN-004-s3-access-logging-enabled/tfplan.binary
+
+To perform exactly these actions, run the following command to apply:
+    terraform apply "/workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/storage/STO-BENIGN-004-s3-access-logging-enabled/tfplan.binary"
+
+============================================================
+FULL SCAN END: 2025-12-23 00:47:09 UTC
+Return codes (non-fatal):
+  checkov   = 1
+  tfsec     = 1
+  terrascan = 1
+  conftest  = 0
+Outputs:
+  /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/storage/STO-BENIGN-004-s3-access-logging-enabled/scan_logs/checkov_STO-BENIGN-004-s3-access-logging-enabled.txt
+  /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/storage/STO-BENIGN-004-s3-access-logging-enabled/scan_logs/tfsec_STO-BENIGN-004-s3-access-logging-enabled.txt
+  /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/storage/STO-BENIGN-004-s3-access-logging-enabled/scan_logs/terrascan_STO-BENIGN-004-s3-access-logging-enabled.txt
+  /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/storage/STO-BENIGN-004-s3-access-logging-enabled/scan_logs/conftest_STO-BENIGN-004-s3-access-logging-enabled.txt
+Master log:
+  /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/storage/STO-BENIGN-004-s3-access-logging-enabled/scan_logs/FULL_STO-BENIGN-004-s3-access-logging-enabled.log
+============================================================
+
+------------------------------------------------------------
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/storage/STO-BENIGN-005-rds-encrypted-deletion-protection
+------------------------------------------------------------
+============================================================
+FULL SCAN START: 2025-12-23 00:47:09 UTC
+Scenario: STO-BENIGN-005-rds-encrypted-deletion-protection
+Path: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/storage/STO-BENIGN-005-rds-encrypted-deletion-protection
+Policy: /workspaces/MSc-Thesis---Cloud-Misconfigurations/policy/terraform
+============================================================
+
+Initializing the backend...
+Initializing provider plugins...
+- Reusing previous version of hashicorp/aws from the dependency lock file
+- Reusing previous version of hashicorp/random from the dependency lock file
+- Using previously-installed hashicorp/aws v5.100.0
+- Using previously-installed hashicorp/random v3.7.2
+
+Terraform has been successfully initialized!
+
+You may now begin working with Terraform. Try running "terraform plan" to see
+any changes that are required for your infrastructure. All Terraform commands
+should now work.
+
+If you ever set or change modules or backend configuration for Terraform,
+rerun this command to reinitialize your working directory. If you forget, other
+commands will detect it and remind you to do so if necessary.
+Success! The configuration is valid.
+
+
+Terraform used the selected providers to generate the following execution
+plan. Resource actions are indicated with the following symbols:
+  + create
+
+Terraform will perform the following actions:
+
+  # aws_db_instance.rds will be created
+  + resource "aws_db_instance" "rds" {
+      + address                               = (known after apply)
+      + allocated_storage                     = 20
+      + apply_immediately                     = false
+      + arn                                   = (known after apply)
+      + auto_minor_version_upgrade            = true
+      + availability_zone                     = (known after apply)
+      + backup_retention_period               = 7
+      + backup_target                         = (known after apply)
+      + backup_window                         = (known after apply)
+      + ca_cert_identifier                    = (known after apply)
+      + character_set_name                    = (known after apply)
+      + copy_tags_to_snapshot                 = false
+      + database_insights_mode                = (known after apply)
+      + db_name                               = (known after apply)
+      + db_subnet_group_name                  = (known after apply)
+      + dedicated_log_volume                  = false
+      + delete_automated_backups              = true
+      + deletion_protection                   = true
+      + domain_fqdn                           = (known after apply)
+      + endpoint                              = (known after apply)
+      + engine                                = "mysql"
+      + engine_lifecycle_support              = (known after apply)
+      + engine_version                        = "8.0"
+      + engine_version_actual                 = (known after apply)
+      + hosted_zone_id                        = (known after apply)
+      + id                                    = (known after apply)
+      + identifier                            = (known after apply)
+      + identifier_prefix                     = (known after apply)
+      + instance_class                        = "db.t3.micro"
+      + iops                                  = (known after apply)
+      + kms_key_id                            = (known after apply)
+      + latest_restorable_time                = (known after apply)
+      + license_model                         = (known after apply)
+      + listener_endpoint                     = (known after apply)
+      + maintenance_window                    = (known after apply)
+      + master_user_secret                    = (known after apply)
+      + master_user_secret_kms_key_id         = (known after apply)
+      + monitoring_interval                   = 0
+      + monitoring_role_arn                   = (known after apply)
+      + multi_az                              = (known after apply)
+      + nchar_character_set_name              = (known after apply)
+      + network_type                          = (known after apply)
+      + option_group_name                     = (known after apply)
+      + parameter_group_name                  = (known after apply)
+      + password                              = (sensitive value)
+      + password_wo                           = (write-only attribute)
+      + performance_insights_enabled          = false
+      + performance_insights_kms_key_id       = (known after apply)
+      + performance_insights_retention_period = (known after apply)
+      + port                                  = (known after apply)
+      + publicly_accessible                   = false
+      + replica_mode                          = (known after apply)
+      + replicas                              = (known after apply)
+      + resource_id                           = (known after apply)
+      + skip_final_snapshot                   = true
+      + snapshot_identifier                   = (known after apply)
+      + status                                = (known after apply)
+      + storage_encrypted                     = true
+      + storage_throughput                    = (known after apply)
+      + storage_type                          = (known after apply)
+      + tags                                  = {
+          + "cis_controls" = "RDS.3"
+          + "domain"       = "STO"
+          + "scenario_id"  = "STO-BENIGN-005-rds-encrypted-deletion-protection"
+          + "type"         = "BENIGN"
+        }
+      + tags_all                              = {
+          + "cis_controls" = "RDS.3"
+          + "domain"       = "STO"
+          + "scenario_id"  = "STO-BENIGN-005-rds-encrypted-deletion-protection"
+          + "type"         = "BENIGN"
+        }
+      + timezone                              = (known after apply)
+      + username                              = "adminuser"
+      + vpc_security_group_ids                = (known after apply)
+    }
+
+  # random_id.suffix will be created
+  + resource "random_id" "suffix" {
+      + b64_std     = (known after apply)
+      + b64_url     = (known after apply)
+      + byte_length = 4
+      + dec         = (known after apply)
+      + hex         = (known after apply)
+      + id          = (known after apply)
+    }
+
+  # random_password.db will be created
+  + resource "random_password" "db" {
+      + bcrypt_hash = (sensitive value)
+      + id          = (known after apply)
+      + length      = 16
+      + lower       = true
+      + min_lower   = 0
+      + min_numeric = 0
+      + min_special = 0
+      + min_upper   = 0
+      + number      = true
+      + numeric     = true
+      + result      = (sensitive value)
+      + special     = true
+      + upper       = true
+    }
+
+Plan: 3 to add, 0 to change, 0 to destroy.
+
+─────────────────────────────────────────────────────────────────────────────
+
+Saved the plan to:
+/workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/storage/STO-BENIGN-005-rds-encrypted-deletion-protection/tfplan.binary
+
+To perform exactly these actions, run the following command to apply:
+    terraform apply "/workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/storage/STO-BENIGN-005-rds-encrypted-deletion-protection/tfplan.binary"
+
+============================================================
+FULL SCAN END: 2025-12-23 00:47:25 UTC
+Return codes (non-fatal):
+  checkov   = 1
+  tfsec     = 1
+  terrascan = 1
+  conftest  = 0
+Outputs:
+  /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/storage/STO-BENIGN-005-rds-encrypted-deletion-protection/scan_logs/checkov_STO-BENIGN-005-rds-encrypted-deletion-protection.txt
+  /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/storage/STO-BENIGN-005-rds-encrypted-deletion-protection/scan_logs/tfsec_STO-BENIGN-005-rds-encrypted-deletion-protection.txt
+  /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/storage/STO-BENIGN-005-rds-encrypted-deletion-protection/scan_logs/terrascan_STO-BENIGN-005-rds-encrypted-deletion-protection.txt
+  /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/storage/STO-BENIGN-005-rds-encrypted-deletion-protection/scan_logs/conftest_STO-BENIGN-005-rds-encrypted-deletion-protection.txt
+Master log:
+  /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/storage/STO-BENIGN-005-rds-encrypted-deletion-protection/scan_logs/FULL_STO-BENIGN-005-rds-encrypted-deletion-protection.log
+============================================================
+
+------------------------------------------------------------
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/storage/STO-MISC-001-s3-public-unencrypted
+------------------------------------------------------------
+============================================================
+FULL SCAN START: 2025-12-23 00:47:25 UTC
+Scenario: STO-MISC-001-s3-public-unencrypted
+Path: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/storage/STO-MISC-001-s3-public-unencrypted
+Policy: /workspaces/MSc-Thesis---Cloud-Misconfigurations/policy/terraform
+============================================================
+
+Initializing the backend...
+Initializing provider plugins...
+- Reusing previous version of hashicorp/aws from the dependency lock file
+- Reusing previous version of hashicorp/random from the dependency lock file
+- Using previously-installed hashicorp/aws v5.100.0
+- Using previously-installed hashicorp/random v3.7.2
+
+Terraform has been successfully initialized!
+
+You may now begin working with Terraform. Try running "terraform plan" to see
+any changes that are required for your infrastructure. All Terraform commands
+should now work.
+
+If you ever set or change modules or backend configuration for Terraform,
+rerun this command to reinitialize your working directory. If you forget, other
+commands will detect it and remind you to do so if necessary.
+Success! The configuration is valid.
+
+
+Terraform used the selected providers to generate the following execution
+plan. Resource actions are indicated with the following symbols:
+  + create
+
+Terraform will perform the following actions:
+
+  # aws_s3_bucket.public_bucket will be created
+  + resource "aws_s3_bucket" "public_bucket" {
+      + acceleration_status         = (known after apply)
+      + acl                         = (known after apply)
+      + arn                         = (known after apply)
+      + bucket                      = (known after apply)
+      + bucket_domain_name          = (known after apply)
+      + bucket_prefix               = (known after apply)
+      + bucket_regional_domain_name = (known after apply)
+      + force_destroy               = true
+      + hosted_zone_id              = (known after apply)
+      + id                          = (known after apply)
+      + object_lock_enabled         = (known after apply)
+      + policy                      = (known after apply)
+      + region                      = (known after apply)
+      + request_payer               = (known after apply)
+      + tags                        = {
+          + "cis_controls" = "S3.8,S3.17, s3.9"
+          + "domain"       = "STO"
+          + "scenario_id"  = "STO-MISC-001-s3-public-unencrypted"
+          + "type"         = "MISC"
+        }
+      + tags_all                    = {
+          + "cis_controls" = "S3.8,S3.17, s3.9"
+          + "domain"       = "STO"
+          + "scenario_id"  = "STO-MISC-001-s3-public-unencrypted"
+          + "type"         = "MISC"
+        }
+      + website_domain              = (known after apply)
+      + website_endpoint            = (known after apply)
+
+      + cors_rule (known after apply)
+
+      + grant (known after apply)
+
+      + lifecycle_rule (known after apply)
+
+      + logging (known after apply)
+
+      + object_lock_configuration (known after apply)
+
+      + replication_configuration (known after apply)
+
+      + server_side_encryption_configuration (known after apply)
+
+      + versioning (known after apply)
+
+      + website (known after apply)
+    }
+
+  # aws_s3_bucket_acl.public_read will be created
+  + resource "aws_s3_bucket_acl" "public_read" {
+      + acl    = "public-read"
+      + bucket = (known after apply)
+      + id     = (known after apply)
+
+      + access_control_policy (known after apply)
+    }
+
+  # aws_s3_bucket_ownership_controls.ownership will be created
+  + resource "aws_s3_bucket_ownership_controls" "ownership" {
+      + bucket = (known after apply)
+      + id     = (known after apply)
+
+      + rule {
+          + object_ownership = "BucketOwnerPreferred"
+        }
+    }
+
+  # aws_s3_bucket_public_access_block.no_block will be created
+  + resource "aws_s3_bucket_public_access_block" "no_block" {
+      + block_public_acls       = false
+      + block_public_policy     = false
+      + bucket                  = (known after apply)
+      + id                      = (known after apply)
+      + ignore_public_acls      = false
+      + restrict_public_buckets = false
+    }
+
+  # random_id.suffix will be created
+  + resource "random_id" "suffix" {
+      + b64_std     = (known after apply)
+      + b64_url     = (known after apply)
+      + byte_length = 4
+      + dec         = (known after apply)
+      + hex         = (known after apply)
+      + id          = (known after apply)
+    }
+
+Plan: 5 to add, 0 to change, 0 to destroy.
+
+─────────────────────────────────────────────────────────────────────────────
+
+Saved the plan to:
+/workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/storage/STO-MISC-001-s3-public-unencrypted/tfplan.binary
+
+To perform exactly these actions, run the following command to apply:
+    terraform apply "/workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/storage/STO-MISC-001-s3-public-unencrypted/tfplan.binary"
+
+============================================================
+FULL SCAN END: 2025-12-23 00:47:40 UTC
+Return codes (non-fatal):
+  checkov   = 1
+  tfsec     = 1
+  terrascan = 1
+  conftest  = 1
+Outputs:
+  /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/storage/STO-MISC-001-s3-public-unencrypted/scan_logs/checkov_STO-MISC-001-s3-public-unencrypted.txt
+  /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/storage/STO-MISC-001-s3-public-unencrypted/scan_logs/tfsec_STO-MISC-001-s3-public-unencrypted.txt
+  /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/storage/STO-MISC-001-s3-public-unencrypted/scan_logs/terrascan_STO-MISC-001-s3-public-unencrypted.txt
+  /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/storage/STO-MISC-001-s3-public-unencrypted/scan_logs/conftest_STO-MISC-001-s3-public-unencrypted.txt
+Master log:
+  /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/storage/STO-MISC-001-s3-public-unencrypted/scan_logs/FULL_STO-MISC-001-s3-public-unencrypted.log
+============================================================
+
+------------------------------------------------------------
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/storage/STO-MISC-002-s3-public-policy
+------------------------------------------------------------
+============================================================
+FULL SCAN START: 2025-12-23 00:47:40 UTC
+Scenario: STO-MISC-002-s3-public-policy
+Path: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/storage/STO-MISC-002-s3-public-policy
+Policy: /workspaces/MSc-Thesis---Cloud-Misconfigurations/policy/terraform
+============================================================
+
+Initializing the backend...
+Initializing provider plugins...
+- Reusing previous version of hashicorp/aws from the dependency lock file
+- Reusing previous version of hashicorp/random from the dependency lock file
+- Using previously-installed hashicorp/aws v5.100.0
+- Using previously-installed hashicorp/random v3.7.2
+
+Terraform has been successfully initialized!
+
+You may now begin working with Terraform. Try running "terraform plan" to see
+any changes that are required for your infrastructure. All Terraform commands
+should now work.
+
+If you ever set or change modules or backend configuration for Terraform,
+rerun this command to reinitialize your working directory. If you forget, other
+commands will detect it and remind you to do so if necessary.
+Success! The configuration is valid.
+
+
+Terraform used the selected providers to generate the following execution
+plan. Resource actions are indicated with the following symbols:
+  + create
+
+Terraform will perform the following actions:
+
+  # aws_s3_bucket.bucket will be created
+  + resource "aws_s3_bucket" "bucket" {
+      + acceleration_status         = (known after apply)
+      + acl                         = (known after apply)
+      + arn                         = (known after apply)
+      + bucket                      = (known after apply)
+      + bucket_domain_name          = (known after apply)
+      + bucket_prefix               = (known after apply)
+      + bucket_regional_domain_name = (known after apply)
+      + force_destroy               = true
+      + hosted_zone_id              = (known after apply)
+      + id                          = (known after apply)
+      + object_lock_enabled         = (known after apply)
+      + policy                      = (known after apply)
+      + region                      = (known after apply)
+      + request_payer               = (known after apply)
+      + tags                        = {
+          + "cis_controls" = "S3.8,S3.1"
+          + "domain"       = "STO"
+          + "scenario_id"  = "STO-MISC-002-s3-public-policy"
+          + "type"         = "MISC"
+        }
+      + tags_all                    = {
+          + "cis_controls" = "S3.8,S3.1"
+          + "domain"       = "STO"
+          + "scenario_id"  = "STO-MISC-002-s3-public-policy"
+          + "type"         = "MISC"
+        }
+      + website_domain              = (known after apply)
+      + website_endpoint            = (known after apply)
+
+      + cors_rule (known after apply)
+
+      + grant (known after apply)
+
+      + lifecycle_rule (known after apply)
+
+      + logging (known after apply)
+
+      + object_lock_configuration (known after apply)
+
+      + replication_configuration (known after apply)
+
+      + server_side_encryption_configuration (known after apply)
+
+      + versioning (known after apply)
+
+      + website (known after apply)
+    }
+
+  # aws_s3_bucket_policy.public_read_policy will be created
+  + resource "aws_s3_bucket_policy" "public_read_policy" {
+      + bucket = (known after apply)
+      + id     = (known after apply)
+      + policy = (known after apply)
+    }
+
+  # random_id.suffix will be created
+  + resource "random_id" "suffix" {
+      + b64_std     = (known after apply)
+      + b64_url     = (known after apply)
+      + byte_length = 4
+      + dec         = (known after apply)
+      + hex         = (known after apply)
+      + id          = (known after apply)
+    }
+
+Plan: 3 to add, 0 to change, 0 to destroy.
+
+─────────────────────────────────────────────────────────────────────────────
+
+Saved the plan to:
+/workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/storage/STO-MISC-002-s3-public-policy/tfplan.binary
+
+To perform exactly these actions, run the following command to apply:
+    terraform apply "/workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/storage/STO-MISC-002-s3-public-policy/tfplan.binary"
+
+============================================================
+FULL SCAN END: 2025-12-23 00:47:55 UTC
+Return codes (non-fatal):
+  checkov   = 1
+  tfsec     = 1
+  terrascan = 1
+  conftest  = 0
+Outputs:
+  /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/storage/STO-MISC-002-s3-public-policy/scan_logs/checkov_STO-MISC-002-s3-public-policy.txt
+  /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/storage/STO-MISC-002-s3-public-policy/scan_logs/tfsec_STO-MISC-002-s3-public-policy.txt
+  /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/storage/STO-MISC-002-s3-public-policy/scan_logs/terrascan_STO-MISC-002-s3-public-policy.txt
+  /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/storage/STO-MISC-002-s3-public-policy/scan_logs/conftest_STO-MISC-002-s3-public-policy.txt
+Master log:
+  /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/storage/STO-MISC-002-s3-public-policy/scan_logs/FULL_STO-MISC-002-s3-public-policy.log
+============================================================
+
+------------------------------------------------------------
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/storage/STO-MISC-003-rds-no-backup-retention
+------------------------------------------------------------
+============================================================
+FULL SCAN START: 2025-12-23 00:47:56 UTC
+Scenario: STO-MISC-003-rds-no-backup-retention
+Path: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/storage/STO-MISC-003-rds-no-backup-retention
+Policy: /workspaces/MSc-Thesis---Cloud-Misconfigurations/policy/terraform
+============================================================
+
+Initializing the backend...
+Initializing provider plugins...
+- Reusing previous version of hashicorp/random from the dependency lock file
+- Reusing previous version of hashicorp/aws from the dependency lock file
+- Using previously-installed hashicorp/random v3.7.2
+- Using previously-installed hashicorp/aws v5.100.0
+
+Terraform has been successfully initialized!
+
+You may now begin working with Terraform. Try running "terraform plan" to see
+any changes that are required for your infrastructure. All Terraform commands
+should now work.
+
+If you ever set or change modules or backend configuration for Terraform,
+rerun this command to reinitialize your working directory. If you forget, other
+commands will detect it and remind you to do so if necessary.
+Success! The configuration is valid.
+
+
+Terraform used the selected providers to generate the following execution
+plan. Resource actions are indicated with the following symbols:
+  + create
+
+Terraform will perform the following actions:
+
+  # aws_db_instance.rds will be created
+  + resource "aws_db_instance" "rds" {
+      + address                               = (known after apply)
+      + allocated_storage                     = 20
+      + apply_immediately                     = false
+      + arn                                   = (known after apply)
+      + auto_minor_version_upgrade            = true
+      + availability_zone                     = (known after apply)
+      + backup_retention_period               = 0
+      + backup_target                         = (known after apply)
+      + backup_window                         = (known after apply)
+      + ca_cert_identifier                    = (known after apply)
+      + character_set_name                    = (known after apply)
+      + copy_tags_to_snapshot                 = false
+      + database_insights_mode                = (known after apply)
+      + db_name                               = (known after apply)
+      + db_subnet_group_name                  = (known after apply)
+      + dedicated_log_volume                  = false
+      + delete_automated_backups              = true
+      + domain_fqdn                           = (known after apply)
+      + endpoint                              = (known after apply)
+      + engine                                = "mysql"
+      + engine_lifecycle_support              = (known after apply)
+      + engine_version                        = "8.0"
+      + engine_version_actual                 = (known after apply)
+      + hosted_zone_id                        = (known after apply)
+      + id                                    = (known after apply)
+      + identifier                            = (known after apply)
+      + identifier_prefix                     = (known after apply)
+      + instance_class                        = "db.t3.micro"
+      + iops                                  = (known after apply)
+      + kms_key_id                            = (known after apply)
+      + latest_restorable_time                = (known after apply)
+      + license_model                         = (known after apply)
+      + listener_endpoint                     = (known after apply)
+      + maintenance_window                    = (known after apply)
+      + master_user_secret                    = (known after apply)
+      + master_user_secret_kms_key_id         = (known after apply)
+      + monitoring_interval                   = 0
+      + monitoring_role_arn                   = (known after apply)
+      + multi_az                              = (known after apply)
+      + nchar_character_set_name              = (known after apply)
+      + network_type                          = (known after apply)
+      + option_group_name                     = (known after apply)
+      + parameter_group_name                  = (known after apply)
+      + password                              = (sensitive value)
+      + password_wo                           = (write-only attribute)
+      + performance_insights_enabled          = false
+      + performance_insights_kms_key_id       = (known after apply)
+      + performance_insights_retention_period = (known after apply)
+      + port                                  = (known after apply)
+      + publicly_accessible                   = false
+      + replica_mode                          = (known after apply)
+      + replicas                              = (known after apply)
+      + resource_id                           = (known after apply)
+      + skip_final_snapshot                   = true
+      + snapshot_identifier                   = (known after apply)
+      + status                                = (known after apply)
+      + storage_throughput                    = (known after apply)
+      + storage_type                          = (known after apply)
+      + tags                                  = {
+          + "cis_controls" = "RDS.2"
+          + "domain"       = "STO"
+          + "scenario_id"  = "STO-MISC-003-rds-no-backup-retention"
+          + "type"         = "MISC"
+        }
+      + tags_all                              = {
+          + "cis_controls" = "RDS.2"
+          + "domain"       = "STO"
+          + "scenario_id"  = "STO-MISC-003-rds-no-backup-retention"
+          + "type"         = "MISC"
+        }
+      + timezone                              = (known after apply)
+      + username                              = "adminuser"
+      + vpc_security_group_ids                = (known after apply)
+    }
+
+  # random_id.suffix will be created
+  + resource "random_id" "suffix" {
+      + b64_std     = (known after apply)
+      + b64_url     = (known after apply)
+      + byte_length = 4
+      + dec         = (known after apply)
+      + hex         = (known after apply)
+      + id          = (known after apply)
+    }
+
+  # random_password.db will be created
+  + resource "random_password" "db" {
+      + bcrypt_hash = (sensitive value)
+      + id          = (known after apply)
+      + length      = 16
+      + lower       = true
+      + min_lower   = 0
+      + min_numeric = 0
+      + min_special = 0
+      + min_upper   = 0
+      + number      = true
+      + numeric     = true
+      + result      = (sensitive value)
+      + special     = true
+      + upper       = true
+    }
+
+Plan: 3 to add, 0 to change, 0 to destroy.
+
+─────────────────────────────────────────────────────────────────────────────
+
+Saved the plan to:
+/workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/storage/STO-MISC-003-rds-no-backup-retention/tfplan.binary
+
+To perform exactly these actions, run the following command to apply:
+    terraform apply "/workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/storage/STO-MISC-003-rds-no-backup-retention/tfplan.binary"
+
+============================================================
+FULL SCAN END: 2025-12-23 00:48:11 UTC
+Return codes (non-fatal):
+  checkov   = 1
+  tfsec     = 1
+  terrascan = 1
+  conftest  = 0
+Outputs:
+  /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/storage/STO-MISC-003-rds-no-backup-retention/scan_logs/checkov_STO-MISC-003-rds-no-backup-retention.txt
+  /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/storage/STO-MISC-003-rds-no-backup-retention/scan_logs/tfsec_STO-MISC-003-rds-no-backup-retention.txt
+  /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/storage/STO-MISC-003-rds-no-backup-retention/scan_logs/terrascan_STO-MISC-003-rds-no-backup-retention.txt
+  /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/storage/STO-MISC-003-rds-no-backup-retention/scan_logs/conftest_STO-MISC-003-rds-no-backup-retention.txt
+Master log:
+  /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/storage/STO-MISC-003-rds-no-backup-retention/scan_logs/FULL_STO-MISC-003-rds-no-backup-retention.log
+============================================================
+
+------------------------------------------------------------
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/storage/STO-MISC-004-s3-access-logging-disabled
+------------------------------------------------------------
+============================================================
+FULL SCAN START: 2025-12-23 00:48:11 UTC
+Scenario: STO-MISC-004-s3-access-logging-disabled
+Path: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/storage/STO-MISC-004-s3-access-logging-disabled
+Policy: /workspaces/MSc-Thesis---Cloud-Misconfigurations/policy/terraform
+============================================================
+
+Initializing the backend...
+Initializing provider plugins...
+- Reusing previous version of hashicorp/aws from the dependency lock file
+- Reusing previous version of hashicorp/random from the dependency lock file
+- Using previously-installed hashicorp/aws v5.100.0
+- Using previously-installed hashicorp/random v3.7.2
+
+Terraform has been successfully initialized!
+
+You may now begin working with Terraform. Try running "terraform plan" to see
+any changes that are required for your infrastructure. All Terraform commands
+should now work.
+
+If you ever set or change modules or backend configuration for Terraform,
+rerun this command to reinitialize your working directory. If you forget, other
+commands will detect it and remind you to do so if necessary.
+Success! The configuration is valid.
+
+
+Terraform used the selected providers to generate the following execution
+plan. Resource actions are indicated with the following symbols:
+  + create
+
+Terraform will perform the following actions:
+
+  # aws_s3_bucket.bucket will be created
+  + resource "aws_s3_bucket" "bucket" {
+      + acceleration_status         = (known after apply)
+      + acl                         = (known after apply)
+      + arn                         = (known after apply)
+      + bucket                      = (known after apply)
+      + bucket_domain_name          = (known after apply)
+      + bucket_prefix               = (known after apply)
+      + bucket_regional_domain_name = (known after apply)
+      + force_destroy               = true
+      + hosted_zone_id              = (known after apply)
+      + id                          = (known after apply)
+      + object_lock_enabled         = (known after apply)
+      + policy                      = (known after apply)
+      + region                      = (known after apply)
+      + request_payer               = (known after apply)
+      + tags                        = {
+          + "cis_controls" = "S3.9"
+          + "domain"       = "STO"
+          + "scenario_id"  = "STO-MISC-004-s3-access-logging-disabled"
+          + "type"         = "MISC"
+        }
+      + tags_all                    = {
+          + "cis_controls" = "S3.9"
+          + "domain"       = "STO"
+          + "scenario_id"  = "STO-MISC-004-s3-access-logging-disabled"
+          + "type"         = "MISC"
+        }
+      + website_domain              = (known after apply)
+      + website_endpoint            = (known after apply)
+
+      + cors_rule (known after apply)
+
+      + grant (known after apply)
+
+      + lifecycle_rule (known after apply)
+
+      + logging (known after apply)
+
+      + object_lock_configuration (known after apply)
+
+      + replication_configuration (known after apply)
+
+      + server_side_encryption_configuration (known after apply)
+
+      + versioning (known after apply)
+
+      + website (known after apply)
+    }
+
+  # aws_s3_bucket_public_access_block.block will be created
+  + resource "aws_s3_bucket_public_access_block" "block" {
+      + block_public_acls       = true
+      + block_public_policy     = true
+      + bucket                  = (known after apply)
+      + id                      = (known after apply)
+      + ignore_public_acls      = true
+      + restrict_public_buckets = true
+    }
+
+  # aws_s3_bucket_server_side_encryption_configuration.encrypt will be created
+  + resource "aws_s3_bucket_server_side_encryption_configuration" "encrypt" {
+      + bucket = (known after apply)
+      + id     = (known after apply)
+
+      + rule {
+          + apply_server_side_encryption_by_default {
+              + sse_algorithm     = "AES256"
+                # (1 unchanged attribute hidden)
+            }
+        }
+    }
+
+  # aws_s3_bucket_versioning.versioning will be created
+  + resource "aws_s3_bucket_versioning" "versioning" {
+      + bucket = (known after apply)
+      + id     = (known after apply)
+
+      + versioning_configuration {
+          + mfa_delete = (known after apply)
+          + status     = "Enabled"
+        }
+    }
+
+  # random_id.suffix will be created
+  + resource "random_id" "suffix" {
+      + b64_std     = (known after apply)
+      + b64_url     = (known after apply)
+      + byte_length = 4
+      + dec         = (known after apply)
+      + hex         = (known after apply)
+      + id          = (known after apply)
+    }
+
+Plan: 5 to add, 0 to change, 0 to destroy.
+
+─────────────────────────────────────────────────────────────────────────────
+
+Saved the plan to:
+/workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/storage/STO-MISC-004-s3-access-logging-disabled/tfplan.binary
+
+To perform exactly these actions, run the following command to apply:
+    terraform apply "/workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/storage/STO-MISC-004-s3-access-logging-disabled/tfplan.binary"
+
+============================================================
+FULL SCAN END: 2025-12-23 00:48:26 UTC
+
+------------------------------------------------------------
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/storage/STO-MISC-005-rds-unencrypted-no-deletion-protection
+------------------------------------------------------------
+Return codes (non-fatal):
+  checkov   = 1
+  tfsec     = 1
+  terrascan = 1
+  conftest  = 0
+Outputs:
+  /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/storage/STO-MISC-004-s3-access-logging-disabled/scan_logs/checkov_STO-MISC-004-s3-access-logging-disabled.txt
+  /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/storage/STO-MISC-004-s3-access-logging-disabled/scan_logs/tfsec_STO-MISC-004-s3-access-logging-disabled.txt
+  /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/storage/STO-MISC-004-s3-access-logging-disabled/scan_logs/terrascan_STO-MISC-004-s3-access-logging-disabled.txt
+  /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/storage/STO-MISC-004-s3-access-logging-disabled/scan_logs/conftest_STO-MISC-004-s3-access-logging-disabled.txt
+Master log:
+  /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/storage/STO-MISC-004-s3-access-logging-disabled/scan_logs/FULL_STO-MISC-004-s3-access-logging-disabled.log
+============================================================
+============================================================
+FULL SCAN START: 2025-12-23 00:48:27 UTC
+Scenario: STO-MISC-005-rds-unencrypted-no-deletion-protection
+Path: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/storage/STO-MISC-005-rds-unencrypted-no-deletion-protection
+Policy: /workspaces/MSc-Thesis---Cloud-Misconfigurations/policy/terraform
+============================================================
+
+Initializing the backend...
+Initializing provider plugins...
+- Reusing previous version of hashicorp/random from the dependency lock file
+- Reusing previous version of hashicorp/aws from the dependency lock file
+- Using previously-installed hashicorp/random v3.7.2
+- Using previously-installed hashicorp/aws v5.100.0
+
+Terraform has been successfully initialized!
+
+You may now begin working with Terraform. Try running "terraform plan" to see
+any changes that are required for your infrastructure. All Terraform commands
+should now work.
+
+If you ever set or change modules or backend configuration for Terraform,
+rerun this command to reinitialize your working directory. If you forget, other
+commands will detect it and remind you to do so if necessary.
+Success! The configuration is valid.
+
+
+Terraform used the selected providers to generate the following execution
+plan. Resource actions are indicated with the following symbols:
+  + create
+
+Terraform will perform the following actions:
+
+  # aws_db_instance.rds will be created
+  + resource "aws_db_instance" "rds" {
+      + address                               = (known after apply)
+      + allocated_storage                     = 20
+      + apply_immediately                     = false
+      + arn                                   = (known after apply)
+      + auto_minor_version_upgrade            = true
+      + availability_zone                     = (known after apply)
+      + backup_retention_period               = 7
+      + backup_target                         = (known after apply)
+      + backup_window                         = (known after apply)
+      + ca_cert_identifier                    = (known after apply)
+      + character_set_name                    = (known after apply)
+      + copy_tags_to_snapshot                 = false
+      + database_insights_mode                = (known after apply)
+      + db_name                               = (known after apply)
+      + db_subnet_group_name                  = (known after apply)
+      + dedicated_log_volume                  = false
+      + delete_automated_backups              = true
+      + deletion_protection                   = false
+      + domain_fqdn                           = (known after apply)
+      + endpoint                              = (known after apply)
+      + engine                                = "mysql"
+      + engine_lifecycle_support              = (known after apply)
+      + engine_version                        = "8.0"
+      + engine_version_actual                 = (known after apply)
+      + hosted_zone_id                        = (known after apply)
+      + id                                    = (known after apply)
+      + identifier                            = (known after apply)
+      + identifier_prefix                     = (known after apply)
+      + instance_class                        = "db.t3.micro"
+      + iops                                  = (known after apply)
+      + kms_key_id                            = (known after apply)
+      + latest_restorable_time                = (known after apply)
+      + license_model                         = (known after apply)
+      + listener_endpoint                     = (known after apply)
+      + maintenance_window                    = (known after apply)
+      + master_user_secret                    = (known after apply)
+      + master_user_secret_kms_key_id         = (known after apply)
+      + monitoring_interval                   = 0
+      + monitoring_role_arn                   = (known after apply)
+      + multi_az                              = (known after apply)
+      + nchar_character_set_name              = (known after apply)
+      + network_type                          = (known after apply)
+      + option_group_name                     = (known after apply)
+      + parameter_group_name                  = (known after apply)
+      + password                              = (sensitive value)
+      + password_wo                           = (write-only attribute)
+      + performance_insights_enabled          = false
+      + performance_insights_kms_key_id       = (known after apply)
+      + performance_insights_retention_period = (known after apply)
+      + port                                  = (known after apply)
+      + publicly_accessible                   = false
+      + replica_mode                          = (known after apply)
+      + replicas                              = (known after apply)
+      + resource_id                           = (known after apply)
+      + skip_final_snapshot                   = true
+      + snapshot_identifier                   = (known after apply)
+      + status                                = (known after apply)
+      + storage_encrypted                     = false
+      + storage_throughput                    = (known after apply)
+      + storage_type                          = (known after apply)
+      + tags                                  = {
+          + "cis_controls" = "RDS.3"
+          + "domain"       = "STO"
+          + "scenario_id"  = "STO-MISC-005-005-rds-unencrypted-no-delettion-protection"
+          + "type"         = "MISC"
+        }
+      + tags_all                              = {
+          + "cis_controls" = "RDS.3"
+          + "domain"       = "STO"
+          + "scenario_id"  = "STO-MISC-005-005-rds-unencrypted-no-delettion-protection"
+          + "type"         = "MISC"
+        }
+      + timezone                              = (known after apply)
+      + username                              = "adminuser"
+      + vpc_security_group_ids                = (known after apply)
+    }
+
+  # random_id.suffix will be created
+  + resource "random_id" "suffix" {
+      + b64_std     = (known after apply)
+      + b64_url     = (known after apply)
+      + byte_length = 4
+      + dec         = (known after apply)
+      + hex         = (known after apply)
+      + id          = (known after apply)
+    }
+
+  # random_password.db will be created
+  + resource "random_password" "db" {
+      + bcrypt_hash = (sensitive value)
+      + id          = (known after apply)
+      + length      = 16
+      + lower       = true
+      + min_lower   = 0
+      + min_numeric = 0
+      + min_special = 0
+      + min_upper   = 0
+      + number      = true
+      + numeric     = true
+      + result      = (sensitive value)
+      + special     = true
+      + upper       = true
+    }
+
+Plan: 3 to add, 0 to change, 0 to destroy.
+
+─────────────────────────────────────────────────────────────────────────────
+
+Saved the plan to:
+/workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/storage/STO-MISC-005-rds-unencrypted-no-deletion-protection/tfplan.binary
+
+To perform exactly these actions, run the following command to apply:
+    terraform apply "/workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/storage/STO-MISC-005-rds-unencrypted-no-deletion-protection/tfplan.binary"
+
+============================================================
+FULL SCAN END: 2025-12-23 00:48:42 UTC
+Return codes (non-fatal):
+  checkov   = 1
+  tfsec     = 1
+  terrascan = 1
+  conftest  = 0
+Outputs:
+  /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/storage/STO-MISC-005-rds-unencrypted-no-deletion-protection/scan_logs/checkov_STO-MISC-005-rds-unencrypted-no-deletion-protection.txt
+  /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/storage/STO-MISC-005-rds-unencrypted-no-deletion-protection/scan_logs/tfsec_STO-MISC-005-rds-unencrypted-no-deletion-protection.txt
+  /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/storage/STO-MISC-005-rds-unencrypted-no-deletion-protection/scan_logs/terrascan_STO-MISC-005-rds-unencrypted-no-deletion-protection.txt
+  /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/storage/STO-MISC-005-rds-unencrypted-no-deletion-protection/scan_logs/conftest_STO-MISC-005-rds-unencrypted-no-deletion-protection.txt
+Master log:
+  /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/storage/STO-MISC-005-rds-unencrypted-no-deletion-protection/scan_logs/FULL_STO-MISC-005-rds-unencrypted-no-deletion-protection.log
+============================================================
+
+============================================================
+EXPERIMENT END: 2025-12-23 00:48:42 UTC
+============================================================

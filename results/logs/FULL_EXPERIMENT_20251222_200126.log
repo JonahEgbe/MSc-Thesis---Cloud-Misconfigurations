@@ -1,0 +1,3050 @@
+============================================================
+EXPERIMENT START: 2025-12-22 20:01:26 UTC
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_200126.log
+============================================================
+
+==> Discovering scenarios (folders containing scenario.json)...
+==> Found 26 scenarios.
+
+============================================================
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+============================================================
+==> Scenario directory: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+
+============================================================
+FULL SCAN LOG START: 2025-12-22 20:01:26 UTC
+Scenario: CMP-BENIGN-001-ssm-enabled-on-ec2
+Path: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+POLICY_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/policy/terraform
+============================================================
+
+===== [0] Terraform plugin cache fix =====
+TF_PLUGIN_CACHE_DIR=/tmp/terraform-plugin-cache
+
+===== [1] Terraform init =====
+[0m[1mInitializing the backend...[0m
+[0m[1mInitializing provider plugins...[0m
+- Finding hashicorp/random versions matching "~> 3.6"...
+- Finding hashicorp/aws versions matching "~> 5.0"...
+- Using previously-installed hashicorp/random v3.7.2
+- Using previously-installed hashicorp/aws v5.100.0
+
+[0m[1m[32mTerraform has been successfully initialized![0m[32m[0m
+[0m[32m
+You may now begin working with Terraform. Try running "terraform plan" to see
+any changes that are required for your infrastructure. All Terraform commands
+should now work.
+
+If you ever set or change modules or backend configuration for Terraform,
+rerun this command to reinitialize your working directory. If you forget, other
+commands will detect it and remind you to do so if necessary.[0m
+
+===== [2] Terraform validate =====
+[32m[1mSuccess![0m The configuration is valid.
+[0m
+
+===== [3] Terraform plan =====
+Detected terraform.tfvars -> using -var-file=terraform.tfvars
+[0m[1mdata.aws_ami.al2: Reading...[0m[0m
+[0m[1mdata.aws_ami.al2: Read complete after 0s [id=ami-0ad8de99ac93341e7][0m
+
+Terraform used the selected providers to generate the following execution
+plan. Resource actions are indicated with the following symbols:
+  [32m+[0m create[0m
+
+Terraform will perform the following actions:
+
+[1m  # aws_iam_instance_profile.profile[0m will be created
+[0m  [32m+[0m[0m resource "aws_iam_instance_profile" "profile" {
+      [32m+[0m[0m arn         = (known after apply)
+      [32m+[0m[0m create_date = (known after apply)
+      [32m+[0m[0m id          = (known after apply)
+      [32m+[0m[0m name        = (known after apply)
+      [32m+[0m[0m name_prefix = (known after apply)
+      [32m+[0m[0m path        = "/"
+      [32m+[0m[0m role        = (known after apply)
+      [32m+[0m[0m tags        = {
+          [32m+[0m[0m "cis_controls" = "SSM.1"
+          [32m+[0m[0m "domain"       = "CMP"
+          [32m+[0m[0m "scenario_id"  = "CMP-BENIGN-001-ssm-enabled-on-ec2"
+          [32m+[0m[0m "type"         = "BENIGN"
+        }
+      [32m+[0m[0m tags_all    = {
+          [32m+[0m[0m "cis_controls" = "SSM.1"
+          [32m+[0m[0m "domain"       = "CMP"
+          [32m+[0m[0m "scenario_id"  = "CMP-BENIGN-001-ssm-enabled-on-ec2"
+          [32m+[0m[0m "type"         = "BENIGN"
+        }
+      [32m+[0m[0m unique_id   = (known after apply)
+    }
+
+[1m  # aws_iam_role.ssm_role[0m will be created
+[0m  [32m+[0m[0m resource "aws_iam_role" "ssm_role" {
+      [32m+[0m[0m arn                   = (known after apply)
+      [32m+[0m[0m assume_role_policy    = jsonencode(
+            {
+              [32m+[0m[0m Statement = [
+                  [32m+[0m[0m {
+                      [32m+[0m[0m Action    = "sts:AssumeRole"
+                      [32m+[0m[0m Effect    = "Allow"
+                      [32m+[0m[0m Principal = {
+                          [32m+[0m[0m Service = "ec2.amazonaws.com"
+                        }
+                    },
+                ]
+              [32m+[0m[0m Version   = "2012-10-17"
+            }
+        )
+      [32m+[0m[0m create_date           = (known after apply)
+      [32m+[0m[0m force_detach_policies = false
+      [32m+[0m[0m id                    = (known after apply)
+      [32m+[0m[0m managed_policy_arns   = (known after apply)
+      [32m+[0m[0m max_session_duration  = 3600
+      [32m+[0m[0m name                  = (known after apply)
+      [32m+[0m[0m name_prefix           = (known after apply)
+      [32m+[0m[0m path                  = "/"
+      [32m+[0m[0m tags                  = {
+          [32m+[0m[0m "cis_controls" = "SSM.1"
+          [32m+[0m[0m "domain"       = "CMP"
+          [32m+[0m[0m "scenario_id"  = "CMP-BENIGN-001-ssm-enabled-on-ec2"
+          [32m+[0m[0m "type"         = "BENIGN"
+        }
+      [32m+[0m[0m tags_all              = {
+          [32m+[0m[0m "cis_controls" = "SSM.1"
+          [32m+[0m[0m "domain"       = "CMP"
+          [32m+[0m[0m "scenario_id"  = "CMP-BENIGN-001-ssm-enabled-on-ec2"
+          [32m+[0m[0m "type"         = "BENIGN"
+        }
+      [32m+[0m[0m unique_id             = (known after apply)
+
+      [32m+[0m[0m inline_policy (known after apply)
+    }
+
+[1m  # aws_iam_role_policy_attachment.ssm_core[0m will be created
+[0m  [32m+[0m[0m resource "aws_iam_role_policy_attachment" "ssm_core" {
+      [32m+[0m[0m id         = (known after apply)
+      [32m+[0m[0m policy_arn = "arn:aws:iam::aws:policy/AmazonSSMManagedInstanceCore"
+      [32m+[0m[0m role       = (known after apply)
+    }
+
+[1m  # aws_instance.ec2[0m will be created
+[0m  [32m+[0m[0m resource "aws_instance" "ec2" {
+      [32m+[0m[0m ami                                  = "ami-0ad8de99ac93341e7"
+      [32m+[0m[0m arn                                  = (known after apply)
+      [32m+[0m[0m associate_public_ip_address          = false
+      [32m+[0m[0m availability_zone                    = (known after apply)
+      [32m+[0m[0m cpu_core_count                       = (known after apply)
+      [32m+[0m[0m cpu_threads_per_core                 = (known after apply)
+      [32m+[0m[0m disable_api_stop                     = (known after apply)
+      [32m+[0m[0m disable_api_termination              = (known after apply)
+      [32m+[0m[0m ebs_optimized                        = (known after apply)
+      [32m+[0m[0m enable_primary_ipv6                  = (known after apply)
+      [32m+[0m[0m get_password_data                    = false
+      [32m+[0m[0m host_id                              = (known after apply)
+      [32m+[0m[0m host_resource_group_arn              = (known after apply)
+      [32m+[0m[0m iam_instance_profile                 = (known after apply)
+      [32m+[0m[0m id                                   = (known after apply)
+      [32m+[0m[0m instance_initiated_shutdown_behavior = (known after apply)
+      [32m+[0m[0m instance_lifecycle                   = (known after apply)
+      [32m+[0m[0m instance_state                       = (known after apply)
+      [32m+[0m[0m instance_type                        = "t3.micro"
+      [32m+[0m[0m ipv6_address_count                   = (known after apply)
+      [32m+[0m[0m ipv6_addresses                       = (known after apply)
+      [32m+[0m[0m key_name                             = (known after apply)
+      [32m+[0m[0m monitoring                           = (known after apply)
+      [32m+[0m[0m outpost_arn                          = (known after apply)
+      [32m+[0m[0m password_data                        = (known after apply)
+      [32m+[0m[0m placement_group                      = (known after apply)
+      [32m+[0m[0m placement_partition_number           = (known after apply)
+      [32m+[0m[0m primary_network_interface_id         = (known after apply)
+      [32m+[0m[0m private_dns                          = (known after apply)
+      [32m+[0m[0m private_ip                           = (known after apply)
+      [32m+[0m[0m public_dns                           = (known after apply)
+      [32m+[0m[0m public_ip                            = (known after apply)
+      [32m+[0m[0m secondary_private_ips                = (known after apply)
+      [32m+[0m[0m security_groups                      = (known after apply)
+      [32m+[0m[0m source_dest_check                    = true
+      [32m+[0m[0m spot_instance_request_id             = (known after apply)
+      [32m+[0m[0m subnet_id                            = (known after apply)
+      [32m+[0m[0m tags                                 = {
+          [32m+[0m[0m "cis_controls" = "SSM.1"
+          [32m+[0m[0m "domain"       = "CMP"
+          [32m+[0m[0m "scenario_id"  = "CMP-BENIGN-001-ssm-enabled-on-ec2"
+          [32m+[0m[0m "type"         = "BENIGN"
+        }
+      [32m+[0m[0m tags_all                             = {
+          [32m+[0m[0m "cis_controls" = "SSM.1"
+          [32m+[0m[0m "domain"       = "CMP"
+          [32m+[0m[0m "scenario_id"  = "CMP-BENIGN-001-ssm-enabled-on-ec2"
+          [32m+[0m[0m "type"         = "BENIGN"
+        }
+      [32m+[0m[0m tenancy                              = (known after apply)
+      [32m+[0m[0m user_data                            = (known after apply)
+      [32m+[0m[0m user_data_base64                     = (known after apply)
+      [32m+[0m[0m user_data_replace_on_change          = false
+      [32m+[0m[0m vpc_security_group_ids               = (known after apply)
+
+      [32m+[0m[0m capacity_reservation_specification (known after apply)
+
+      [32m+[0m[0m cpu_options (known after apply)
+
+      [32m+[0m[0m ebs_block_device (known after apply)
+
+      [32m+[0m[0m enclave_options (known after apply)
+
+      [32m+[0m[0m ephemeral_block_device (known after apply)
+
+      [32m+[0m[0m instance_market_options (known after apply)
+
+      [32m+[0m[0m maintenance_options (known after apply)
+
+      [32m+[0m[0m metadata_options (known after apply)
+
+      [32m+[0m[0m network_interface (known after apply)
+
+      [32m+[0m[0m private_dns_name_options (known after apply)
+
+      [32m+[0m[0m root_block_device (known after apply)
+    }
+
+[1m  # aws_security_group.sg[0m will be created
+[0m  [32m+[0m[0m resource "aws_security_group" "sg" {
+      [32m+[0m[0m arn                    = (known after apply)
+      [32m+[0m[0m description            = "Managed by Terraform"
+      [32m+[0m[0m egress                 = [
+          [32m+[0m[0m {
+              [32m+[0m[0m cidr_blocks      = [
+                  [32m+[0m[0m "0.0.0.0/0",
+                ]
+              [32m+[0m[0m from_port        = 0
+              [32m+[0m[0m ipv6_cidr_blocks = []
+              [32m+[0m[0m prefix_list_ids  = []
+              [32m+[0m[0m protocol         = "-1"
+              [32m+[0m[0m security_groups  = []
+              [32m+[0m[0m self             = false
+              [32m+[0m[0m to_port          = 0
+                [90m# (1 unchanged attribute hidden)[0m[0m
+            },
+        ]
+      [32m+[0m[0m id                     = (known after apply)
+      [32m+[0m[0m ingress                = (known after apply)
+      [32m+[0m[0m name                   = (known after apply)
+      [32m+[0m[0m name_prefix            = (known after apply)
+      [32m+[0m[0m owner_id               = (known after apply)
+      [32m+[0m[0m revoke_rules_on_delete = false
+      [32m+[0m[0m tags                   = {
+          [32m+[0m[0m "cis_controls" = "SSM.1"
+          [32m+[0m[0m "domain"       = "CMP"
+          [32m+[0m[0m "scenario_id"  = "CMP-BENIGN-001-ssm-enabled-on-ec2"
+          [32m+[0m[0m "type"         = "BENIGN"
+        }
+      [32m+[0m[0m tags_all               = {
+          [32m+[0m[0m "cis_controls" = "SSM.1"
+          [32m+[0m[0m "domain"       = "CMP"
+          [32m+[0m[0m "scenario_id"  = "CMP-BENIGN-001-ssm-enabled-on-ec2"
+          [32m+[0m[0m "type"         = "BENIGN"
+        }
+      [32m+[0m[0m vpc_id                 = (known after apply)
+    }
+
+[1m  # aws_subnet.private[0m will be created
+[0m  [32m+[0m[0m resource "aws_subnet" "private" {
+      [32m+[0m[0m arn                                            = (known after apply)
+      [32m+[0m[0m assign_ipv6_address_on_creation                = false
+      [32m+[0m[0m availability_zone                              = "eu-west-2a"
+      [32m+[0m[0m availability_zone_id                           = (known after apply)
+      [32m+[0m[0m cidr_block                                     = "10.61.1.0/24"
+      [32m+[0m[0m enable_dns64                                   = false
+      [32m+[0m[0m enable_resource_name_dns_a_record_on_launch    = false
+      [32m+[0m[0m enable_resource_name_dns_aaaa_record_on_launch = false
+      [32m+[0m[0m id                                             = (known after apply)
+      [32m+[0m[0m ipv6_cidr_block_association_id                 = (known after apply)
+      [32m+[0m[0m ipv6_native                                    = false
+      [32m+[0m[0m map_public_ip_on_launch                        = false
+      [32m+[0m[0m owner_id                                       = (known after apply)
+      [32m+[0m[0m private_dns_hostname_type_on_launch            = (known after apply)
+      [32m+[0m[0m tags                                           = {
+          [32m+[0m[0m "cis_controls" = "SSM.1"
+          [32m+[0m[0m "domain"       = "CMP"
+          [32m+[0m[0m "scenario_id"  = "CMP-BENIGN-001-ssm-enabled-on-ec2"
+          [32m+[0m[0m "type"         = "BENIGN"
+        }
+      [32m+[0m[0m tags_all                                       = {
+          [32m+[0m[0m "cis_controls" = "SSM.1"
+          [32m+[0m[0m "domain"       = "CMP"
+          [32m+[0m[0m "scenario_id"  = "CMP-BENIGN-001-ssm-enabled-on-ec2"
+          [32m+[0m[0m "type"         = "BENIGN"
+        }
+      [32m+[0m[0m vpc_id                                         = (known after apply)
+    }
+
+[1m  # aws_vpc.vpc[0m will be created
+[0m  [32m+[0m[0m resource "aws_vpc" "vpc" {
+      [32m+[0m[0m arn                                  = (known after apply)
+      [32m+[0m[0m cidr_block                           = "10.61.0.0/16"
+      [32m+[0m[0m default_network_acl_id               = (known after apply)
+      [32m+[0m[0m default_route_table_id               = (known after apply)
+      [32m+[0m[0m default_security_group_id            = (known after apply)
+      [32m+[0m[0m dhcp_options_id                      = (known after apply)
+      [32m+[0m[0m enable_dns_hostnames                 = true
+      [32m+[0m[0m enable_dns_support                   = true
+      [32m+[0m[0m enable_network_address_usage_metrics = (known after apply)
+      [32m+[0m[0m id                                   = (known after apply)
+      [32m+[0m[0m instance_tenancy                     = "default"
+      [32m+[0m[0m ipv6_association_id                  = (known after apply)
+      [32m+[0m[0m ipv6_cidr_block                      = (known after apply)
+      [32m+[0m[0m ipv6_cidr_block_network_border_group = (known after apply)
+      [32m+[0m[0m main_route_table_id                  = (known after apply)
+      [32m+[0m[0m owner_id                             = (known after apply)
+      [32m+[0m[0m tags                                 = {
+          [32m+[0m[0m "cis_controls" = "SSM.1"
+          [32m+[0m[0m "domain"       = "CMP"
+          [32m+[0m[0m "scenario_id"  = "CMP-BENIGN-001-ssm-enabled-on-ec2"
+          [32m+[0m[0m "type"         = "BENIGN"
+        }
+      [32m+[0m[0m tags_all                             = {
+          [32m+[0m[0m "cis_controls" = "SSM.1"
+          [32m+[0m[0m "domain"       = "CMP"
+          [32m+[0m[0m "scenario_id"  = "CMP-BENIGN-001-ssm-enabled-on-ec2"
+          [32m+[0m[0m "type"         = "BENIGN"
+        }
+    }
+
+[1m  # random_id.suffix[0m will be created
+[0m  [32m+[0m[0m resource "random_id" "suffix" {
+      [32m+[0m[0m b64_std     = (known after apply)
+      [32m+[0m[0m b64_url     = (known after apply)
+      [32m+[0m[0m byte_length = 4
+      [32m+[0m[0m dec         = (known after apply)
+      [32m+[0m[0m hex         = (known after apply)
+      [32m+[0m[0m id          = (known after apply)
+    }
+
+[1mPlan:[0m [0m8 to add, 0 to change, 0 to destroy.
+[90m
+─────────────────────────────────────────────────────────────────────────────[0m
+
+Saved the plan to: tfplan.binary
+
+To perform exactly these actions, run the following command to apply:
+    terraform apply "tfplan.binary"
+
+===== [4] Export plan to JSON =====
+
+===== [5] Checkov =====
+
+       _               _
+   ___| |__   ___  ___| | _______   __
+  / __| '_ \ / _ \/ __| |/ / _ \ \ / /
+ | (__| | | |  __/ (__|   < (_) \ V /
+  \___|_| |_|\___|\___|_|\_\___/ \_/
+
+By Prisma Cloud | version: 3.2.495 
+
+terraform scan results:
+
+Passed checks: 16, Failed checks: 8, Skipped checks: 0
+
+Check: CKV_AWS_130: "Ensure VPC subnets do not assign public IP by default"
+	PASSED for resource: aws_subnet.private
+	File: /main.tf:19-25
+Check: CKV_AWS_24: "Ensure no security groups allow ingress from 0.0.0.0:0 to port 22"
+	PASSED for resource: aws_security_group.sg
+	File: /main.tf:27-38
+Check: CKV_AWS_277: "Ensure no security groups allow ingress from 0.0.0.0:0 to port -1"
+	PASSED for resource: aws_security_group.sg
+	File: /main.tf:27-38
+Check: CKV_AWS_260: "Ensure no security groups allow ingress from 0.0.0.0:0 to port 80"
+	PASSED for resource: aws_security_group.sg
+	File: /main.tf:27-38
+Check: CKV_AWS_25: "Ensure no security groups allow ingress from 0.0.0.0:0 to port 3389"
+	PASSED for resource: aws_security_group.sg
+	File: /main.tf:27-38
+Check: CKV_AWS_274: "Disallow IAM roles, users, and groups from using the AWS AdministratorAccess policy"
+	PASSED for resource: aws_iam_role.ssm_role
+	File: /main.tf:40-53
+Check: CKV_AWS_61: "Ensure AWS IAM policy does not allow assume role permission across all services"
+	PASSED for resource: aws_iam_role.ssm_role
+	File: /main.tf:40-53
+Check: CKV_AWS_60: "Ensure IAM role allows only specific services or principals to assume it"
+	PASSED for resource: aws_iam_role.ssm_role
+	File: /main.tf:40-53
+Check: CKV_AWS_274: "Disallow IAM roles, users, and groups from using the AWS AdministratorAccess policy"
+	PASSED for resource: aws_iam_role_policy_attachment.ssm_core
+	File: /main.tf:55-58
+Check: CKV_AWS_46: "Ensure no hard-coded secrets exist in EC2 user data"
+	PASSED for resource: aws_instance.ec2
+	File: /main.tf:66-76
+Check: CKV_AWS_88: "EC2 instance should not have public IP."
+	PASSED for resource: aws_instance.ec2
+	File: /main.tf:66-76
+Check: CKV_AWS_386: "Reduce potential for WhoAMI cloud image name confusion attack"
+	PASSED for resource: aws_ami.al2
+	File: /main.tf:3-10
+Check: CKV_AWS_41: "Ensure no hard coded AWS access key and secret key exists in provider"
+	PASSED for resource: aws.default
+	File: /provider.tf:1-9
+Check: CKV2_AWS_5: "Ensure that Security Groups are attached to another resource"
+	PASSED for resource: aws_security_group.sg
+	File: /main.tf:27-38
+Check: CKV2_AWS_56: "Ensure AWS Managed IAMFullAccess IAM policy is not used."
+	PASSED for resource: aws_iam_role_policy_attachment.ssm_core
+	File: /main.tf:55-58
+Check: CKV2_AWS_41: "Ensure an IAM role is attached to EC2 instance"
+	PASSED for resource: aws_instance.ec2
+	File: /main.tf:66-76
+Check: CKV_AWS_23: "Ensure every security group and rule has a description"
+	FAILED for resource: aws_security_group.sg
+	File: /main.tf:27-38
+
+		27 | resource "aws_security_group" "sg" {
+		28 |   name   = lower(format("%s-sg-%s", var.scenario_id, local.name_suffix))
+		29 |   vpc_id = aws_vpc.vpc.id
+		30 |   tags   = local.common_tags
+		31 | 
+		32 |   egress {
+		33 |     from_port   = 0
+		34 |     to_port     = 0
+		35 |     protocol    = "-1"
+		36 |     cidr_blocks = ["0.0.0.0/0"]
+		37 |   }
+		38 | }
+
+Check: CKV_AWS_382: "Ensure no security groups allow egress from 0.0.0.0:0 to port -1"
+	FAILED for resource: aws_security_group.sg
+	File: /main.tf:27-38
+
+		27 | resource "aws_security_group" "sg" {
+		28 |   name   = lower(format("%s-sg-%s", var.scenario_id, local.name_suffix))
+		29 |   vpc_id = aws_vpc.vpc.id
+		30 |   tags   = local.common_tags
+		31 | 
+		32 |   egress {
+		33 |     from_port   = 0
+		34 |     to_port     = 0
+		35 |     protocol    = "-1"
+		36 |     cidr_blocks = ["0.0.0.0/0"]
+		37 |   }
+		38 | }
+
+Check: CKV_AWS_126: "Ensure that detailed monitoring is enabled for EC2 instances"
+	FAILED for resource: aws_instance.ec2
+	File: /main.tf:66-76
+
+		66 | resource "aws_instance" "ec2" {
+		67 |   ami                         = data.aws_ami.al2.id
+		68 |   instance_type               = "t3.micro"
+		69 |   subnet_id                   = aws_subnet.private.id
+		70 |   vpc_security_group_ids      = [aws_security_group.sg.id]
+		71 |   associate_public_ip_address = false
+		72 | 
+		73 |   iam_instance_profile = aws_iam_instance_profile.profile.name
+		74 | 
+		75 |   tags = local.common_tags
+		76 | }
+
+Check: CKV_AWS_79: "Ensure Instance Metadata Service Version 1 is not enabled"
+	FAILED for resource: aws_instance.ec2
+	File: /main.tf:66-76
+
+		66 | resource "aws_instance" "ec2" {
+		67 |   ami                         = data.aws_ami.al2.id
+		68 |   instance_type               = "t3.micro"
+		69 |   subnet_id                   = aws_subnet.private.id
+		70 |   vpc_security_group_ids      = [aws_security_group.sg.id]
+		71 |   associate_public_ip_address = false
+		72 | 
+		73 |   iam_instance_profile = aws_iam_instance_profile.profile.name
+		74 | 
+		75 |   tags = local.common_tags
+		76 | }
+
+Check: CKV_AWS_135: "Ensure that EC2 is EBS optimized"
+	FAILED for resource: aws_instance.ec2
+	File: /main.tf:66-76
+
+		66 | resource "aws_instance" "ec2" {
+		67 |   ami                         = data.aws_ami.al2.id
+		68 |   instance_type               = "t3.micro"
+		69 |   subnet_id                   = aws_subnet.private.id
+		70 |   vpc_security_group_ids      = [aws_security_group.sg.id]
+		71 |   associate_public_ip_address = false
+		72 | 
+		73 |   iam_instance_profile = aws_iam_instance_profile.profile.name
+		74 | 
+		75 |   tags = local.common_tags
+		76 | }
+
+Check: CKV_AWS_8: "Ensure all data stored in the Launch configuration or instance Elastic Blocks Store is securely encrypted"
+	FAILED for resource: aws_instance.ec2
+	File: /main.tf:66-76
+
+		66 | resource "aws_instance" "ec2" {
+		67 |   ami                         = data.aws_ami.al2.id
+		68 |   instance_type               = "t3.micro"
+		69 |   subnet_id                   = aws_subnet.private.id
+		70 |   vpc_security_group_ids      = [aws_security_group.sg.id]
+		71 |   associate_public_ip_address = false
+		72 | 
+		73 |   iam_instance_profile = aws_iam_instance_profile.profile.name
+		74 | 
+		75 |   tags = local.common_tags
+		76 | }
+
+Check: CKV2_AWS_11: "Ensure VPC flow logging is enabled in all VPCs"
+	FAILED for resource: aws_vpc.vpc
+	File: /main.tf:12-17
+
+		12 | resource "aws_vpc" "vpc" {
+		13 |   cidr_block           = "10.61.0.0/16"
+		14 |   enable_dns_support   = true
+		15 |   enable_dns_hostnames = true
+		16 |   tags                 = local.common_tags
+		17 | }
+
+Check: CKV2_AWS_12: "Ensure the default security group of every VPC restricts all traffic"
+	FAILED for resource: aws_vpc.vpc
+	File: /main.tf:12-17
+
+		12 | resource "aws_vpc" "vpc" {
+		13 |   cidr_block           = "10.61.0.0/16"
+		14 |   enable_dns_support   = true
+		15 |   enable_dns_hostnames = true
+		16 |   tags                 = local.common_tags
+		17 | }
+
+terraform_plan scan results:
+
+Passed checks: 17, Failed checks: 7, Skipped checks: 0
+
+Check: CKV_AWS_41: "Ensure no hard coded AWS access key and secret key exists in provider"
+	PASSED for resource: aws.default
+	File: /tfplan.json:0-1
+Check: CKV_AWS_274: "Disallow IAM roles, users, and groups from using the AWS AdministratorAccess policy"
+	PASSED for resource: aws_iam_role.ssm_role
+	File: /tfplan.json:0-0
+Check: CKV_AWS_61: "Ensure AWS IAM policy does not allow assume role permission across all services"
+	PASSED for resource: aws_iam_role.ssm_role
+	File: /tfplan.json:0-0
+Check: CKV_AWS_60: "Ensure IAM role allows only specific services or principals to assume it"
+	PASSED for resource: aws_iam_role.ssm_role
+	File: /tfplan.json:0-0
+Check: CKV_AWS_274: "Disallow IAM roles, users, and groups from using the AWS AdministratorAccess policy"
+	PASSED for resource: aws_iam_role_policy_attachment.ssm_core
+	File: /tfplan.json:0-0
+Check: CKV_AWS_46: "Ensure no hard-coded secrets exist in EC2 user data"
+	PASSED for resource: aws_instance.ec2
+	File: /tfplan.json:0-0
+Check: CKV_AWS_88: "EC2 instance should not have public IP."
+	PASSED for resource: aws_instance.ec2
+	File: /tfplan.json:0-0
+Check: CKV_AWS_24: "Ensure no security groups allow ingress from 0.0.0.0:0 to port 22"
+	PASSED for resource: aws_security_group.sg
+	File: /tfplan.json:0-0
+Check: CKV_AWS_23: "Ensure every security group and rule has a description"
+	PASSED for resource: aws_security_group.sg
+	File: /tfplan.json:0-0
+Check: CKV_AWS_277: "Ensure no security groups allow ingress from 0.0.0.0:0 to port -1"
+	PASSED for resource: aws_security_group.sg
+	File: /tfplan.json:0-0
+Check: CKV_AWS_260: "Ensure no security groups allow ingress from 0.0.0.0:0 to port 80"
+	PASSED for resource: aws_security_group.sg
+	File: /tfplan.json:0-0
+Check: CKV_AWS_25: "Ensure no security groups allow ingress from 0.0.0.0:0 to port 3389"
+	PASSED for resource: aws_security_group.sg
+	File: /tfplan.json:0-0
+Check: CKV_AWS_130: "Ensure VPC subnets do not assign public IP by default"
+	PASSED for resource: aws_subnet.private
+	File: /tfplan.json:0-0
+Check: CKV2_AWS_5: "Ensure that Security Groups are attached to another resource"
+	PASSED for resource: aws_security_group.sg
+	File: /tfplan.json:0-0
+Check: CKV2_AWS_56: "Ensure AWS Managed IAMFullAccess IAM policy is not used."
+	PASSED for resource: aws_iam_role.ssm_role
+	File: /tfplan.json:0-0
+Check: CKV2_AWS_56: "Ensure AWS Managed IAMFullAccess IAM policy is not used."
+	PASSED for resource: aws_iam_role_policy_attachment.ssm_core
+	File: /tfplan.json:0-0
+Check: CKV2_AWS_41: "Ensure an IAM role is attached to EC2 instance"
+	PASSED for resource: aws_instance.ec2
+	File: /tfplan.json:0-0
+Check: CKV_AWS_126: "Ensure that detailed monitoring is enabled for EC2 instances"
+	FAILED for resource: aws_instance.ec2
+	File: /tfplan.json:0-0
+Check: CKV_AWS_79: "Ensure Instance Metadata Service Version 1 is not enabled"
+	FAILED for resource: aws_instance.ec2
+	File: /tfplan.json:0-0
+Check: CKV_AWS_135: "Ensure that EC2 is EBS optimized"
+	FAILED for resource: aws_instance.ec2
+	File: /tfplan.json:0-0
+Check: CKV_AWS_8: "Ensure all data stored in the Launch configuration or instance Elastic Blocks Store is securely encrypted"
+	FAILED for resource: aws_instance.ec2
+	File: /tfplan.json:0-0
+Check: CKV_AWS_382: "Ensure no security groups allow egress from 0.0.0.0:0 to port -1"
+	FAILED for resource: aws_security_group.sg
+	File: /tfplan.json:0-0
+Check: CKV2_AWS_11: "Ensure VPC flow logging is enabled in all VPCs"
+	FAILED for resource: aws_vpc.vpc
+	File: /tfplan.json:0-0
+Check: CKV2_AWS_12: "Ensure the default security group of every VPC restricts all traffic"
+	FAILED for resource: aws_vpc.vpc
+	File: /tfplan.json:0-0
+
+
+===== [6] tfsec =====
+
+======================================================
+tfsec is joining the Trivy family
+
+tfsec will continue to remain available 
+for the time being, although our engineering 
+attention will be directed at Trivy going forward.
+
+You can read more here: 
+https://github.com/aquasecurity/tfsec/discussions/1994
+======================================================
+
+[0m[3mResult #1[0m [0m[1m[31mCRITICAL[39m[0m[39m[0m [1mSecurity group rule allows egress to multiple public internet addresses.[0m [2m[0m
+[0m[0m[90m───────────────────────────────────────────────────────────────────────────────────────────────────────────
+[0m[0m  [3mmain.tf[2m[3m:36
+[0m[0m[90m───────────────────────────────────────────────────────────────────────────────────────────────────────────[39m
+[0m[0m[90m   27  [0m[0m  [38;5;33mresource[0m [38;5;37m"aws_security_group"[0m [38;5;37m"sg"[0m {[0m
+[0m[90m   ..  [0m
+[0m[31m   36  [0m[0m[31m[[39m[0m[0m [0m    [38;5;245mcidr_blocks[0m = [[38;5;37m"0.0.0.0/0"[0m][0m
+[0m[90m   ..  [0m
+[0m[90m   38  [0m[0m  }[0m
+[0m[90m───────────────────────────────────────────────────────────────────────────────────────────────────────────[39m
+[0m[0m  [2m        ID[0m[3m aws-ec2-no-public-egress-sgr
+[0m[0m  [2m    Impact[0m Your port is egressing data to the internet
+[0m[0m  [2mResolution[0m Set a more restrictive cidr range
+[0m[0m
+  [2mMore Information[0m[0m[0m
+  [2m-[0m [34mhttps://aquasecurity.github.io/tfsec/v1.28.14/checks/aws/ec2/no-public-egress-sgr/[0m[0m
+  [2m-[0m [34mhttps://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group[0m[0m
+[90m───────────────────────────────────────────────────────────────────────────────────────────────────────────[39m
+
+
+[0m[0m[3mResult #2[0m [0m[31mHIGH[39m[0m [1mInstance does not require IMDS access to require a token[0m [2m[0m
+[0m[0m[90m───────────────────────────────────────────────────────────────────────────────────────────────────────────
+[0m[0m  [3mmain.tf[2m[3m:66-76
+[0m[0m[90m───────────────────────────────────────────────────────────────────────────────────────────────────────────[39m
+[0m[0m[31m   66  [0m[0m[31m┌[39m[0m[0m [38;5;33mresource[0m [38;5;37m"aws_instance"[0m [38;5;37m"ec2"[0m {[0m
+[0m[31m   67  [0m[0m[31m│[39m[0m[0m   [38;5;245mami[0m                         = [38;5;33mdata[0m.aws_ami.al2.id[0m
+[0m[31m   68  [0m[0m[31m│[39m[0m[0m   [38;5;245minstance_type[0m               = [38;5;37m"t3.micro"[0m
+[0m[31m   69  [0m[0m[31m│[39m[0m[0m [0m  [38;5;245msubnet_id[0m                   = aws_subnet.private.id[0m
+[0m[31m   70  [0m[0m[31m│[39m[0m[0m   [38;5;245mvpc_security_group_ids[0m      = [aws_security_group.sg.id][0m
+[0m[31m   71  [0m[0m[31m│[39m[0m[0m   [38;5;245massociate_public_ip_address[0m = [38;5;166mfalse[0m
+[0m[31m   72  [0m[0m[31m│[39m[0m[0m [0m[0m
+[0m[31m   73  [0m[0m[31m│[39m[0m[0m   [38;5;245miam_instance_profile[0m = aws_iam_instance_profile.profile.name[0m
+[0m[31m   74  [0m[0m[31m└[39m[0m[0m [0m
+[0m[90m   ..  [0m
+[0m[90m───────────────────────────────────────────────────────────────────────────────────────────────────────────[39m
+[0m[0m  [2m        ID[0m[3m aws-ec2-enforce-http-token-imds
+[0m[0m  [2m    Impact[0m Instance metadata service can be interacted with freely
+[0m[0m  [2mResolution[0m Enable HTTP token requirement for IMDS
+[0m[0m
+  [2mMore Information[0m[0m[0m
+  [2m-[0m [34mhttps://aquasecurity.github.io/tfsec/v1.28.14/checks/aws/ec2/enforce-http-token-imds/[0m[0m
+  [2m-[0m [34mhttps://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/instance#metadata-options[0m[0m
+[90m───────────────────────────────────────────────────────────────────────────────────────────────────────────[39m
+
+
+[0m[0m[3mResult #3[0m [0m[31mHIGH[39m[0m [1mRoot block device is not encrypted.[0m [2m[0m
+[0m[0m[90m───────────────────────────────────────────────────────────────────────────────────────────────────────────
+[0m[0m  [3mmain.tf[2m[3m:66-76
+[0m[0m[90m───────────────────────────────────────────────────────────────────────────────────────────────────────────[39m
+[0m[0m[31m   66  [0m[0m[31m┌[39m[0m[0m [38;5;33mresource[0m [38;5;37m"aws_instance"[0m [38;5;37m"ec2"[0m {[0m
+[0m[31m   67  [0m[0m[31m│[39m[0m[0m   [38;5;245mami[0m                         = [38;5;33mdata[0m.aws_ami.al2.id[0m
+[0m[31m   68  [0m[0m[31m│[39m[0m[0m   [38;5;245minstance_type[0m               = [38;5;37m"t3.micro"[0m
+[0m[31m   69  [0m[0m[31m│[39m[0m[0m [0m  [38;5;245msubnet_id[0m                   = aws_subnet.private.id[0m
+[0m[31m   70  [0m[0m[31m│[39m[0m[0m   [38;5;245mvpc_security_group_ids[0m      = [aws_security_group.sg.id][0m
+[0m[31m   71  [0m[0m[31m│[39m[0m[0m   [38;5;245massociate_public_ip_address[0m = [38;5;166mfalse[0m
+[0m[31m   72  [0m[0m[31m│[39m[0m[0m [0m[0m
+[0m[31m   73  [0m[0m[31m│[39m[0m[0m   [38;5;245miam_instance_profile[0m = aws_iam_instance_profile.profile.name[0m
+[0m[31m   74  [0m[0m[31m└[39m[0m[0m [0m
+[0m[90m   ..  [0m
+[0m[90m───────────────────────────────────────────────────────────────────────────────────────────────────────────[39m
+[0m[0m  [2m        ID[0m[3m aws-ec2-enable-at-rest-encryption
+[0m[0m  [2m    Impact[0m The block device could be compromised and read from
+[0m[0m  [2mResolution[0m Turn on encryption for all block devices
+[0m[0m
+  [2mMore Information[0m[0m[0m
+  [2m-[0m [34mhttps://aquasecurity.github.io/tfsec/v1.28.14/checks/aws/ec2/enable-at-rest-encryption/[0m[0m
+  [2m-[0m [34mhttps://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/instance#ebs-ephemeral-and-root-block-devices[0m[0m
+[90m───────────────────────────────────────────────────────────────────────────────────────────────────────────[39m
+
+
+[0m[0m[3mResult #4[0m [0m[33mMEDIUM[39m[0m [1mVPC Flow Logs is not enabled for VPC [0m [2m[0m
+[0m[0m[90m───────────────────────────────────────────────────────────────────────────────────────────────────────────
+[0m[0m  [3mmain.tf[2m[3m:12-17
+[0m[0m[90m───────────────────────────────────────────────────────────────────────────────────────────────────────────[39m
+[0m[0m[31m   12  [0m[0m [0m[0m [38;5;33mresource[0m [38;5;37m"aws_vpc"[0m [38;5;37m"vpc"[0m {[0m
+[0m[31m   13  [0m[0m [0m[0m   [38;5;245mcidr_block[0m           = [38;5;37m"10.61.0.0/16"[0m
+[0m[31m   14  [0m[0m [0m[0m [0m  [38;5;245menable_dns_support[0m   = [38;5;166mtrue[0m
+[0m[31m   15  [0m[0m [0m[0m [0m  [38;5;245menable_dns_hostnames[0m = [38;5;166mtrue[0m
+[0m[31m   16  [0m[0m [0m[0m [0m  [38;5;245mtags[0m                 = local.common_tags[0m
+[0m[31m   17  [0m[0m [0m[0m }[0m
+[0m[90m───────────────────────────────────────────────────────────────────────────────────────────────────────────[39m
+[0m[0m  [2m        ID[0m[3m aws-ec2-require-vpc-flow-logs-for-all-vpcs
+[0m[0m  [2m    Impact[0m Without VPC flow logs, you risk not having enough information about network traffic flow to investigate incidents or identify security issues.
+[0m[0m  [2mResolution[0m Enable flow logs for VPC
+[0m[0m
+  [2mMore Information[0m[0m[0m
+  [2m-[0m [34mhttps://aquasecurity.github.io/tfsec/v1.28.14/checks/aws/ec2/require-vpc-flow-logs-for-all-vpcs/[0m[0m
+[90m───────────────────────────────────────────────────────────────────────────────────────────────────────────[39m
+
+
+[0m[0m[3mResult #5[0m [0m[97mLOW[39m[0m [1mSecurity group explicitly uses the default description.[0m [2m[0m
+[0m[0m[90m───────────────────────────────────────────────────────────────────────────────────────────────────────────
+[0m[0m  [3mmain.tf[2m[3m:27-38
+[0m[0m[90m───────────────────────────────────────────────────────────────────────────────────────────────────────────[39m
+[0m[0m[31m   27  [0m[0m[31m┌[39m[0m[0m [38;5;33mresource[0m [38;5;37m"aws_security_group"[0m [38;5;37m"sg"[0m {[0m
+[0m[31m   28  [0m[0m[31m│[39m[0m[0m   [38;5;245mname[0m   = [38;5;33mlower[0m([38;5;33mformat[0m([38;5;37m"%s-sg-%s"[0m, [38;5;33mvar[0m.scenario_id, local.name_suffix))[0m
+[0m[31m   29  [0m[0m[31m│[39m[0m[0m   [38;5;245mvpc_id[0m = aws_vpc.vpc.id[0m
+[0m[31m   30  [0m[0m[31m│[39m[0m[0m   [38;5;245mtags[0m   = local.common_tags[0m
+[0m[31m   31  [0m[0m[31m│[39m[0m[0m [0m
+[0m[31m   32  [0m[0m[31m│[39m[0m[0m   egress {[0m
+[0m[31m   33  [0m[0m[31m│[39m[0m[0m     [38;5;245mfrom_port[0m   = [38;5;37m0[0m
+[0m[31m   34  [0m[0m[31m│[39m[0m[0m [0m    [38;5;245mto_port[0m     = [38;5;37m0[0m
+[0m[31m   35  [0m[0m[31m└[39m[0m[0m [0m    [38;5;245mprotocol[0m    = [38;5;37m"-1"[0m
+[0m[90m   ..  [0m
+[0m[90m───────────────────────────────────────────────────────────────────────────────────────────────────────────[39m
+[0m[0m  [2m        ID[0m[3m aws-ec2-add-description-to-security-group
+[0m[0m  [2m    Impact[0m Descriptions provide context for the firewall rule reasons
+[0m[0m  [2mResolution[0m Add descriptions for all security groups
+[0m[0m
+  [2mMore Information[0m[0m[0m
+  [2m-[0m [34mhttps://aquasecurity.github.io/tfsec/v1.28.14/checks/aws/ec2/add-description-to-security-group/[0m[0m
+  [2m-[0m [34mhttps://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group[0m[0m
+  [2m-[0m [34mhttps://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group_rule[0m[0m
+[90m───────────────────────────────────────────────────────────────────────────────────────────────────────────[39m
+
+
+[0m[0m[3mResult #6[0m [0m[97mLOW[39m[0m [1mSecurity group rule does not have a description.[0m [2m[0m
+[0m[0m[90m───────────────────────────────────────────────────────────────────────────────────────────────────────────
+[0m[0m  [3mmain.tf[2m[3m:32-37
+[0m[0m[90m───────────────────────────────────────────────────────────────────────────────────────────────────────────[39m
+[0m[0m[90m   27  [0m[0m  [38;5;33mresource[0m [38;5;37m"aws_security_group"[0m [38;5;37m"sg"[0m {[0m
+[0m[90m   28  [0m[0m    [38;5;245mname[0m   = [38;5;33mlower[0m([38;5;33mformat[0m([38;5;37m"%s-sg-%s"[0m, [38;5;33mvar[0m.scenario_id, local.name_suffix))[0m
+[0m[90m   29  [0m[0m    [38;5;245mvpc_id[0m = aws_vpc.vpc.id[0m
+[0m[90m   30  [0m[0m    [38;5;245mtags[0m   = local.common_tags[0m
+[0m[90m   31  [0m[0m  [0m
+[0m[31m   32  [0m[0m[31m┌[39m[0m[0m   egress {[0m
+[0m[31m   33  [0m[0m[31m│[39m[0m[0m     [38;5;245mfrom_port[0m   = [38;5;37m0[0m
+[0m[31m   34  [0m[0m[31m│[39m[0m[0m [0m    [38;5;245mto_port[0m     = [38;5;37m0[0m
+[0m[31m   35  [0m[0m[31m└[39m[0m[0m [0m    [38;5;245mprotocol[0m    = [38;5;37m"-1"[0m
+[0m[90m   ..  [0m
+[0m[90m───────────────────────────────────────────────────────────────────────────────────────────────────────────[39m
+[0m[0m  [2m        ID[0m[3m aws-ec2-add-description-to-security-group-rule
+[0m[0m  [2m    Impact[0m Descriptions provide context for the firewall rule reasons
+[0m[0m  [2mResolution[0m Add descriptions for all security groups rules
+[0m[0m
+  [2mMore Information[0m[0m[0m
+  [2m-[0m [34mhttps://aquasecurity.github.io/tfsec/v1.28.14/checks/aws/ec2/add-description-to-security-group-rule/[0m[0m
+  [2m-[0m [34mhttps://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group[0m[0m
+  [2m-[0m [34mhttps://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group_rule[0m[0m
+[90m───────────────────────────────────────────────────────────────────────────────────────────────────────────[39m
+
+
+[0m[0m  [1mtimings[0m
+  ──────────────────────────────────────────
+[0m[0m  [2mdisk i/o            [0m 59.307µs
+[0m[0m  [2mparsing             [0m 3.864745ms
+[0m[0m  [2madaptation          [0m 150.781µs
+[0m[0m  [2mchecks              [0m 11.958391ms
+[0m[0m  [2mtotal               [0m 16.033224ms
+[0m
+[0m  [1mcounts[0m
+  ──────────────────────────────────────────
+[0m[0m  [2mmodules downloaded  [0m 0
+[0m[0m  [2mmodules processed   [0m 1
+[0m[0m  [2mblocks processed    [0m 18
+[0m[0m  [2mfiles read          [0m 5
+[0m
+[0m  [1mresults[0m
+  ──────────────────────────────────────────
+[0m[0m  [2mpassed              [0m 2
+[0m[0m  [2mignored             [0m 0
+[0m[0m  [2mcritical            [0m 1
+[0m[0m  [2mhigh                [0m 2
+[0m[0m  [2mmedium              [0m 1
+[0m[0m  [2mlow                 [0m 2
+[0m
+[0m  [31m[1m2 passed, 6 potential problem(s) detected.
+
+[0m
+===== [7] Terrascan =====
+
+===== [8] Conftest =====
+[31mFAIL[0m - tfplan.json - main - No aws_cloudtrail resource detected in plan (CloudTrail logging not enabled)
+[31mFAIL[0m - tfplan.json - main - No aws_flow_log resources detected in plan (VPC Flow Logs likely not enabled)
+[31mFAIL[0m - tfplan.json - main - Security Group aws_security_group.sg has unrestricted egress to 0.0.0.0/0 (review / high-risk)
+
+[31m21 tests, 18 passed, 0 warnings, 3 failures, 0 exceptions[0m
+
+============================================================
+FULL SCAN LOG END: 2025-12-22 20:01:42 UTC
+Return codes:
+  checkov   = 1
+  tfsec     = 1
+  terrascan = 1
+  conftest  = 1
+Scenario outputs (root):
+  - /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2/checkov_CMP-BENIGN-001-ssm-enabled-on-ec2.txt
+  - /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2/tfsec_CMP-BENIGN-001-ssm-enabled-on-ec2.txt
+  - /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2/terrascan_CMP-BENIGN-001-ssm-enabled-on-ec2.txt
+  - /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2/conftest_CMP-BENIGN-001-ssm-enabled-on-ec2.txt
+Master log:
+  - /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2/scan_logs/FULL_CMP-BENIGN-001-ssm-enabled-on-ec2.log
+============================================================
+
+
+============================================================
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-002-imdsv2-required
+============================================================
+==> Scenario directory: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-002-imdsv2-required
+
+============================================================
+FULL SCAN LOG START: 2025-12-22 20:01:42 UTC
+Scenario: CMP-BENIGN-002-imdsv2-required
+Path: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-002-imdsv2-required
+POLICY_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/policy/terraform
+============================================================
+
+===== [0] Terraform plugin cache fix =====
+TF_PLUGIN_CACHE_DIR=/tmp/terraform-plugin-cache
+
+===== [1] Terraform init =====
+[0m[1mInitializing the backend...[0m
+[0m[1mInitializing provider plugins...[0m
+- Finding hashicorp/aws versions matching "~> 5.0"...
+- Finding hashicorp/random versions matching "~> 3.6"...
+- Using previously-installed hashicorp/aws v5.100.0
+- Using previously-installed hashicorp/random v3.7.2
+
+[0m[1m[32mTerraform has been successfully initialized![0m[32m[0m
+[0m[32m
+You may now begin working with Terraform. Try running "terraform plan" to see
+any changes that are required for your infrastructure. All Terraform commands
+should now work.
+
+If you ever set or change modules or backend configuration for Terraform,
+rerun this command to reinitialize your working directory. If you forget, other
+commands will detect it and remind you to do so if necessary.[0m
+
+===== [2] Terraform validate =====
+[32m[1mSuccess![0m The configuration is valid.
+[0m
+
+===== [3] Terraform plan =====
+Detected terraform.tfvars -> using -var-file=terraform.tfvars
+[0m[1mdata.aws_ami.al2: Reading...[0m[0m
+[0m[1mdata.aws_ami.al2: Read complete after 0s [id=ami-0ad8de99ac93341e7][0m
+
+Terraform used the selected providers to generate the following execution
+plan. Resource actions are indicated with the following symbols:
+  [32m+[0m create[0m
+
+Terraform will perform the following actions:
+
+[1m  # aws_instance.ec2[0m will be created
+[0m  [32m+[0m[0m resource "aws_instance" "ec2" {
+      [32m+[0m[0m ami                                  = "ami-0ad8de99ac93341e7"
+      [32m+[0m[0m arn                                  = (known after apply)
+      [32m+[0m[0m associate_public_ip_address          = (known after apply)
+      [32m+[0m[0m availability_zone                    = (known after apply)
+      [32m+[0m[0m cpu_core_count                       = (known after apply)
+      [32m+[0m[0m cpu_threads_per_core                 = (known after apply)
+      [32m+[0m[0m disable_api_stop                     = (known after apply)
+      [32m+[0m[0m disable_api_termination              = (known after apply)
+      [32m+[0m[0m ebs_optimized                        = (known after apply)
+      [32m+[0m[0m enable_primary_ipv6                  = (known after apply)
+      [32m+[0m[0m get_password_data                    = false
+      [32m+[0m[0m host_id                              = (known after apply)
+      [32m+[0m[0m host_resource_group_arn              = (known after apply)
+      [32m+[0m[0m iam_instance_profile                 = (known after apply)
+      [32m+[0m[0m id                                   = (known after apply)
+      [32m+[0m[0m instance_initiated_shutdown_behavior = (known after apply)
+      [32m+[0m[0m instance_lifecycle                   = (known after apply)
+      [32m+[0m[0m instance_state                       = (known after apply)
+      [32m+[0m[0m instance_type                        = "t3.micro"
+      [32m+[0m[0m ipv6_address_count                   = (known after apply)
+      [32m+[0m[0m ipv6_addresses                       = (known after apply)
+      [32m+[0m[0m key_name                             = (known after apply)
+      [32m+[0m[0m monitoring                           = (known after apply)
+      [32m+[0m[0m outpost_arn                          = (known after apply)
+      [32m+[0m[0m password_data                        = (known after apply)
+      [32m+[0m[0m placement_group                      = (known after apply)
+      [32m+[0m[0m placement_partition_number           = (known after apply)
+      [32m+[0m[0m primary_network_interface_id         = (known after apply)
+      [32m+[0m[0m private_dns                          = (known after apply)
+      [32m+[0m[0m private_ip                           = (known after apply)
+      [32m+[0m[0m public_dns                           = (known after apply)
+      [32m+[0m[0m public_ip                            = (known after apply)
+      [32m+[0m[0m secondary_private_ips                = (known after apply)
+      [32m+[0m[0m security_groups                      = (known after apply)
+      [32m+[0m[0m source_dest_check                    = true
+      [32m+[0m[0m spot_instance_request_id             = (known after apply)
+      [32m+[0m[0m subnet_id                            = (known after apply)
+      [32m+[0m[0m tags                                 = {
+          [32m+[0m[0m "cis_controls" = "EC2.8"
+          [32m+[0m[0m "domain"       = "CMP"
+          [32m+[0m[0m "scenario_id"  = "CMP-BENIGN-002-imdsv2-required"
+          [32m+[0m[0m "type"         = "BENIGN"
+        }
+      [32m+[0m[0m tags_all                             = {
+          [32m+[0m[0m "cis_controls" = "EC2.8"
+          [32m+[0m[0m "domain"       = "CMP"
+          [32m+[0m[0m "scenario_id"  = "CMP-BENIGN-002-imdsv2-required"
+          [32m+[0m[0m "type"         = "BENIGN"
+        }
+      [32m+[0m[0m tenancy                              = (known after apply)
+      [32m+[0m[0m user_data                            = (known after apply)
+      [32m+[0m[0m user_data_base64                     = (known after apply)
+      [32m+[0m[0m user_data_replace_on_change          = false
+      [32m+[0m[0m vpc_security_group_ids               = (known after apply)
+
+      [32m+[0m[0m capacity_reservation_specification (known after apply)
+
+      [32m+[0m[0m cpu_options (known after apply)
+
+      [32m+[0m[0m ebs_block_device (known after apply)
+
+      [32m+[0m[0m enclave_options (known after apply)
+
+      [32m+[0m[0m ephemeral_block_device (known after apply)
+
+      [32m+[0m[0m instance_market_options (known after apply)
+
+      [32m+[0m[0m maintenance_options (known after apply)
+
+      [32m+[0m[0m metadata_options {
+          [32m+[0m[0m http_endpoint               = "enabled"
+          [32m+[0m[0m http_protocol_ipv6          = "disabled"
+          [32m+[0m[0m http_put_response_hop_limit = (known after apply)
+          [32m+[0m[0m http_tokens                 = "required"
+          [32m+[0m[0m instance_metadata_tags      = (known after apply)
+        }
+
+      [32m+[0m[0m network_interface (known after apply)
+
+      [32m+[0m[0m private_dns_name_options (known after apply)
+
+      [32m+[0m[0m root_block_device (known after apply)
+    }
+
+[1m  # random_id.suffix[0m will be created
+[0m  [32m+[0m[0m resource "random_id" "suffix" {
+      [32m+[0m[0m b64_std     = (known after apply)
+      [32m+[0m[0m b64_url     = (known after apply)
+      [32m+[0m[0m byte_length = 4
+      [32m+[0m[0m dec         = (known after apply)
+      [32m+[0m[0m hex         = (known after apply)
+      [32m+[0m[0m id          = (known after apply)
+    }
+
+[1mPlan:[0m [0m2 to add, 0 to change, 0 to destroy.
+[90m
+─────────────────────────────────────────────────────────────────────────────[0m
+
+Saved the plan to: tfplan.binary
+
+To perform exactly these actions, run the following command to apply:
+    terraform apply "tfplan.binary"
+
+===== [4] Export plan to JSON =====
+
+===== [5] Checkov =====
+
+       _               _
+   ___| |__   ___  ___| | _______   __
+  / __| '_ \ / _ \/ __| |/ / _ \ \ / /
+ | (__| | | |  __/ (__|   < (_) \ V /
+  \___|_| |_|\___|\___|_|\_\___/ \_/
+
+By Prisma Cloud | version: 3.2.495 
+
+terraform scan results:
+
+Passed checks: 5, Failed checks: 4, Skipped checks: 0
+
+Check: CKV_AWS_386: "Reduce potential for WhoAMI cloud image name confusion attack"
+	PASSED for resource: aws_ami.al2
+	File: /main.tf:3-10
+Check: CKV_AWS_46: "Ensure no hard-coded secrets exist in EC2 user data"
+	PASSED for resource: aws_instance.ec2
+	File: /main.tf:12-21
+Check: CKV_AWS_79: "Ensure Instance Metadata Service Version 1 is not enabled"
+	PASSED for resource: aws_instance.ec2
+	File: /main.tf:12-21
+Check: CKV_AWS_88: "EC2 instance should not have public IP."
+	PASSED for resource: aws_instance.ec2
+	File: /main.tf:12-21
+Check: CKV_AWS_41: "Ensure no hard coded AWS access key and secret key exists in provider"
+	PASSED for resource: aws.default
+	File: /provider.tf:1-9
+Check: CKV_AWS_126: "Ensure that detailed monitoring is enabled for EC2 instances"
+	FAILED for resource: aws_instance.ec2
+	File: /main.tf:12-21
+
+		12 | resource "aws_instance" "ec2" {
+		13 |   ami           = data.aws_ami.al2.id
+		14 |   instance_type = "t3.micro"
+		15 | 
+		16 |   metadata_options {
+		17 |     http_tokens = "required"
+		18 |   }
+		19 | 
+		20 |   tags = local.common_tags
+		21 | }
+
+Check: CKV_AWS_135: "Ensure that EC2 is EBS optimized"
+	FAILED for resource: aws_instance.ec2
+	File: /main.tf:12-21
+
+		12 | resource "aws_instance" "ec2" {
+		13 |   ami           = data.aws_ami.al2.id
+		14 |   instance_type = "t3.micro"
+		15 | 
+		16 |   metadata_options {
+		17 |     http_tokens = "required"
+		18 |   }
+		19 | 
+		20 |   tags = local.common_tags
+		21 | }
+
+Check: CKV_AWS_8: "Ensure all data stored in the Launch configuration or instance Elastic Blocks Store is securely encrypted"
+	FAILED for resource: aws_instance.ec2
+	File: /main.tf:12-21
+
+		12 | resource "aws_instance" "ec2" {
+		13 |   ami           = data.aws_ami.al2.id
+		14 |   instance_type = "t3.micro"
+		15 | 
+		16 |   metadata_options {
+		17 |     http_tokens = "required"
+		18 |   }
+		19 | 
+		20 |   tags = local.common_tags
+		21 | }
+
+Check: CKV2_AWS_41: "Ensure an IAM role is attached to EC2 instance"
+	FAILED for resource: aws_instance.ec2
+	File: /main.tf:12-21
+
+		12 | resource "aws_instance" "ec2" {
+		13 |   ami           = data.aws_ami.al2.id
+		14 |   instance_type = "t3.micro"
+		15 | 
+		16 |   metadata_options {
+		17 |     http_tokens = "required"
+		18 |   }
+		19 | 
+		20 |   tags = local.common_tags
+		21 | }
+
+terraform_plan scan results:
+
+Passed checks: 4, Failed checks: 4, Skipped checks: 0
+
+Check: CKV_AWS_41: "Ensure no hard coded AWS access key and secret key exists in provider"
+	PASSED for resource: aws.default
+	File: /tfplan.json:0-1
+Check: CKV_AWS_46: "Ensure no hard-coded secrets exist in EC2 user data"
+	PASSED for resource: aws_instance.ec2
+	File: /tfplan.json:0-0
+Check: CKV_AWS_79: "Ensure Instance Metadata Service Version 1 is not enabled"
+	PASSED for resource: aws_instance.ec2
+	File: /tfplan.json:0-0
+Check: CKV_AWS_88: "EC2 instance should not have public IP."
+	PASSED for resource: aws_instance.ec2
+	File: /tfplan.json:0-0
+Check: CKV_AWS_126: "Ensure that detailed monitoring is enabled for EC2 instances"
+	FAILED for resource: aws_instance.ec2
+	File: /tfplan.json:0-0
+Check: CKV_AWS_135: "Ensure that EC2 is EBS optimized"
+	FAILED for resource: aws_instance.ec2
+	File: /tfplan.json:0-0
+Check: CKV_AWS_8: "Ensure all data stored in the Launch configuration or instance Elastic Blocks Store is securely encrypted"
+	FAILED for resource: aws_instance.ec2
+	File: /tfplan.json:0-0
+Check: CKV2_AWS_41: "Ensure an IAM role is attached to EC2 instance"
+	FAILED for resource: aws_instance.ec2
+	File: /tfplan.json:0-0
+
+
+===== [6] tfsec =====
+
+======================================================
+tfsec is joining the Trivy family
+
+tfsec will continue to remain available 
+for the time being, although our engineering 
+attention will be directed at Trivy going forward.
+
+You can read more here: 
+https://github.com/aquasecurity/tfsec/discussions/1994
+======================================================
+
+[0m[3mResult #1[0m [0m[31mHIGH[39m[0m [1mRoot block device is not encrypted.[0m [2m[0m
+[0m[0m[90m───────────────────────────────────────────────────────────────────────────────────────────────────────────
+[0m[0m  [3mmain.tf[2m[3m:12-21
+[0m[0m[90m───────────────────────────────────────────────────────────────────────────────────────────────────────────[39m
+[0m[0m[31m   12  [0m[0m [0m[0m [38;5;33mresource[0m [38;5;37m"aws_instance"[0m [38;5;37m"ec2"[0m {[0m
+[0m[31m   13  [0m[0m [0m[0m   [38;5;245mami[0m           = [38;5;33mdata[0m.aws_ami.al2.id[0m
+[0m[31m   14  [0m[0m [0m[0m   [38;5;245minstance_type[0m = [38;5;37m"t3.micro"[0m
+[0m[31m   15  [0m[0m [0m[0m [0m[0m
+[0m[31m   16  [0m[0m [0m[0m   metadata_options {[0m
+[0m[31m   17  [0m[0m [0m[0m     [38;5;245mhttp_tokens[0m = [38;5;37m"required"[0m
+[0m[31m   18  [0m[0m [0m[0m [0m  }[0m
+[0m[31m   19  [0m[0m [0m[0m [0m
+[0m[31m   20  [0m[0m [0m[0m   [38;5;245mtags[0m = local.common_tags[0m
+[0m[31m   21  [0m[0m [0m[0m }[0m
+[0m[90m───────────────────────────────────────────────────────────────────────────────────────────────────────────[39m
+[0m[0m  [2m        ID[0m[3m aws-ec2-enable-at-rest-encryption
+[0m[0m  [2m    Impact[0m The block device could be compromised and read from
+[0m[0m  [2mResolution[0m Turn on encryption for all block devices
+[0m[0m
+  [2mMore Information[0m[0m[0m
+  [2m-[0m [34mhttps://aquasecurity.github.io/tfsec/v1.28.14/checks/aws/ec2/enable-at-rest-encryption/[0m[0m
+  [2m-[0m [34mhttps://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/instance#ebs-ephemeral-and-root-block-devices[0m[0m
+[90m───────────────────────────────────────────────────────────────────────────────────────────────────────────[39m
+
+
+[0m[0m  [1mtimings[0m
+  ──────────────────────────────────────────
+[0m[0m  [2mdisk i/o            [0m 34.256µs
+[0m[0m  [2mparsing             [0m 508.915µs
+[0m[0m  [2madaptation          [0m 78.806µs
+[0m[0m  [2mchecks              [0m 5.125402ms
+[0m[0m  [2mtotal               [0m 5.747379ms
+[0m
+[0m  [1mcounts[0m
+  ──────────────────────────────────────────
+[0m[0m  [2mmodules downloaded  [0m 0
+[0m[0m  [2mmodules processed   [0m 1
+[0m[0m  [2mblocks processed    [0m 12
+[0m[0m  [2mfiles read          [0m 5
+[0m
+[0m  [1mresults[0m
+  ──────────────────────────────────────────
+[0m[0m  [2mpassed              [0m 2
+[0m[0m  [2mignored             [0m 0
+[0m[0m  [2mcritical            [0m 0
+[0m[0m  [2mhigh                [0m 1
+[0m[0m  [2mmedium              [0m 0
+[0m[0m  [2mlow                 [0m 0
+[0m
+[0m  [31m[1m2 passed, 1 potential problem(s) detected.
+
+[0m
+===== [7] Terrascan =====
+
+===== [8] Conftest =====
+[31mFAIL[0m - tfplan.json - main - No aws_cloudtrail resource detected in plan (CloudTrail logging not enabled)
+[31mFAIL[0m - tfplan.json - main - No aws_flow_log resources detected in plan (VPC Flow Logs likely not enabled)
+
+[31m21 tests, 19 passed, 0 warnings, 2 failures, 0 exceptions[0m
+
+============================================================
+FULL SCAN LOG END: 2025-12-22 20:01:57 UTC
+Return codes:
+  checkov   = 1
+  tfsec     = 1
+  terrascan = 1
+  conftest  = 1
+Scenario outputs (root):
+  - /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-002-imdsv2-required/checkov_CMP-BENIGN-002-imdsv2-required.txt
+  - /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-002-imdsv2-required/tfsec_CMP-BENIGN-002-imdsv2-required.txt
+  - /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-002-imdsv2-required/terrascan_CMP-BENIGN-002-imdsv2-required.txt
+  - /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-002-imdsv2-required/conftest_CMP-BENIGN-002-imdsv2-required.txt
+Master log:
+  - /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-002-imdsv2-required/scan_logs/FULL_CMP-BENIGN-002-imdsv2-required.log
+============================================================
+
+
+============================================================
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-MISC-001-ssm-disabled-on-ec2
+============================================================
+==> Scenario directory: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-MISC-001-ssm-disabled-on-ec2
+
+============================================================
+FULL SCAN LOG START: 2025-12-22 20:01:57 UTC
+Scenario: CMP-MISC-001-ssm-disabled-on-ec2
+Path: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-MISC-001-ssm-disabled-on-ec2
+POLICY_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/policy/terraform
+============================================================
+
+===== [0] Terraform plugin cache fix =====
+TF_PLUGIN_CACHE_DIR=/tmp/terraform-plugin-cache
+
+===== [1] Terraform init =====
+[0m[1mInitializing the backend...[0m
+[0m[1mInitializing provider plugins...[0m
+- Finding hashicorp/random versions matching "~> 3.6"...
+- Finding hashicorp/aws versions matching "~> 5.0"...
+- Using previously-installed hashicorp/random v3.7.2
+- Using previously-installed hashicorp/aws v5.100.0
+
+[0m[1m[32mTerraform has been successfully initialized![0m[32m[0m
+[0m[32m
+You may now begin working with Terraform. Try running "terraform plan" to see
+any changes that are required for your infrastructure. All Terraform commands
+should now work.
+
+If you ever set or change modules or backend configuration for Terraform,
+rerun this command to reinitialize your working directory. If you forget, other
+commands will detect it and remind you to do so if necessary.[0m
+
+===== [2] Terraform validate =====
+[32m[1mSuccess![0m The configuration is valid.
+[0m
+
+===== [3] Terraform plan =====
+Detected terraform.tfvars -> using -var-file=terraform.tfvars
+[0m[1mdata.aws_ami.al2: Reading...[0m[0m
+[0m[1mdata.aws_ami.al2: Read complete after 0s [id=ami-0ad8de99ac93341e7][0m
+
+Terraform used the selected providers to generate the following execution
+plan. Resource actions are indicated with the following symbols:
+  [32m+[0m create[0m
+
+Terraform will perform the following actions:
+
+[1m  # aws_instance.ec2[0m will be created
+[0m  [32m+[0m[0m resource "aws_instance" "ec2" {
+      [32m+[0m[0m ami                                  = "ami-0ad8de99ac93341e7"
+      [32m+[0m[0m arn                                  = (known after apply)
+      [32m+[0m[0m associate_public_ip_address          = false
+      [32m+[0m[0m availability_zone                    = (known after apply)
+      [32m+[0m[0m cpu_core_count                       = (known after apply)
+      [32m+[0m[0m cpu_threads_per_core                 = (known after apply)
+      [32m+[0m[0m disable_api_stop                     = (known after apply)
+      [32m+[0m[0m disable_api_termination              = (known after apply)
+      [32m+[0m[0m ebs_optimized                        = (known after apply)
+      [32m+[0m[0m enable_primary_ipv6                  = (known after apply)
+      [32m+[0m[0m get_password_data                    = false
+      [32m+[0m[0m host_id                              = (known after apply)
+      [32m+[0m[0m host_resource_group_arn              = (known after apply)
+      [32m+[0m[0m iam_instance_profile                 = (known after apply)
+      [32m+[0m[0m id                                   = (known after apply)
+      [32m+[0m[0m instance_initiated_shutdown_behavior = (known after apply)
+      [32m+[0m[0m instance_lifecycle                   = (known after apply)
+      [32m+[0m[0m instance_state                       = (known after apply)
+      [32m+[0m[0m instance_type                        = "t3.micro"
+      [32m+[0m[0m ipv6_address_count                   = (known after apply)
+      [32m+[0m[0m ipv6_addresses                       = (known after apply)
+      [32m+[0m[0m key_name                             = (known after apply)
+      [32m+[0m[0m monitoring                           = (known after apply)
+      [32m+[0m[0m outpost_arn                          = (known after apply)
+      [32m+[0m[0m password_data                        = (known after apply)
+      [32m+[0m[0m placement_group                      = (known after apply)
+      [32m+[0m[0m placement_partition_number           = (known after apply)
+      [32m+[0m[0m primary_network_interface_id         = (known after apply)
+      [32m+[0m[0m private_dns                          = (known after apply)
+      [32m+[0m[0m private_ip                           = (known after apply)
+      [32m+[0m[0m public_dns                           = (known after apply)
+      [32m+[0m[0m public_ip                            = (known after apply)
+      [32m+[0m[0m secondary_private_ips                = (known after apply)
+      [32m+[0m[0m security_groups                      = (known after apply)
+      [32m+[0m[0m source_dest_check                    = true
+      [32m+[0m[0m spot_instance_request_id             = (known after apply)
+      [32m+[0m[0m subnet_id                            = (known after apply)
+      [32m+[0m[0m tags                                 = {
+          [32m+[0m[0m "cis_controls" = "SSM.1"
+          [32m+[0m[0m "domain"       = "CMP"
+          [32m+[0m[0m "scenario_id"  = "CMP-MISC-001-ssm-disabled-on-ec2"
+          [32m+[0m[0m "type"         = "MISC"
+        }
+      [32m+[0m[0m tags_all                             = {
+          [32m+[0m[0m "cis_controls" = "SSM.1"
+          [32m+[0m[0m "domain"       = "CMP"
+          [32m+[0m[0m "scenario_id"  = "CMP-MISC-001-ssm-disabled-on-ec2"
+          [32m+[0m[0m "type"         = "MISC"
+        }
+      [32m+[0m[0m tenancy                              = (known after apply)
+      [32m+[0m[0m user_data                            = (known after apply)
+      [32m+[0m[0m user_data_base64                     = (known after apply)
+      [32m+[0m[0m user_data_replace_on_change          = false
+      [32m+[0m[0m vpc_security_group_ids               = (known after apply)
+
+      [32m+[0m[0m capacity_reservation_specification (known after apply)
+
+      [32m+[0m[0m cpu_options (known after apply)
+
+      [32m+[0m[0m ebs_block_device (known after apply)
+
+      [32m+[0m[0m enclave_options (known after apply)
+
+      [32m+[0m[0m ephemeral_block_device (known after apply)
+
+      [32m+[0m[0m instance_market_options (known after apply)
+
+      [32m+[0m[0m maintenance_options (known after apply)
+
+      [32m+[0m[0m metadata_options (known after apply)
+
+      [32m+[0m[0m network_interface (known after apply)
+
+      [32m+[0m[0m private_dns_name_options (known after apply)
+
+      [32m+[0m[0m root_block_device (known after apply)
+    }
+
+[1m  # aws_security_group.sg[0m will be created
+[0m  [32m+[0m[0m resource "aws_security_group" "sg" {
+      [32m+[0m[0m arn                    = (known after apply)
+      [32m+[0m[0m description            = "Managed by Terraform"
+      [32m+[0m[0m egress                 = [
+          [32m+[0m[0m {
+              [32m+[0m[0m cidr_blocks      = [
+                  [32m+[0m[0m "0.0.0.0/0",
+                ]
+              [32m+[0m[0m from_port        = 0
+              [32m+[0m[0m ipv6_cidr_blocks = []
+              [32m+[0m[0m prefix_list_ids  = []
+              [32m+[0m[0m protocol         = "-1"
+              [32m+[0m[0m security_groups  = []
+              [32m+[0m[0m self             = false
+              [32m+[0m[0m to_port          = 0
+                [90m# (1 unchanged attribute hidden)[0m[0m
+            },
+        ]
+      [32m+[0m[0m id                     = (known after apply)
+      [32m+[0m[0m ingress                = (known after apply)
+      [32m+[0m[0m name                   = (known after apply)
+      [32m+[0m[0m name_prefix            = (known after apply)
+      [32m+[0m[0m owner_id               = (known after apply)
+      [32m+[0m[0m revoke_rules_on_delete = false
+      [32m+[0m[0m tags                   = {
+          [32m+[0m[0m "cis_controls" = "SSM.1"
+          [32m+[0m[0m "domain"       = "CMP"
+          [32m+[0m[0m "scenario_id"  = "CMP-MISC-001-ssm-disabled-on-ec2"
+          [32m+[0m[0m "type"         = "MISC"
+        }
+      [32m+[0m[0m tags_all               = {
+          [32m+[0m[0m "cis_controls" = "SSM.1"
+          [32m+[0m[0m "domain"       = "CMP"
+          [32m+[0m[0m "scenario_id"  = "CMP-MISC-001-ssm-disabled-on-ec2"
+          [32m+[0m[0m "type"         = "MISC"
+        }
+      [32m+[0m[0m vpc_id                 = (known after apply)
+    }
+
+[1m  # aws_subnet.private[0m will be created
+[0m  [32m+[0m[0m resource "aws_subnet" "private" {
+      [32m+[0m[0m arn                                            = (known after apply)
+      [32m+[0m[0m assign_ipv6_address_on_creation                = false
+      [32m+[0m[0m availability_zone                              = "eu-west-2a"
+      [32m+[0m[0m availability_zone_id                           = (known after apply)
+      [32m+[0m[0m cidr_block                                     = "10.60.1.0/24"
+      [32m+[0m[0m enable_dns64                                   = false
+      [32m+[0m[0m enable_resource_name_dns_a_record_on_launch    = false
+      [32m+[0m[0m enable_resource_name_dns_aaaa_record_on_launch = false
+      [32m+[0m[0m id                                             = (known after apply)
+      [32m+[0m[0m ipv6_cidr_block_association_id                 = (known after apply)
+      [32m+[0m[0m ipv6_native                                    = false
+      [32m+[0m[0m map_public_ip_on_launch                        = false
+      [32m+[0m[0m owner_id                                       = (known after apply)
+      [32m+[0m[0m private_dns_hostname_type_on_launch            = (known after apply)
+      [32m+[0m[0m tags                                           = {
+          [32m+[0m[0m "cis_controls" = "SSM.1"
+          [32m+[0m[0m "domain"       = "CMP"
+          [32m+[0m[0m "scenario_id"  = "CMP-MISC-001-ssm-disabled-on-ec2"
+          [32m+[0m[0m "type"         = "MISC"
+        }
+      [32m+[0m[0m tags_all                                       = {
+          [32m+[0m[0m "cis_controls" = "SSM.1"
+          [32m+[0m[0m "domain"       = "CMP"
+          [32m+[0m[0m "scenario_id"  = "CMP-MISC-001-ssm-disabled-on-ec2"
+          [32m+[0m[0m "type"         = "MISC"
+        }
+      [32m+[0m[0m vpc_id                                         = (known after apply)
+    }
+
+[1m  # aws_vpc.vpc[0m will be created
+[0m  [32m+[0m[0m resource "aws_vpc" "vpc" {
+      [32m+[0m[0m arn                                  = (known after apply)
+      [32m+[0m[0m cidr_block                           = "10.60.0.0/16"
+      [32m+[0m[0m default_network_acl_id               = (known after apply)
+      [32m+[0m[0m default_route_table_id               = (known after apply)
+      [32m+[0m[0m default_security_group_id            = (known after apply)
+      [32m+[0m[0m dhcp_options_id                      = (known after apply)
+      [32m+[0m[0m enable_dns_hostnames                 = true
+      [32m+[0m[0m enable_dns_support                   = true
+      [32m+[0m[0m enable_network_address_usage_metrics = (known after apply)
+      [32m+[0m[0m id                                   = (known after apply)
+      [32m+[0m[0m instance_tenancy                     = "default"
+      [32m+[0m[0m ipv6_association_id                  = (known after apply)
+      [32m+[0m[0m ipv6_cidr_block                      = (known after apply)
+      [32m+[0m[0m ipv6_cidr_block_network_border_group = (known after apply)
+      [32m+[0m[0m main_route_table_id                  = (known after apply)
+      [32m+[0m[0m owner_id                             = (known after apply)
+      [32m+[0m[0m tags                                 = {
+          [32m+[0m[0m "cis_controls" = "SSM.1"
+          [32m+[0m[0m "domain"       = "CMP"
+          [32m+[0m[0m "scenario_id"  = "CMP-MISC-001-ssm-disabled-on-ec2"
+          [32m+[0m[0m "type"         = "MISC"
+        }
+      [32m+[0m[0m tags_all                             = {
+          [32m+[0m[0m "cis_controls" = "SSM.1"
+          [32m+[0m[0m "domain"       = "CMP"
+          [32m+[0m[0m "scenario_id"  = "CMP-MISC-001-ssm-disabled-on-ec2"
+          [32m+[0m[0m "type"         = "MISC"
+        }
+    }
+
+[1m  # random_id.suffix[0m will be created
+[0m  [32m+[0m[0m resource "random_id" "suffix" {
+      [32m+[0m[0m b64_std     = (known after apply)
+      [32m+[0m[0m b64_url     = (known after apply)
+      [32m+[0m[0m byte_length = 4
+      [32m+[0m[0m dec         = (known after apply)
+      [32m+[0m[0m hex         = (known after apply)
+      [32m+[0m[0m id          = (known after apply)
+    }
+
+[1mPlan:[0m [0m5 to add, 0 to change, 0 to destroy.
+[90m
+─────────────────────────────────────────────────────────────────────────────[0m
+
+Saved the plan to: tfplan.binary
+
+To perform exactly these actions, run the following command to apply:
+    terraform apply "tfplan.binary"
+
+===== [4] Export plan to JSON =====
+
+===== [5] Checkov =====
+
+       _               _
+   ___| |__   ___  ___| | _______   __
+  / __| '_ \ / _ \/ __| |/ / _ \ \ / /
+ | (__| | | |  __/ (__|   < (_) \ V /
+  \___|_| |_|\___|\___|_|\_\___/ \_/
+
+By Prisma Cloud | version: 3.2.495 
+
+terraform scan results:
+
+Passed checks: 10, Failed checks: 9, Skipped checks: 0
+
+Check: CKV_AWS_386: "Reduce potential for WhoAMI cloud image name confusion attack"
+	PASSED for resource: aws_ami.al2
+	File: /main.tf:3-10
+Check: CKV_AWS_130: "Ensure VPC subnets do not assign public IP by default"
+	PASSED for resource: aws_subnet.private
+	File: /main.tf:19-25
+Check: CKV_AWS_24: "Ensure no security groups allow ingress from 0.0.0.0:0 to port 22"
+	PASSED for resource: aws_security_group.sg
+	File: /main.tf:27-38
+Check: CKV_AWS_277: "Ensure no security groups allow ingress from 0.0.0.0:0 to port -1"
+	PASSED for resource: aws_security_group.sg
+	File: /main.tf:27-38
+Check: CKV_AWS_260: "Ensure no security groups allow ingress from 0.0.0.0:0 to port 80"
+	PASSED for resource: aws_security_group.sg
+	File: /main.tf:27-38
+Check: CKV_AWS_25: "Ensure no security groups allow ingress from 0.0.0.0:0 to port 3389"
+	PASSED for resource: aws_security_group.sg
+	File: /main.tf:27-38
+Check: CKV_AWS_46: "Ensure no hard-coded secrets exist in EC2 user data"
+	PASSED for resource: aws_instance.ec2
+	File: /main.tf:40-49
+Check: CKV_AWS_88: "EC2 instance should not have public IP."
+	PASSED for resource: aws_instance.ec2
+	File: /main.tf:40-49
+Check: CKV_AWS_41: "Ensure no hard coded AWS access key and secret key exists in provider"
+	PASSED for resource: aws.default
+	File: /provider.tf:1-9
+Check: CKV2_AWS_5: "Ensure that Security Groups are attached to another resource"
+	PASSED for resource: aws_security_group.sg
+	File: /main.tf:27-38
+Check: CKV_AWS_23: "Ensure every security group and rule has a description"
+	FAILED for resource: aws_security_group.sg
+	File: /main.tf:27-38
+
+		27 | resource "aws_security_group" "sg" {
+		28 |   name   = lower(format("%s-sg-%s", var.scenario_id, local.name_suffix))
+		29 |   vpc_id = aws_vpc.vpc.id
+		30 |   tags   = local.common_tags
+		31 | 
+		32 |   egress {
+		33 |     from_port   = 0
+		34 |     to_port     = 0
+		35 |     protocol    = "-1"
+		36 |     cidr_blocks = ["0.0.0.0/0"]
+		37 |   }
+		38 | }
+
+Check: CKV_AWS_382: "Ensure no security groups allow egress from 0.0.0.0:0 to port -1"
+	FAILED for resource: aws_security_group.sg
+	File: /main.tf:27-38
+
+		27 | resource "aws_security_group" "sg" {
+		28 |   name   = lower(format("%s-sg-%s", var.scenario_id, local.name_suffix))
+		29 |   vpc_id = aws_vpc.vpc.id
+		30 |   tags   = local.common_tags
+		31 | 
+		32 |   egress {
+		33 |     from_port   = 0
+		34 |     to_port     = 0
+		35 |     protocol    = "-1"
+		36 |     cidr_blocks = ["0.0.0.0/0"]
+		37 |   }
+		38 | }
+
+Check: CKV_AWS_126: "Ensure that detailed monitoring is enabled for EC2 instances"
+	FAILED for resource: aws_instance.ec2
+	File: /main.tf:40-49
+
+		40 | resource "aws_instance" "ec2" {
+		41 |   ami                         = data.aws_ami.al2.id
+		42 |   instance_type               = "t3.micro"
+		43 |   subnet_id                   = aws_subnet.private.id
+		44 |   vpc_security_group_ids      = [aws_security_group.sg.id]
+		45 |   associate_public_ip_address = false
+		46 | 
+		47 |   # Intentionally NO iam_instance_profile (SSM disabled)
+		48 |   tags = local.common_tags
+		49 | }
+
+Check: CKV_AWS_79: "Ensure Instance Metadata Service Version 1 is not enabled"
+	FAILED for resource: aws_instance.ec2
+	File: /main.tf:40-49
+
+		40 | resource "aws_instance" "ec2" {
+		41 |   ami                         = data.aws_ami.al2.id
+		42 |   instance_type               = "t3.micro"
+		43 |   subnet_id                   = aws_subnet.private.id
+		44 |   vpc_security_group_ids      = [aws_security_group.sg.id]
+		45 |   associate_public_ip_address = false
+		46 | 
+		47 |   # Intentionally NO iam_instance_profile (SSM disabled)
+		48 |   tags = local.common_tags
+		49 | }
+
+Check: CKV_AWS_135: "Ensure that EC2 is EBS optimized"
+	FAILED for resource: aws_instance.ec2
+	File: /main.tf:40-49
+
+		40 | resource "aws_instance" "ec2" {
+		41 |   ami                         = data.aws_ami.al2.id
+		42 |   instance_type               = "t3.micro"
+		43 |   subnet_id                   = aws_subnet.private.id
+		44 |   vpc_security_group_ids      = [aws_security_group.sg.id]
+		45 |   associate_public_ip_address = false
+		46 | 
+		47 |   # Intentionally NO iam_instance_profile (SSM disabled)
+		48 |   tags = local.common_tags
+		49 | }
+
+Check: CKV_AWS_8: "Ensure all data stored in the Launch configuration or instance Elastic Blocks Store is securely encrypted"
+	FAILED for resource: aws_instance.ec2
+	File: /main.tf:40-49
+
+		40 | resource "aws_instance" "ec2" {
+		41 |   ami                         = data.aws_ami.al2.id
+		42 |   instance_type               = "t3.micro"
+		43 |   subnet_id                   = aws_subnet.private.id
+		44 |   vpc_security_group_ids      = [aws_security_group.sg.id]
+		45 |   associate_public_ip_address = false
+		46 | 
+		47 |   # Intentionally NO iam_instance_profile (SSM disabled)
+		48 |   tags = local.common_tags
+		49 | }
+
+Check: CKV2_AWS_11: "Ensure VPC flow logging is enabled in all VPCs"
+	FAILED for resource: aws_vpc.vpc
+	File: /main.tf:12-17
+
+		12 | resource "aws_vpc" "vpc" {
+		13 |   cidr_block           = "10.60.0.0/16"
+		14 |   enable_dns_support   = true
+		15 |   enable_dns_hostnames = true
+		16 |   tags                 = local.common_tags
+		17 | }
+
+Check: CKV2_AWS_12: "Ensure the default security group of every VPC restricts all traffic"
+	FAILED for resource: aws_vpc.vpc
+	File: /main.tf:12-17
+
+		12 | resource "aws_vpc" "vpc" {
+		13 |   cidr_block           = "10.60.0.0/16"
+		14 |   enable_dns_support   = true
+		15 |   enable_dns_hostnames = true
+		16 |   tags                 = local.common_tags
+		17 | }
+
+Check: CKV2_AWS_41: "Ensure an IAM role is attached to EC2 instance"
+	FAILED for resource: aws_instance.ec2
+	File: /main.tf:40-49
+
+		40 | resource "aws_instance" "ec2" {
+		41 |   ami                         = data.aws_ami.al2.id
+		42 |   instance_type               = "t3.micro"
+		43 |   subnet_id                   = aws_subnet.private.id
+		44 |   vpc_security_group_ids      = [aws_security_group.sg.id]
+		45 |   associate_public_ip_address = false
+		46 | 
+		47 |   # Intentionally NO iam_instance_profile (SSM disabled)
+		48 |   tags = local.common_tags
+		49 | }
+
+terraform_plan scan results:
+
+Passed checks: 10, Failed checks: 8, Skipped checks: 0
+
+Check: CKV_AWS_41: "Ensure no hard coded AWS access key and secret key exists in provider"
+	PASSED for resource: aws.default
+	File: /tfplan.json:0-1
+Check: CKV_AWS_46: "Ensure no hard-coded secrets exist in EC2 user data"
+	PASSED for resource: aws_instance.ec2
+	File: /tfplan.json:0-0
+Check: CKV_AWS_88: "EC2 instance should not have public IP."
+	PASSED for resource: aws_instance.ec2
+	File: /tfplan.json:0-0
+Check: CKV_AWS_24: "Ensure no security groups allow ingress from 0.0.0.0:0 to port 22"
+	PASSED for resource: aws_security_group.sg
+	File: /tfplan.json:0-0
+Check: CKV_AWS_23: "Ensure every security group and rule has a description"
+	PASSED for resource: aws_security_group.sg
+	File: /tfplan.json:0-0
+Check: CKV_AWS_277: "Ensure no security groups allow ingress from 0.0.0.0:0 to port -1"
+	PASSED for resource: aws_security_group.sg
+	File: /tfplan.json:0-0
+Check: CKV_AWS_260: "Ensure no security groups allow ingress from 0.0.0.0:0 to port 80"
+	PASSED for resource: aws_security_group.sg
+	File: /tfplan.json:0-0
+Check: CKV_AWS_25: "Ensure no security groups allow ingress from 0.0.0.0:0 to port 3389"
+	PASSED for resource: aws_security_group.sg
+	File: /tfplan.json:0-0
+Check: CKV_AWS_130: "Ensure VPC subnets do not assign public IP by default"
+	PASSED for resource: aws_subnet.private
+	File: /tfplan.json:0-0
+Check: CKV2_AWS_5: "Ensure that Security Groups are attached to another resource"
+	PASSED for resource: aws_security_group.sg
+	File: /tfplan.json:0-0
+Check: CKV_AWS_126: "Ensure that detailed monitoring is enabled for EC2 instances"
+	FAILED for resource: aws_instance.ec2
+	File: /tfplan.json:0-0
+Check: CKV_AWS_79: "Ensure Instance Metadata Service Version 1 is not enabled"
+	FAILED for resource: aws_instance.ec2
+	File: /tfplan.json:0-0
+Check: CKV_AWS_135: "Ensure that EC2 is EBS optimized"
+	FAILED for resource: aws_instance.ec2
+	File: /tfplan.json:0-0
+Check: CKV_AWS_8: "Ensure all data stored in the Launch configuration or instance Elastic Blocks Store is securely encrypted"
+	FAILED for resource: aws_instance.ec2
+	File: /tfplan.json:0-0
+Check: CKV_AWS_382: "Ensure no security groups allow egress from 0.0.0.0:0 to port -1"
+	FAILED for resource: aws_security_group.sg
+	File: /tfplan.json:0-0
+Check: CKV2_AWS_11: "Ensure VPC flow logging is enabled in all VPCs"
+	FAILED for resource: aws_vpc.vpc
+	File: /tfplan.json:0-0
+Check: CKV2_AWS_12: "Ensure the default security group of every VPC restricts all traffic"
+	FAILED for resource: aws_vpc.vpc
+	File: /tfplan.json:0-0
+Check: CKV2_AWS_41: "Ensure an IAM role is attached to EC2 instance"
+	FAILED for resource: aws_instance.ec2
+	File: /tfplan.json:0-0
+
+
+===== [6] tfsec =====
+
+======================================================
+tfsec is joining the Trivy family
+
+tfsec will continue to remain available 
+for the time being, although our engineering 
+attention will be directed at Trivy going forward.
+
+You can read more here: 
+https://github.com/aquasecurity/tfsec/discussions/1994
+======================================================
+
+[0m[3mResult #1[0m [0m[1m[31mCRITICAL[39m[0m[39m[0m [1mSecurity group rule allows egress to multiple public internet addresses.[0m [2m[0m
+[0m[0m[90m───────────────────────────────────────────────────────────────────────────────────────────────────────────
+[0m[0m  [3mmain.tf[2m[3m:36
+[0m[0m[90m───────────────────────────────────────────────────────────────────────────────────────────────────────────[39m
+[0m[0m[90m   27  [0m[0m  [38;5;33mresource[0m [38;5;37m"aws_security_group"[0m [38;5;37m"sg"[0m {[0m
+[0m[90m   ..  [0m
+[0m[31m   36  [0m[0m[31m[[39m[0m[0m [0m    [38;5;245mcidr_blocks[0m = [[38;5;37m"0.0.0.0/0"[0m][0m
+[0m[90m   ..  [0m
+[0m[90m   38  [0m[0m  }[0m
+[0m[90m───────────────────────────────────────────────────────────────────────────────────────────────────────────[39m
+[0m[0m  [2m        ID[0m[3m aws-ec2-no-public-egress-sgr
+[0m[0m  [2m    Impact[0m Your port is egressing data to the internet
+[0m[0m  [2mResolution[0m Set a more restrictive cidr range
+[0m[0m
+  [2mMore Information[0m[0m[0m
+  [2m-[0m [34mhttps://aquasecurity.github.io/tfsec/v1.28.14/checks/aws/ec2/no-public-egress-sgr/[0m[0m
+  [2m-[0m [34mhttps://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group[0m[0m
+[90m───────────────────────────────────────────────────────────────────────────────────────────────────────────[39m
+
+
+[0m[0m[3mResult #2[0m [0m[31mHIGH[39m[0m [1mInstance does not require IMDS access to require a token[0m [2m[0m
+[0m[0m[90m───────────────────────────────────────────────────────────────────────────────────────────────────────────
+[0m[0m  [3mmain.tf[2m[3m:40-49
+[0m[0m[90m───────────────────────────────────────────────────────────────────────────────────────────────────────────[39m
+[0m[0m[31m   40  [0m[0m [0m[0m [38;5;33mresource[0m [38;5;37m"aws_instance"[0m [38;5;37m"ec2"[0m {[0m
+[0m[31m   41  [0m[0m [0m[0m   [38;5;245mami[0m                         = [38;5;33mdata[0m.aws_ami.al2.id[0m
+[0m[31m   42  [0m[0m [0m[0m   [38;5;245minstance_type[0m               = [38;5;37m"t3.micro"[0m
+[0m[31m   43  [0m[0m [0m[0m [0m  [38;5;245msubnet_id[0m                   = aws_subnet.private.id[0m
+[0m[31m   44  [0m[0m [0m[0m   [38;5;245mvpc_security_group_ids[0m      = [aws_security_group.sg.id][0m
+[0m[31m   45  [0m[0m [0m[0m   [38;5;245massociate_public_ip_address[0m = [38;5;166mfalse[0m[0m
+[0m[31m   46  [0m[0m [0m[0m [38;5;239m[0m
+[0m[31m   47  [0m[0m [0m[0m   # Intentionally NO iam_instance_profile (SSM disabled)[0m
+[0m[31m   48  [0m[0m [0m[0m [0m  [38;5;245mtags[0m = local.common_tags[0m
+[0m[31m   49  [0m[0m [0m[0m }[0m
+[0m[90m───────────────────────────────────────────────────────────────────────────────────────────────────────────[39m
+[0m[0m  [2m        ID[0m[3m aws-ec2-enforce-http-token-imds
+[0m[0m  [2m    Impact[0m Instance metadata service can be interacted with freely
+[0m[0m  [2mResolution[0m Enable HTTP token requirement for IMDS
+[0m[0m
+  [2mMore Information[0m[0m[0m
+  [2m-[0m [34mhttps://aquasecurity.github.io/tfsec/v1.28.14/checks/aws/ec2/enforce-http-token-imds/[0m[0m
+  [2m-[0m [34mhttps://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/instance#metadata-options[0m[0m
+[90m───────────────────────────────────────────────────────────────────────────────────────────────────────────[39m
+
+
+[0m[0m[3mResult #3[0m [0m[31mHIGH[39m[0m [1mRoot block device is not encrypted.[0m [2m[0m
+[0m[0m[90m───────────────────────────────────────────────────────────────────────────────────────────────────────────
+[0m[0m  [3mmain.tf[3m[2m:40-49
+[0m[0m[90m───────────────────────────────────────────────────────────────────────────────────────────────────────────[39m
+[0m[0m[31m   40  [0m[0m [0m[0m [38;5;33mresource[0m [38;5;37m"aws_instance"[0m [38;5;37m"ec2"[0m {[0m
+[0m[31m   41  [0m[0m [0m[0m   [38;5;245mami[0m                         = [38;5;33mdata[0m.aws_ami.al2.id[0m
+[0m[31m   42  [0m[0m [0m[0m   [38;5;245minstance_type[0m               = [38;5;37m"t3.micro"[0m
+[0m[31m   43  [0m[0m [0m[0m [0m  [38;5;245msubnet_id[0m                   = aws_subnet.private.id[0m
+[0m[31m   44  [0m[0m [0m[0m   [38;5;245mvpc_security_group_ids[0m      = [aws_security_group.sg.id][0m
+[0m[31m   45  [0m[0m [0m[0m   [38;5;245massociate_public_ip_address[0m = [38;5;166mfalse[0m[0m
+[0m[31m   46  [0m[0m [0m[0m [38;5;239m[0m
+[0m[31m   47  [0m[0m [0m[0m   # Intentionally NO iam_instance_profile (SSM disabled)[0m
+[0m[31m   48  [0m[0m [0m[0m [0m  [38;5;245mtags[0m = local.common_tags[0m
+[0m[31m   49  [0m[0m [0m[0m }[0m
+[0m[90m───────────────────────────────────────────────────────────────────────────────────────────────────────────[39m
+[0m[0m  [2m        ID[0m[3m aws-ec2-enable-at-rest-encryption
+[0m[0m  [2m    Impact[0m The block device could be compromised and read from
+[0m[0m  [2mResolution[0m Turn on encryption for all block devices
+[0m[0m
+  [2mMore Information[0m[0m[0m
+  [2m-[0m [34mhttps://aquasecurity.github.io/tfsec/v1.28.14/checks/aws/ec2/enable-at-rest-encryption/[0m[0m
+  [2m-[0m [34mhttps://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/instance#ebs-ephemeral-and-root-block-devices[0m[0m
+[90m───────────────────────────────────────────────────────────────────────────────────────────────────────────[39m
+
+
+[0m[0m[3mResult #4[0m [0m[33mMEDIUM[39m[0m [1mVPC Flow Logs is not enabled for VPC [0m [2m[0m
+[0m[0m[90m───────────────────────────────────────────────────────────────────────────────────────────────────────────
+[0m[0m  [3mmain.tf[2m[3m:12-17
+[0m[0m[90m───────────────────────────────────────────────────────────────────────────────────────────────────────────[39m
+[0m[0m[31m   12  [0m[0m [0m[0m [38;5;33mresource[0m [38;5;37m"aws_vpc"[0m [38;5;37m"vpc"[0m {[0m
+[0m[31m   13  [0m[0m [0m[0m   [38;5;245mcidr_block[0m           = [38;5;37m"10.60.0.0/16"[0m
+[0m[31m   14  [0m[0m [0m[0m [0m  [38;5;245menable_dns_support[0m   = [38;5;166mtrue[0m
+[0m[31m   15  [0m[0m [0m[0m [0m  [38;5;245menable_dns_hostnames[0m = [38;5;166mtrue[0m
+[0m[31m   16  [0m[0m [0m[0m [0m  [38;5;245mtags[0m                 = local.common_tags[0m
+[0m[31m   17  [0m[0m [0m[0m }[0m
+[0m[90m───────────────────────────────────────────────────────────────────────────────────────────────────────────[39m
+[0m[0m  [2m        ID[0m[3m aws-ec2-require-vpc-flow-logs-for-all-vpcs
+[0m[0m  [2m    Impact[0m Without VPC flow logs, you risk not having enough information about network traffic flow to investigate incidents or identify security issues.
+[0m[0m  [2mResolution[0m Enable flow logs for VPC
+[0m[0m
+  [2mMore Information[0m[0m[0m
+  [2m-[0m [34mhttps://aquasecurity.github.io/tfsec/v1.28.14/checks/aws/ec2/require-vpc-flow-logs-for-all-vpcs/[0m[0m
+[90m───────────────────────────────────────────────────────────────────────────────────────────────────────────[39m
+
+
+[0m[0m[3mResult #5[0m [0m[97mLOW[39m[0m [1mSecurity group explicitly uses the default description.[0m [2m[0m
+[0m[0m[90m───────────────────────────────────────────────────────────────────────────────────────────────────────────
+[0m[0m  [3mmain.tf[2m[3m:27-38
+[0m[0m[90m───────────────────────────────────────────────────────────────────────────────────────────────────────────[39m
+[0m[0m[31m   27  [0m[0m[31m┌[39m[0m[0m [38;5;33mresource[0m [38;5;37m"aws_security_group"[0m [38;5;37m"sg"[0m {[0m
+[0m[31m   28  [0m[0m[31m│[39m[0m[0m   [38;5;245mname[0m   = [38;5;33mlower[0m([38;5;33mformat[0m([38;5;37m"%s-sg-%s"[0m, [38;5;33mvar[0m.scenario_id, local.name_suffix))[0m
+[0m[31m   29  [0m[0m[31m│[39m[0m[0m   [38;5;245mvpc_id[0m = aws_vpc.vpc.id[0m
+[0m[31m   30  [0m[0m[31m│[39m[0m[0m   [38;5;245mtags[0m   = local.common_tags[0m
+[0m[31m   31  [0m[0m[31m│[39m[0m[0m [0m
+[0m[31m   32  [0m[0m[31m│[39m[0m[0m   egress {[0m
+[0m[31m   33  [0m[0m[31m│[39m[0m[0m     [38;5;245mfrom_port[0m   = [38;5;37m0[0m
+[0m[31m   34  [0m[0m[31m│[39m[0m[0m [0m    [38;5;245mto_port[0m     = [38;5;37m0[0m
+[0m[31m   35  [0m[0m[31m└[39m[0m[0m [0m    [38;5;245mprotocol[0m    = [38;5;37m"-1"[0m
+[0m[90m   ..  [0m
+[0m[90m───────────────────────────────────────────────────────────────────────────────────────────────────────────[39m
+[0m[0m  [2m        ID[0m[3m aws-ec2-add-description-to-security-group
+[0m[0m  [2m    Impact[0m Descriptions provide context for the firewall rule reasons
+[0m[0m  [2mResolution[0m Add descriptions for all security groups
+[0m[0m
+  [2mMore Information[0m[0m[0m
+  [2m-[0m [34mhttps://aquasecurity.github.io/tfsec/v1.28.14/checks/aws/ec2/add-description-to-security-group/[0m[0m
+  [2m-[0m [34mhttps://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group[0m[0m
+  [2m-[0m [34mhttps://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group_rule[0m[0m
+[90m───────────────────────────────────────────────────────────────────────────────────────────────────────────[39m
+
+
+[0m[0m[3mResult #6[0m [0m[97mLOW[39m[0m [1mSecurity group rule does not have a description.[0m [2m[0m
+[0m[0m[90m───────────────────────────────────────────────────────────────────────────────────────────────────────────
+[0m[0m  [3mmain.tf[2m[3m:32-37
+[0m[0m[90m───────────────────────────────────────────────────────────────────────────────────────────────────────────[39m
+[0m[0m[90m   27  [0m[0m  [38;5;33mresource[0m [38;5;37m"aws_security_group"[0m [38;5;37m"sg"[0m {[0m
+[0m[90m   28  [0m[0m    [38;5;245mname[0m   = [38;5;33mlower[0m([38;5;33mformat[0m([38;5;37m"%s-sg-%s"[0m, [38;5;33mvar[0m.scenario_id, local.name_suffix))[0m
+[0m[90m   29  [0m[0m    [38;5;245mvpc_id[0m = aws_vpc.vpc.id[0m
+[0m[90m   30  [0m[0m    [38;5;245mtags[0m   = local.common_tags[0m
+[0m[90m   31  [0m[0m  [0m
+[0m[31m   32  [0m[0m[31m┌[39m[0m[0m   egress {[0m
+[0m[31m   33  [0m[0m[31m│[39m[0m[0m     [38;5;245mfrom_port[0m   = [38;5;37m0[0m
+[0m[31m   34  [0m[0m[31m│[39m[0m[0m [0m    [38;5;245mto_port[0m     = [38;5;37m0[0m
+[0m[31m   35  [0m[0m[31m└[39m[0m[0m [0m    [38;5;245mprotocol[0m    = [38;5;37m"-1"[0m
+[0m[90m   ..  [0m
+[0m[90m───────────────────────────────────────────────────────────────────────────────────────────────────────────[39m
+[0m[0m  [2m        ID[0m[3m aws-ec2-add-description-to-security-group-rule
+[0m[0m  [2m    Impact[0m Descriptions provide context for the firewall rule reasons
+[0m[0m  [2mResolution[0m Add descriptions for all security groups rules
+[0m[0m
+  [2mMore Information[0m[0m[0m
+  [2m-[0m [34mhttps://aquasecurity.github.io/tfsec/v1.28.14/checks/aws/ec2/add-description-to-security-group-rule/[0m[0m
+  [2m-[0m [34mhttps://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group[0m[0m
+  [2m-[0m [34mhttps://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group_rule[0m[0m
+[90m───────────────────────────────────────────────────────────────────────────────────────────────────────────[39m
+
+
+[0m[0m  [1mtimings[0m
+  ──────────────────────────────────────────
+[0m[0m  [2mdisk i/o            [0m 37.034µs
+[0m[0m  [2mparsing             [0m 924.162µs
+[0m[0m  [2madaptation          [0m 99.747µs
+[0m[0m  [2mchecks              [0m 5.236291ms
+[0m[0m  [2mtotal               [0m 6.297234ms
+[0m
+[0m  [1mcounts[0m
+  ──────────────────────────────────────────
+[0m[0m  [2mmodules downloaded  [0m 0
+[0m[0m  [2mmodules processed   [0m 1
+[0m[0m  [2mblocks processed    [0m 15
+[0m[0m  [2mfiles read          [0m 5
+[0m
+[0m  [1mresults[0m
+  ──────────────────────────────────────────
+[0m[0m  [2mpassed              [0m 2
+[0m[0m  [2mignored             [0m 0
+[0m[0m  [2mcritical            [0m 1
+[0m[0m  [2mhigh                [0m 2
+[0m[0m  [2mmedium              [0m 1
+[0m[0m  [2mlow                 [0m 2
+[0m
+[0m  [31m[1m2 passed, 6 potential problem(s) detected.
+
+[0m
+===== [7] Terrascan =====
+
+===== [8] Conftest =====
+[31mFAIL[0m - tfplan.json - main - No aws_cloudtrail resource detected in plan (CloudTrail logging not enabled)
+[31mFAIL[0m - tfplan.json - main - No aws_flow_log resources detected in plan (VPC Flow Logs likely not enabled)
+[31mFAIL[0m - tfplan.json - main - Security Group aws_security_group.sg has unrestricted egress to 0.0.0.0/0 (review / high-risk)
+
+[31m21 tests, 18 passed, 0 warnings, 3 failures, 0 exceptions[0m
+
+============================================================
+FULL SCAN LOG END: 2025-12-22 20:02:13 UTC
+Return codes:
+  checkov   = 1
+  tfsec     = 1
+  terrascan = 1
+  conftest  = 1
+Scenario outputs (root):
+  - /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-MISC-001-ssm-disabled-on-ec2/checkov_CMP-MISC-001-ssm-disabled-on-ec2.txt
+  - /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-MISC-001-ssm-disabled-on-ec2/tfsec_CMP-MISC-001-ssm-disabled-on-ec2.txt
+  - /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-MISC-001-ssm-disabled-on-ec2/terrascan_CMP-MISC-001-ssm-disabled-on-ec2.txt
+  - /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-MISC-001-ssm-disabled-on-ec2/conftest_CMP-MISC-001-ssm-disabled-on-ec2.txt
+Master log:
+  - /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-MISC-001-ssm-disabled-on-ec2/scan_logs/FULL_CMP-MISC-001-ssm-disabled-on-ec2.log
+============================================================
+
+
+============================================================
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-MISC-002-imdsv2-allowed
+============================================================
+==> Scenario directory: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-MISC-002-imdsv2-allowed
+
+============================================================
+FULL SCAN LOG START: 2025-12-22 20:02:13 UTC
+Scenario: CMP-MISC-002-imdsv2-allowed
+Path: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-MISC-002-imdsv2-allowed
+POLICY_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/policy/terraform
+============================================================
+
+===== [0] Terraform plugin cache fix =====
+TF_PLUGIN_CACHE_DIR=/tmp/terraform-plugin-cache
+
+===== [1] Terraform init =====
+[0m[1mInitializing the backend...[0m
+[0m[1mInitializing provider plugins...[0m
+- Finding hashicorp/aws versions matching "~> 5.0"...
+- Finding hashicorp/random versions matching "~> 3.6"...
+- Using previously-installed hashicorp/aws v5.100.0
+- Using previously-installed hashicorp/random v3.7.2
+
+[0m[1m[32mTerraform has been successfully initialized![0m[32m[0m
+[0m[32m
+You may now begin working with Terraform. Try running "terraform plan" to see
+any changes that are required for your infrastructure. All Terraform commands
+should now work.
+
+If you ever set or change modules or backend configuration for Terraform,
+rerun this command to reinitialize your working directory. If you forget, other
+commands will detect it and remind you to do so if necessary.[0m
+
+===== [2] Terraform validate =====
+[32m[1mSuccess![0m The configuration is valid.
+[0m
+
+===== [3] Terraform plan =====
+Detected terraform.tfvars -> using -var-file=terraform.tfvars
+[0m[1mdata.aws_ami.al2: Reading...[0m[0m
+[0m[1mdata.aws_ami.al2: Read complete after 1s [id=ami-0ad8de99ac93341e7][0m
+
+Terraform used the selected providers to generate the following execution
+plan. Resource actions are indicated with the following symbols:
+  [32m+[0m create[0m
+
+Terraform will perform the following actions:
+
+[1m  # aws_instance.ec2[0m will be created
+[0m  [32m+[0m[0m resource "aws_instance" "ec2" {
+      [32m+[0m[0m ami                                  = "ami-0ad8de99ac93341e7"
+      [32m+[0m[0m arn                                  = (known after apply)
+      [32m+[0m[0m associate_public_ip_address          = (known after apply)
+      [32m+[0m[0m availability_zone                    = (known after apply)
+      [32m+[0m[0m cpu_core_count                       = (known after apply)
+      [32m+[0m[0m cpu_threads_per_core                 = (known after apply)
+      [32m+[0m[0m disable_api_stop                     = (known after apply)
+      [32m+[0m[0m disable_api_termination              = (known after apply)
+      [32m+[0m[0m ebs_optimized                        = (known after apply)
+      [32m+[0m[0m enable_primary_ipv6                  = (known after apply)
+      [32m+[0m[0m get_password_data                    = false
+      [32m+[0m[0m host_id                              = (known after apply)
+      [32m+[0m[0m host_resource_group_arn              = (known after apply)
+      [32m+[0m[0m iam_instance_profile                 = (known after apply)
+      [32m+[0m[0m id                                   = (known after apply)
+      [32m+[0m[0m instance_initiated_shutdown_behavior = (known after apply)
+      [32m+[0m[0m instance_lifecycle                   = (known after apply)
+      [32m+[0m[0m instance_state                       = (known after apply)
+      [32m+[0m[0m instance_type                        = "t3.micro"
+      [32m+[0m[0m ipv6_address_count                   = (known after apply)
+      [32m+[0m[0m ipv6_addresses                       = (known after apply)
+      [32m+[0m[0m key_name                             = (known after apply)
+      [32m+[0m[0m monitoring                           = (known after apply)
+      [32m+[0m[0m outpost_arn                          = (known after apply)
+      [32m+[0m[0m password_data                        = (known after apply)
+      [32m+[0m[0m placement_group                      = (known after apply)
+      [32m+[0m[0m placement_partition_number           = (known after apply)
+      [32m+[0m[0m primary_network_interface_id         = (known after apply)
+      [32m+[0m[0m private_dns                          = (known after apply)
+      [32m+[0m[0m private_ip                           = (known after apply)
+      [32m+[0m[0m public_dns                           = (known after apply)
+      [32m+[0m[0m public_ip                            = (known after apply)
+      [32m+[0m[0m secondary_private_ips                = (known after apply)
+      [32m+[0m[0m security_groups                      = (known after apply)
+      [32m+[0m[0m source_dest_check                    = true
+      [32m+[0m[0m spot_instance_request_id             = (known after apply)
+      [32m+[0m[0m subnet_id                            = (known after apply)
+      [32m+[0m[0m tags                                 = {
+          [32m+[0m[0m "cis_controls" = "EC2.8"
+          [32m+[0m[0m "domain"       = "CMP"
+          [32m+[0m[0m "scenario_id"  = "CMP-MISC-002-imdsv2-allowed"
+          [32m+[0m[0m "type"         = "MISC"
+        }
+      [32m+[0m[0m tags_all                             = {
+          [32m+[0m[0m "cis_controls" = "EC2.8"
+          [32m+[0m[0m "domain"       = "CMP"
+          [32m+[0m[0m "scenario_id"  = "CMP-MISC-002-imdsv2-allowed"
+          [32m+[0m[0m "type"         = "MISC"
+        }
+      [32m+[0m[0m tenancy                              = (known after apply)
+      [32m+[0m[0m user_data                            = (known after apply)
+      [32m+[0m[0m user_data_base64                     = (known after apply)
+      [32m+[0m[0m user_data_replace_on_change          = false
+      [32m+[0m[0m vpc_security_group_ids               = (known after apply)
+
+      [32m+[0m[0m capacity_reservation_specification (known after apply)
+
+      [32m+[0m[0m cpu_options (known after apply)
+
+      [32m+[0m[0m ebs_block_device (known after apply)
+
+      [32m+[0m[0m enclave_options (known after apply)
+
+      [32m+[0m[0m ephemeral_block_device (known after apply)
+
+      [32m+[0m[0m instance_market_options (known after apply)
+
+      [32m+[0m[0m maintenance_options (known after apply)
+
+      [32m+[0m[0m metadata_options {
+          [32m+[0m[0m http_endpoint               = "enabled"
+          [32m+[0m[0m http_protocol_ipv6          = "disabled"
+          [32m+[0m[0m http_put_response_hop_limit = (known after apply)
+          [32m+[0m[0m http_tokens                 = "optional"
+          [32m+[0m[0m instance_metadata_tags      = (known after apply)
+        }
+
+      [32m+[0m[0m network_interface (known after apply)
+
+      [32m+[0m[0m private_dns_name_options (known after apply)
+
+      [32m+[0m[0m root_block_device (known after apply)
+    }
+
+[1m  # random_id.suffix[0m will be created
+[0m  [32m+[0m[0m resource "random_id" "suffix" {
+      [32m+[0m[0m b64_std     = (known after apply)
+      [32m+[0m[0m b64_url     = (known after apply)
+      [32m+[0m[0m byte_length = 4
+      [32m+[0m[0m dec         = (known after apply)
+      [32m+[0m[0m hex         = (known after apply)
+      [32m+[0m[0m id          = (known after apply)
+    }
+
+[1mPlan:[0m [0m2 to add, 0 to change, 0 to destroy.
+[90m
+─────────────────────────────────────────────────────────────────────────────[0m
+
+Saved the plan to: tfplan.binary
+
+To perform exactly these actions, run the following command to apply:
+    terraform apply "tfplan.binary"
+
+===== [4] Export plan to JSON =====
+
+===== [5] Checkov =====
+
+       _               _
+   ___| |__   ___  ___| | _______   __
+  / __| '_ \ / _ \/ __| |/ / _ \ \ / /
+ | (__| | | |  __/ (__|   < (_) \ V /
+  \___|_| |_|\___|\___|_|\_\___/ \_/
+
+By Prisma Cloud | version: 3.2.495 
+
+terraform scan results:
+
+Passed checks: 4, Failed checks: 5, Skipped checks: 0
+
+Check: CKV_AWS_46: "Ensure no hard-coded secrets exist in EC2 user data"
+	PASSED for resource: aws_instance.ec2
+	File: /main.tf:12-21
+Check: CKV_AWS_88: "EC2 instance should not have public IP."
+	PASSED for resource: aws_instance.ec2
+	File: /main.tf:12-21
+Check: CKV_AWS_386: "Reduce potential for WhoAMI cloud image name confusion attack"
+	PASSED for resource: aws_ami.al2
+	File: /main.tf:3-10
+Check: CKV_AWS_41: "Ensure no hard coded AWS access key and secret key exists in provider"
+	PASSED for resource: aws.default
+	File: /provider.tf:1-9
+Check: CKV_AWS_126: "Ensure that detailed monitoring is enabled for EC2 instances"
+	FAILED for resource: aws_instance.ec2
+	File: /main.tf:12-21
+
+		12 | resource "aws_instance" "ec2" {
+		13 |   ami           = data.aws_ami.al2.id
+		14 |   instance_type = "t3.micro"
+		15 | 
+		16 |   metadata_options {
+		17 |     http_tokens = "optional"
+		18 |   }
+		19 | 
+		20 |   tags = local.common_tags
+		21 | }
+
+Check: CKV_AWS_79: "Ensure Instance Metadata Service Version 1 is not enabled"
+	FAILED for resource: aws_instance.ec2
+	File: /main.tf:12-21
+
+		12 | resource "aws_instance" "ec2" {
+		13 |   ami           = data.aws_ami.al2.id
+		14 |   instance_type = "t3.micro"
+		15 | 
+		16 |   metadata_options {
+		17 |     http_tokens = "optional"
+		18 |   }
+		19 | 
+		20 |   tags = local.common_tags
+		21 | }
+
+Check: CKV_AWS_135: "Ensure that EC2 is EBS optimized"
+	FAILED for resource: aws_instance.ec2
+	File: /main.tf:12-21
+
+		12 | resource "aws_instance" "ec2" {
+		13 |   ami           = data.aws_ami.al2.id
+		14 |   instance_type = "t3.micro"
+		15 | 
+		16 |   metadata_options {
+		17 |     http_tokens = "optional"
+		18 |   }
+		19 | 
+		20 |   tags = local.common_tags
+		21 | }
+
+Check: CKV_AWS_8: "Ensure all data stored in the Launch configuration or instance Elastic Blocks Store is securely encrypted"
+	FAILED for resource: aws_instance.ec2
+	File: /main.tf:12-21
+
+		12 | resource "aws_instance" "ec2" {
+		13 |   ami           = data.aws_ami.al2.id
+		14 |   instance_type = "t3.micro"
+		15 | 
+		16 |   metadata_options {
+		17 |     http_tokens = "optional"
+		18 |   }
+		19 | 
+		20 |   tags = local.common_tags
+		21 | }
+
+Check: CKV2_AWS_41: "Ensure an IAM role is attached to EC2 instance"
+	FAILED for resource: aws_instance.ec2
+	File: /main.tf:12-21
+
+		12 | resource "aws_instance" "ec2" {
+		13 |   ami           = data.aws_ami.al2.id
+		14 |   instance_type = "t3.micro"
+		15 | 
+		16 |   metadata_options {
+		17 |     http_tokens = "optional"
+		18 |   }
+		19 | 
+		20 |   tags = local.common_tags
+		21 | }
+
+terraform_plan scan results:
+
+Passed checks: 3, Failed checks: 5, Skipped checks: 0
+
+Check: CKV_AWS_41: "Ensure no hard coded AWS access key and secret key exists in provider"
+	PASSED for resource: aws.default
+	File: /tfplan.json:0-1
+Check: CKV_AWS_46: "Ensure no hard-coded secrets exist in EC2 user data"
+	PASSED for resource: aws_instance.ec2
+	File: /tfplan.json:0-0
+Check: CKV_AWS_88: "EC2 instance should not have public IP."
+	PASSED for resource: aws_instance.ec2
+	File: /tfplan.json:0-0
+Check: CKV_AWS_126: "Ensure that detailed monitoring is enabled for EC2 instances"
+	FAILED for resource: aws_instance.ec2
+	File: /tfplan.json:0-0
+Check: CKV_AWS_79: "Ensure Instance Metadata Service Version 1 is not enabled"
+	FAILED for resource: aws_instance.ec2
+	File: /tfplan.json:0-0
+Check: CKV_AWS_135: "Ensure that EC2 is EBS optimized"
+	FAILED for resource: aws_instance.ec2
+	File: /tfplan.json:0-0
+Check: CKV_AWS_8: "Ensure all data stored in the Launch configuration or instance Elastic Blocks Store is securely encrypted"
+	FAILED for resource: aws_instance.ec2
+	File: /tfplan.json:0-0
+Check: CKV2_AWS_41: "Ensure an IAM role is attached to EC2 instance"
+	FAILED for resource: aws_instance.ec2
+	File: /tfplan.json:0-0
+
+
+===== [6] tfsec =====
+
+======================================================
+tfsec is joining the Trivy family
+
+tfsec will continue to remain available 
+for the time being, although our engineering 
+attention will be directed at Trivy going forward.
+
+You can read more here: 
+https://github.com/aquasecurity/tfsec/discussions/1994
+======================================================
+
+[0m[3mResult #1[0m [0m[31mHIGH[39m[0m [1mRoot block device is not encrypted.[0m [2m[0m
+[0m[0m[90m───────────────────────────────────────────────────────────────────────────────────────────────────────────
+[0m[0m  [3mmain.tf[3m[2m:12-21
+[0m[0m[90m───────────────────────────────────────────────────────────────────────────────────────────────────────────[39m
+[0m[0m[31m   12  [0m[0m [0m[0m [38;5;33mresource[0m [38;5;37m"aws_instance"[0m [38;5;37m"ec2"[0m {[0m
+[0m[31m   13  [0m[0m [0m[0m   [38;5;245mami[0m           = [38;5;33mdata[0m.aws_ami.al2.id[0m
+[0m[31m   14  [0m[0m [0m[0m   [38;5;245minstance_type[0m = [38;5;37m"t3.micro"[0m
+[0m[31m   15  [0m[0m [0m[0m [0m[0m
+[0m[31m   16  [0m[0m [0m[0m   metadata_options {[0m
+[0m[31m   17  [0m[0m [0m[0m     [38;5;245mhttp_tokens[0m = [38;5;37m"optional"[0m
+[0m[31m   18  [0m[0m [0m[0m [0m  }[0m
+[0m[31m   19  [0m[0m [0m[0m [0m
+[0m[31m   20  [0m[0m [0m[0m   [38;5;245mtags[0m = local.common_tags[0m
+[0m[31m   21  [0m[0m [0m[0m }[0m
+[0m[90m───────────────────────────────────────────────────────────────────────────────────────────────────────────[39m
+[0m[0m  [2m        ID[0m[3m aws-ec2-enable-at-rest-encryption
+[0m[0m  [2m    Impact[0m The block device could be compromised and read from
+[0m[0m  [2mResolution[0m Turn on encryption for all block devices
+[0m[0m
+  [2mMore Information[0m[0m[0m
+  [2m-[0m [34mhttps://aquasecurity.github.io/tfsec/v1.28.14/checks/aws/ec2/enable-at-rest-encryption/[0m[0m
+  [2m-[0m [34mhttps://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/instance#ebs-ephemeral-and-root-block-devices[0m[0m
+[90m───────────────────────────────────────────────────────────────────────────────────────────────────────────[39m
+
+
+[0m[0m[3mResult #2[0m [0m[31mHIGH[39m[0m [1mInstance does not require IMDS access to require a token[0m [2m[0m
+[0m[0m[90m───────────────────────────────────────────────────────────────────────────────────────────────────────────
+[0m[0m  [3mmain.tf[3m[2m:17
+[0m[0m[90m───────────────────────────────────────────────────────────────────────────────────────────────────────────[39m
+[0m[0m[90m   12  [0m[0m  [38;5;33mresource[0m [38;5;37m"aws_instance"[0m [38;5;37m"ec2"[0m {[0m
+[0m[90m   13  [0m[0m    [38;5;245mami[0m           = [38;5;33mdata[0m.aws_ami.al2.id[0m
+[0m[90m   14  [0m[0m    [38;5;245minstance_type[0m = [38;5;37m"t3.micro"[0m
+[0m[90m   15  [0m[0m  [0m[0m
+[0m[90m   16  [0m[0m    metadata_options {[0m
+[0m[31m   17  [0m[0m[31m[[39m[0m[0m     [38;5;245mhttp_tokens[0m = [38;5;37m"optional"[0m[0m [3m[2m[3m("optional")[0m
+[0m[90m   18  [0m[0m  [0m  }[0m
+[0m[90m   19  [0m[0m  [0m
+[0m[90m   20  [0m[0m    [38;5;245mtags[0m = local.common_tags[0m
+[0m[90m   21  [0m[0m  }[0m
+[0m[90m───────────────────────────────────────────────────────────────────────────────────────────────────────────[39m
+[0m[0m  [2m        ID[0m[3m aws-ec2-enforce-http-token-imds
+[0m[0m  [2m    Impact[0m Instance metadata service can be interacted with freely
+[0m[0m  [2mResolution[0m Enable HTTP token requirement for IMDS
+[0m[0m
+  [2mMore Information[0m[0m[0m
+  [2m-[0m [34mhttps://aquasecurity.github.io/tfsec/v1.28.14/checks/aws/ec2/enforce-http-token-imds/[0m[0m
+  [2m-[0m [34mhttps://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/instance#metadata-options[0m[0m
+[90m───────────────────────────────────────────────────────────────────────────────────────────────────────────[39m
+
+
+[0m[0m  [1mtimings[0m
+  ──────────────────────────────────────────
+[0m[0m  [2mdisk i/o            [0m 43.009µs
+[0m[0m  [2mparsing             [0m 504.817µs
+[0m[0m  [2madaptation          [0m 78.549µs
+[0m[0m  [2mchecks              [0m 17.484026ms
+[0m[0m  [2mtotal               [0m 18.110401ms
+[0m
+[0m  [1mcounts[0m
+  ──────────────────────────────────────────
+[0m[0m  [2mmodules downloaded  [0m 0
+[0m[0m  [2mmodules processed   [0m 1
+[0m[0m  [2mblocks processed    [0m 12
+[0m[0m  [2mfiles read          [0m 5
+[0m
+[0m  [1mresults[0m
+  ──────────────────────────────────────────
+[0m[0m  [2mpassed              [0m 1
+[0m[0m  [2mignored             [0m 0
+[0m[0m  [2mcritical            [0m 0
+[0m[0m  [2mhigh                [0m 2
+[0m[0m  [2mmedium              [0m 0
+[0m[0m  [2mlow                 [0m 0
+[0m
+[0m  [31m[1m1 passed, 2 potential problem(s) detected.
+
+[0m
+===== [7] Terrascan =====
+
+===== [8] Conftest =====
+[31mFAIL[0m - tfplan.json - main - EC2 aws_instance.ec2 does not enforce IMDSv2 (metadata_options.http_tokens must be 'required')
+[31mFAIL[0m - tfplan.json - main - No aws_cloudtrail resource detected in plan (CloudTrail logging not enabled)
+[31mFAIL[0m - tfplan.json - main - No aws_flow_log resources detected in plan (VPC Flow Logs likely not enabled)
+
+[31m21 tests, 18 passed, 0 warnings, 3 failures, 0 exceptions[0m
+
+============================================================
+FULL SCAN LOG END: 2025-12-22 20:02:28 UTC
+Return codes:
+  checkov   = 1
+  tfsec     = 1
+  terrascan = 1
+  conftest  = 1
+Scenario outputs (root):
+  - /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-MISC-002-imdsv2-allowed/checkov_CMP-MISC-002-imdsv2-allowed.txt
+  - /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-MISC-002-imdsv2-allowed/tfsec_CMP-MISC-002-imdsv2-allowed.txt
+  - /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-MISC-002-imdsv2-allowed/terrascan_CMP-MISC-002-imdsv2-allowed.txt
+  - /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-MISC-002-imdsv2-allowed/conftest_CMP-MISC-002-imdsv2-allowed.txt
+Master log:
+  - /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-MISC-002-imdsv2-allowed/scan_logs/FULL_CMP-MISC-002-imdsv2-allowed.log
+============================================================
+
+
+============================================================
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/iam/IAM-BENIGN-001-mfa-enforced
+============================================================
+==> Scenario directory: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/iam/IAM-BENIGN-001-mfa-enforced
+
+============================================================
+FULL SCAN LOG START: 2025-12-22 20:02:28 UTC
+Scenario: IAM-BENIGN-001-mfa-enforced
+Path: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/iam/IAM-BENIGN-001-mfa-enforced
+POLICY_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/policy/terraform
+============================================================
+
+===== [0] Terraform plugin cache fix =====
+TF_PLUGIN_CACHE_DIR=/tmp/terraform-plugin-cache
+
+===== [1] Terraform init =====
+[0m[1mInitializing the backend...[0m
+[0m[1mInitializing provider plugins...[0m
+- Finding hashicorp/aws versions matching "~> 5.0"...
+- Finding hashicorp/random versions matching "~> 3.6"...
+- Using previously-installed hashicorp/aws v5.100.0
+- Using previously-installed hashicorp/random v3.7.2
+
+[0m[1m[32mTerraform has been successfully initialized![0m[32m[0m
+[0m[32m
+You may now begin working with Terraform. Try running "terraform plan" to see
+any changes that are required for your infrastructure. All Terraform commands
+should now work.
+
+If you ever set or change modules or backend configuration for Terraform,
+rerun this command to reinitialize your working directory. If you forget, other
+commands will detect it and remind you to do so if necessary.[0m
+
+===== [2] Terraform validate =====
+[32m[1mSuccess![0m The configuration is valid.
+[0m
+
+===== [3] Terraform plan =====
+Detected terraform.tfvars -> using -var-file=terraform.tfvars
+
+Terraform used the selected providers to generate the following execution
+plan. Resource actions are indicated with the following symbols:
+  [32m+[0m create[0m
+
+Terraform will perform the following actions:
+
+[1m  # aws_iam_policy.deny_without_mfa[0m will be created
+[0m  [32m+[0m[0m resource "aws_iam_policy" "deny_without_mfa" {
+      [32m+[0m[0m arn              = (known after apply)
+      [32m+[0m[0m attachment_count = (known after apply)
+      [32m+[0m[0m id               = (known after apply)
+      [32m+[0m[0m name             = (known after apply)
+      [32m+[0m[0m name_prefix      = (known after apply)
+      [32m+[0m[0m path             = "/"
+      [32m+[0m[0m policy           = jsonencode(
+            {
+              [32m+[0m[0m Statement = [
+                  [32m+[0m[0m {
+                      [32m+[0m[0m Condition = {
+                          [32m+[0m[0m BoolIfExists = {
+                              [32m+[0m[0m "aws:MultiFactorAuthPresent" = "false"
+                            }
+                        }
+                      [32m+[0m[0m Effect    = "Deny"
+                      [32m+[0m[0m NotAction = [
+                          [32m+[0m[0m "iam:CreateVirtualMFADevice",
+                          [32m+[0m[0m "iam:EnableMFADevice",
+                          [32m+[0m[0m "iam:GetUser",
+                          [32m+[0m[0m "iam:ListMFADevices",
+                          [32m+[0m[0m "iam:ListVirtualMFADevices",
+                          [32m+[0m[0m "iam:ResyncMFADevice",
+                        ]
+                      [32m+[0m[0m Resource  = "*"
+                      [32m+[0m[0m Sid       = "DenyAllUnlessMFA"
+                    },
+                ]
+              [32m+[0m[0m Version   = "2012-10-17"
+            }
+        )
+      [32m+[0m[0m policy_id        = (known after apply)
+      [32m+[0m[0m tags_all         = {
+          [32m+[0m[0m "cis_controls" = "IAM.6"
+          [32m+[0m[0m "domain"       = "IAM"
+          [32m+[0m[0m "scenario_id"  = "IAM-BENIGN-001-mfa-enforced"
+          [32m+[0m[0m "type"         = "BENIGN"
+        }
+    }
+
+[1m  # aws_iam_user.user[0m will be created
+[0m  [32m+[0m[0m resource "aws_iam_user" "user" {
+      [32m+[0m[0m arn           = (known after apply)
+      [32m+[0m[0m force_destroy = false
+      [32m+[0m[0m id            = (known after apply)
+      [32m+[0m[0m name          = (known after apply)
+      [32m+[0m[0m path          = "/"
+      [32m+[0m[0m tags          = {
+          [32m+[0m[0m "cis_controls" = "IAM.6"
+          [32m+[0m[0m "domain"       = "IAM"
+          [32m+[0m[0m "scenario_id"  = "IAM-BENIGN-001-mfa-enforced"
+          [32m+[0m[0m "type"         = "BENIGN"
+        }
+      [32m+[0m[0m tags_all      = {
+          [32m+[0m[0m "cis_controls" = "IAM.6"
+          [32m+[0m[0m "domain"       = "IAM"
+          [32m+[0m[0m "scenario_id"  = "IAM-BENIGN-001-mfa-enforced"
+          [32m+[0m[0m "type"         = "BENIGN"
+        }
+      [32m+[0m[0m unique_id     = (known after apply)
+    }
+
+[1m  # aws_iam_user_policy_attachment.attach[0m will be created
+[0m  [32m+[0m[0m resource "aws_iam_user_policy_attachment" "attach" {
+      [32m+[0m[0m id         = (known after apply)
+      [32m+[0m[0m policy_arn = (known after apply)
+      [32m+[0m[0m user       = (known after apply)
+    }
+
+[1m  # random_id.suffix[0m will be created
+[0m  [32m+[0m[0m resource "random_id" "suffix" {
+      [32m+[0m[0m b64_std     = (known after apply)
+      [32m+[0m[0m b64_url     = (known after apply)
+      [32m+[0m[0m byte_length = 4
+      [32m+[0m[0m dec         = (known after apply)
+      [32m+[0m[0m hex         = (known after apply)
+      [32m+[0m[0m id          = (known after apply)
+    }
+
+[1mPlan:[0m [0m4 to add, 0 to change, 0 to destroy.
+[90m
+─────────────────────────────────────────────────────────────────────────────[0m
+
+Saved the plan to: tfplan.binary
+
+To perform exactly these actions, run the following command to apply:
+    terraform apply "tfplan.binary"
+
+===== [4] Export plan to JSON =====
+
+===== [5] Checkov =====
+
+       _               _
+   ___| |__   ___  ___| | _______   __
+  / __| '_ \ / _ \/ __| |/ / _ \ \ / /
+ | (__| | | |  __/ (__|   < (_) \ V /
+  \___|_| |_|\___|\___|_|\_\___/ \_/
+
+By Prisma Cloud | version: 3.2.495 
+
+terraform scan results:
+
+Passed checks: 12, Failed checks: 2, Skipped checks: 0
+
+Check: CKV_AWS_62: "Ensure IAM policies that allow full "*-*" administrative privileges are not created"
+	PASSED for resource: aws_iam_policy.deny_without_mfa
+	File: /main.tf:8-32
+Check: CKV_AWS_355: "Ensure no IAM policies documents allow "*" as a statement's resource for restrictable actions"
+	PASSED for resource: aws_iam_policy.deny_without_mfa
+	File: /main.tf:8-32
+Check: CKV_AWS_287: "Ensure IAM policies does not allow credentials exposure"
+	PASSED for resource: aws_iam_policy.deny_without_mfa
+	File: /main.tf:8-32
+Check: CKV_AWS_286: "Ensure IAM policies does not allow privilege escalation"
+	PASSED for resource: aws_iam_policy.deny_without_mfa
+	File: /main.tf:8-32
+Check: CKV_AWS_290: "Ensure IAM policies does not allow write access without constraints"
+	PASSED for resource: aws_iam_policy.deny_without_mfa
+	File: /main.tf:8-32
+Check: CKV_AWS_63: "Ensure no IAM policies documents allow "*" as a statement's actions"
+	PASSED for resource: aws_iam_policy.deny_without_mfa
+	File: /main.tf:8-32
+Check: CKV_AWS_289: "Ensure IAM policies does not allow permissions management / resource exposure without constraints"
+	PASSED for resource: aws_iam_policy.deny_without_mfa
+	File: /main.tf:8-32
+Check: CKV_AWS_288: "Ensure IAM policies does not allow data exfiltration"
+	PASSED for resource: aws_iam_policy.deny_without_mfa
+	File: /main.tf:8-32
+Check: CKV_AWS_274: "Disallow IAM roles, users, and groups from using the AWS AdministratorAccess policy"
+	PASSED for resource: aws_iam_user_policy_attachment.attach
+	File: /main.tf:34-37
+Check: CKV_AWS_41: "Ensure no hard coded AWS access key and secret key exists in provider"
+	PASSED for resource: aws.default
+	File: /provider.tf:1-9
+Check: CKV2_AWS_22: "Ensure an IAM User does not have access to the console"
+	PASSED for resource: aws_iam_user.user
+	File: /main.tf:3-6
+Check: CKV2_AWS_40: "Ensure AWS IAM policy does not allow full IAM privileges"
+	PASSED for resource: aws_iam_policy.deny_without_mfa
+	File: /main.tf:8-32
+Check: CKV_AWS_273: "Ensure access is controlled through SSO and not AWS IAM defined users"
+	FAILED for resource: aws_iam_user.user
+	File: /main.tf:3-6
+
+		3 | resource "aws_iam_user" "user" {
+		4 |   name = lower(format("%s-%s", var.scenario_id, local.name_suffix))
+		5 |   tags = local.common_tags
+		6 | }
+
+Check: CKV_AWS_40: "Ensure IAM policies are attached only to groups or roles (Reducing access management complexity may in-turn reduce opportunity for a principal to inadvertently receive or retain excessive privileges.)"
+	FAILED for resource: aws_iam_user_policy_attachment.attach
+	File: /main.tf:34-37
+
+		34 | resource "aws_iam_user_policy_attachment" "attach" {
+		35 |   user       = aws_iam_user.user.name
+		36 |   policy_arn = aws_iam_policy.deny_without_mfa.arn
+		37 | }
+
+terraform_plan scan results:
+
+Passed checks: 12, Failed checks: 2, Skipped checks: 0
+
+Check: CKV_AWS_41: "Ensure no hard coded AWS access key and secret key exists in provider"
+	PASSED for resource: aws.default
+	File: /tfplan.json:0-1
+Check: CKV_AWS_62: "Ensure IAM policies that allow full "*-*" administrative privileges are not created"
+	PASSED for resource: aws_iam_policy.deny_without_mfa
+	File: /tfplan.json:0-0
+Check: CKV_AWS_355: "Ensure no IAM policies documents allow "*" as a statement's resource for restrictable actions"
+	PASSED for resource: aws_iam_policy.deny_without_mfa
+	File: /tfplan.json:0-0
+Check: CKV_AWS_287: "Ensure IAM policies does not allow credentials exposure"
+	PASSED for resource: aws_iam_policy.deny_without_mfa
+	File: /tfplan.json:0-0
+Check: CKV_AWS_286: "Ensure IAM policies does not allow privilege escalation"
+	PASSED for resource: aws_iam_policy.deny_without_mfa
+	File: /tfplan.json:0-0
+Check: CKV_AWS_290: "Ensure IAM policies does not allow write access without constraints"
+	PASSED for resource: aws_iam_policy.deny_without_mfa
+	File: /tfplan.json:0-0
+Check: CKV_AWS_63: "Ensure no IAM policies documents allow "*" as a statement's actions"
+	PASSED for resource: aws_iam_policy.deny_without_mfa
+	File: /tfplan.json:0-0
+Check: CKV_AWS_289: "Ensure IAM policies does not allow permissions management / resource exposure without constraints"
+	PASSED for resource: aws_iam_policy.deny_without_mfa
+	File: /tfplan.json:0-0
+Check: CKV_AWS_288: "Ensure IAM policies does not allow data exfiltration"
+	PASSED for resource: aws_iam_policy.deny_without_mfa
+	File: /tfplan.json:0-0
+Check: CKV_AWS_274: "Disallow IAM roles, users, and groups from using the AWS AdministratorAccess policy"
+	PASSED for resource: aws_iam_user_policy_attachment.attach
+	File: /tfplan.json:0-0
+Check: CKV2_AWS_22: "Ensure an IAM User does not have access to the console"
+	PASSED for resource: aws_iam_user.user
+	File: /tfplan.json:0-0
+Check: CKV2_AWS_40: "Ensure AWS IAM policy does not allow full IAM privileges"
+	PASSED for resource: aws_iam_policy.deny_without_mfa
+	File: /tfplan.json:0-0
+Check: CKV_AWS_273: "Ensure access is controlled through SSO and not AWS IAM defined users"
+	FAILED for resource: aws_iam_user.user
+	File: /tfplan.json:0-0
+Check: CKV_AWS_40: "Ensure IAM policies are attached only to groups or roles (Reducing access management complexity may in-turn reduce opportunity for a principal to inadvertently receive or retain excessive privileges.)"
+	FAILED for resource: aws_iam_user_policy_attachment.attach
+	File: /tfplan.json:0-0
+
+
+===== [6] tfsec =====
+
+======================================================
+tfsec is joining the Trivy family
+
+tfsec will continue to remain available 
+for the time being, although our engineering 
+attention will be directed at Trivy going forward.
+
+You can read more here: 
+https://github.com/aquasecurity/tfsec/discussions/1994
+======================================================
+[0m  [1mtimings[0m
+  ──────────────────────────────────────────
+[0m[0m  [2mdisk i/o            [0m 39.444µs
+[0m[0m  [2mparsing             [0m 2.192057ms
+[0m[0m  [2madaptation          [0m 863.329µs
+[0m[0m  [2mchecks              [0m 16.447613ms
+[0m[0m  [2mtotal               [0m 19.542443ms
+[0m
+[0m  [1mcounts[0m
+  ──────────────────────────────────────────
+[0m[0m  [2mmodules downloaded  [0m 0
+[0m[0m  [2mmodules processed   [0m 1
+[0m[0m  [2mblocks processed    [0m 13
+[0m[0m  [2mfiles read          [0m 5
+[0m
+[0m  [1mresults[0m
+  ──────────────────────────────────────────
+[0m[0m  [2mpassed              [0m 1
+[0m[0m  [2mignored             [0m 0
+[0m[0m  [2mcritical            [0m 0
+[0m[0m  [2mhigh                [0m 0
+[0m[0m  [2mmedium              [0m 0
+[0m[0m  [2mlow                 [0m 0
+[0m
+[0m
+[32m[1mNo problems detected!
+
+[0m
+===== [7] Terrascan =====
+
+===== [8] Conftest =====
+[31mFAIL[0m - tfplan.json - main - No aws_cloudtrail resource detected in plan (CloudTrail logging not enabled)
+[31mFAIL[0m - tfplan.json - main - No aws_flow_log resources detected in plan (VPC Flow Logs likely not enabled)
+
+[31m21 tests, 19 passed, 0 warnings, 2 failures, 0 exceptions[0m
+
+============================================================
+FULL SCAN LOG END: 2025-12-22 20:02:44 UTC
+Return codes:
+  checkov   = 1
+  tfsec     = 0
+  terrascan = 1
+  conftest  = 1
+Scenario outputs (root):
+  - /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/iam/IAM-BENIGN-001-mfa-enforced/checkov_IAM-BENIGN-001-mfa-enforced.txt
+  - /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/iam/IAM-BENIGN-001-mfa-enforced/tfsec_IAM-BENIGN-001-mfa-enforced.txt
+  - /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/iam/IAM-BENIGN-001-mfa-enforced/terrascan_IAM-BENIGN-001-mfa-enforced.txt
+  - /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/iam/IAM-BENIGN-001-mfa-enforced/conftest_IAM-BENIGN-001-mfa-enforced.txt
+Master log:
+  - /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/iam/IAM-BENIGN-001-mfa-enforced/scan_logs/FULL_IAM-BENIGN-001-mfa-enforced.log
+============================================================
+
+
+============================================================
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/iam/IAM-BENIGN-002-no-admin-policy
+============================================================
+==> Scenario directory: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/iam/IAM-BENIGN-002-no-admin-policy
+
+============================================================
+FULL SCAN LOG START: 2025-12-22 20:02:44 UTC
+Scenario: IAM-BENIGN-002-no-admin-policy
+Path: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/iam/IAM-BENIGN-002-no-admin-policy
+POLICY_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/policy/terraform
+============================================================
+
+===== [0] Terraform plugin cache fix =====
+TF_PLUGIN_CACHE_DIR=/tmp/terraform-plugin-cache
+
+===== [1] Terraform init =====
+[0m[1mInitializing the backend...[0m
+[0m[1mInitializing provider plugins...[0m
+- Finding hashicorp/aws versions matching "~> 5.0"...
+- Finding hashicorp/random versions matching "~> 3.6"...
+- Using previously-installed hashicorp/aws v5.100.0
+- Using previously-installed hashicorp/random v3.7.2
+
+[0m[1m[32mTerraform has been successfully initialized![0m[32m[0m
+[0m[32m
+You may now begin working with Terraform. Try running "terraform plan" to see
+any changes that are required for your infrastructure. All Terraform commands
+should now work.
+
+If you ever set or change modules or backend configuration for Terraform,
+rerun this command to reinitialize your working directory. If you forget, other
+commands will detect it and remind you to do so if necessary.[0m
+
+===== [2] Terraform validate =====
+[32m[1mSuccess![0m The configuration is valid.
+[0m
+
+===== [3] Terraform plan =====
+Detected terraform.tfvars -> using -var-file=terraform.tfvars
+
+Terraform used the selected providers to generate the following execution
+plan. Resource actions are indicated with the following symbols:
+  [32m+[0m create[0m
+
+Terraform will perform the following actions:
+
+[1m  # aws_iam_user.user[0m will be created
+[0m  [32m+[0m[0m resource "aws_iam_user" "user" {
+      [32m+[0m[0m arn           = (known after apply)
+      [32m+[0m[0m force_destroy = false
+      [32m+[0m[0m id            = (known after apply)
+      [32m+[0m[0m name          = (known after apply)
+      [32m+[0m[0m path          = "/"
+      [32m+[0m[0m tags          = {
+          [32m+[0m[0m "cis_controls" = "IAM.1"
+          [32m+[0m[0m "domain"       = "IAM"
+          [32m+[0m[0m "scenario_id"  = "IAM-BENIGN-002-no-admin-policy"
+          [32m+[0m[0m "type"         = "BENIGN"
+        }
+      [32m+[0m[0m tags_all      = {
+          [32m+[0m[0m "cis_controls" = "IAM.1"
+          [32m+[0m[0m "domain"       = "IAM"
+          [32m+[0m[0m "scenario_id"  = "IAM-BENIGN-002-no-admin-policy"
+          [32m+[0m[0m "type"         = "BENIGN"
+        }
+      [32m+[0m[0m unique_id     = (known after apply)
+    }
+
+[1m  # aws_iam_user_policy_attachment.readonly[0m will be created
+[0m  [32m+[0m[0m resource "aws_iam_user_policy_attachment" "readonly" {
+      [32m+[0m[0m id         = (known after apply)
+      [32m+[0m[0m policy_arn = "arn:aws:iam::aws:policy/ReadOnlyAccess"
+      [32m+[0m[0m user       = (known after apply)
+    }
+
+[1m  # random_id.suffix[0m will be created
+[0m  [32m+[0m[0m resource "random_id" "suffix" {
+      [32m+[0m[0m b64_std     = (known after apply)
+      [32m+[0m[0m b64_url     = (known after apply)
+      [32m+[0m[0m byte_length = 4
+      [32m+[0m[0m dec         = (known after apply)
+      [32m+[0m[0m hex         = (known after apply)
+      [32m+[0m[0m id          = (known after apply)
+    }
+
+[1mPlan:[0m [0m3 to add, 0 to change, 0 to destroy.
+[90m
+─────────────────────────────────────────────────────────────────────────────[0m
+
+Saved the plan to: tfplan.binary
+
+To perform exactly these actions, run the following command to apply:
+    terraform apply "tfplan.binary"
+
+===== [4] Export plan to JSON =====
+
+===== [5] Checkov =====
+
+       _               _
+   ___| |__   ___  ___| | _______   __
+  / __| '_ \ / _ \/ __| |/ / _ \ \ / /
+ | (__| | | |  __/ (__|   < (_) \ V /
+  \___|_| |_|\___|\___|_|\_\___/ \_/
+
+By Prisma Cloud | version: 3.2.495 
+
+terraform scan results:
+
+Passed checks: 4, Failed checks: 2, Skipped checks: 0
+
+Check: CKV_AWS_274: "Disallow IAM roles, users, and groups from using the AWS AdministratorAccess policy"
+	PASSED for resource: aws_iam_user_policy_attachment.readonly
+	File: /main.tf:8-11
+Check: CKV_AWS_41: "Ensure no hard coded AWS access key and secret key exists in provider"
+	PASSED for resource: aws.default
+	File: /provider.tf:1-9
+Check: CKV2_AWS_56: "Ensure AWS Managed IAMFullAccess IAM policy is not used."
+	PASSED for resource: aws_iam_user_policy_attachment.readonly
+	File: /main.tf:8-11
+Check: CKV2_AWS_22: "Ensure an IAM User does not have access to the console"
+	PASSED for resource: aws_iam_user.user
+	File: /main.tf:3-6
+Check: CKV_AWS_273: "Ensure access is controlled through SSO and not AWS IAM defined users"
+	FAILED for resource: aws_iam_user.user
+	File: /main.tf:3-6
+
+		3 | resource "aws_iam_user" "user" {
+		4 |   name = lower(format("%s-%s", var.scenario_id, local.name_suffix))
+		5 |   tags = local.common_tags
+		6 | }
+
+Check: CKV_AWS_40: "Ensure IAM policies are attached only to groups or roles (Reducing access management complexity may in-turn reduce opportunity for a principal to inadvertently receive or retain excessive privileges.)"
+	FAILED for resource: aws_iam_user_policy_attachment.readonly
+	File: /main.tf:8-11
+
+		8  | resource "aws_iam_user_policy_attachment" "readonly" {
+		9  |   user       = aws_iam_user.user.name
+		10 |   policy_arn = "arn:aws:iam::aws:policy/ReadOnlyAccess"
+		11 | }
+
+terraform_plan scan results:
+
+Passed checks: 4, Failed checks: 2, Skipped checks: 0
+
+Check: CKV_AWS_41: "Ensure no hard coded AWS access key and secret key exists in provider"
+	PASSED for resource: aws.default
+	File: /tfplan.json:0-1
+Check: CKV_AWS_274: "Disallow IAM roles, users, and groups from using the AWS AdministratorAccess policy"
+	PASSED for resource: aws_iam_user_policy_attachment.readonly
+	File: /tfplan.json:0-0
+Check: CKV2_AWS_56: "Ensure AWS Managed IAMFullAccess IAM policy is not used."
+	PASSED for resource: aws_iam_user_policy_attachment.readonly
+	File: /tfplan.json:0-0
+Check: CKV2_AWS_22: "Ensure an IAM User does not have access to the console"
+	PASSED for resource: aws_iam_user.user
+	File: /tfplan.json:0-0
+Check: CKV_AWS_273: "Ensure access is controlled through SSO and not AWS IAM defined users"
+	FAILED for resource: aws_iam_user.user
+	File: /tfplan.json:0-0
+Check: CKV_AWS_40: "Ensure IAM policies are attached only to groups or roles (Reducing access management complexity may in-turn reduce opportunity for a principal to inadvertently receive or retain excessive privileges.)"
+	FAILED for resource: aws_iam_user_policy_attachment.readonly
+	File: /tfplan.json:0-0
+
+
+===== [6] tfsec =====
+
+======================================================
+tfsec is joining the Trivy family
+
+tfsec will continue to remain available 
+for the time being, although our engineering 
+attention will be directed at Trivy going forward.
+
+You can read more here: 
+https://github.com/aquasecurity/tfsec/discussions/1994
+======================================================
+[0m  [1mtimings[0m
+  ──────────────────────────────────────────
+[0m[0m  [2mdisk i/o            [0m 54.224µs
+[0m[0m  [2mparsing             [0m 1.262472ms
+[0m[0m  [2madaptation          [0m 186.437µs
+[0m[0m  [2mchecks              [0m 17.445038ms
+[0m[0m  [2mtotal               [0m 18.948171ms
+[0m
+[0m  [1mcounts[0m
+  ──────────────────────────────────────────
+[0m[0m  [2mmodules downloaded  [0m 0
+[0m[0m  [2mmodules processed   [0m 1
+[0m[0m  [2mblocks processed    [0m 12
+[0m[0m  [2mfiles read          [0m 5
+[0m
+[0m  [1mresults[0m
+  ──────────────────────────────────────────
+[0m[0m  [2mpassed              [0m 1
+[0m[0m  [2mignored             [0m 0
+[0m[0m  [2mcritical            [0m 0
+[0m[0m  [2mhigh                [0m 0
+[0m[0m  [2mmedium              [0m 0
+[0m[0m  [2mlow                 [0m 0
+[0m
+[0m
+[32m[1mNo problems detected!
+
+[0m
+===== [7] Terrascan =====
+
+===== [8] Conftest =====
+[31mFAIL[0m - tfplan.json - main - No aws_cloudtrail resource detected in plan (CloudTrail logging not enabled)
+[31mFAIL[0m - tfplan.json - main - No aws_flow_log resources detected in plan (VPC Flow Logs likely not enabled)
+
+[31m21 tests, 19 passed, 0 warnings, 2 failures, 0 exceptions[0m
+
+============================================================
+FULL SCAN LOG END: 2025-12-22 20:02:59 UTC
+Return codes:
+  checkov   = 1
+  tfsec     = 0
+  terrascan = 1
+  conftest  = 1
+Scenario outputs (root):
+  - /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/iam/IAM-BENIGN-002-no-admin-policy/checkov_IAM-BENIGN-002-no-admin-policy.txt
+  - /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/iam/IAM-BENIGN-002-no-admin-policy/tfsec_IAM-BENIGN-002-no-admin-policy.txt
+  - /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/iam/IAM-BENIGN-002-no-admin-policy/terrascan_IAM-BENIGN-002-no-admin-policy.txt
+  - /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/iam/IAM-BENIGN-002-no-admin-policy/conftest_IAM-BENIGN-002-no-admin-policy.txt
+Master log:
+  - /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/iam/IAM-BENIGN-002-no-admin-policy/scan_logs/FULL_IAM-BENIGN-002-no-admin-policy.log
+============================================================
+
+
+============================================================
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/iam/IAM-MISC-001-mfa-not-enforced
+============================================================
+==> Scenario directory: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/iam/IAM-MISC-001-mfa-not-enforced
+
+============================================================
+FULL SCAN LOG START: 2025-12-22 20:02:59 UTC
+Scenario: IAM-MISC-001-mfa-not-enforced
+Path: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/iam/IAM-MISC-001-mfa-not-enforced
+POLICY_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/policy/terraform
+============================================================
+
+===== [0] Terraform plugin cache fix =====
+TF_PLUGIN_CACHE_DIR=/tmp/terraform-plugin-cache
+
+===== [1] Terraform init =====
+[0m[1mInitializing the backend...[0m
+[0m[1mInitializing provider plugins...[0m
+- Finding hashicorp/random versions matching "~> 3.6"...
+- Finding hashicorp/aws versions matching "~> 5.0"...
+- Using previously-installed hashicorp/random v3.7.2
+- Using previously-installed hashicorp/aws v5.100.0
+
+[0m[1m[32mTerraform has been successfully initialized![0m[32m[0m
+[0m[32m
+You may now begin working with Terraform. Try running "terraform plan" to see
+any changes that are required for your infrastructure. All Terraform commands
+should now work.
+
+If you ever set or change modules or backend configuration for Terraform,
+rerun this command to reinitialize your working directory. If you forget, other
+commands will detect it and remind you to do so if necessary.[0m
+
+===== [2] Terraform validate =====
+[32m[1mSuccess![0m The configuration is valid.
+[0m
+
+===== [3] Terraform plan =====
+Detected terraform.tfvars -> using -var-file=terraform.tfvars
+
+Terraform used the selected providers to generate the following execution
+plan. Resource actions are indicated with the following symbols:
+  [32m+[0m create[0m
+
+Terraform will perform the following actions:
+
+[1m  # aws_iam_user.user[0m will be created
+[0m  [32m+[0m[0m resource "aws_iam_user" "user" {
+      [32m+[0m[0m arn           = (known after apply)
+      [32m+[0m[0m force_destroy = false
+      [32m+[0m[0m id            = (known after apply)
+      [32m+[0m[0m name          = (known after apply)
+      [32m+[0m[0m path          = "/"
+      [32m+[0m[0m tags          = {
+          [32m+[0m[0m "cis_controls" = "IAM.6"
+          [32m+[0m[0m "domain"       = "IAM"
+          [32m+[0m[0m "scenario_id"  = "IAM-MISC-001-mfa-not-enforced"
+          [32m+[0m[0m "type"         = "MISC"
+        }
+      [32m+[0m[0m tags_all      = {
+          [32m+[0m[0m "cis_controls" = "IAM.6"
+          [32m+[0m[0m "domain"       = "IAM"
+          [32m+[0m[0m "scenario_id"  = "IAM-MISC-001-mfa-not-enforced"
+          [32m+[0m[0m "type"         = "MISC"
+        }
+      [32m+[0m[0m unique_id     = (known after apply)
+    }
+
+[1m  # random_id.suffix[0m will be created
+[0m  [32m+[0m[0m resource "random_id" "suffix" {
+      [32m+[0m[0m b64_std     = (known after apply)
+      [32m+[0m[0m b64_url     = (known after apply)
+      [32m+[0m[0m byte_length = 4
+      [32m+[0m[0m dec         = (known after apply)
+      [32m+[0m[0m hex         = (known after apply)
+      [32m+[0m[0m id          = (known after apply)
+    }
+
+[1mPlan:[0m [0m2 to add, 0 to change, 0 to destroy.
+[90m
+─────────────────────────────────────────────────────────────────────────────[0m
+
+Saved the plan to: tfplan.binary
+
+To perform exactly these actions, run the following command to apply:
+    terraform apply "tfplan.binary"
+
+===== [4] Export plan to JSON =====
+
+===== [5] Checkov =====
+
+       _               _
+   ___| |__   ___  ___| | _______   __
+  / __| '_ \ / _ \/ __| |/ / _ \ \ / /
+ | (__| | | |  __/ (__|   < (_) \ V /
+  \___|_| |_|\___|\___|_|\_\___/ \_/
+
+By Prisma Cloud | version: 3.2.495 
+
+terraform scan results:
+
+Passed checks: 2, Failed checks: 1, Skipped checks: 0
+
+Check: CKV_AWS_41: "Ensure no hard coded AWS access key and secret key exists in provider"
+	PASSED for resource: aws.default
+	File: /provider.tf:1-9
+Check: CKV2_AWS_22: "Ensure an IAM User does not have access to the console"
+	PASSED for resource: aws_iam_user.user
+	File: /main.tf:3-6
+Check: CKV_AWS_273: "Ensure access is controlled through SSO and not AWS IAM defined users"
+	FAILED for resource: aws_iam_user.user
+	File: /main.tf:3-6
+
+		3 | resource "aws_iam_user" "user" {
+		4 |   name = lower(format("%s-%s", var.scenario_id, local.name_suffix))
+		5 |   tags = local.common_tags
+		6 | }
+
+terraform_plan scan results:
+
+Passed checks: 2, Failed checks: 1, Skipped checks: 0
+
+Check: CKV_AWS_41: "Ensure no hard coded AWS access key and secret key exists in provider"
+	PASSED for resource: aws.default
+	File: /tfplan.json:0-1
+Check: CKV2_AWS_22: "Ensure an IAM User does not have access to the console"
+	PASSED for resource: aws_iam_user.user
+	File: /tfplan.json:0-0
+Check: CKV_AWS_273: "Ensure access is controlled through SSO and not AWS IAM defined users"
+	FAILED for resource: aws_iam_user.user
+	File: /tfplan.json:0-0
+
+
+===== [6] tfsec =====
+
+======================================================
+tfsec is joining the Trivy family
+
+tfsec will continue to remain available 
+for the time being, although our engineering 
+attention will be directed at Trivy going forward.
+
+You can read more here: 
+https://github.com/aquasecurity/tfsec/discussions/1994
+======================================================
+[0m  [1mtimings[0m
+  ──────────────────────────────────────────
+[0m[0m  [2mdisk i/o            [0m 50.849µs
+[0m[0m  [2mparsing             [0m 5.422712ms
+[0m[0m  [2madaptation          [0m 170.408µs
+[0m[0m  [2mchecks              [0m 5.576482ms
+[0m[0m  [2mtotal               [0m 11.220451ms
+[0m
+[0m  [1mcounts[0m
+  ──────────────────────────────────────────
+[0m[0m  [2mmodules downloaded  [0m 0
+[0m[0m  [2mmodules processed   [0m 1
+[0m[0m  [2mblocks processed    [0m 11
+[0m[0m  [2mfiles read          [0m 5
+[0m
+[0m  [1mresults[0m
+  ──────────────────────────────────────────
+[0m[0m  [2mpassed              [0m 1
+[0m[0m  [2mignored             [0m 0
+[0m[0m  [2mcritical            [0m 0
+[0m[0m  [2mhigh                [0m 0
+[0m[0m  [2mmedium              [0m 0
+[0m[0m  [2mlow                 [0m 0
+[0m
+[0m
+[32m[1mNo problems detected!
+
+[0m
+===== [7] Terrascan =====
+
+===== [8] Conftest =====
+[31mFAIL[0m - tfplan.json - main - No aws_cloudtrail resource detected in plan (CloudTrail logging not enabled)
+[31mFAIL[0m - tfplan.json - main - No aws_flow_log resources detected in plan (VPC Flow Logs likely not enabled)
+
+[31m21 tests, 19 passed, 0 warnings, 2 failures, 0 exceptions[0m
+
+============================================================
+FULL SCAN LOG END: 2025-12-22 20:03:14 UTC
+Return codes:
+  checkov   = 1
+  tfsec     = 0
+  terrascan = 1
+  conftest  = 1
+Scenario outputs (root):
+  - /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/iam/IAM-MISC-001-mfa-not-enforced/checkov_IAM-MISC-001-mfa-not-enforced.txt
+  - /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/iam/IAM-MISC-001-mfa-not-enforced/tfsec_IAM-MISC-001-mfa-not-enforced.txt
+  - /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/iam/IAM-MISC-001-mfa-not-enforced/terrascan_IAM-MISC-001-mfa-not-enforced.txt
+  - /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/iam/IAM-MISC-001-mfa-not-enforced/conftest_IAM-MISC-001-mfa-not-enforced.txt
+Master log:
+  - /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/iam/IAM-MISC-001-mfa-not-enforced/scan_logs/FULL_IAM-MISC-001-mfa-not-enforced.log
+============================================================
+
+
+============================================================
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/iam/IAM-MISC-002-admin-policy-attached
+============================================================
+==> Scenario directory: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/iam/IAM-MISC-002-admin-policy-attached
+
+============================================================
+FULL SCAN LOG START: 2025-12-22 20:03:14 UTC
+Scenario: IAM-MISC-002-admin-policy-attached
+Path: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/iam/IAM-MISC-002-admin-policy-attached
+POLICY_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/policy/terraform
+============================================================
+
+===== [0] Terraform plugin cache fix =====
+TF_PLUGIN_CACHE_DIR=/tmp/terraform-plugin-cache
+
+===== [1] Terraform init =====
+[0m[1mInitializing the backend...[0m
+[0m[1mInitializing provider plugins...[0m
+- Finding hashicorp/aws versions matching "~> 5.0"...
+- Finding hashicorp/random versions matching "~> 3.6"...
+- Using previously-installed hashicorp/aws v5.100.0
+- Using previously-installed hashicorp/random v3.7.2
+
+[0m[1m[32mTerraform has been successfully initialized![0m[32m[0m
+[0m[32m
+You may now begin working with Terraform. Try running "terraform plan" to see
+any changes that are required for your infrastructure. All Terraform commands
+should now work.
+
+If you ever set or change modules or backend configuration for Terraform,
+rerun this command to reinitialize your working directory. If you forget, other
+commands will detect it and remind you to do so if necessary.[0m
+
+===== [2] Terraform validate =====
+[32m[1mSuccess![0m The configuration is valid.
+[0m
+
+===== [3] Terraform plan =====
+Detected terraform.tfvars -> using -var-file=terraform.tfvars

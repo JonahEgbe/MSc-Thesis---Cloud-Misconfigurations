@@ -1,0 +1,13 @@
+============================================================
+EXPERIMENT START: 2025-12-22 21:02:30 UTC
+ROOT_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations
+TEST_SUITE_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite
+RESULTS_DIR: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results
+EXPERIMENT_LOG: /workspaces/MSc-Thesis---Cloud-Misconfigurations/results/logs/FULL_EXPERIMENT_20251222_210230.log
+============================================================
+
+==> Found 26 scenarios.
+
+============================================================
+Running scenario: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/cmp/CMP-BENIGN-001-ssm-enabled-on-ec2
+============================================================

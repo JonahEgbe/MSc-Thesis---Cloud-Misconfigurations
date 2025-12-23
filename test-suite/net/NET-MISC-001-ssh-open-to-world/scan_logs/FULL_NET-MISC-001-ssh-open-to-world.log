@@ -745,3 +745,371 @@ Return codes:
 Master log: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/net/NET-MISC-001-ssh-open-to-world/scan_logs/FULL_NET-MISC-001-ssh-open-to-world.log
 ============================================================
 
+============================================================
+FULL SCAN START: 2025-12-22 22:45:34 UTC
+Scenario: NET-MISC-001-ssh-open-to-world
+Path: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/net/NET-MISC-001-ssh-open-to-world
+Policy: /workspaces/MSc-Thesis---Cloud-Misconfigurations/policy/terraform
+============================================================
+
+Initializing the backend...
+Initializing provider plugins...
+- Reusing previous version of hashicorp/aws from the dependency lock file
+- Reusing previous version of hashicorp/random from the dependency lock file
+- Using previously-installed hashicorp/aws v5.100.0
+- Using previously-installed hashicorp/random v3.7.2
+
+Terraform has been successfully initialized!
+
+You may now begin working with Terraform. Try running "terraform plan" to see
+any changes that are required for your infrastructure. All Terraform commands
+should now work.
+
+If you ever set or change modules or backend configuration for Terraform,
+rerun this command to reinitialize your working directory. If you forget, other
+commands will detect it and remind you to do so if necessary.
+Success! The configuration is valid.
+
+
+Terraform used the selected providers to generate the following execution
+plan. Resource actions are indicated with the following symbols:
+  + create
+
+Terraform will perform the following actions:
+
+  # aws_security_group.sg will be created
+  + resource "aws_security_group" "sg" {
+      + arn                    = (known after apply)
+      + description            = "Managed by Terraform"
+      + egress                 = [
+          + {
+              + cidr_blocks      = [
+                  + "0.0.0.0/0",
+                ]
+              + from_port        = 0
+              + ipv6_cidr_blocks = []
+              + prefix_list_ids  = []
+              + protocol         = "-1"
+              + security_groups  = []
+              + self             = false
+              + to_port          = 0
+                # (1 unchanged attribute hidden)
+            },
+        ]
+      + id                     = (known after apply)
+      + ingress                = [
+          + {
+              + cidr_blocks      = [
+                  + "0.0.0.0/0",
+                ]
+              + from_port        = 22
+              + ipv6_cidr_blocks = []
+              + prefix_list_ids  = []
+              + protocol         = "tcp"
+              + security_groups  = []
+              + self             = false
+              + to_port          = 22
+                # (1 unchanged attribute hidden)
+            },
+        ]
+      + name                   = (known after apply)
+      + name_prefix            = (known after apply)
+      + owner_id               = (known after apply)
+      + revoke_rules_on_delete = false
+      + tags                   = {
+          + "cis_controls" = "EC2.2"
+          + "domain"       = "NET"
+          + "scenario_id"  = "NET-MISC-001-ssh-open-to-world"
+          + "type"         = "MISC"
+        }
+      + tags_all               = {
+          + "cis_controls" = "EC2.2"
+          + "domain"       = "NET"
+          + "scenario_id"  = "NET-MISC-001-ssh-open-to-world"
+          + "type"         = "MISC"
+        }
+      + vpc_id                 = (known after apply)
+    }
+
+  # aws_subnet.subnet will be created
+  + resource "aws_subnet" "subnet" {
+      + arn                                            = (known after apply)
+      + assign_ipv6_address_on_creation                = false
+      + availability_zone                              = "eu-west-2a"
+      + availability_zone_id                           = (known after apply)
+      + cidr_block                                     = "10.50.1.0/24"
+      + enable_dns64                                   = false
+      + enable_resource_name_dns_a_record_on_launch    = false
+      + enable_resource_name_dns_aaaa_record_on_launch = false
+      + id                                             = (known after apply)
+      + ipv6_cidr_block_association_id                 = (known after apply)
+      + ipv6_native                                    = false
+      + map_public_ip_on_launch                        = false
+      + owner_id                                       = (known after apply)
+      + private_dns_hostname_type_on_launch            = (known after apply)
+      + tags                                           = {
+          + "cis_controls" = "EC2.2"
+          + "domain"       = "NET"
+          + "scenario_id"  = "NET-MISC-001-ssh-open-to-world"
+          + "type"         = "MISC"
+        }
+      + tags_all                                       = {
+          + "cis_controls" = "EC2.2"
+          + "domain"       = "NET"
+          + "scenario_id"  = "NET-MISC-001-ssh-open-to-world"
+          + "type"         = "MISC"
+        }
+      + vpc_id                                         = (known after apply)
+    }
+
+  # aws_vpc.vpc will be created
+  + resource "aws_vpc" "vpc" {
+      + arn                                  = (known after apply)
+      + cidr_block                           = "10.50.0.0/16"
+      + default_network_acl_id               = (known after apply)
+      + default_route_table_id               = (known after apply)
+      + default_security_group_id            = (known after apply)
+      + dhcp_options_id                      = (known after apply)
+      + enable_dns_hostnames                 = true
+      + enable_dns_support                   = true
+      + enable_network_address_usage_metrics = (known after apply)
+      + id                                   = (known after apply)
+      + instance_tenancy                     = "default"
+      + ipv6_association_id                  = (known after apply)
+      + ipv6_cidr_block                      = (known after apply)
+      + ipv6_cidr_block_network_border_group = (known after apply)
+      + main_route_table_id                  = (known after apply)
+      + owner_id                             = (known after apply)
+      + tags                                 = {
+          + "cis_controls" = "EC2.2"
+          + "domain"       = "NET"
+          + "scenario_id"  = "NET-MISC-001-ssh-open-to-world"
+          + "type"         = "MISC"
+        }
+      + tags_all                             = {
+          + "cis_controls" = "EC2.2"
+          + "domain"       = "NET"
+          + "scenario_id"  = "NET-MISC-001-ssh-open-to-world"
+          + "type"         = "MISC"
+        }
+    }
+
+  # random_id.suffix will be created
+  + resource "random_id" "suffix" {
+      + b64_std     = (known after apply)
+      + b64_url     = (known after apply)
+      + byte_length = 4
+      + dec         = (known after apply)
+      + hex         = (known after apply)
+      + id          = (known after apply)
+    }
+
+Plan: 4 to add, 0 to change, 0 to destroy.
+
+─────────────────────────────────────────────────────────────────────────────
+
+Saved the plan to:
+/workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/net/NET-MISC-001-ssh-open-to-world/tfplan.binary
+
+To perform exactly these actions, run the following command to apply:
+    terraform apply "/workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/net/NET-MISC-001-ssh-open-to-world/tfplan.binary"
+
+============================================================
+FULL SCAN END: 2025-12-22 22:45:49 UTC
+Return codes (non-fatal):
+  checkov   = 1
+  tfsec     = 1
+  terrascan = 1
+  conftest  = 1
+Outputs:
+  /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/net/NET-MISC-001-ssh-open-to-world/scan_logs/checkov_NET-MISC-001-ssh-open-to-world.txt
+  /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/net/NET-MISC-001-ssh-open-to-world/scan_logs/tfsec_NET-MISC-001-ssh-open-to-world.txt
+  /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/net/NET-MISC-001-ssh-open-to-world/scan_logs/terrascan_NET-MISC-001-ssh-open-to-world.txt
+  /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/net/NET-MISC-001-ssh-open-to-world/scan_logs/conftest_NET-MISC-001-ssh-open-to-world.txt
+Master log:
+  /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/net/NET-MISC-001-ssh-open-to-world/scan_logs/FULL_NET-MISC-001-ssh-open-to-world.log
+============================================================
+============================================================
+FULL SCAN START: 2025-12-23 00:45:36 UTC
+Scenario: NET-MISC-001-ssh-open-to-world
+Path: /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/net/NET-MISC-001-ssh-open-to-world
+Policy: /workspaces/MSc-Thesis---Cloud-Misconfigurations/policy/terraform
+============================================================
+
+Initializing the backend...
+Initializing provider plugins...
+- Reusing previous version of hashicorp/aws from the dependency lock file
+- Reusing previous version of hashicorp/random from the dependency lock file
+- Using previously-installed hashicorp/random v3.7.2
+- Using previously-installed hashicorp/aws v5.100.0
+
+Terraform has been successfully initialized!
+
+You may now begin working with Terraform. Try running "terraform plan" to see
+any changes that are required for your infrastructure. All Terraform commands
+should now work.
+
+If you ever set or change modules or backend configuration for Terraform,
+rerun this command to reinitialize your working directory. If you forget, other
+commands will detect it and remind you to do so if necessary.
+Success! The configuration is valid.
+
+
+Terraform used the selected providers to generate the following execution
+plan. Resource actions are indicated with the following symbols:
+  + create
+
+Terraform will perform the following actions:
+
+  # aws_security_group.sg will be created
+  + resource "aws_security_group" "sg" {
+      + arn                    = (known after apply)
+      + description            = "Managed by Terraform"
+      + egress                 = [
+          + {
+              + cidr_blocks      = [
+                  + "0.0.0.0/0",
+                ]
+              + from_port        = 0
+              + ipv6_cidr_blocks = []
+              + prefix_list_ids  = []
+              + protocol         = "-1"
+              + security_groups  = []
+              + self             = false
+              + to_port          = 0
+                # (1 unchanged attribute hidden)
+            },
+        ]
+      + id                     = (known after apply)
+      + ingress                = [
+          + {
+              + cidr_blocks      = [
+                  + "0.0.0.0/0",
+                ]
+              + from_port        = 22
+              + ipv6_cidr_blocks = []
+              + prefix_list_ids  = []
+              + protocol         = "tcp"
+              + security_groups  = []
+              + self             = false
+              + to_port          = 22
+                # (1 unchanged attribute hidden)
+            },
+        ]
+      + name                   = (known after apply)
+      + name_prefix            = (known after apply)
+      + owner_id               = (known after apply)
+      + revoke_rules_on_delete = false
+      + tags                   = {
+          + "cis_controls" = "EC2.2"
+          + "domain"       = "NET"
+          + "scenario_id"  = "NET-MISC-001-ssh-open-to-world"
+          + "type"         = "MISC"
+        }
+      + tags_all               = {
+          + "cis_controls" = "EC2.2"
+          + "domain"       = "NET"
+          + "scenario_id"  = "NET-MISC-001-ssh-open-to-world"
+          + "type"         = "MISC"
+        }
+      + vpc_id                 = (known after apply)
+    }
+
+  # aws_subnet.subnet will be created
+  + resource "aws_subnet" "subnet" {
+      + arn                                            = (known after apply)
+      + assign_ipv6_address_on_creation                = false
+      + availability_zone                              = "eu-west-2a"
+      + availability_zone_id                           = (known after apply)
+      + cidr_block                                     = "10.50.1.0/24"
+      + enable_dns64                                   = false
+      + enable_resource_name_dns_a_record_on_launch    = false
+      + enable_resource_name_dns_aaaa_record_on_launch = false
+      + id                                             = (known after apply)
+      + ipv6_cidr_block_association_id                 = (known after apply)
+      + ipv6_native                                    = false
+      + map_public_ip_on_launch                        = false
+      + owner_id                                       = (known after apply)
+      + private_dns_hostname_type_on_launch            = (known after apply)
+      + tags                                           = {
+          + "cis_controls" = "EC2.2"
+          + "domain"       = "NET"
+          + "scenario_id"  = "NET-MISC-001-ssh-open-to-world"
+          + "type"         = "MISC"
+        }
+      + tags_all                                       = {
+          + "cis_controls" = "EC2.2"
+          + "domain"       = "NET"
+          + "scenario_id"  = "NET-MISC-001-ssh-open-to-world"
+          + "type"         = "MISC"
+        }
+      + vpc_id                                         = (known after apply)
+    }
+
+  # aws_vpc.vpc will be created
+  + resource "aws_vpc" "vpc" {
+      + arn                                  = (known after apply)
+      + cidr_block                           = "10.50.0.0/16"
+      + default_network_acl_id               = (known after apply)
+      + default_route_table_id               = (known after apply)
+      + default_security_group_id            = (known after apply)
+      + dhcp_options_id                      = (known after apply)
+      + enable_dns_hostnames                 = true
+      + enable_dns_support                   = true
+      + enable_network_address_usage_metrics = (known after apply)
+      + id                                   = (known after apply)
+      + instance_tenancy                     = "default"
+      + ipv6_association_id                  = (known after apply)
+      + ipv6_cidr_block                      = (known after apply)
+      + ipv6_cidr_block_network_border_group = (known after apply)
+      + main_route_table_id                  = (known after apply)
+      + owner_id                             = (known after apply)
+      + tags                                 = {
+          + "cis_controls" = "EC2.2"
+          + "domain"       = "NET"
+          + "scenario_id"  = "NET-MISC-001-ssh-open-to-world"
+          + "type"         = "MISC"
+        }
+      + tags_all                             = {
+          + "cis_controls" = "EC2.2"
+          + "domain"       = "NET"
+          + "scenario_id"  = "NET-MISC-001-ssh-open-to-world"
+          + "type"         = "MISC"
+        }
+    }
+
+  # random_id.suffix will be created
+  + resource "random_id" "suffix" {
+      + b64_std     = (known after apply)
+      + b64_url     = (known after apply)
+      + byte_length = 4
+      + dec         = (known after apply)
+      + hex         = (known after apply)
+      + id          = (known after apply)
+    }
+
+Plan: 4 to add, 0 to change, 0 to destroy.
+
+─────────────────────────────────────────────────────────────────────────────
+
+Saved the plan to:
+/workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/net/NET-MISC-001-ssh-open-to-world/tfplan.binary
+
+To perform exactly these actions, run the following command to apply:
+    terraform apply "/workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/net/NET-MISC-001-ssh-open-to-world/tfplan.binary"
+
+============================================================
+FULL SCAN END: 2025-12-23 00:45:52 UTC
+Return codes (non-fatal):
+  checkov   = 1
+  tfsec     = 1
+  terrascan = 1
+  conftest  = 1
+Outputs:
+  /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/net/NET-MISC-001-ssh-open-to-world/scan_logs/checkov_NET-MISC-001-ssh-open-to-world.txt
+  /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/net/NET-MISC-001-ssh-open-to-world/scan_logs/tfsec_NET-MISC-001-ssh-open-to-world.txt
+  /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/net/NET-MISC-001-ssh-open-to-world/scan_logs/terrascan_NET-MISC-001-ssh-open-to-world.txt
+  /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/net/NET-MISC-001-ssh-open-to-world/scan_logs/conftest_NET-MISC-001-ssh-open-to-world.txt
+Master log:
+  /workspaces/MSc-Thesis---Cloud-Misconfigurations/test-suite/net/NET-MISC-001-ssh-open-to-world/scan_logs/FULL_NET-MISC-001-ssh-open-to-world.log
+============================================================
