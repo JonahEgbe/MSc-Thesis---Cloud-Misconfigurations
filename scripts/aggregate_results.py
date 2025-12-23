@@ -110,16 +110,17 @@ def parse_conftest(output: str) -> dict:
 def aggregate_scenario_results(scenario_dir: Path) -> dict:
     """Aggregate all tool results for a given scenario directory."""
     scenario_name = scenario_dir.name
+    log_dir = scenario_dir / "scan_logs"
 
     def read(path: Path) -> str:
         if not path.exists():
             raise FileNotFoundError(path)
         return path.read_text(errors="ignore")
 
-    checkov_output = read(scenario_dir / f"checkov_{scenario_name}.txt")
-    tfsec_output = read(scenario_dir / f"tfsec_{scenario_name}.txt")
-    terrascan_output = read(scenario_dir / f"terrascan_{scenario_name}.txt")
-    conftest_output = read(scenario_dir / f"conftest_{scenario_name}.txt")
+    checkov_output = read(log_dir / f"checkov_{scenario_name}.txt")
+    tfsec_output = read(log_dir / f"tfsec_{scenario_name}.txt")
+    terrascan_output = read(log_dir / f"terrascan_{scenario_name}.txt")
+    conftest_output = read(log_dir / f"conftest_{scenario_name}.txt")
 
     results = {
         "scenario_id": scenario_name,
